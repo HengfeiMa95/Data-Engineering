@@ -23,7 +23,7 @@
 <meta name="author" content="史冬波 续本达" />
 
 
-<meta name="date" content="2023-09-14" />
+<meta name="date" content="2023-09-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -99,6 +99,7 @@
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="flow.html"><a href="flow.html#数据工程的灵魂数据流"><i class="fa fa-check"></i><b>2.2.1</b> 数据工程的灵魂：数据流</a></li>
 <li class="chapter" data-level="2.2.2" data-path="flow.html"><a href="flow.html#数据工程的钥匙数据结构"><i class="fa fa-check"></i><b>2.2.2</b> 数据工程的钥匙：数据结构</a></li>
+<li class="chapter" data-level="2.2.3" data-path="flow.html"><a href="flow.html#数据工程师的工具箱"><i class="fa fa-check"></i><b>2.2.3</b> 数据工程师的工具箱</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="flow.html"><a href="flow.html#数据工程的四个指导原则"><i class="fa fa-check"></i><b>2.3</b> 数据工程的四个指导原则</a>
 <ul>
@@ -107,15 +108,20 @@
 <li class="chapter" data-level="2.3.3" data-path="flow.html"><a href="flow.html#最佳工具原则"><i class="fa fa-check"></i><b>2.3.3</b> 最佳工具原则</a></li>
 <li class="chapter" data-level="2.3.4" data-path="flow.html"><a href="flow.html#一次原则"><i class="fa fa-check"></i><b>2.3.4</b> 一次原则</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="flow.html"><a href="flow.html#数据工程师的工具箱"><i class="fa fa-check"></i><b>2.4</b> 数据工程师的工具箱</a></li>
+<li class="chapter" data-level="2.4" data-path="flow.html"><a href="flow.html#gnu-环境"><i class="fa fa-check"></i><b>2.4</b> GNU 环境</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="flow.html"><a href="flow.html#posix"><i class="fa fa-check"></i><b>2.4.1</b> POSIX</a></li>
+<li class="chapter" data-level="2.4.2" data-path="flow.html"><a href="flow.html#gnu"><i class="fa fa-check"></i><b>2.4.2</b> GNU</a></li>
+<li class="chapter" data-level="2.4.3" data-path="flow.html"><a href="flow.html#命令行"><i class="fa fa-check"></i><b>2.4.3</b> 命令行</a></li>
+<li class="chapter" data-level="2.4.4" data-path="flow.html"><a href="flow.html#编辑器"><i class="fa fa-check"></i><b>2.4.4</b> 编辑器</a></li>
+</ul></li>
 <li class="chapter" data-level="2.5" data-path="flow.html"><a href="flow.html#版本控制"><i class="fa fa-check"></i><b>2.5</b> 版本控制</a>
 <ul>
 <li class="chapter" data-level="2.5.1" data-path="flow.html"><a href="flow.html#git"><i class="fa fa-check"></i><b>2.5.1</b> Git</a></li>
 <li class="chapter" data-level="2.5.2" data-path="flow.html"><a href="flow.html#git的三种状态"><i class="fa fa-check"></i><b>2.5.2</b> Git的三种状态</a></li>
 <li class="chapter" data-level="2.5.3" data-path="flow.html"><a href="flow.html#git仓库"><i class="fa fa-check"></i><b>2.5.3</b> Git仓库</a></li>
 <li class="chapter" data-level="2.5.4" data-path="flow.html"><a href="flow.html#git命令实践"><i class="fa fa-check"></i><b>2.5.4</b> Git命令实践</a></li>
-<li class="chapter" data-level="2.5.5" data-path="flow.html"><a href="flow.html#git的连接思路"><i class="fa fa-check"></i><b>2.5.5</b> git的连接思路</a></li>
-<li class="chapter" data-level="2.5.6" data-path="flow.html"><a href="flow.html#其他学习资料"><i class="fa fa-check"></i><b>2.5.6</b> 其他学习资料</a></li>
+<li class="chapter" data-level="2.5.5" data-path="flow.html"><a href="flow.html#git目前的局限性"><i class="fa fa-check"></i><b>2.5.5</b> Git目前的局限性</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="basic.html"><a href="basic.html"><i class="fa fa-check"></i><b>3</b> R编程基础</a>
@@ -452,6 +458,13 @@
 <p>首先，数据结构的选取决定了解决问题的方式与难度。例如，在表达与计算网络时，选择表结构就意味着繁复的计算以及冗余的储存。换句话说，表结构并不是解决网络问题的<em>最佳工具</em>。在设计数据任务时，一旦设想好每个步骤的数据结构，其他问题就会迎刃而解。</p>
 <p>第二，数据结构意味着接口或封装，在数据工程中不同任务的接口是输入与输出数据，良好定义的数据结构便是基础。在一个数据任务内部，数据结构可以被用作不同函数之间的接口，从而实现更好的封装。</p>
 </div>
+<div id="数据工程师的工具箱" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> 数据工程师的工具箱<a href="flow.html#数据工程师的工具箱" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>根据数据工程不同的任务，我将最佳工具总结如下，这也将是本书的主要知识点。</p>
+<p><img src="%E6%9C%80%E4%BD%B3%E5%B7%A5%E5%85%B7.png" /></p>
+<p>读者可以在不同阶段选择学习不同的工具。虽然本书的主要内容是介绍使用R进行数据分析，我们也会在附件中介绍其他主要的工具，特别是对于新手阶段使用的工具的基本用法。</p>
+<p>在新手村阶段，推荐读者选择Vscode(Mac用户直接使用Item2)作为文本编译器，并使用Markdown作为文学编程语言，并学习Linux命令行的基本语法。另外，我们推荐选择Papers作为文献管理软件。</p>
+</div>
 </div>
 <div id="数据工程的四个指导原则" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> 数据工程的四个指导原则<a href="flow.html#数据工程的四个指导原则" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -482,12 +495,38 @@ This may sound simple and easy to achieve (which it is if you carefully maintain
 <p>一次原则是数据工程的最后一个原则，包括两个含义：一是从数据输入到形成数据分析报告，需要全部通过代码一次完成，不能在过程中存在任何人工干预；二是在数据工程中不做任何重复工作。</p>
 </div>
 </div>
-<div id="数据工程师的工具箱" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> 数据工程师的工具箱<a href="flow.html#数据工程师的工具箱" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>根据数据工程不同的任务，我将最佳工具总结如下，这也将是本书的主要知识点。</p>
-<p><img src="%E6%9C%80%E4%BD%B3%E5%B7%A5%E5%85%B7.png" /></p>
-<p>读者可以在不同阶段选择学习不同的工具。虽然本书的主要内容是介绍使用R进行数据分析，我们也会在附件中介绍其他主要的工具，特别是对于新手阶段使用的工具的基本用法。</p>
-<p>在新手村阶段，推荐读者选择Vscode(Mac用户直接使用Item2)作为文本编译器，并使用Markdown作为文学编程语言，并学习Linux命令行的基本语法。另外，我们推荐选择Papers作为文献管理软件。</p>
+<div id="gnu-环境" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> GNU 环境<a href="flow.html#gnu-环境" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="posix" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> POSIX<a href="flow.html#posix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>POSIX（Portable Operating System Interface），是关于计算机操作
+系统的国际标准。它规定了操作系统的基本工具和程序接口。同一个程序，在任何满足POSIX标准的运算环境中，都会得到相同的结果，这就保证了科学研究结果的可复现性。</p>
+</div>
+<div id="gnu" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> GNU<a href="flow.html#gnu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>满足 POSIX 的操作系统有 GNU/Linux，macOS，或者其他的类Unix系统。GNU是GNU is not Unix的缩写,是自由软件运动形成的POSIX环境，是科学计算的首选。我们推荐Debian系统。Microsoft Windows系统不满足POSIX标准，可以使用Windows Subsystem for Linux （简称 WSL）扩展来在 Windows上实现POSIX环境。具体实现方式参见视频（视频链接）。</p>
+<p>Mac OS中使用Gentoo、homebrew等配置环境。推荐使用item2作为客户端工具。item2的配置可参考https://iterm2.com/documentation.html。</p>
+</div>
+<div id="命令行" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> 命令行<a href="flow.html#命令行" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>本节介绍一些常用的命令行命令</p>
+<pre><code>ls list structure, 列出当前路径中的文件
+cd change directory, 改变当前路径
+sudo 使用管理员权限执行操作
+apt Advanced Package Tool 软件管理器
+apt update
+apt install nano diffutils patch
+nano 文件编辑器，与 emacs, vi, VSCode 等互换
+查找 ^W 、替换 ^R 、保存 ^O 、退出 ^X
+注： ^W 代表按住 Ctrl 键，再按 W。</code></pre>
+<p>GNU标准定义了推荐的参数格式，命令的各个部分由<strong>半角</strong>空格分隔。命令行有两种参数，短参数用<code>-</code>接一个字母，例如<code>ls -a</code>；长参数用<code>--</code>接一个单词，例如，<code>ls --color==tty</code>。短参数的好处是可以将不同的参数放在一起，例如<code>ls -lrta</code>。</p>
+<p>特别地，不要强迫自己记住所有的参数，经常使用<code>man</code>查看帮助文档即可，例如<code>man ls</code>。</p>
+</div>
+<div id="编辑器" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> 编辑器<a href="flow.html#编辑器" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>编辑器用于撰写、修改和调试程序，我们大部分时间都会在编辑器中度过。一个趁手的编辑器就好似一件趁手的兵器，可以极大提升生产力。编译器（editor）不同于文书处理器（word processor，如 WPS，Word），排版功能对程序没有帮助，可视化的排版功能对于程序来说没有价值。最常见的编辑器有GNU nano、Vim、GNU Emacs，其中 Vim 和 Emacs 都有对应的图形版本。<code>nano</code>适用于临时任务，Vim和Emacs是两大主流编辑器，并形成了稳定的用户阵营，被其拥趸称为“神的编辑器”与“编辑器之神”，读者可以根据自身偏好选择其中一款长期学习使用。</p>
+<p>尽管Vim和Emacs提供了无限的扩展性，但都需要一个漫长的学习过程。新进崛起的，Visual Studio Code （简称 VSCode）则以快速上手著称。对于新手来说也更友好。</p>
+</div>
 </div>
 <div id="版本控制" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> 版本控制<a href="flow.html#版本控制" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -499,8 +538,8 @@ This may sound simple and easy to achieve (which it is if you carefully maintain
 <div id="git" class="section level3 hasAnchor" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Git<a href="flow.html#git" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Git是Linux发明人 Linus Torvalds 发明的一个解决版本控制问题的”最佳工具”，可以支持超过5000人团队协作维护Linux。Git的思想是将时间轴看作离散的时间存档点，每一存档就相当于对文件系统进行一次快照，对比与上一次存档点的文件差异，储存文件的差分（diff）。例如，在第二次快照中文件A变成了A1，此时储存文件A1与A的差异，diff = A1-A。对于没有改变的文件，如Version2中的B文件，则不进行新的储存。由于快照时间是不会完全一致的，因此当存在一个共享的版本存储仓库时（例如Github），可以满足多人协同的目标。每一次快照储存的版本都是可以追溯的，满足可复现原则。由于每次快照只储存差分文件，没有重复储存，因此满足一次原则。</p>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9b85433c0822bac88b78" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-9b85433c0822bac88b78">{"x":{"diagram":"graph R {\n  rankdir= TB\n  node [shape=box]\n  \n  node1 [style=\"rounded, filled\",label = \"Version1\",fillcolor = goldenrod]\n  node2 [style=\"rounded, filled\", label = \"File A\",fillcolor = Gainsboro]\n  node3 [style=\"rounded, filled\", label = \"File B\",fillcolor= Gainsboro]\n  node4 [style=\"rounded, filled\", label = \"File C\",fillcolor= Gainsboro]\n  node1 -- node2 -- node3 -- node4\n  \n  node5 [style=\"rounded, filled\", label = \"Version2\",fillcolor = goldenrod]\n  node6 [style=\"rounded, filled\",  label = \"A1\",fillcolor = Gainsboro]\n  node7 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node8 [style=\"rounded, filled\",  label = \"C1\",fillcolor= Gainsboro]\n  node5 -- node6 -- node7 -- node8\n  \n  node9 [style=\"rounded, filled\", label = \"Version3\",fillcolor = goldenrod]\n  node10 [style=\"rounded, filled, dashed\",  label = \"A1\",fillcolor = Gainsboro]\n  node11 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node12 [style=\"rounded, filled\",  label = \"C2\",fillcolor= Gainsboro]\n  node9 -- node10 -- node11 -- node12\n  \n  node13 [style=\"rounded, filled\", label = \"Version4\",fillcolor = goldenrod]\n  node14 [style=\"rounded, filled\",  label = \"A2\",fillcolor = Gainsboro]\n  node15 [style=\"rounded, filled\",  label = \"B1\", fillcolor= Gainsboro]\n  node16 [style=\"rounded, filled,dashed\",  label = \"C2\",fillcolor= Gainsboro]\n  node13 -- node14 -- node15 -- node16\n  \n  node17 [style=\"rounded, filled\", label = \"Version5\",fillcolor = goldenrod]\n  node18 [style=\"rounded, filled,dashed\",  label = \"A2\",fillcolor = Gainsboro]\n  node19 [style=\"rounded, filled\",  label = \"B2\", fillcolor= Gainsboro]\n  node20 [style=\"rounded, filled\",  label = \"C3\",fillcolor= Gainsboro]\n  node17 -- node18 -- node19 -- node20\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4894aba24407c41c3c14" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-4894aba24407c41c3c14">{"x":{"diagram":"graph R {\n  rankdir= TB\n  node [shape=box]\n  \n  node1 [style=\"rounded, filled\",label = \"Version1\",fillcolor = goldenrod]\n  node2 [style=\"rounded, filled\", label = \"File A\",fillcolor = Gainsboro]\n  node3 [style=\"rounded, filled\", label = \"File B\",fillcolor= Gainsboro]\n  node4 [style=\"rounded, filled\", label = \"File C\",fillcolor= Gainsboro]\n  node1 -- node2 -- node3 -- node4\n  \n  node5 [style=\"rounded, filled\", label = \"Version2\",fillcolor = goldenrod]\n  node6 [style=\"rounded, filled\",  label = \"A1\",fillcolor = Gainsboro]\n  node7 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node8 [style=\"rounded, filled\",  label = \"C1\",fillcolor= Gainsboro]\n  node5 -- node6 -- node7 -- node8\n  \n  node9 [style=\"rounded, filled\", label = \"Version3\",fillcolor = goldenrod]\n  node10 [style=\"rounded, filled, dashed\",  label = \"A1\",fillcolor = Gainsboro]\n  node11 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node12 [style=\"rounded, filled\",  label = \"C2\",fillcolor= Gainsboro]\n  node9 -- node10 -- node11 -- node12\n  \n  node13 [style=\"rounded, filled\", label = \"Version4\",fillcolor = goldenrod]\n  node14 [style=\"rounded, filled\",  label = \"A2\",fillcolor = Gainsboro]\n  node15 [style=\"rounded, filled\",  label = \"B1\", fillcolor= Gainsboro]\n  node16 [style=\"rounded, filled,dashed\",  label = \"C2\",fillcolor= Gainsboro]\n  node13 -- node14 -- node15 -- node16\n  \n  node17 [style=\"rounded, filled\", label = \"Version5\",fillcolor = goldenrod]\n  node18 [style=\"rounded, filled,dashed\",  label = \"A2\",fillcolor = Gainsboro]\n  node19 [style=\"rounded, filled\",  label = \"B2\", fillcolor= Gainsboro]\n  node20 [style=\"rounded, filled\",  label = \"C3\",fillcolor= Gainsboro]\n  node17 -- node18 -- node19 -- node20\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="git的三种状态" class="section level3 hasAnchor" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> Git的三种状态<a href="flow.html#git的三种状态" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -562,8 +601,7 @@ git add -i #逐一询问添加当前目录下所有文件</code></pre>
 <p>此结果显示，commit操作修改了一个文件，在文件中插入了一行。上述操作可以用git commit –m “add what I learned in 2023-09-18”完成。</p>
 <p>查看当前的状态</p>
 <pre><code>git status</code></pre>
-<p><img src="git5.png" />
-使用git log -p可以查看具体提交的历史。</p>
+<p><img src="git5.png" /> 使用git log -p可以查看具体提交的历史。</p>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>使用tag发布版本</strong></li>
 </ol>
@@ -575,18 +613,64 @@ git checkout gitnotes-1.0 #看到历史版本</code></pre>
 <pre><code>git checkout master #回到主分支</code></pre>
 <p>这样做的意义是可以在以后开发当中，找到任何一个节点的版本，这对于持续性的项目太重要了！</p>
 <ol start="4" style="list-style-type: decimal">
-<li><strong>git到gitlab</strong></li>
+<li><strong>Git到GitHub</strong></li>
 </ol>
-<p>如何连接github之类的</p>
-<p>明天把tenure的数据问卷做了</p>
-<p>然后整理论文的结果</p>
+<p>上面我们介绍了如何在本地仓库进行版本管理，当多人协作时，我们就需要一个远程仓库。GitHub是目前世界上使用最多的远程仓，截至2023年1月26日，已经有超过1亿开发人员使用GitHub。</p>
+<p>首先，注册GitHub账户，建议使用教育邮箱（如果有的话），注册完成后，登录进入GitHub，进入设置页面（<a href="https://github.com/settings/profile" class="uri">https://github.com/settings/profile</a>）。</p>
+<p>第二步，在本地生成一个sshkey</p>
+<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot; # 此处为GitHub账户的email
+cat /.ssh/id_ras.pub#查看sshkey</code></pre>
+<p>第三步，将上述sshkey输入<code>GitHub-&gt;Settings-&gt;SSH and GPG keys</code>页面，与GitHub绑定（sshkey可以用来不输入密码登陆服务器）
+<img src="git7.png" /></p>
+<p>第四步，在GitHub网页端（<a href="https://github.com/new" class="uri">https://github.com/new</a>） 新建仓库，learngit</p>
+<p><img src="git8.png" /></p>
+<p>第五步，在网页端找到仓库地址，在本地通过<code>git clone</code>命令建立与GitHub的联系
+<img src="git9.png" /></p>
+<pre><code>git clone https://github.com/DongboShi/learngit.git</code></pre>
+<p>此时，在本地会生成一个<code>learngit</code>文件夹，将<code>log.txt</code>文件复制到learngit文件夹，<code>cp log.txt ./learngit/</code></p>
+<p>然后通过下列命令将文件更新到GitHub（注意，在对一个协作项目修改之前，先使用<code>git pull</code>命令将最新版本的文件快照传送到本地）。</p>
+<pre><code>git add .
+git commit -m &#39;add log file&#39;
+git push</code></pre>
+<p>此时可以看到GitHub仓库更新了文件
+<img src="git10.png" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>分支与合并</strong></li>
+</ol>
+<p>多人协作时，为了避免对文件进行不必要的改动，可以建立分支，再对通过测试的分支进行合并。</p>
+<pre><code>git checkout -b branch1 #新建branch1
+git checkout -b branch2
+git checkout main # 切换会主分支</code></pre>
+<p>我们新建了两个branch，我们在两个分支上分别push一个文件上去</p>
+<pre><code>git checkout branch1
+echo &quot;I am the first contributor&quot;&gt;&gt; log.txt
+git add log.txt
+git commit --author=&quot;Zhang San &lt;zhang3@qq.com&gt;&quot; -m &quot;add 1st contributor&quot;
+#伪装成新的contributor “Zhang San”
+git push origin branch1
+
+git checkout branch2
+echo &quot;I am the 2nd contributor&quot;&gt;&gt; log.txt
+git add log.txt
+git commit --author=&quot;Li Si &lt;li4@qq.com&gt;&quot; -m &quot;add 2nd contributor&quot;
+git push origin branch2</code></pre>
+<p>现在将第二个分支合并到主分支</p>
+<pre><code>git checkout main
+git merge branch2
+git push origin main</code></pre>
+<p>但是当我们要把第一个分支也合并进入主分支的时候，此时我们发现由于branch1和branch2都是对log.txt文件进行了修改，出现冲突！</p>
+<pre><code>git merge branch1</code></pre>
+<p><img src="git11.png" />
+此时git status查看提示：</p>
+<p><img src="git12.png" /></p>
+<p><code>nano log.txt</code> 查看冲突文件
+<img src="git13.png" /></p>
+<p>其中，&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD表示冲突的开始，=======表示两个文件之间的分割线&gt;&gt;&gt;&gt;&gt;&gt;&gt; BRANCH-NAMEbranch的来源。对冲突进行修正后，重新commit和push，此时可以将编辑后的文件push到master中。</p>
+<p>本文介绍了git的基本命令，对于更多git命令的学习可以参考，官方手册或者https://www.runoob.com/git/git-tutorial.html</p>
 </div>
-<div id="git的连接思路" class="section level3 hasAnchor" number="2.5.5">
-<h3><span class="header-section-number">2.5.5</span> git的连接思路<a href="flow.html#git的连接思路" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="git目前的局限性" class="section level3 hasAnchor" number="2.5.5">
+<h3><span class="header-section-number">2.5.5</span> Git目前的局限性<a href="flow.html#git目前的局限性" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>版本控制对于研究论文写作也是适用的。一种方式是直接使用文学式编程（作者认为是未来的发展方向），另一种方式是退而求其次，使用LeTex编辑文件。但是对于经济学论文的研究论文版本管理来说，这要求你的合作者也需要适应使用文学式编程的方式来写作研究论文。另外，如果你的英文水平还不足以完成论文时，还受限于你的proofreader是否习惯使用latex或者pdf文件来进行修改。</p>
-</div>
-<div id="其他学习资料" class="section level3 hasAnchor" number="2.5.6">
-<h3><span class="header-section-number">2.5.6</span> 其他学习资料<a href="flow.html#其他学习资料" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>

@@ -124,6 +124,16 @@ AI的发展直接带火了一个工作岗位--*数据分析*。按照[Oracle](ht
 
 第二，数据结构意味着接口或封装，在数据工程中不同任务的接口是输入与输出数据，良好定义的数据结构便是基础。在一个数据任务内部，数据结构可以被用作不同函数之间的接口，从而实现更好的封装。
 
+### 数据工程师的工具箱
+
+根据数据工程不同的任务，我将最佳工具总结如下，这也将是本书的主要知识点。
+
+![](最佳工具.png)
+
+读者可以在不同阶段选择学习不同的工具。虽然本书的主要内容是介绍使用R进行数据分析，我们也会在附件中介绍其他主要的工具，特别是对于新手阶段使用的工具的基本用法。
+
+在新手村阶段，推荐读者选择Vscode(Mac用户直接使用Item2)作为文本编译器，并使用Markdown作为文学编程语言，并学习Linux命令行的基本语法。另外，我们推荐选择Papers作为文献管理软件。
+
 ## 数据工程的四个指导原则
 
 综合当前数据分析的特点与我们从事数据科学研究的经验，本书提出数据工程的四大原则。我们认为只有满足以下四个原则的数据工程才是一项合格的数据工程。只要有一个原则不符合，该数据工程就还是一个未完成的项目。
@@ -155,15 +165,6 @@ This may sound simple and easy to achieve (which it is if you carefully maintain
 
 一次原则是数据工程的最后一个原则，包括两个含义：一是从数据输入到形成数据分析报告，需要全部通过代码一次完成，不能在过程中存在任何人工干预；二是在数据工程中不做任何重复工作。
 
-## 数据工程师的工具箱
-
-根据数据工程不同的任务，我将最佳工具总结如下，这也将是本书的主要知识点。
-
-![](最佳工具.png)
-
-读者可以在不同阶段选择学习不同的工具。虽然本书的主要内容是介绍使用R进行数据分析，我们也会在附件中介绍其他主要的工具，特别是对于新手阶段使用的工具的基本用法。
-
-在新手村阶段，推荐读者选择Vscode(Mac用户直接使用Item2)作为文本编译器，并使用Markdown作为文学编程语言，并学习Linux命令行的基本语法。另外，我们推荐选择Papers作为文献管理软件。
 
 ## GNU 环境
 
@@ -220,8 +221,8 @@ Git是Linux发明人 Linus Torvalds 发明的一个解决版本控制问题的"�
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-40aa2a36b75d77268a81" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-40aa2a36b75d77268a81">{"x":{"diagram":"graph R {\n  rankdir= TB\n  node [shape=box]\n  \n  node1 [style=\"rounded, filled\",label = \"Version1\",fillcolor = goldenrod]\n  node2 [style=\"rounded, filled\", label = \"File A\",fillcolor = Gainsboro]\n  node3 [style=\"rounded, filled\", label = \"File B\",fillcolor= Gainsboro]\n  node4 [style=\"rounded, filled\", label = \"File C\",fillcolor= Gainsboro]\n  node1 -- node2 -- node3 -- node4\n  \n  node5 [style=\"rounded, filled\", label = \"Version2\",fillcolor = goldenrod]\n  node6 [style=\"rounded, filled\",  label = \"A1\",fillcolor = Gainsboro]\n  node7 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node8 [style=\"rounded, filled\",  label = \"C1\",fillcolor= Gainsboro]\n  node5 -- node6 -- node7 -- node8\n  \n  node9 [style=\"rounded, filled\", label = \"Version3\",fillcolor = goldenrod]\n  node10 [style=\"rounded, filled, dashed\",  label = \"A1\",fillcolor = Gainsboro]\n  node11 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node12 [style=\"rounded, filled\",  label = \"C2\",fillcolor= Gainsboro]\n  node9 -- node10 -- node11 -- node12\n  \n  node13 [style=\"rounded, filled\", label = \"Version4\",fillcolor = goldenrod]\n  node14 [style=\"rounded, filled\",  label = \"A2\",fillcolor = Gainsboro]\n  node15 [style=\"rounded, filled\",  label = \"B1\", fillcolor= Gainsboro]\n  node16 [style=\"rounded, filled,dashed\",  label = \"C2\",fillcolor= Gainsboro]\n  node13 -- node14 -- node15 -- node16\n  \n  node17 [style=\"rounded, filled\", label = \"Version5\",fillcolor = goldenrod]\n  node18 [style=\"rounded, filled,dashed\",  label = \"A2\",fillcolor = Gainsboro]\n  node19 [style=\"rounded, filled\",  label = \"B2\", fillcolor= Gainsboro]\n  node20 [style=\"rounded, filled\",  label = \"C3\",fillcolor= Gainsboro]\n  node17 -- node18 -- node19 -- node20\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-354a6a3eecf2ee66724a" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-354a6a3eecf2ee66724a">{"x":{"diagram":"graph R {\n  rankdir= TB\n  node [shape=box]\n  \n  node1 [style=\"rounded, filled\",label = \"Version1\",fillcolor = goldenrod]\n  node2 [style=\"rounded, filled\", label = \"File A\",fillcolor = Gainsboro]\n  node3 [style=\"rounded, filled\", label = \"File B\",fillcolor= Gainsboro]\n  node4 [style=\"rounded, filled\", label = \"File C\",fillcolor= Gainsboro]\n  node1 -- node2 -- node3 -- node4\n  \n  node5 [style=\"rounded, filled\", label = \"Version2\",fillcolor = goldenrod]\n  node6 [style=\"rounded, filled\",  label = \"A1\",fillcolor = Gainsboro]\n  node7 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node8 [style=\"rounded, filled\",  label = \"C1\",fillcolor= Gainsboro]\n  node5 -- node6 -- node7 -- node8\n  \n  node9 [style=\"rounded, filled\", label = \"Version3\",fillcolor = goldenrod]\n  node10 [style=\"rounded, filled, dashed\",  label = \"A1\",fillcolor = Gainsboro]\n  node11 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node12 [style=\"rounded, filled\",  label = \"C2\",fillcolor= Gainsboro]\n  node9 -- node10 -- node11 -- node12\n  \n  node13 [style=\"rounded, filled\", label = \"Version4\",fillcolor = goldenrod]\n  node14 [style=\"rounded, filled\",  label = \"A2\",fillcolor = Gainsboro]\n  node15 [style=\"rounded, filled\",  label = \"B1\", fillcolor= Gainsboro]\n  node16 [style=\"rounded, filled,dashed\",  label = \"C2\",fillcolor= Gainsboro]\n  node13 -- node14 -- node15 -- node16\n  \n  node17 [style=\"rounded, filled\", label = \"Version5\",fillcolor = goldenrod]\n  node18 [style=\"rounded, filled,dashed\",  label = \"A2\",fillcolor = Gainsboro]\n  node19 [style=\"rounded, filled\",  label = \"B2\", fillcolor= Gainsboro]\n  node20 [style=\"rounded, filled\",  label = \"C3\",fillcolor= Gainsboro]\n  node17 -- node18 -- node19 -- node20\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ### Git的三种状态
