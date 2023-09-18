@@ -165,6 +165,43 @@ This may sound simple and easy to achieve (which it is if you carefully maintain
 
 在新手村阶段，推荐读者选择Vscode(Mac用户直接使用Item2)作为文本编译器，并使用Markdown作为文学编程语言，并学习Linux命令行的基本语法。另外，我们推荐选择Papers作为文献管理软件。
 
+## GNU 环境
+
+### POSIX
+POSIX（Portable Operating System Interface），是关于计算机操作
+系统的国际标准。它规定了操作系统的基本工具和程序接口。同一个程序，在任何满足POSIX标准的运算环境中，都会得到相同的结果，这就保证了科学研究结果的可复现性。
+
+### GNU
+满足 POSIX 的操作系统有 GNU/Linux，macOS，或者其他的类Unix系统。GNU是GNU is not Unix的缩写,是自由软件运动形成的POSIX环境，是科学计算的首选。我们推荐Debian系统。Microsoft Windows系统不满足POSIX标准，可以使用Windows Subsystem for Linux （简称 WSL）扩展来在 Windows上实现POSIX环境。具体实现方式参见视频（视频链接）。
+
+Mac OS中使用Gentoo、homebrew等配置环境。推荐使用item2作为客户端工具。item2的配置可参考https://iterm2.com/documentation.html。
+
+### 命令行
+
+本节介绍一些常用的命令行命令
+
+```
+ls list structure, 列出当前路径中的文件
+cd change directory, 改变当前路径
+sudo 使用管理员权限执行操作
+apt Advanced Package Tool 软件管理器
+apt update
+apt install nano diffutils patch
+nano 文件编辑器，与 emacs, vi, VSCode 等互换
+查找 ^W 、替换 ^R 、保存 ^O 、退出 ^X
+注： ^W 代表按住 Ctrl 键，再按 W。
+```
+
+GNU标准定义了推荐的参数格式，命令的各个部分由**半角**空格分隔。命令行有两种参数，短参数用`-`接一个字母，例如`ls -a`；长参数用`--`接一个单词，例如，`ls --color==tty`。短参数的好处是可以将不同的参数放在一起，例如`ls -lrta`。
+
+特别地，不要强迫自己记住所有的参数，经常使用`man`查看帮助文档即可，例如`man ls`。
+
+### 编辑器
+
+编辑器用于撰写、修改和调试程序，我们大部分时间都会在编辑器中度过。一个趁手的编辑器就好似一件趁手的兵器，可以极大提升生产力。编译器（editor）不同于文书处理器（word processor，如 WPS，Word），排版功能对程序没有帮助，可视化的排版功能对于程序来说没有价值。最常见的编辑器有GNU nano、Vim、GNU Emacs，其中 Vim 和 Emacs 都有对应的图形版本。`nano`适用于临时任务，Vim和Emacs是两大主流编辑器，并形成了稳定的用户阵营，被其拥趸称为“神的编辑器”与“编辑器之神”，读者可以根据自身偏好选择其中一款长期学习使用。
+
+尽管Vim和Emacs提供了无限的扩展性，但都需要一个漫长的学习过程。新进崛起的，Visual Studio Code （简称 VSCode）则以快速上手著称。对于新手来说也更友好。
+
 ## 版本控制
 
 版本控制，也称为源代码控制，指的是单人或多人，对于同一（代码）文件的变更情况进行记录、追踪、维护和控制的过程。版本控制在多人协作时至关重要。设想一个简单的情景，你与合作者共同修改一篇论文，你们需要对对方的论文进行修改，有时候甚至同时对某个版本的稿件进行修改。于是，为了区分不同版本的文件，你的文件夹会出现类似下面的奇观：
@@ -183,8 +220,8 @@ Git是Linux发明人 Linus Torvalds 发明的一个解决版本控制问题的"�
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9b85433c0822bac88b78" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-9b85433c0822bac88b78">{"x":{"diagram":"graph R {\n  rankdir= TB\n  node [shape=box]\n  \n  node1 [style=\"rounded, filled\",label = \"Version1\",fillcolor = goldenrod]\n  node2 [style=\"rounded, filled\", label = \"File A\",fillcolor = Gainsboro]\n  node3 [style=\"rounded, filled\", label = \"File B\",fillcolor= Gainsboro]\n  node4 [style=\"rounded, filled\", label = \"File C\",fillcolor= Gainsboro]\n  node1 -- node2 -- node3 -- node4\n  \n  node5 [style=\"rounded, filled\", label = \"Version2\",fillcolor = goldenrod]\n  node6 [style=\"rounded, filled\",  label = \"A1\",fillcolor = Gainsboro]\n  node7 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node8 [style=\"rounded, filled\",  label = \"C1\",fillcolor= Gainsboro]\n  node5 -- node6 -- node7 -- node8\n  \n  node9 [style=\"rounded, filled\", label = \"Version3\",fillcolor = goldenrod]\n  node10 [style=\"rounded, filled, dashed\",  label = \"A1\",fillcolor = Gainsboro]\n  node11 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node12 [style=\"rounded, filled\",  label = \"C2\",fillcolor= Gainsboro]\n  node9 -- node10 -- node11 -- node12\n  \n  node13 [style=\"rounded, filled\", label = \"Version4\",fillcolor = goldenrod]\n  node14 [style=\"rounded, filled\",  label = \"A2\",fillcolor = Gainsboro]\n  node15 [style=\"rounded, filled\",  label = \"B1\", fillcolor= Gainsboro]\n  node16 [style=\"rounded, filled,dashed\",  label = \"C2\",fillcolor= Gainsboro]\n  node13 -- node14 -- node15 -- node16\n  \n  node17 [style=\"rounded, filled\", label = \"Version5\",fillcolor = goldenrod]\n  node18 [style=\"rounded, filled,dashed\",  label = \"A2\",fillcolor = Gainsboro]\n  node19 [style=\"rounded, filled\",  label = \"B2\", fillcolor= Gainsboro]\n  node20 [style=\"rounded, filled\",  label = \"C3\",fillcolor= Gainsboro]\n  node17 -- node18 -- node19 -- node20\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-40aa2a36b75d77268a81" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-40aa2a36b75d77268a81">{"x":{"diagram":"graph R {\n  rankdir= TB\n  node [shape=box]\n  \n  node1 [style=\"rounded, filled\",label = \"Version1\",fillcolor = goldenrod]\n  node2 [style=\"rounded, filled\", label = \"File A\",fillcolor = Gainsboro]\n  node3 [style=\"rounded, filled\", label = \"File B\",fillcolor= Gainsboro]\n  node4 [style=\"rounded, filled\", label = \"File C\",fillcolor= Gainsboro]\n  node1 -- node2 -- node3 -- node4\n  \n  node5 [style=\"rounded, filled\", label = \"Version2\",fillcolor = goldenrod]\n  node6 [style=\"rounded, filled\",  label = \"A1\",fillcolor = Gainsboro]\n  node7 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node8 [style=\"rounded, filled\",  label = \"C1\",fillcolor= Gainsboro]\n  node5 -- node6 -- node7 -- node8\n  \n  node9 [style=\"rounded, filled\", label = \"Version3\",fillcolor = goldenrod]\n  node10 [style=\"rounded, filled, dashed\",  label = \"A1\",fillcolor = Gainsboro]\n  node11 [style=\"rounded, filled,dashed\",  label = \"B\", fillcolor= Gainsboro]\n  node12 [style=\"rounded, filled\",  label = \"C2\",fillcolor= Gainsboro]\n  node9 -- node10 -- node11 -- node12\n  \n  node13 [style=\"rounded, filled\", label = \"Version4\",fillcolor = goldenrod]\n  node14 [style=\"rounded, filled\",  label = \"A2\",fillcolor = Gainsboro]\n  node15 [style=\"rounded, filled\",  label = \"B1\", fillcolor= Gainsboro]\n  node16 [style=\"rounded, filled,dashed\",  label = \"C2\",fillcolor= Gainsboro]\n  node13 -- node14 -- node15 -- node16\n  \n  node17 [style=\"rounded, filled\", label = \"Version5\",fillcolor = goldenrod]\n  node18 [style=\"rounded, filled,dashed\",  label = \"A2\",fillcolor = Gainsboro]\n  node19 [style=\"rounded, filled\",  label = \"B2\", fillcolor= Gainsboro]\n  node20 [style=\"rounded, filled\",  label = \"C3\",fillcolor= Gainsboro]\n  node17 -- node18 -- node19 -- node20\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ### Git的三种状态
@@ -291,36 +328,125 @@ git commit
 此结果显示，commit操作修改了一个文件，在文件中插入了一行。上述操作可以用git commit --m "add what I learned in 2023-09-18"完成。
 
 查看当前的状态
+
 ```         
 git status
 ```
-![](git5.png)
-使用git log -p可以查看具体提交的历史。
+
+![](git5.png) 使用git log -p可以查看具体提交的历史。
 
 3.  **使用tag发布版本**
 
 为了便于回溯，可以将重要的节点打上版本标签，并通过`git checkout`命令方便找到对应版本。
-```
+
+```         
 git tag gitnotes-1.0 #发布为1.0版本
 git tag #查看版本号
 git checkout gitnotes-1.0 #看到历史版本
 ```
+
 ![](git6.png)
-```
+
+```         
 git checkout master #回到主分支
 ```
+
 这样做的意义是可以在以后开发当中，找到任何一个节点的版本，这对于持续性的项目太重要了！
 
-4.  **git到gitlab**
+4.  **Git到GitHub**
 
-如何连接github之类的
+上面我们介绍了如何在本地仓库进行版本管理，当多人协作时，我们就需要一个远程仓库。GitHub是目前世界上使用最多的远程仓，截至2023年1月26日，已经有超过1亿开发人员使用GitHub。
 
-明天把tenure的数据问卷做了
+首先，注册GitHub账户，建议使用教育邮箱（如果有的话），注册完成后，登录进入GitHub，进入设置页面（<https://github.com/settings/profile>）。
 
-然后整理论文的结果
+第二步，在本地生成一个sshkey
 
-### git的连接思路
+```         
+ssh-keygen -t rsa -C "youremail" # 此处为GitHub账户的email
+cat /.ssh/id_ras.pub#查看sshkey
+```
+
+第三步，将上述sshkey输入`GitHub->Settings->SSH and GPG keys`页面，与GitHub绑定（sshkey可以用来不输入密码登陆服务器）
+![](git7.png)
+
+第四步，在GitHub网页端（https://github.com/new） 新建仓库，learngit
+
+![](git8.png)
+
+第五步，在网页端找到仓库地址，在本地通过`git clone`命令建立与GitHub的联系
+![](git9.png)
+
+```
+git clone https://github.com/DongboShi/learngit.git
+```
+此时，在本地会生成一个`learngit`文件夹，将`log.txt`文件复制到learngit文件夹，`cp log.txt ./learngit/`
+
+然后通过下列命令将文件更新到GitHub（注意，在对一个协作项目修改之前，先使用`git pull`命令将最新版本的文件快照传送到本地）。
+
+```
+git add .
+git commit -m 'add log file'
+git push
+```
+
+此时可以看到GitHub仓库更新了文件
+![](git10.png)
+
+
+5.  **分支与合并**
+
+多人协作时，为了避免对文件进行不必要的改动，可以建立分支，再对通过测试的分支进行合并。
+
+```
+git checkout -b branch1 #新建branch1
+git checkout -b branch2
+git checkout main # 切换会主分支
+```
+
+我们新建了两个branch，我们在两个分支上分别push一个文件上去
+
+```
+git checkout branch1
+echo "I am the first contributor">> log.txt
+git add log.txt
+git commit --author="Zhang San <zhang3@qq.com>" -m "add 1st contributor"
+#伪装成新的contributor “Zhang San”
+git push origin branch1
+
+git checkout branch2
+echo "I am the 2nd contributor">> log.txt
+git add log.txt
+git commit --author="Li Si <li4@qq.com>" -m "add 2nd contributor"
+git push origin branch2
+```
+
+现在将第二个分支合并到主分支
+
+```
+git checkout main
+git merge branch2
+git push origin main
+```
+
+但是当我们要把第一个分支也合并进入主分支的时候，此时我们发现由于branch1和branch2都是对log.txt文件进行了修改，出现冲突！
+
+```
+git merge branch1
+```
+
+![](git11.png)
+此时git status查看提示：
+
+![](git12.png)
+
+`nano log.txt` 查看冲突文件
+![](git13.png)
+
+其中，<<<<<<< HEAD表示冲突的开始，=======表示两个文件之间的分割线>>>>>>> BRANCH-NAMEbranch的来源。对冲突进行修正后，重新commit和push，此时可以将编辑后的文件push到master中。
+
+本文介绍了git的基本命令，对于更多git命令的学习可以参考，官方手册或者https://www.runoob.com/git/git-tutorial.html 
+
+
+### Git目前的局限性
 
 版本控制对于研究论文写作也是适用的。一种方式是直接使用文学式编程（作者认为是未来的发展方向），另一种方式是退而求其次，使用LeTex编辑文件。但是对于经济学论文的研究论文版本管理来说，这要求你的合作者也需要适应使用文学式编程的方式来写作研究论文。另外，如果你的英文水平还不足以完成论文时，还受限于你的proofreader是否习惯使用latex或者pdf文件来进行修改。
-
-### 其他学习资料
