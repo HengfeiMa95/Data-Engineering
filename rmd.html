@@ -23,7 +23,7 @@
 <meta name="author" content="史冬波 续本达" />
 
 
-<meta name="date" content="2023-09-18" />
+<meta name="date" content="2023-10-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -227,10 +227,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.8" data-path="basic.html"><a href="basic.html#数据读写"><i class="fa fa-check"></i><b>3.8</b> 数据读写</a>
 <ul>
 <li class="chapter" data-level="3.8.1" data-path="basic.html"><a href="basic.html#csv文件"><i class="fa fa-check"></i><b>3.8.1</b> csv文件</a></li>
-<li class="chapter" data-level="3.8.2" data-path="basic.html"><a href="basic.html#hdf5文件"><i class="fa fa-check"></i><b>3.8.2</b> HDF5文件</a></li>
+<li class="chapter" data-level="3.8.2" data-path="basic.html"><a href="basic.html#hdf5"><i class="fa fa-check"></i><b>3.8.2</b> HDF5</a></li>
 <li class="chapter" data-level="3.8.3" data-path="basic.html"><a href="basic.html#xml"><i class="fa fa-check"></i><b>3.8.3</b> XML</a></li>
 <li class="chapter" data-level="3.8.4" data-path="basic.html"><a href="basic.html#json"><i class="fa fa-check"></i><b>3.8.4</b> JSON</a></li>
-<li class="chapter" data-level="3.8.5" data-path="basic.html"><a href="basic.html#专用数据文件"><i class="fa fa-check"></i><b>3.8.5</b> 专用数据文件</a></li>
+<li class="chapter" data-level="3.8.5" data-path="basic.html"><a href="basic.html#yaml"><i class="fa fa-check"></i><b>3.8.5</b> YAML</a></li>
+<li class="chapter" data-level="3.8.6" data-path="basic.html"><a href="basic.html#专用数据文件"><i class="fa fa-check"></i><b>3.8.6</b> 专用数据文件</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="basic.html"><a href="basic.html#流程控制"><i class="fa fa-check"></i><b>3.9</b> 流程控制</a>
 <ul>
@@ -510,7 +511,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="rmd" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">第 4 章</span> 文学式编程<a href="rmd.html#rmd" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>可复现性是数据工程誓死捍卫的底线原则与科学研究区分于巫术的主要特征。R语言内嵌了一整套自动化报告解决方案，可以保证结果可复现。另一方面，任何数据分析报告都不是一簇而就的，必然涉及到反反复复的结果调试，R语言自动化报告可以帮我们避免反复将分析结果赋值粘贴到Word文档里面（如果你不理解这句话，那说明你还不是一个资深数据分析人员），避免了这种愚蠢的重复劳动。我们一直认为懒没有错，因为懒是推动人类寻找更高效技术方案的原生动力，自动化报告就是这样的技术方案。</p>
+<blockquote>
+<p>他要是体面，你就让他体面；他要是不体面，你就帮他体面。—《让子弹飞》</p>
+</blockquote>
+<p>可复现性是数据工程誓死捍卫的底线原则与科学研究区分于巫术的主要特征。R语言内嵌了一整套自动化报告解决方案，可以保证结果可复现。另一方面，任何数据分析报告都不是一蹴而就的，必然涉及到反反复复的结果调试，R语言自动化报告可以帮我们避免反复将分析结果赋值粘贴到Word文档里面（如果你不理解这句话，那说明你还不是一个资深数据分析人员），避免了这种愚蠢的重复劳动。我们一直认为懒没有错，因为懒是推动人类寻找更高效技术方案的原生动力，自动化报告就是这样的技术方案。</p>
 <div id="什么是文学式编程" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> 什么是文学式编程<a href="rmd.html#什么是文学式编程" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>文学式编程是相对于结构式编程而言的。结构式编程就是我们前面学到的那些循环、分支结构、函数等代码，让计算机按照我们的设定去执行特定任务。但是在展示这些运算结果的时候，我们还需要将其编辑到一个文档或者演示文稿中。文学式编程则是将这两步融合在一起，分析报告的正文和代码放入同一个文档，编译的时候分别运行，从而一次性生成分析报告。</p>
@@ -882,7 +886,7 @@ knitr::include_graphics(&#39;Rlogo.png&#39;)
 <div id="其他学习资源" class="section level3 hasAnchor" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> 其他学习资源<a href="rmd.html#其他学习资源" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Xaringan模板中自带了其基本语法，读者通过模板自学。这里我们分享几个不包含在Xaringan中的学习资源。</p>
-<p>第一个是<code>Xaringan</code>模板<code>NHSRthemes</code>，这个模板的设计是非常简洁美观的，感兴趣取得可以通过安装其拓展包学习，<a href="https://spcanelon.github.io/xaringan-basics-and-beyond/nhsr-theme/sample-16-9.html#1" class="uri">https://spcanelon.github.io/xaringan-basics-and-beyond/nhsr-theme/sample-16-9.html#1</a></p>
+<p>第一个是<code>Xaringan</code>模板<code>NHSRthemes</code>，这个模板的设计是非常简洁美观的，感兴趣的可以通过安装其拓展包学习，<a href="https://spcanelon.github.io/xaringan-basics-and-beyond/nhsr-theme/sample-16-9.html#1" class="uri">https://spcanelon.github.io/xaringan-basics-and-beyond/nhsr-theme/sample-16-9.html#1</a></p>
 <p>第二个是<code>xaringanExtra</code>拓展包为<code>Xaringan</code>添加了包括动画在内的各种效果，使得其更接近ms powerpoint的功能。资源为<a href="https://pkg.garrickadenbuie.com/xaringanExtra/#/slide-tone" class="uri">https://pkg.garrickadenbuie.com/xaringanExtra/#/slide-tone</a></p>
 <p>第三个是2021年的一个会议，详细介绍了如何通过定制化CSS对幻灯片进行美化。<a href="https://presentable-user2021.netlify.app/materials/act-01/03-xaringan-extras/" class="uri">https://presentable-user2021.netlify.app/materials/act-01/03-xaringan-extras/</a></p>
 <p>第四个是一个制作精良的slides，可以参考其中具体的语法。<a href="https://arm.rbind.io/slides/xaringan.html#1" class="uri">https://arm.rbind.io/slides/xaringan.html#1</a></p>
@@ -900,7 +904,7 @@ knitr::include_graphics(&#39;Rlogo.png&#39;)
 <h3><span class="header-section-number">4.5.2</span> 互动代码模块<a href="rmd.html#互动代码模块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>learnr兼容所有的Rmarkdown语法，通过设置代码块的参数exercise=TRUE，可以在文本文档中生成可以编辑的代码框，这将让文档变成可交互运行的。</p>
 <p><img src="exercises.png" width="50%" style="display: block; margin: auto;" /></p>
-<p>值得注意的是，learnr的不同代码块之间是独立的运行环境，是不联通的。这就导致在同一个文档中需要反复读入数据，如果要服复用某个代码块的环境，可以通过exercise.setup指定已运行的环境。</p>
+<p>值得注意的是，learnr的不同代码块之间是独立的运行环境，是不联通的。这就导致在同一个文档中需要反复读入数据，如果要复用某个代码块的环境，可以通过exercise.setup指定已运行的环境。</p>
 <p>例如，</p>
 <pre><code>
 
