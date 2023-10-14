@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第 5 章 数据操纵 | 数据工程讲义：经济学分册</title>
+  <title>第 4 章 文学式编程 | 数据工程讲义：经济学分册</title>
   <meta name="description" content="适用于数据工程与数据科学课程的教材。" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第 5 章 数据操纵 | 数据工程讲义：经济学分册" />
+  <meta property="og:title" content="第 4 章 文学式编程 | 数据工程讲义：经济学分册" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="适用于数据工程与数据科学课程的教材。" />
   <meta name="github-repo" content="yihui/bookdown-chinese" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第 5 章 数据操纵 | 数据工程讲义：经济学分册" />
+  <meta name="twitter:title" content="第 4 章 文学式编程 | 数据工程讲义：经济学分册" />
   
   <meta name="twitter:description" content="适用于数据工程与数据科学课程的教材。" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="rmd.html"/>
-<link rel="next" href="visu.html"/>
+<link rel="prev" href="basic.html"/>
+<link rel="next" href="manipulate.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -58,6 +58,70 @@
 <script src="libs/grViz-binding-1.0.10/grViz.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -205,13 +269,24 @@
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="rmd.html"><a href="rmd.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> Rmarkdown</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rmd.html"><a href="rmd.html#代码块控制"><i class="fa fa-check"></i><b>4.3.1</b> 代码块控制</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rmd.html"><a href="rmd.html#rmarkdown特殊语法"><i class="fa fa-check"></i><b>4.3.2</b> Rmarkdown特殊语法</a></li>
+<li class="chapter" data-level="4.3.1" data-path="rmd.html"><a href="rmd.html#yaml头文件"><i class="fa fa-check"></i><b>4.3.1</b> YAML头文件</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rmd.html"><a href="rmd.html#代码块控制"><i class="fa fa-check"></i><b>4.3.2</b> 代码块控制</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rmd.html"><a href="rmd.html#rmarkdown特殊语法"><i class="fa fa-check"></i><b>4.3.3</b> Rmarkdown特殊语法</a></li>
+<li class="chapter" data-level="4.3.4" data-path="rmd.html"><a href="rmd.html#格式转换"><i class="fa fa-check"></i><b>4.3.4</b> 格式转换</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rmd.html"><a href="rmd.html#xaringan"><i class="fa fa-check"></i><b>4.4</b> Xaringan</a></li>
-<li class="chapter" data-level="4.5" data-path="rmd.html"><a href="rmd.html#leanr"><i class="fa fa-check"></i><b>4.5</b> LeanR</a></li>
-<li class="chapter" data-level="4.6" data-path="rmd.html"><a href="rmd.html#bookdown"><i class="fa fa-check"></i><b>4.6</b> Bookdown</a></li>
-<li class="chapter" data-level="4.7" data-path="rmd.html"><a href="rmd.html#格式转化"><i class="fa fa-check"></i><b>4.7</b> 格式转化</a></li>
+<li class="chapter" data-level="4.4" data-path="rmd.html"><a href="rmd.html#xaringan"><i class="fa fa-check"></i><b>4.4</b> Xaringan</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="rmd.html"><a href="rmd.html#安装与模板"><i class="fa fa-check"></i><b>4.4.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.4.2" data-path="rmd.html"><a href="rmd.html#其他学习资源"><i class="fa fa-check"></i><b>4.4.2</b> 其他学习资源</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="rmd.html"><a href="rmd.html#leanr"><i class="fa fa-check"></i><b>4.5</b> leanr</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="rmd.html"><a href="rmd.html#安装与模板-1"><i class="fa fa-check"></i><b>4.5.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.5.2" data-path="rmd.html"><a href="rmd.html#互动代码模块"><i class="fa fa-check"></i><b>4.5.2</b> 互动代码模块</a></li>
+<li class="chapter" data-level="4.5.3" data-path="rmd.html"><a href="rmd.html#测试题"><i class="fa fa-check"></i><b>4.5.3</b> 测试题</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="rmd.html"><a href="rmd.html#bookdownblogdown以及pagedown"><i class="fa fa-check"></i><b>4.6</b> bookdown、blogdown以及pagedown</a></li>
+<li class="chapter" data-level="4.7" data-path="rmd.html"><a href="rmd.html#quarto"><i class="fa fa-check"></i><b>4.7</b> Quarto</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="manipulate.html"><a href="manipulate.html"><i class="fa fa-check"></i><b>5</b> 数据操纵</a>
 <ul>
@@ -433,73 +508,505 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="manipulate" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">第 5 章</span> 数据操纵<a href="manipulate.html#manipulate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="rmd" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">第 4 章</span> 文学式编程<a href="rmd.html#rmd" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>可复现性是数据工程誓死捍卫的底线原则与科学研究区分于巫术的主要特征。R语言内嵌了一整套自动化报告解决方案，可以保证结果可复现。另一方面，任何数据分析报告都不是一簇而就的，必然涉及到反反复复的结果调试，R语言自动化报告可以帮我们避免反复将分析结果赋值粘贴到Word文档里面（如果你不理解这句话，那说明你还不是一个资深数据分析人员），避免了这种愚蠢的重复劳动。我们一直认为懒没有错，因为懒是推动人类寻找更高效技术方案的原生动力，自动化报告就是这样的技术方案。</p>
+<div id="什么是文学式编程" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 什么是文学式编程<a href="rmd.html#什么是文学式编程" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>文学式编程是相对于结构式编程而言的。结构式编程就是我们前面学到的那些循环、分支结构、函数等代码，让计算机按照我们的设定去执行特定任务。但是在展示这些运算结果的时候，我们还需要将其编辑到一个文档或者演示文稿中。文学式编程则是将这两步融合在一起，分析报告的正文和代码放入同一个文档，编译的时候分别运行，从而一次性生成分析报告。</p>
+<p>文学式编程起源于大神Knuth开发的Sweave框架，大名鼎鼎的Tex就是其作品。写到这里，忍不住要提到Tex开发的故事，当年Knuth老人家不满出版社的排版质量，一气之下写了一套高质量排版系统，并写支票奖励发现缺陷的人，奖金都是16进制的1美元，而且金额随缺陷数目递增（这段轶事大神谢益辉的书籍中也有记载）。</p>
+<p>2011年，R语言社区大神谢益辉（我在课上把他称为华人之光）由于忍不了Sweave的图片宽度设置等问题，一气之下（又来！）开发了knitr包（具体这段历史可以参考谢益辉自己的<a href="https://bookdown.org/yihui/r-ninja/auto-report.html">回忆</a><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>），兼容并无限拓展Sweave，把我们从LaTex的深坑中拯救了出来。读到这里，如果你还没有体会过LaTex的坑有多深，那么恭喜你，你可以不用体会，直接跳入RMarkdown的简洁世界吧。</p>
+<p>上面的故事也告诉我们，如果你想推动技术进步，就让程序员生气吧，忍无可忍的程序员总会搞出一些惊天动地的事情。</p>
+</div>
+<div id="markdown格式" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Markdown格式<a href="rmd.html#markdown格式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Markdown</code>格式是最简洁的带格式的文本语法。<code>Markdown</code>是John Gruber于2004年开发的，使用一组非常简洁的符合人类阅读习惯的标签来实现大部分文本文档中的格式，大量被程序开发人员使用。</p>
+<div id="标题" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> 标题<a href="rmd.html#标题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>标题使用<code>#</code>加空格的形式表示，几级标题就用几个<code>#</code>表示。由于本文是使用markdown语法写作的，因此就不演示编译后结果了。</p>
+<pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题</code></pre>
+</div>
+<div id="段落文本" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> 段落文本<a href="rmd.html#段落文本" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>段落可以是一行或者多行文字，不同段落之间用空行分割。<code>*</code>之间的文本为<em>斜体</em>，两个<code>*</code>之间的文本为<strong>加粗</strong>，三个以上<code>*</code>表示分隔符，使用<code>-</code>表示无序列表，使用<code>1.</code>表示有序列表，可以通过制表符来进行列表分级。通过<code>[](link)</code>来表示引用，link表示超链接地址。</p>
+<p>例如，</p>
+<pre><code>后来我就念了**两首诗**[^2],
+
+[^2]: 纪念一位逝去的长者
+
+&gt; 苟利国家生死以，岂因祸福避趋之
+
+他回忆说：“*一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的行程。*”
+
+***
+
+人固有一死，
+
+- 或重于泰山
+- 或轻于鸿毛
+  - 或介于中间
+
+更多关于markdown知识可以参考markdown手册和Rstudio的文档， 以及[Xie, Allaire, and Grolemund 2019](https://bookdown.org/yihui/rmarkdown/)。</code></pre>
+<p>后来我就念了<strong>两首诗</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>,</p>
 <blockquote>
-<p>整齐数据都是一样的，凌乱数据各有各的凌乱。— Hadley Wickham</p>
+<p>苟利国家生死以，岂因祸福避趋之</p>
 </blockquote>
-<p>数据操纵的目的是把原始数据转变成</p>
-<div id="整洁数据tidydata" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> 整洁数据tidydata<a href="manipulate.html#整洁数据tidydata" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="分析单位unit-of-analysis" class="section level3 hasAnchor" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> 分析单位(unit of analysis)<a href="manipulate.html#分析单位unit-of-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>为了理解整洁数据，需要先介绍一个新的概念-分析单位。分析单元是实证研究中至关重要的概念。毫不夸张的说，理解分析单位就是理解和设计实证论文的钥匙。然而遗憾的是，分析单位在国内的教学中并没有得到充分的重视。</p>
-<p>分析单位是一个”单位”的概念，类似于<em>千克，公里</em>，是针对某种对象的”计量”方式。艾尔·巴比在《社会研究方法》中将分析单位定义为”用来考察和总结同类事物特征，解释其中差异的单位。“该定义的核心关键词是<em>差异</em>。在艾尔·巴比的基础上，我们可以给出一个更加直观的定义，即<strong>分析单位是研究设计中用于比较研究对象差异的最小计量单位</strong>。设想这样的一个研究教育回报的研究设计，研究对象为上海市的所有应届毕业生，研究者可以通过普查的方式得到所有人的受教育年限与收入水平，此时的分析单位是<strong>个人</strong>。如果研究问题转化为研究生教育对收入的影响，此时，分析单位就不再是<strong>个人</strong>，而成为<em>研究生学历</em>与<em>研究生以下学历</em>的两个群体，因为同群体内的个人在教育测度上并不存在差异。从这个角度来看，风笑天在其影响范围很广的教材《社会研究方法》中对分析单位的定义就有点草率了。风笑天将分析单位定义为<em>“一项社会科学的研究对象”</em>，这个定义直接将分析单位与研究对象等价。</p>
-<p>与分析单位密切相关的一个概念是<strong>观测单位(unit of observation)</strong>，指的是观测数据中的计量单位。直观来说，就是数据每一行的单位。在上面的两个例子里面，数据都是在个人层面采集的，观测单位都是<strong>个人</strong>。这就看出了观测单位与分析单位之间的细微差别。</p>
-<p>单位与变量的关系</p>
-<p>在操作层面，分析单位是由自变量的设计决定的，而观测单位是由因变量的设计决定的。在介绍理论与模型的章节中，我们提到当前的理论主要是关注两个变量之间的关系。因此，此处的自变量指的是我们关心的核心自变量(variable of interest)。所以才说，分析单位是实证研究的钥匙，当我们开始一项研究的时候，第一个要回答的问题便是这个研究的自变量与因变量分别是在什么”单位”上测量的。同样的道理，当我们去精度别人的论文时，首先要理解的便是他的回归中的分析单位与观测单位。如果我们看到识别模型的为 <span class="math display">\[y_{i,j,t} = \alpha + \beta \times x_{j,t} + \epsilon_{i,j,t}\]</span></p>
-<p>我们便可以确定此处的分析单位是{j,t}，而观测单位是{i,j,t}，在回归表中的观测值数量（样本大小N）应该等于<span class="math inline">\(I \times J \times T\)</span>。</p>
-<p>所以我们常说，看懂回归表格中的观测值数量是判断回归是否看懂的黄金标准。</p>
+<p>他回忆说：“<em>一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的行程。</em>”</p>
+<hr />
+<p>人固有一死，</p>
+<ul>
+<li>或重于泰山</li>
+<li>或轻于鸿毛
+<ul>
+<li>或介于中间</li>
+</ul></li>
+</ul>
+<p>更多关于markdown知识可以参考markdown手册和Rstudio的文档， 以及<a href="https://bookdown.org/yihui/rmarkdown/">Xie, Allaire, and Grolemund 2019</a>。</p>
+</div>
+<div id="表格" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> 表格<a href="rmd.html#表格" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>表格使用<code>|</code>分割不同的列，多个<code>-</code>区分表头与表格，并搭配<code>:</code>表示对齐方式，列宽度与输入的列标题下横线宽度成比例。例如：</p>
+<pre><code>| Covariates                                                | Mean      |           | Difference | P value |
+| --------------------------------------------------------- |:---------:| --------- | ----------:| -------|
+|                                                           | Acceptors | Rejectors |            |         |
+| PhD from globally top-100 STEM program                    | 0.525     | 0.551     | −0.026   | 0.701   |
+| Research productivity before return                       |           |           |            |         |
+|   Articles per year                                       | 2.390     | 2.932     | −0.541   | 0.098   |
+|   First-authored articles per year                        | 1.003     | 1.058     | −0.055   | 0.658   |
+|   First-authored articles in top 10% of journals per year | 0.523     | 0.403     | 0.119      | 0.040   |
+|   Last-authored articles per year                         | 0.196     | 0.608     | −0.412   | 0.000   |
+|   Last-authored articles in top 10% of journals per year  | 0.046     | 0.202     | −0.156   | 0.001   |
+| Overseas faculty appointments                             | 0.136     | 0.890     | −0.755   | 0.000   |
+| Research funding per year ($1000 in 2010 USD)             | 4.439     | 30.365    | −25.925  | 0.006   |
+Table: Table 1. YTT offer receiver comparison.(Shi et.al., 2023)[^3]
+
+[^3]: Dongbo Shi et al. ,Has China’s Young Thousand Talents program been successful in recruiting and nurturing top-caliber scientists?.Science379,62-65(2023).DOI:10.1126/science.abq1218
+</code></pre>
+<table>
+<caption>Table 1. YTT offer receiver comparison.(Shi et.al., 2023)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></caption>
+<colgroup>
+<col width="60%" />
+<col width="11%" />
+<col width="9%" />
+<col width="11%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Covariates</th>
+<th align="center">Mean</th>
+<th></th>
+<th align="right">Difference</th>
+<th>P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td align="center">Acceptors</td>
+<td>Rejectors</td>
+<td align="right"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>PhD from globally top-100 STEM program</td>
+<td align="center">0.525</td>
+<td>0.551</td>
+<td align="right">−0.026</td>
+<td>0.701</td>
+</tr>
+<tr class="odd">
+<td>Research productivity before return</td>
+<td align="center"></td>
+<td></td>
+<td align="right"></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Articles per year</td>
+<td align="center">2.390</td>
+<td>2.932</td>
+<td align="right">−0.541</td>
+<td>0.098</td>
+</tr>
+<tr class="odd">
+<td>First-authored articles per year</td>
+<td align="center">1.003</td>
+<td>1.058</td>
+<td align="right">−0.055</td>
+<td>0.658</td>
+</tr>
+<tr class="even">
+<td>First-authored articles in top 10% of journals per year</td>
+<td align="center">0.523</td>
+<td>0.403</td>
+<td align="right">0.119</td>
+<td>0.040</td>
+</tr>
+<tr class="odd">
+<td>Last-authored articles per year</td>
+<td align="center">0.196</td>
+<td>0.608</td>
+<td align="right">−0.412</td>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<td>Last-authored articles in top 10% of journals per year</td>
+<td align="center">0.046</td>
+<td>0.202</td>
+<td align="right">−0.156</td>
+<td>0.001</td>
+</tr>
+<tr class="odd">
+<td>Overseas faculty appointments</td>
+<td align="center">0.136</td>
+<td>0.890</td>
+<td align="right">−0.755</td>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<td>Research funding per year ($1000 in 2010 USD)</td>
+<td align="center">4.439</td>
+<td>30.365</td>
+<td align="right">−25.925</td>
+<td>0.006</td>
+</tr>
+</tbody>
+</table>
+<p>实际上，对于比较已经有<code>MS Excel</code>文件的表格，可以使用在线工具将其直接转化为<code>Markdown</code>语法，例如<a href="https://tool.lu/tables" class="uri">https://tool.lu/tables</a>.</p>
+</div>
+<div id="图片" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> 图片<a href="rmd.html#图片" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>![]()</code>用于添加图片，方括号内是图片的标题，可以空缺，圆括号内是图片的地址，可以是网页图片也可以是本地图片。</p>
+<pre><code>![](https://www.r-project.org/logo/Rlogo.png)</code></pre>
+<p><img src="https://www.r-project.org/logo/Rlogo.png" /></p>
+<p>或者</p>
+<pre><code>![](Rlogo.png)</code></pre>
+<p><img src="Rlogo.png" /></p>
+</div>
+<div id="代码块" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> 代码块<a href="rmd.html#代码块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>使用单个上标顿号`可以在文本行内标注代码代码引用，使用三个`可以将整个段落设置为代码块。</p>
+<p>段落代码块使用时，可以在三个`后用<code>{}</code>来标记代码块使用的编程语言。</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="rmd.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div>
+</div>
+<div id="数学公式" class="section level3 hasAnchor" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> 数学公式<a href="rmd.html#数学公式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>使用单个<code>$</code>可以在文本行内应用Tex语法来编辑数学公式，两个<code>$</code>可以生成数学公式段落。例如，</p>
+<pre><code>$$
+\beta_{1} = \frac{\Sigma_{1}^{n}(x_{i}-\bar{x})(y_{i}-\bar{y})}{\Sigma_{1}^{n}(x_{i}-\bar{x})^2}
+$$</code></pre>
+<p><span class="math display">\[
+\beta_{1} = \frac{\Sigma_{1}^{n}(x_{i}-\bar{x})(y_{i}-\bar{y})}{\Sigma_{1}^{n}(x_{i}-\bar{x})^2}
+\]</span></p>
+<p>除此之外，<code>Markdown</code>还可以兼容<code>HTML</code>，在网络上可以找到丰富的学术资源拓展学习。</p>
+<p>更有趣的是大部分的网页编译器都允许<code>Markdown</code>语法，例如<a href="https://editor.mdnice.com/" class="uri">https://editor.mdnice.com/</a>可以通过<code>Markdown</code>语法来编辑文档，然后转化成微信公众号或知乎支持的富文档。</p>
 </div>
 </div>
-<div id="整齐数据" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> 整齐数据<a href="manipulate.html#整齐数据" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>了解完变量与分析单位后，我们就可以介绍整齐数据（tidy data）的定义及其背后深刻的哲学思考了。</p>
-<div id="整齐数据的缘起" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> 整齐数据的缘起<a href="manipulate.html#整齐数据的缘起" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>正如Hadley所说，数据分析中超过80%的时间都被用于数据清理与变形等为数据分析做准备的工作。在实践中，我们往往要处理大量的不同类型与来源的数据，但是却没有一个理论告诉我们，数据清理的目标与终点是什么。在这篇文章中，Hadley把他创造plyr与ggplot2中总结出来的数据哲学概括为一个重要的思想，即整齐数据。整齐数据是可以支撑数据分析的结构化的数据集，是数据清理的终点，也是数据分析的起点。</p>
+<div id="rmarkdown" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Rmarkdown<a href="rmd.html#rmarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>基于<code>knitr</code>包，R在Markdown语法的基础上，将运算代码和预算结果嵌入到文本当中，并做了针对性的设计，拓展名为<code>.Rmd</code>。<code>Rmarkdown</code>由三个部分组成，分别是YAML, 文本部分以及代码块。</p>
+<div id="yaml头文件" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> YAML头文件<a href="rmd.html#yaml头文件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rmarkdown的头文件使用YAML格式，用<code>---</code>包围起来。通过参数设置,可以控制比如输入格式,输出主题等等。</p>
+<p>典型的YAML文件如下：</p>
+<pre><code>---
+title: &quot;Untitled&quot;
+author: &quot;Dongbo Shi&quot;
+date: &quot;2023-10-13&quot;
+output: html_document
+---</code></pre>
 </div>
-<div id="整齐数据的定义" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> 整齐数据的定义<a href="manipulate.html#整齐数据的定义" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>整齐数据是针对”表”这一类数据结构的定义。实际上，表是我们数据分析时使用到的最主要的数据结构。“表”是一个二维的数据结构，表的基本元素是单元格（cell），具有行（row）与列（volume）两个属性（大多数时候，行列是不可以互换的）。每个单元格中储存一个数据。</p>
-<p>回忆一下，我们讨论过的变量与观测单元的概念。变量指的是对研究对象的某一个属性（概念）的测度，而一个观测是属于同一个观测个体的所有变量。当我们提到表格时，一般默认表格的”第零行”为表头，用于储存变量名，而非数据值。</p>
-<p>当一个表格满足</p>
-<ol style="list-style-type: decimal">
-<li>每一列都储存同一个变量，且相同变量都储存在同一列</li>
-<li>每一行都储存对观测单元的一个观测，且同一个观测都储存于同一行</li>
-<li>一个表储存同一个观测单元</li>
-</ol>
-<p>三个条件时，该表便是一组整齐数据。违背以上三个条件中的任何一个的表格都不是整齐数据，我们将其称为凌乱数据（Messy data）。</p>
-<p>我们看下面的三组数据，分别包含了</p>
-<p>当我们使用表1计算xx变量的平均数时，需要通过复杂的数据提取与计算。如果我们使用表2，则可以轻松的通过mean(xx)来达到同样的目的。这一下子就看出了整齐数据蕴含的力量。</p>
-<p>实际上，整齐数据直接对应了研究设计中使用的数据结构，因此可以直接用于回归分析。另一方面，R中的可视化工具ggplot2也是基于整齐数据而设计的，整齐数据在可视化中也有着天然的不可替代的优势。</p>
+<div id="代码块控制" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> 代码块控制<a href="rmd.html#代码块控制" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在代码块的<code>{}</code>中通过<code>参数=取值</code>的方式来控制代码块在文档中的功能与呈现方式。为了更好区分不同的代码块，可以在<code>{r}</code>之后添加一个标签，例如<code>{r setup}</code>，只有标签是可以不指定参数名的。</p>
+<p>常用参数如下：</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>eval</code></td>
+<td align="left">是否运行代码，也可用向量指定运行代码的行数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>echo</code></td>
+<td align="left">是否在文档中显示代码，也可用向量指定显示代码的行数</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>results</code></td>
+<td align="left">显示文本输出的方式，<code>markup</code>用标记语言显示，<code>asis</code>显示原始文本，<code>hold</code>表示代码运行结束之后统一输出文本，<code>hide</code>表示隐藏文本结果</td>
+</tr>
+<tr class="even">
+<td align="left"><code>collapse</code></td>
+<td align="left">是否将代码块合并</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>warning</code></td>
+<td align="left">是否输出警告信息</td>
+</tr>
+<tr class="even">
+<td align="left"><code>message</code></td>
+<td align="left">是否输出运行信息</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>include</code></td>
+<td align="left">是否将代码结果输出到文档，当<code>FALSE</code>时，代码依然运行，但是不输出结果</td>
+</tr>
+<tr class="even">
+<td align="left"><code>error</code></td>
+<td align="left">是否在代码运行报错是停止编译markdown，缺省值是<code>TRUE</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>comment</code></td>
+<td align="left">注释的标注方式，默认为<code>#</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>background</code></td>
+<td align="left">代码块的背景颜色</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>cache</code></td>
+<td align="left">是否缓存代码，当<code>TRUE</code>时，代码在第二次编译时不重复运行</td>
+</tr>
+<tr class="even">
+<td align="left"><code>fig.x</code></td>
+<td align="left">系列参数设置图片输出的格式</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>file</code></td>
+<td align="left">调用外部R代码</td>
+</tr>
+</tbody>
+</table>
+<p>可以在文档开头通过一个代码块设置全局参数，例如，</p>
+<pre class="set"><code>
+```{r setup, include = FALSE}
+  knitr::opts_chunk$set(
+    comment = &#39;&#39;, fig.width = 6, fig.height = 6
+  )
+```
+</code></pre>
 </div>
-<div id="数据的凌乱点" class="section level3 hasAnchor" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> 数据的凌乱点<a href="manipulate.html#数据的凌乱点" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Hadley在他的论文中总结了5种最常见的凌乱点：</p>
-<ol style="list-style-type: decimal">
-<li>表头不是变量名，而是数据值</li>
-<li>多个变量被储存在同一列</li>
-<li>变量同时被储存在行与列中</li>
-<li>存在两个及以上的观测单元</li>
-<li>同一组观测被存在多行中</li>
-</ol>
-<p>当然，我们永远不能低估数据的凌乱程度，在实际数据分析时遇到超出想象的情形也无需大惊小怪。</p>
+<div id="rmarkdown特殊语法" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Rmarkdown特殊语法<a href="rmd.html#rmarkdown特殊语法" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>knitr::include_graphics</code>函数可以在Rmarkdown直接插入图片。且可以设置图片的宽度、高度、对齐等。</p>
+<pre class="fig1"><code>```{r, eval = TRUE, fig.show = &#39;hold&#39;, out.width = &#39;50%&#39;, fig.align = &#39;center&#39;, fig.cap = &#39;Rlogo&#39;}
+knitr::include_graphics(&#39;Rlogo.png&#39;)
+```</code></pre>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig2"></span>
+<img src="Rlogo.png" alt="Rlogo" width="50%" />
+<p class="caption">
+图 4.1: Rlogo
+</p>
+</div>
+<p><code>knitr::ktable</code>函数可以将数据框直接以表格的形式嵌入在文档中，</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="rmd.html#cb11-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ], <span class="at">caption =</span> <span class="st">&#39;A caption&#39;</span>)</span></code></pre></div>
+<table>
+<caption><span id="tab:ktb">表 4.1: </span>A caption</caption>
+<thead>
+<tr class="header">
+<th align="right">Sepal.Length</th>
+<th align="right">Sepal.Width</th>
+<th align="right">Petal.Length</th>
+<th align="right">Petal.Width</th>
+<th align="left">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.5</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.9</td>
+<td align="right">3.0</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.3</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">4.6</td>
+<td align="right">3.1</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">3.6</td>
+<td align="right">1.4</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+</tbody>
+</table>
+<p>更详细的资料可以参考<a href="https://bookdown.org/yihui/rmarkdown-cookbook/" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/</a>。</p>
+</div>
+<div id="格式转换" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> 格式转换<a href="rmd.html#格式转换" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rmarkdown默认的编译结果为HTML文件，且可以通过<code>Knit</code>可以Rmd文件转换为PDF与Word文件。</p>
+<p><img src="knit.png" width="50%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="数据操纵案例" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> 数据操纵案例<a href="manipulate.html#数据操纵案例" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>先根据数据变形的目的</p>
+<div id="xaringan" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Xaringan<a href="rmd.html#xaringan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Xaringan</code>是谢益辉基于<code>Rmarkdown</code>开发了制作幻灯片的扩展包。</p>
+<div id="安装与模板" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> 安装与模板<a href="rmd.html#安装与模板" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>安装之后，可以直接在Rstudio中通过模板新建Xaringan幻灯片。</p>
+<p><img src="xaringan.png" width="50%" style="display: block; margin: auto;" /></p>
+<p><img src="ninjia.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="其他学习资源" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> 其他学习资源<a href="rmd.html#其他学习资源" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Xaringan模板中自带了其基本语法，读者通过模板自学。这里我们分享几个不包含在Xaringan中的学习资源。</p>
+<p>第一个是<code>Xaringan</code>模板<code>NHSRthemes</code>，这个模板的设计是非常简洁美观的，感兴趣取得可以通过安装其拓展包学习，<a href="https://spcanelon.github.io/xaringan-basics-and-beyond/nhsr-theme/sample-16-9.html#1" class="uri">https://spcanelon.github.io/xaringan-basics-and-beyond/nhsr-theme/sample-16-9.html#1</a></p>
+<p>第二个是<code>xaringanExtra</code>拓展包为<code>Xaringan</code>添加了包括动画在内的各种效果，使得其更接近ms powerpoint的功能。资源为<a href="https://pkg.garrickadenbuie.com/xaringanExtra/#/slide-tone" class="uri">https://pkg.garrickadenbuie.com/xaringanExtra/#/slide-tone</a></p>
+<p>第三个是2021年的一个会议，详细介绍了如何通过定制化CSS对幻灯片进行美化。<a href="https://presentable-user2021.netlify.app/materials/act-01/03-xaringan-extras/" class="uri">https://presentable-user2021.netlify.app/materials/act-01/03-xaringan-extras/</a></p>
+<p>第四个是一个制作精良的slides，可以参考其中具体的语法。<a href="https://arm.rbind.io/slides/xaringan.html#1" class="uri">https://arm.rbind.io/slides/xaringan.html#1</a></p>
+</div>
+</div>
+<div id="leanr" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> leanr<a href="rmd.html#leanr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R社区最新开发了一个工具<code>learnr</code>，可以应用<code>Rmarkdown</code>制作交互性教程。</p>
+<div id="安装与模板-1" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> 安装与模板<a href="rmd.html#安装与模板-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>通过<code>install.packages("learnr")</code>安装learnr包之后，Rstudio会嵌入learnr模板。</p>
+<p><img src="learnr.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="互动代码模块" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> 互动代码模块<a href="rmd.html#互动代码模块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>learnr兼容所有的Rmarkdown语法，通过设置代码块的参数exercise=TRUE，可以在文本文档中生成可以编辑的代码框，这将让文档变成可交互运行的。</p>
+<p><img src="exercises.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>值得注意的是，learnr的不同代码块之间是独立的运行环境，是不联通的。这就导致在同一个文档中需要反复读入数据，如果要服复用某个代码块的环境，可以通过exercise.setup指定已运行的环境。</p>
+<p>例如，</p>
+<pre><code>
+
+```r
+library(nycflights13)
+library(dplyr)
+nycflights &lt;- nycflights13::flights
+```
+
+
+```r
+# Change the filter to select February rather than January
+filter(nycflights, month == 1)
+```
+
+```
+## # A tibble: 27,004 × 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     1      517            515         2      830            819
+##  2  2013     1     1      533            529         4      850            830
+##  3  2013     1     1      542            540         2      923            850
+##  4  2013     1     1      544            545        -1     1004           1022
+##  5  2013     1     1      554            600        -6      812            837
+##  6  2013     1     1      554            558        -4      740            728
+##  7  2013     1     1      555            600        -5      913            854
+##  8  2013     1     1      557            600        -3      709            723
+##  9  2013     1     1      557            600        -3      838            846
+## 10  2013     1     1      558            600        -2      753            745
+## # ℹ 26,994 more rows
+## # ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+
+```r
+# Change the sort order to Ascending
+arrange(nycflights, desc(arr_delay))
+```
+
+```
+## # A tibble: 336,776 × 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+##  1  2013     1     9      641            900      1301     1242           1530
+##  2  2013     6    15     1432           1935      1137     1607           2120
+##  3  2013     1    10     1121           1635      1126     1239           1810
+##  4  2013     9    20     1139           1845      1014     1457           2210
+##  5  2013     7    22      845           1600      1005     1044           1815
+##  6  2013     4    10     1100           1900       960     1342           2211
+##  7  2013     3    17     2321            810       911      135           1020
+##  8  2013     7    22     2257            759       898      121           1026
+##  9  2013    12     5      756           1700       896     1058           2020
+## 10  2013     5     3     1133           2055       878     1250           2215
+## # ℹ 336,766 more rows
+## # ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+## #   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+## #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+</code></pre>
+</div>
+<div id="测试题" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> 测试题<a href="rmd.html#测试题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>下面的代码可以插入随堂测验题，bi</p>
+<pre><code></code></pre>
+<p><img src="question.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>参考官方文档可以了解更多关于<code>learnr</code>的功能，<a href="https://rstudio.github.io/learnr/articles/learnr.html" class="uri">https://rstudio.github.io/learnr/articles/learnr.html</a></p>
+</div>
+</div>
+<div id="bookdownblogdown以及pagedown" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> bookdown、blogdown以及pagedown<a href="rmd.html#bookdownblogdown以及pagedown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R语言还提供了各类markdown的扩展程序，可以用于书稿写作，网页制作与网站制作等。参考资料包括：</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/</a></li>
+<li><a href="https://bookdown.org/yihui/bookdown/" class="uri">https://bookdown.org/yihui/bookdown/</a></li>
+<li><a href="https://bookdown.org/yihui/blogdown/" class="uri">https://bookdown.org/yihui/blogdown/</a></li>
+</ul>
+</div>
+<div id="quarto" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Quarto<a href="rmd.html#quarto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>为了实现一次原则，文学式编程是应该是跨语言的。尽管Rmarkdown也努力开发了跨语言编译的功能，但并不顺滑。为了更好地实现跨语言、多文件类型、多格式输出的文学式编程，POSIT（原Rstudio）集中力量推出了新一代文学式编程语言<code>Quarto</code>。</p>
+<p><code>Quarto</code>的野心非常大，是想一统江湖的。它可以将R、Python、Julia、Observable JS源程序的markdown文件产生运行结果后转换为各种输出格式，其扩展名即可以是扩展的markdown（<code>.qmd</code>），也可以是Jupyter笔记本文件（.ipynb）,支持HTML、MS Word、LaTeX PDF、ePub、网站、幻灯片等多种输出格式。</p>
+<p>从这个意义上说，<code>Rmarkdown</code>仅仅是R语言文学式编程的最佳工具，而<code>Quarto</code>可能是跨语言文学式编程的最佳工具。很遗憾，我在写讲义的时候才开始接触<code>Quarto</code>，目前还不能下这个结论，等介绍完python之后，我们可以一起体会下其妙处，到时候也会扩展本节的内容。感兴趣的读者可以先阅读丰富的官方文档自学，<a href="https://quarto.org/docs/guide/" class="uri">https://quarto.org/docs/guide/</a>。</p>
+<p>最后，讲一个程序员之间流行着的一个故事。</p>
+<blockquote>
+<p>每隔一段时间，总有大佬感慨于江湖上不同语言之间的纷争，以毕生所学推出一个新的语言来一统江湖，最后，江湖上的纷争又多了一种语言。</p>
+</blockquote>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>R语言忍者秘笈 <a href="https://bookdown.org/yihui/r-ninja/" class="uri">https://bookdown.org/yihui/r-ninja/</a> <a href="rmd.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>纪念一位逝去的长者<a href="rmd.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Dongbo Shi et al. ,Has China’s Young Thousand Talents program been successful in recruiting and nurturing top-caliber scientists?.Science379,62-65(2023).DOI:10.1126/science.abq1218<a href="rmd.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="rmd.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="visu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="basic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="manipulate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -530,7 +1037,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-chinese/edit/master/06-data_manipulation.Rmd",
+"link": "https://github.com/yihui/bookdown-chinese/edit/master/04-markdown.Rmd",
 "text": "编辑"
 },
 "history": {
