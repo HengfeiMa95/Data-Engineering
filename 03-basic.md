@@ -347,8 +347,8 @@ R提供了内置的`is.`函数和`as.`函数来对数据类型进行判断与转
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7ec3ad2060abd9e015f6" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-7ec3ad2060abd9e015f6">{"x":{"diagram":"digraph R {\n  \n  rankdir = LR\n  layout = dot\n  node [shape = box]\n  \n  num [style=\"rounded, filled\",label = \"numeric\",fillcolor = Gainsboro]\n  char [style=\"rounded, filled\", label = \"character\",fillcolor = Gainsboro]\n  log [style=\"rounded, filled\", label = \"logical\",fillcolor= Gainsboro]\n  num -> char [label = \"as.character\"]\n  char -> num [label = \"as.numeric(数字组成字符)\"]\n  num -> log [label = \"as.logical\"]\n  log -> num [label = \"as.numeric\"]\n  log -> char [label = \"as.character\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-09122988607741f3d1f9" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-09122988607741f3d1f9">{"x":{"diagram":"digraph R {\n  \n  rankdir = LR\n  layout = dot\n  node [shape = box]\n  \n  num [style=\"rounded, filled\",label = \"numeric\",fillcolor = Gainsboro]\n  char [style=\"rounded, filled\", label = \"character\",fillcolor = Gainsboro]\n  log [style=\"rounded, filled\", label = \"logical\",fillcolor= Gainsboro]\n  num -> char [label = \"as.character\"]\n  char -> num [label = \"as.numeric(数字组成字符)\"]\n  num -> log [label = \"as.logical\"]\n  log -> num [label = \"as.numeric\"]\n  log -> char [label = \"as.character\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 **课堂练习**
@@ -978,8 +978,8 @@ list_data[["category"]] <- 'C9'
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-37c89be060ef00a36a0b" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-37c89be060ef00a36a0b">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  node [shape = box]\n  \n  v [style=\"rounded, filled\",label = \"vector\",fillcolor = Gainsboro]\n  mt [style=\"rounded, filled\", label = \"matrix\",fillcolor = Gainsboro]\n  df [style=\"rounded, filled\", label = \"data.frame\",fillcolor= Gainsboro]\n  l [style=\"rounded, filled\", label = \"list\",fillcolor= Gainsboro]\n\n  v -> mt [label = \"matrix\"]\n  v -> df [label = \"data.frame\"]\n  v -> l [label = \"list\"]\n  mt -> df [label = \"data.frame\"]\n  mt -> l [label = \"list\"]\n  mt -> v [label = \"as.vector\"]\n  df -> l [label = \"list\"]\n  df -> mt [label = \"matrix（列全部是数值型）\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a1df22c608e14f14b750" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-a1df22c608e14f14b750">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  node [shape = box]\n  \n  v [style=\"rounded, filled\",label = \"vector\",fillcolor = Gainsboro]\n  mt [style=\"rounded, filled\", label = \"matrix\",fillcolor = Gainsboro]\n  df [style=\"rounded, filled\", label = \"data.frame\",fillcolor= Gainsboro]\n  l [style=\"rounded, filled\", label = \"list\",fillcolor= Gainsboro]\n\n  v -> mt [label = \"matrix\"]\n  v -> df [label = \"data.frame\"]\n  v -> l [label = \"list\"]\n  mt -> df [label = \"data.frame\"]\n  mt -> l [label = \"list\"]\n  mt -> v [label = \"as.vector\"]\n  df -> l [label = \"list\"]\n  df -> mt [label = \"matrix（列全部是数值型）\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ## 数据读写
@@ -1018,7 +1018,7 @@ pub_211 <- read_csv('pub_211.csv')
 
 4.  计算上海交通大学2020-2022年每个学科平均发表论文的数量
 
-### HDF5文件
+### HDF5
 
 HDF5是Hierarchical Data
 Format(HDF)第5代的简称，起源于高性能计算领域，目前标准由非营利组织The
@@ -1144,6 +1144,10 @@ JSON由对象object与数组组成。对象(object)是一个对象包含一系�
 
 JSON与XML最大的不同在于XML是一个完整的标记语言，而JSON不是。XML利用标记语言的特性提供了绝佳的延展性（如XPath），在数据存储，扩展及高级检索方面具备对JSON的优势，而JSON则由于比XML更加小巧，以及浏览器的内建快速解析支持，使得其更适用于网络数据传输领域。
 
+### YAML
+
+YAML全称YAin’t Markup Language，它可以看做是JSON的进一步优化。JSON尽管已经非常简洁，但是其字符串使用的引号和花括号依然是可以简约掉的。YAML使用`key: value`对的形式来传递信息，使用缩进表达数据之间的层级关系（强制缩进，python的思想），同时YAML的字符串不再使用引号加以区分。以上一系列约定，使得YAML成为最简洁的数据文件。YAML被广泛引用在配置文件中。
+
 ### 专用数据文件
 
 R语言针对各类专用数据文件设计了读写借口，具体函数如下表：
@@ -1170,8 +1174,8 @@ R语言针对各类专用数据文件设计了读写借口，具体函数如下�
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6f15d3757621eafe913d" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-6f15d3757621eafe913d">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b1 [shape = box, style=\"rounded, filled\",label = \"执行语句1\", fillcolor = Gainsboro]\n  b2 [shape = box, style=\"rounded, filled\",label = \"执行语句2\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b1 [label = \"TRUE\"]\n  d -> b2 [label = \"FALSE（可选）\"]\n  b1 -> c2 \n  b2 -> c2 []\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4aa1dd7668a3499a46d3" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-4aa1dd7668a3499a46d3">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b1 [shape = box, style=\"rounded, filled\",label = \"执行语句1\", fillcolor = Gainsboro]\n  b2 [shape = box, style=\"rounded, filled\",label = \"执行语句2\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b1 [label = \"TRUE\"]\n  d -> b2 [label = \"FALSE（可选）\"]\n  b1 -> c2 \n  b2 -> c2 []\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### if-else语句
@@ -1286,8 +1290,8 @@ switch("史老师", 张老师 = "谁啊", 王老师 = "呵呵", 史老师 = "讲
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ae75fe7e648730413e0e" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-ae75fe7e648730413e0e">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b [shape = box, style=\"rounded, filled\",label = \"执行语句\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b [label = \"TRUE\"]\n  b -> c1 \n  d -> c2 [label = \"FALSE\"]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-425d76e967d46e0949fe" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-425d76e967d46e0949fe">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b [shape = box, style=\"rounded, filled\",label = \"执行语句\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b [label = \"TRUE\"]\n  b -> c1 \n  d -> c2 [label = \"FALSE\"]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### for循环
@@ -1595,16 +1599,16 @@ R语言包可以上传到CRAN平台，通过审核后，遍布在世界各地的
 
 ```
 ##    rank     package  count       from         to
-## 1     1        ragg 123803 2023-10-10 2023-10-10
-## 2     2 textshaping 121001 2023-10-10 2023-10-10
-## 3     3     ggplot2 109434 2023-10-10 2023-10-10
-## 4     4       rlang  87413 2023-10-10 2023-10-10
-## 5     5         cli  75235 2023-10-10 2023-10-10
-## 6     6       vctrs  73921 2023-10-10 2023-10-10
-## 7     7       dplyr  73847 2023-10-10 2023-10-10
-## 8     8    devtools  70974 2023-10-10 2023-10-10
-## 9     9   lifecycle  69551 2023-10-10 2023-10-10
-## 10   10     pkgdown  64619 2023-10-10 2023-10-10
+## 1     1        ragg 123656 2023-10-11 2023-10-11
+## 2     2 textshaping 116518 2023-10-11 2023-10-11
+## 3     3     ggplot2 103434 2023-10-11 2023-10-11
+## 4     4       rlang  83003 2023-10-11 2023-10-11
+## 5     5    devtools  72177 2023-10-11 2023-10-11
+## 6     6         cli  72169 2023-10-11 2023-10-11
+## 7     7       dplyr  71513 2023-10-11 2023-10-11
+## 8     8       vctrs  66837 2023-10-11 2023-10-11
+## 9     9   lifecycle  66273 2023-10-11 2023-10-11
+## 10   10     pkgdown  65880 2023-10-11 2023-10-11
 ```
 
 ## 向量化
