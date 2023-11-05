@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>第 5 章 数据操纵 | 数据工程讲义：经济学分册</title>
+  <title>第 5 章 数据整理 | 数据工程讲义：经济学分册</title>
   <meta name="description" content="适用于数据工程与数据科学课程的教材。" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="第 5 章 数据操纵 | 数据工程讲义：经济学分册" />
+  <meta property="og:title" content="第 5 章 数据整理 | 数据工程讲义：经济学分册" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="适用于数据工程与数据科学课程的教材。" />
   <meta name="github-repo" content="yihui/bookdown-chinese" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="第 5 章 数据操纵 | 数据工程讲义：经济学分册" />
+  <meta name="twitter:title" content="第 5 章 数据整理 | 数据工程讲义：经济学分册" />
   
   <meta name="twitter:description" content="适用于数据工程与数据科学课程的教材。" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="史冬波 续本达" />
 
 
-<meta name="date" content="2023-09-18" />
+<meta name="date" content="2023-10-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,6 +58,70 @@
 <script src="libs/grViz-binding-1.0.10/grViz.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -124,7 +188,7 @@
 <li class="chapter" data-level="2.5.5" data-path="flow.html"><a href="flow.html#git目前的局限性"><i class="fa fa-check"></i><b>2.5.5</b> Git目前的局限性</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="basic.html"><a href="basic.html"><i class="fa fa-check"></i><b>3</b> R编程基础</a>
+<li class="chapter" data-level="3" data-path="basic.html"><a href="basic.html"><i class="fa fa-check"></i><b>3</b> R语言基础</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="basic.html"><a href="basic.html#r语言简介"><i class="fa fa-check"></i><b>3.1</b> R语言简介</a></li>
 <li class="chapter" data-level="3.2" data-path="basic.html"><a href="basic.html#r语言的特点"><i class="fa fa-check"></i><b>3.2</b> R语言的特点</a></li>
@@ -163,10 +227,11 @@
 <li class="chapter" data-level="3.8" data-path="basic.html"><a href="basic.html#数据读写"><i class="fa fa-check"></i><b>3.8</b> 数据读写</a>
 <ul>
 <li class="chapter" data-level="3.8.1" data-path="basic.html"><a href="basic.html#csv文件"><i class="fa fa-check"></i><b>3.8.1</b> csv文件</a></li>
-<li class="chapter" data-level="3.8.2" data-path="basic.html"><a href="basic.html#hdf5文件"><i class="fa fa-check"></i><b>3.8.2</b> HDF5文件</a></li>
+<li class="chapter" data-level="3.8.2" data-path="basic.html"><a href="basic.html#hdf5"><i class="fa fa-check"></i><b>3.8.2</b> HDF5</a></li>
 <li class="chapter" data-level="3.8.3" data-path="basic.html"><a href="basic.html#xml"><i class="fa fa-check"></i><b>3.8.3</b> XML</a></li>
 <li class="chapter" data-level="3.8.4" data-path="basic.html"><a href="basic.html#json"><i class="fa fa-check"></i><b>3.8.4</b> JSON</a></li>
-<li class="chapter" data-level="3.8.5" data-path="basic.html"><a href="basic.html#专用数据文件"><i class="fa fa-check"></i><b>3.8.5</b> 专用数据文件</a></li>
+<li class="chapter" data-level="3.8.5" data-path="basic.html"><a href="basic.html#yaml"><i class="fa fa-check"></i><b>3.8.5</b> YAML</a></li>
+<li class="chapter" data-level="3.8.6" data-path="basic.html"><a href="basic.html#专用数据文件"><i class="fa fa-check"></i><b>3.8.6</b> 专用数据文件</a></li>
 </ul></li>
 <li class="chapter" data-level="3.9" data-path="basic.html"><a href="basic.html#流程控制"><i class="fa fa-check"></i><b>3.9</b> 流程控制</a>
 <ul>
@@ -205,17 +270,28 @@
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="rmd.html"><a href="rmd.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> Rmarkdown</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rmd.html"><a href="rmd.html#代码块控制"><i class="fa fa-check"></i><b>4.3.1</b> 代码块控制</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rmd.html"><a href="rmd.html#rmarkdown特殊语法"><i class="fa fa-check"></i><b>4.3.2</b> Rmarkdown特殊语法</a></li>
+<li class="chapter" data-level="4.3.1" data-path="rmd.html"><a href="rmd.html#yaml头文件"><i class="fa fa-check"></i><b>4.3.1</b> YAML头文件</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rmd.html"><a href="rmd.html#代码块控制"><i class="fa fa-check"></i><b>4.3.2</b> 代码块控制</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rmd.html"><a href="rmd.html#rmarkdown特殊语法"><i class="fa fa-check"></i><b>4.3.3</b> Rmarkdown特殊语法</a></li>
+<li class="chapter" data-level="4.3.4" data-path="rmd.html"><a href="rmd.html#格式转换"><i class="fa fa-check"></i><b>4.3.4</b> 格式转换</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rmd.html"><a href="rmd.html#xaringan"><i class="fa fa-check"></i><b>4.4</b> Xaringan</a></li>
-<li class="chapter" data-level="4.5" data-path="rmd.html"><a href="rmd.html#leanr"><i class="fa fa-check"></i><b>4.5</b> LeanR</a></li>
-<li class="chapter" data-level="4.6" data-path="rmd.html"><a href="rmd.html#bookdown"><i class="fa fa-check"></i><b>4.6</b> Bookdown</a></li>
-<li class="chapter" data-level="4.7" data-path="rmd.html"><a href="rmd.html#格式转化"><i class="fa fa-check"></i><b>4.7</b> 格式转化</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="manipulate.html"><a href="manipulate.html"><i class="fa fa-check"></i><b>5</b> 数据操纵</a>
+<li class="chapter" data-level="4.4" data-path="rmd.html"><a href="rmd.html#xaringan"><i class="fa fa-check"></i><b>4.4</b> Xaringan</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="manipulate.html"><a href="manipulate.html#整洁数据tidydata"><i class="fa fa-check"></i><b>5.1</b> 整洁数据tidydata</a>
+<li class="chapter" data-level="4.4.1" data-path="rmd.html"><a href="rmd.html#安装与模板"><i class="fa fa-check"></i><b>4.4.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.4.2" data-path="rmd.html"><a href="rmd.html#其他学习资源"><i class="fa fa-check"></i><b>4.4.2</b> 其他学习资源</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="rmd.html"><a href="rmd.html#leanr"><i class="fa fa-check"></i><b>4.5</b> leanr</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="rmd.html"><a href="rmd.html#安装与模板-1"><i class="fa fa-check"></i><b>4.5.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.5.2" data-path="rmd.html"><a href="rmd.html#互动代码模块"><i class="fa fa-check"></i><b>4.5.2</b> 互动代码模块</a></li>
+<li class="chapter" data-level="4.5.3" data-path="rmd.html"><a href="rmd.html#测试题"><i class="fa fa-check"></i><b>4.5.3</b> 测试题</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="rmd.html"><a href="rmd.html#bookdownblogdown以及pagedown"><i class="fa fa-check"></i><b>4.6</b> bookdown、blogdown以及pagedown</a></li>
+<li class="chapter" data-level="4.7" data-path="rmd.html"><a href="rmd.html#quarto"><i class="fa fa-check"></i><b>4.7</b> Quarto</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipulate.html"><a href="manipulate.html"><i class="fa fa-check"></i><b>5</b> 数据整理</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipulate.html"><a href="manipulate.html#整齐数据tidydata"><i class="fa fa-check"></i><b>5.1</b> 整齐数据tidydata</a>
 <ul>
 <li class="chapter" data-level="5.1.1" data-path="manipulate.html"><a href="manipulate.html#分析单位unit-of-analysis"><i class="fa fa-check"></i><b>5.1.1</b> 分析单位(unit of analysis)</a></li>
 </ul></li>
@@ -225,7 +301,37 @@
 <li class="chapter" data-level="5.2.2" data-path="manipulate.html"><a href="manipulate.html#整齐数据的定义"><i class="fa fa-check"></i><b>5.2.2</b> 整齐数据的定义</a></li>
 <li class="chapter" data-level="5.2.3" data-path="manipulate.html"><a href="manipulate.html#数据的凌乱点"><i class="fa fa-check"></i><b>5.2.3</b> 数据的凌乱点</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="manipulate.html"><a href="manipulate.html#数据操纵案例"><i class="fa fa-check"></i><b>5.3</b> 数据操纵案例</a></li>
+<li class="chapter" data-level="5.3" data-path="manipulate.html"><a href="manipulate.html#关系代数"><i class="fa fa-check"></i><b>5.3</b> 关系代数</a></li>
+<li class="chapter" data-level="5.4" data-path="manipulate.html"><a href="manipulate.html#sql语言"><i class="fa fa-check"></i><b>5.4</b> SQL语言</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="manipulate.html"><a href="manipulate.html#mysql"><i class="fa fa-check"></i><b>5.4.1</b> MySQL</a></li>
+<li class="chapter" data-level="5.4.2" data-path="manipulate.html"><a href="manipulate.html#postgresql"><i class="fa fa-check"></i><b>5.4.2</b> Postgresql</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="manipulate.html"><a href="manipulate.html#dplyr"><i class="fa fa-check"></i><b>5.5</b> dplyr</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="manipulate.html"><a href="manipulate.html#集合运算"><i class="fa fa-check"></i><b>5.5.1</b> 集合运算</a></li>
+<li class="chapter" data-level="5.5.2" data-path="manipulate.html"><a href="manipulate.html#线性运算"><i class="fa fa-check"></i><b>5.5.2</b> 线性运算</a></li>
+<li class="chapter" data-level="5.5.3" data-path="manipulate.html"><a href="manipulate.html#管道"><i class="fa fa-check"></i><b>5.5.3</b> 管道</a></li>
+<li class="chapter" data-level="5.5.4" data-path="manipulate.html"><a href="manipulate.html#数据连接"><i class="fa fa-check"></i><b>5.5.4</b> 数据连接</a></li>
+<li class="chapter" data-level="5.5.5" data-path="manipulate.html"><a href="manipulate.html#数据分组与汇总"><i class="fa fa-check"></i><b>5.5.5</b> 数据分组与汇总</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="manipulate.html"><a href="manipulate.html#宽数据与长数据的转换"><i class="fa fa-check"></i><b>5.6</b> 宽数据与长数据的转换</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="manipulate.html"><a href="manipulate.html#宽数据转长数据"><i class="fa fa-check"></i><b>5.6.1</b> 宽数据转长数据</a></li>
+<li class="chapter" data-level="5.6.2" data-path="manipulate.html"><a href="manipulate.html#长数据转宽数据"><i class="fa fa-check"></i><b>5.6.2</b> 长数据转宽数据</a></li>
+<li class="chapter" data-level="5.6.3" data-path="manipulate.html"><a href="manipulate.html#联系人数据表的案例"><i class="fa fa-check"></i><b>5.6.3</b> 联系人数据表的案例</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="manipulate.html"><a href="manipulate.html#其他定制操作"><i class="fa fa-check"></i><b>5.7</b> 其他定制操作</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="manipulate.html"><a href="manipulate.html#排序"><i class="fa fa-check"></i><b>5.7.1</b> 排序</a></li>
+<li class="chapter" data-level="5.7.2" data-path="manipulate.html"><a href="manipulate.html#抽样"><i class="fa fa-check"></i><b>5.7.2</b> 抽样</a></li>
+<li class="chapter" data-level="5.7.3" data-path="manipulate.html"><a href="manipulate.html#去重复"><i class="fa fa-check"></i><b>5.7.3</b> 去重复</a></li>
+<li class="chapter" data-level="5.7.4" data-path="manipulate.html"><a href="manipulate.html#缺失值处理"><i class="fa fa-check"></i><b>5.7.4</b> 缺失值处理</a></li>
+<li class="chapter" data-level="5.7.5" data-path="manipulate.html"><a href="manipulate.html#拆分与合并数据列"><i class="fa fa-check"></i><b>5.7.5</b> 拆分与合并数据列</a></li>
+<li class="chapter" data-level="5.7.6" data-path="manipulate.html"><a href="manipulate.html#合并数据"><i class="fa fa-check"></i><b>5.7.6</b> 合并数据</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="manipulate.html"><a href="manipulate.html#数据库的连接"><i class="fa fa-check"></i><b>5.8</b> 数据库的连接</a></li>
+<li class="chapter" data-level="5.9" data-path="manipulate.html"><a href="manipulate.html#data.table"><i class="fa fa-check"></i><b>5.9</b> data.table</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="visu.html"><a href="visu.html"><i class="fa fa-check"></i><b>6</b> 数据可视化</a>
 <ul>
@@ -264,136 +370,146 @@
 <ul>
 <li class="chapter" data-level="7.6.1" data-path="reg.html"><a href="reg.html#原理-3"><i class="fa fa-check"></i><b>7.6.1</b> 原理</a></li>
 <li class="chapter" data-level="7.6.2" data-path="reg.html"><a href="reg.html#案例-3"><i class="fa fa-check"></i><b>7.6.2</b> 案例</a></li>
-<li class="chapter" data-level="7.6.3" data-path="reg.html"><a href="reg.html#其他乱七八糟的方法"><i class="fa fa-check"></i><b>7.6.3</b> 其他乱七八糟的方法</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="reg.html"><a href="reg.html#formula-公式对象"><i class="fa fa-check"></i><b>7.7</b> formula (公式)对象</a>
+<li class="chapter" data-level="7.7" data-path="reg.html"><a href="reg.html#包含高维分类变量的回归"><i class="fa fa-check"></i><b>7.7</b> 包含高维分类变量的回归</a></li>
+<li class="chapter" data-level="7.8" data-path="reg.html"><a href="reg.html#formula-公式对象"><i class="fa fa-check"></i><b>7.8</b> formula (公式)对象</a>
 <ul>
-<li class="chapter" data-level="7.7.1" data-path="reg.html"><a href="reg.html#公式的生成"><i class="fa fa-check"></i><b>7.7.1</b> 公式的生成</a></li>
-<li class="chapter" data-level="7.7.2" data-path="reg.html"><a href="reg.html#生成公式的运算符"><i class="fa fa-check"></i><b>7.7.2</b> 生成公式的运算符</a></li>
-<li class="chapter" data-level="7.7.3" data-path="reg.html"><a href="reg.html#公式与字符串之间的转换"><i class="fa fa-check"></i><b>7.7.3</b> 公式与字符串之间的转换</a></li>
+<li class="chapter" data-level="7.8.1" data-path="reg.html"><a href="reg.html#公式的生成"><i class="fa fa-check"></i><b>7.8.1</b> 公式的生成</a></li>
+<li class="chapter" data-level="7.8.2" data-path="reg.html"><a href="reg.html#生成公式的运算符"><i class="fa fa-check"></i><b>7.8.2</b> 生成公式的运算符</a></li>
+<li class="chapter" data-level="7.8.3" data-path="reg.html"><a href="reg.html#公式与字符串之间的转换"><i class="fa fa-check"></i><b>7.8.3</b> 公式与字符串之间的转换</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="reg.html"><a href="reg.html#表达式expression"><i class="fa fa-check"></i><b>7.8</b> 表达式expression</a></li>
-<li class="chapter" data-level="7.9" data-path="reg.html"><a href="reg.html#表达式的生成与执行"><i class="fa fa-check"></i><b>7.9</b> 表达式的生成与执行</a></li>
-<li class="chapter" data-level="7.10" data-path="reg.html"><a href="reg.html#表达式与字符串的转换"><i class="fa fa-check"></i><b>7.10</b> 表达式与字符串的转换</a></li>
-<li class="chapter" data-level="7.11" data-path="reg.html"><a href="reg.html#使用stargazer输出表格"><i class="fa fa-check"></i><b>7.11</b> 使用stargazer输出表格</a>
+<li class="chapter" data-level="7.9" data-path="reg.html"><a href="reg.html#表达式expression"><i class="fa fa-check"></i><b>7.9</b> 表达式expression</a></li>
+<li class="chapter" data-level="7.10" data-path="reg.html"><a href="reg.html#表达式的生成与执行"><i class="fa fa-check"></i><b>7.10</b> 表达式的生成与执行</a></li>
+<li class="chapter" data-level="7.11" data-path="reg.html"><a href="reg.html#表达式与字符串的转换"><i class="fa fa-check"></i><b>7.11</b> 表达式与字符串的转换</a></li>
+<li class="chapter" data-level="7.12" data-path="reg.html"><a href="reg.html#使用stargazer输出表格"><i class="fa fa-check"></i><b>7.12</b> 使用stargazer输出表格</a>
 <ul>
-<li class="chapter" data-level="7.11.1" data-path="reg.html"><a href="reg.html#标准回归表"><i class="fa fa-check"></i><b>7.11.1</b> 标准回归表</a></li>
-<li class="chapter" data-level="7.11.2" data-path="reg.html"><a href="reg.html#默认格式"><i class="fa fa-check"></i><b>7.11.2</b> 默认格式</a></li>
-<li class="chapter" data-level="7.11.3" data-path="reg.html"><a href="reg.html#表格表头"><i class="fa fa-check"></i><b>7.11.3</b> 表格表头</a></li>
-<li class="chapter" data-level="7.11.4" data-path="reg.html"><a href="reg.html#表格正文"><i class="fa fa-check"></i><b>7.11.4</b> 表格正文</a></li>
-<li class="chapter" data-level="7.11.5" data-path="reg.html"><a href="reg.html#添加变量信息"><i class="fa fa-check"></i><b>7.11.5</b> 添加变量信息</a></li>
-<li class="chapter" data-level="7.11.6" data-path="reg.html"><a href="reg.html#选择统计量"><i class="fa fa-check"></i><b>7.11.6</b> 选择统计量</a></li>
-<li class="chapter" data-level="7.11.7" data-path="reg.html"><a href="reg.html#表格注释"><i class="fa fa-check"></i><b>7.11.7</b> 表格注释</a></li>
-<li class="chapter" data-level="7.11.8" data-path="reg.html"><a href="reg.html#整体布局"><i class="fa fa-check"></i><b>7.11.8</b> 整体布局</a></li>
-<li class="chapter" data-level="7.11.9" data-path="reg.html"><a href="reg.html#其他-1"><i class="fa fa-check"></i><b>7.11.9</b> 其他</a></li>
-<li class="chapter" data-level="7.11.10" data-path="reg.html"><a href="reg.html#描述性统计表"><i class="fa fa-check"></i><b>7.11.10</b> 描述性统计表</a></li>
+<li class="chapter" data-level="7.12.1" data-path="reg.html"><a href="reg.html#标准回归表"><i class="fa fa-check"></i><b>7.12.1</b> 标准回归表</a></li>
+<li class="chapter" data-level="7.12.2" data-path="reg.html"><a href="reg.html#默认格式"><i class="fa fa-check"></i><b>7.12.2</b> 默认格式</a></li>
+<li class="chapter" data-level="7.12.3" data-path="reg.html"><a href="reg.html#表格表头"><i class="fa fa-check"></i><b>7.12.3</b> 表格表头</a></li>
+<li class="chapter" data-level="7.12.4" data-path="reg.html"><a href="reg.html#表格正文"><i class="fa fa-check"></i><b>7.12.4</b> 表格正文</a></li>
+<li class="chapter" data-level="7.12.5" data-path="reg.html"><a href="reg.html#添加变量信息"><i class="fa fa-check"></i><b>7.12.5</b> 添加变量信息</a></li>
+<li class="chapter" data-level="7.12.6" data-path="reg.html"><a href="reg.html#选择统计量"><i class="fa fa-check"></i><b>7.12.6</b> 选择统计量</a></li>
+<li class="chapter" data-level="7.12.7" data-path="reg.html"><a href="reg.html#表格注释"><i class="fa fa-check"></i><b>7.12.7</b> 表格注释</a></li>
+<li class="chapter" data-level="7.12.8" data-path="reg.html"><a href="reg.html#整体布局"><i class="fa fa-check"></i><b>7.12.8</b> 整体布局</a></li>
+<li class="chapter" data-level="7.12.9" data-path="reg.html"><a href="reg.html#其他-1"><i class="fa fa-check"></i><b>7.12.9</b> 其他</a></li>
+<li class="chapter" data-level="7.12.10" data-path="reg.html"><a href="reg.html#描述性统计表"><i class="fa fa-check"></i><b>7.12.10</b> 描述性统计表</a></li>
 </ul></li>
-<li class="chapter" data-level="7.12" data-path="reg.html"><a href="reg.html#回归结果的可视化"><i class="fa fa-check"></i><b>7.12</b> 回归结果的可视化</a>
+<li class="chapter" data-level="7.13" data-path="reg.html"><a href="reg.html#回归结果的可视化"><i class="fa fa-check"></i><b>7.13</b> 回归结果的可视化</a>
 <ul>
-<li class="chapter" data-level="7.12.1" data-path="reg.html"><a href="reg.html#使用ggcoefstats可视化回归结果"><i class="fa fa-check"></i><b>7.12.1</b> 使用ggcoefstats可视化回归结果</a></li>
-<li class="chapter" data-level="7.12.2" data-path="reg.html"><a href="reg.html#使用"><i class="fa fa-check"></i><b>7.12.2</b> 使用</a></li>
-<li class="chapter" data-level="7.12.3" data-path="reg.html"><a href="reg.html#双重差分模型的可视化"><i class="fa fa-check"></i><b>7.12.3</b> 双重差分模型的可视化</a></li>
+<li class="chapter" data-level="7.13.1" data-path="reg.html"><a href="reg.html#使用ggcoefstats可视化回归结果"><i class="fa fa-check"></i><b>7.13.1</b> 使用ggcoefstats可视化回归结果</a></li>
+<li class="chapter" data-level="7.13.2" data-path="reg.html"><a href="reg.html#使用"><i class="fa fa-check"></i><b>7.13.2</b> 使用</a></li>
+<li class="chapter" data-level="7.13.3" data-path="reg.html"><a href="reg.html#双重差分模型的可视化"><i class="fa fa-check"></i><b>7.13.3</b> 双重差分模型的可视化</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="cml.html"><a href="cml.html"><i class="fa fa-check"></i><b>8</b> 命令行</a>
+<li class="chapter" data-level="8" data-path="py.html"><a href="py.html"><i class="fa fa-check"></i><b>8</b> python基础</a></li>
+<li class="chapter" data-level="9" data-path="regexp.html"><a href="regexp.html"><i class="fa fa-check"></i><b>9</b> 正则表达式</a></li>
+<li class="chapter" data-level="10" data-path="cml.html"><a href="cml.html"><i class="fa fa-check"></i><b>10</b> 命令行</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="cml.html"><a href="cml.html#命令的基本概念"><i class="fa fa-check"></i><b>8.1</b> 命令的基本概念</a></li>
-<li class="chapter" data-level="8.2" data-path="cml.html"><a href="cml.html#通配符"><i class="fa fa-check"></i><b>8.2</b> 通配符</a></li>
-<li class="chapter" data-level="8.3" data-path="cml.html"><a href="cml.html#正则表达式"><i class="fa fa-check"></i><b>8.3</b> 正则表达式</a></li>
-<li class="chapter" data-level="8.4" data-path="cml.html"><a href="cml.html#r的命令行选项"><i class="fa fa-check"></i><b>8.4</b> R的命令行选项</a>
+<li class="chapter" data-level="10.1" data-path="cml.html"><a href="cml.html#命令的基本概念"><i class="fa fa-check"></i><b>10.1</b> 命令的基本概念</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="cml.html"><a href="cml.html#linuxunix-shebang"><i class="fa fa-check"></i><b>8.4.1</b> Linux/Unix Shebang</a></li>
-<li class="chapter" data-level="8.4.2" data-path="cml.html"><a href="cml.html#argparse包实例"><i class="fa fa-check"></i><b>8.4.2</b> argparse包实例</a></li>
+<li class="chapter" data-level="10.1.1" data-path="cml.html"><a href="cml.html#常用命令"><i class="fa fa-check"></i><b>10.1.1</b> 常用命令</a></li>
+<li class="chapter" data-level="10.1.2" data-path="cml.html"><a href="cml.html#标准输入与输出"><i class="fa fa-check"></i><b>10.1.2</b> 标准输入与输出</a></li>
+<li class="chapter" data-level="10.1.3" data-path="cml.html"><a href="cml.html#别名"><i class="fa fa-check"></i><b>10.1.3</b> 别名</a></li>
+<li class="chapter" data-level="10.1.4" data-path="cml.html"><a href="cml.html#脚本"><i class="fa fa-check"></i><b>10.1.4</b> 脚本</a></li>
+<li class="chapter" data-level="10.1.5" data-path="cml.html"><a href="cml.html#函数-1"><i class="fa fa-check"></i><b>10.1.5</b> 函数</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="web.html"><a href="web.html"><i class="fa fa-check"></i><b>9</b> 网络数据采集</a>
+<li class="chapter" data-level="10.2" data-path="cml.html"><a href="cml.html#通配符"><i class="fa fa-check"></i><b>10.2</b> 通配符</a></li>
+<li class="chapter" data-level="10.3" data-path="cml.html"><a href="cml.html#正则表达式"><i class="fa fa-check"></i><b>10.3</b> 正则表达式</a></li>
+<li class="chapter" data-level="10.4" data-path="cml.html"><a href="cml.html#r的命令行选项"><i class="fa fa-check"></i><b>10.4</b> R的命令行选项</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="web.html"><a href="web.html#网络数据格式"><i class="fa fa-check"></i><b>9.1</b> 网络数据格式</a>
+<li class="chapter" data-level="10.4.1" data-path="cml.html"><a href="cml.html#linuxunix-shebang"><i class="fa fa-check"></i><b>10.4.1</b> Linux/Unix Shebang</a></li>
+<li class="chapter" data-level="10.4.2" data-path="cml.html"><a href="cml.html#argparse包实例"><i class="fa fa-check"></i><b>10.4.2</b> argparse包实例</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="web.html"><a href="web.html"><i class="fa fa-check"></i><b>11</b> 网络数据采集</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="web.html"><a href="web.html#csv"><i class="fa fa-check"></i><b>9.1.1</b> CSV</a></li>
-<li class="chapter" data-level="9.1.2" data-path="web.html"><a href="web.html#xml-1"><i class="fa fa-check"></i><b>9.1.2</b> XML</a></li>
-<li class="chapter" data-level="9.1.3" data-path="web.html"><a href="web.html#json-1"><i class="fa fa-check"></i><b>9.1.3</b> JSON</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="web.html"><a href="web.html#html"><i class="fa fa-check"></i><b>9.2</b> HTML</a>
+<li class="chapter" data-level="11.1" data-path="web.html"><a href="web.html#网络数据格式"><i class="fa fa-check"></i><b>11.1</b> 网络数据格式</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="web.html"><a href="web.html#html的基本语法"><i class="fa fa-check"></i><b>9.2.1</b> HTML的基本语法</a></li>
-<li class="chapter" data-level="9.2.2" data-path="web.html"><a href="web.html#常见html标签"><i class="fa fa-check"></i><b>9.2.2</b> 常见HTML标签</a></li>
-<li class="chapter" data-level="9.2.3" data-path="web.html"><a href="web.html#dom树形数据结构"><i class="fa fa-check"></i><b>9.2.3</b> DOM树形数据结构</a></li>
+<li class="chapter" data-level="11.1.1" data-path="web.html"><a href="web.html#csv"><i class="fa fa-check"></i><b>11.1.1</b> CSV</a></li>
+<li class="chapter" data-level="11.1.2" data-path="web.html"><a href="web.html#xml-1"><i class="fa fa-check"></i><b>11.1.2</b> XML</a></li>
+<li class="chapter" data-level="11.1.3" data-path="web.html"><a href="web.html#json-1"><i class="fa fa-check"></i><b>11.1.3</b> JSON</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="web.html"><a href="web.html#css"><i class="fa fa-check"></i><b>9.3</b> CSS</a>
+<li class="chapter" data-level="11.2" data-path="web.html"><a href="web.html#html"><i class="fa fa-check"></i><b>11.2</b> HTML</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="web.html"><a href="web.html#css的基本语法"><i class="fa fa-check"></i><b>9.3.1</b> CSS的基本语法</a></li>
-<li class="chapter" data-level="9.3.2" data-path="web.html"><a href="web.html#id选择器"><i class="fa fa-check"></i><b>9.3.2</b> id选择器</a></li>
-<li class="chapter" data-level="9.3.3" data-path="web.html"><a href="web.html#类选择器"><i class="fa fa-check"></i><b>9.3.3</b> 类选择器</a></li>
+<li class="chapter" data-level="11.2.1" data-path="web.html"><a href="web.html#html的基本语法"><i class="fa fa-check"></i><b>11.2.1</b> HTML的基本语法</a></li>
+<li class="chapter" data-level="11.2.2" data-path="web.html"><a href="web.html#常见html标签"><i class="fa fa-check"></i><b>11.2.2</b> 常见HTML标签</a></li>
+<li class="chapter" data-level="11.2.3" data-path="web.html"><a href="web.html#dom树形数据结构"><i class="fa fa-check"></i><b>11.2.3</b> DOM树形数据结构</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="web.html"><a href="web.html#javascript"><i class="fa fa-check"></i><b>9.4</b> JavaScript</a>
+<li class="chapter" data-level="11.3" data-path="web.html"><a href="web.html#css"><i class="fa fa-check"></i><b>11.3</b> CSS</a>
 <ul>
-<li class="chapter" data-level="9.4.1" data-path="web.html"><a href="web.html#javascript案例"><i class="fa fa-check"></i><b>9.4.1</b> JavaScript案例</a></li>
-<li class="chapter" data-level="9.4.2" data-path="web.html"><a href="web.html#javascript的基本语法"><i class="fa fa-check"></i><b>9.4.2</b> JavaScript的基本语法</a></li>
-<li class="chapter" data-level="9.4.3" data-path="web.html"><a href="web.html#ajax"><i class="fa fa-check"></i><b>9.4.3</b> AJAX</a></li>
+<li class="chapter" data-level="11.3.1" data-path="web.html"><a href="web.html#css的基本语法"><i class="fa fa-check"></i><b>11.3.1</b> CSS的基本语法</a></li>
+<li class="chapter" data-level="11.3.2" data-path="web.html"><a href="web.html#id选择器"><i class="fa fa-check"></i><b>11.3.2</b> id选择器</a></li>
+<li class="chapter" data-level="11.3.3" data-path="web.html"><a href="web.html#类选择器"><i class="fa fa-check"></i><b>11.3.3</b> 类选择器</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="web.html"><a href="web.html#开发者工具"><i class="fa fa-check"></i><b>9.5</b> 开发者工具</a>
+<li class="chapter" data-level="11.4" data-path="web.html"><a href="web.html#javascript"><i class="fa fa-check"></i><b>11.4</b> JavaScript</a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="web.html"><a href="web.html#打开开发者工具"><i class="fa fa-check"></i><b>9.5.1</b> 打开开发者工具</a></li>
-<li class="chapter" data-level="9.5.2" data-path="web.html"><a href="web.html#查看器与样式"><i class="fa fa-check"></i><b>9.5.2</b> 查看器与样式</a></li>
-<li class="chapter" data-level="9.5.3" data-path="web.html"><a href="web.html#其他功能"><i class="fa fa-check"></i><b>9.5.3</b> 其他功能</a></li>
+<li class="chapter" data-level="11.4.1" data-path="web.html"><a href="web.html#javascript案例"><i class="fa fa-check"></i><b>11.4.1</b> JavaScript案例</a></li>
+<li class="chapter" data-level="11.4.2" data-path="web.html"><a href="web.html#javascript的基本语法"><i class="fa fa-check"></i><b>11.4.2</b> JavaScript的基本语法</a></li>
+<li class="chapter" data-level="11.4.3" data-path="web.html"><a href="web.html#ajax"><i class="fa fa-check"></i><b>11.4.3</b> AJAX</a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="web.html"><a href="web.html#xpath"><i class="fa fa-check"></i><b>9.6</b> Xpath</a>
+<li class="chapter" data-level="11.5" data-path="web.html"><a href="web.html#开发者工具"><i class="fa fa-check"></i><b>11.5</b> 开发者工具</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="web.html"><a href="web.html#基本查询"><i class="fa fa-check"></i><b>9.6.1</b> 基本查询</a></li>
+<li class="chapter" data-level="11.5.1" data-path="web.html"><a href="web.html#打开开发者工具"><i class="fa fa-check"></i><b>11.5.1</b> 打开开发者工具</a></li>
+<li class="chapter" data-level="11.5.2" data-path="web.html"><a href="web.html#查看器与样式"><i class="fa fa-check"></i><b>11.5.2</b> 查看器与样式</a></li>
+<li class="chapter" data-level="11.5.3" data-path="web.html"><a href="web.html#其他功能"><i class="fa fa-check"></i><b>11.5.3</b> 其他功能</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="web.html"><a href="web.html#http"><i class="fa fa-check"></i><b>9.7</b> HTTP</a>
+<li class="chapter" data-level="11.6" data-path="web.html"><a href="web.html#xpath"><i class="fa fa-check"></i><b>11.6</b> Xpath</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="web.html"><a href="web.html#http常见方法"><i class="fa fa-check"></i><b>9.7.1</b> HTTP常见方法</a></li>
+<li class="chapter" data-level="11.6.1" data-path="web.html"><a href="web.html#基本查询"><i class="fa fa-check"></i><b>11.6.1</b> 基本查询</a></li>
 </ul></li>
-<li class="chapter" data-level="9.8" data-path="web.html"><a href="web.html#静态爬虫"><i class="fa fa-check"></i><b>9.8</b> 静态爬虫</a></li>
-<li class="chapter" data-level="9.9" data-path="web.html"><a href="web.html#使用rselenium的动态爬虫"><i class="fa fa-check"></i><b>9.9</b> 使用RSelenium的动态爬虫</a>
+<li class="chapter" data-level="11.7" data-path="web.html"><a href="web.html#http"><i class="fa fa-check"></i><b>11.7</b> HTTP</a>
 <ul>
-<li class="chapter" data-level="9.9.1" data-path="web.html"><a href="web.html#rselenium简介与安装"><i class="fa fa-check"></i><b>9.9.1</b> RSelenium简介与安装</a></li>
-<li class="chapter" data-level="9.9.2" data-path="web.html"><a href="web.html#安装docker"><i class="fa fa-check"></i><b>9.9.2</b> 安装Docker</a></li>
-<li class="chapter" data-level="9.9.3" data-path="web.html"><a href="web.html#rselenum语法"><i class="fa fa-check"></i><b>9.9.3</b> RSelenum语法</a></li>
-<li class="chapter" data-level="9.9.4" data-path="web.html"><a href="web.html#案例1在链家搜索并获取相关信息"><i class="fa fa-check"></i><b>9.9.4</b> 案例1:在链家搜索并获取相关信息</a></li>
-<li class="chapter" data-level="9.9.5" data-path="web.html"><a href="web.html#案例2登录豆瓣"><i class="fa fa-check"></i><b>9.9.5</b> 案例2:登录豆瓣</a></li>
+<li class="chapter" data-level="11.7.1" data-path="web.html"><a href="web.html#http常见方法"><i class="fa fa-check"></i><b>11.7.1</b> HTTP常见方法</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="geo.html"><a href="geo.html"><i class="fa fa-check"></i><b>10</b> 地理计算</a>
+<li class="chapter" data-level="11.8" data-path="web.html"><a href="web.html#静态爬虫"><i class="fa fa-check"></i><b>11.8</b> 静态爬虫</a></li>
+<li class="chapter" data-level="11.9" data-path="web.html"><a href="web.html#使用rselenium的动态爬虫"><i class="fa fa-check"></i><b>11.9</b> 使用RSelenium的动态爬虫</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="geo.html"><a href="geo.html#r中地理计算"><i class="fa fa-check"></i><b>10.1</b> R中地理计算</a></li>
-<li class="chapter" data-level="10.2" data-path="geo.html"><a href="geo.html#地理数据结构"><i class="fa fa-check"></i><b>10.2</b> 地理数据结构</a>
+<li class="chapter" data-level="11.9.1" data-path="web.html"><a href="web.html#rselenium简介与安装"><i class="fa fa-check"></i><b>11.9.1</b> RSelenium简介与安装</a></li>
+<li class="chapter" data-level="11.9.2" data-path="web.html"><a href="web.html#安装docker"><i class="fa fa-check"></i><b>11.9.2</b> 安装Docker</a></li>
+<li class="chapter" data-level="11.9.3" data-path="web.html"><a href="web.html#rselenum语法"><i class="fa fa-check"></i><b>11.9.3</b> RSelenum语法</a></li>
+<li class="chapter" data-level="11.9.4" data-path="web.html"><a href="web.html#案例1在链家搜索并获取相关信息"><i class="fa fa-check"></i><b>11.9.4</b> 案例1:在链家搜索并获取相关信息</a></li>
+<li class="chapter" data-level="11.9.5" data-path="web.html"><a href="web.html#案例2登录豆瓣"><i class="fa fa-check"></i><b>11.9.5</b> 案例2:登录豆瓣</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="geo.html"><a href="geo.html"><i class="fa fa-check"></i><b>12</b> 地理计算</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="geo.html"><a href="geo.html#向量vector"><i class="fa fa-check"></i><b>10.2.1</b> 向量（Vector）</a></li>
-<li class="chapter" data-level="10.2.2" data-path="geo.html"><a href="geo.html#栅格raster"><i class="fa fa-check"></i><b>10.2.2</b> 栅格（Raster）</a></li>
-<li class="chapter" data-level="10.2.3" data-path="geo.html"><a href="geo.html#坐标系coordinate-reference-system"><i class="fa fa-check"></i><b>10.2.3</b> 坐标系（coordinate reference system）</a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="geo.html"><a href="geo.html#地理数据操纵"><i class="fa fa-check"></i><b>10.3</b> 地理数据操纵</a></li>
-<li class="chapter" data-level="10.4" data-path="geo.html"><a href="geo.html#地理数据可视化"><i class="fa fa-check"></i><b>10.4</b> 地理数据可视化</a></li>
-<li class="chapter" data-level="10.5" data-path="geo.html"><a href="geo.html#地理数据运算"><i class="fa fa-check"></i><b>10.5</b> 地理数据运算</a>
+<li class="chapter" data-level="12.1" data-path="geo.html"><a href="geo.html#r中地理计算"><i class="fa fa-check"></i><b>12.1</b> R中地理计算</a></li>
+<li class="chapter" data-level="12.2" data-path="geo.html"><a href="geo.html#地理数据结构"><i class="fa fa-check"></i><b>12.2</b> 地理数据结构</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="geo.html"><a href="geo.html#取子集"><i class="fa fa-check"></i><b>10.5.1</b> 取子集</a></li>
+<li class="chapter" data-level="12.2.1" data-path="geo.html"><a href="geo.html#向量vector"><i class="fa fa-check"></i><b>12.2.1</b> 向量（Vector）</a></li>
+<li class="chapter" data-level="12.2.2" data-path="geo.html"><a href="geo.html#栅格raster"><i class="fa fa-check"></i><b>12.2.2</b> 栅格（Raster）</a></li>
+<li class="chapter" data-level="12.2.3" data-path="geo.html"><a href="geo.html#坐标系coordinate-reference-system"><i class="fa fa-check"></i><b>12.2.3</b> 坐标系（coordinate reference system）</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="geo.html"><a href="geo.html#地理数据读写"><i class="fa fa-check"></i><b>10.6</b> 地理数据读写</a></li>
-<li class="chapter" data-level="10.7" data-path="geo.html"><a href="geo.html#地理数据计算"><i class="fa fa-check"></i><b>10.7</b> 地理数据计算</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="make.html"><a href="make.html"><i class="fa fa-check"></i><b>11</b> GUN Make的数据生产线</a>
+<li class="chapter" data-level="12.3" data-path="geo.html"><a href="geo.html#地理数据操纵"><i class="fa fa-check"></i><b>12.3</b> 地理数据操纵</a></li>
+<li class="chapter" data-level="12.4" data-path="geo.html"><a href="geo.html#地理数据可视化"><i class="fa fa-check"></i><b>12.4</b> 地理数据可视化</a></li>
+<li class="chapter" data-level="12.5" data-path="geo.html"><a href="geo.html#地理数据运算"><i class="fa fa-check"></i><b>12.5</b> 地理数据运算</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="make.html"><a href="make.html#使用make的必要性"><i class="fa fa-check"></i><b>11.1</b> 使用Make的必要性</a></li>
-<li class="chapter" data-level="11.2" data-path="make.html"><a href="make.html#数据流水线的构造目标"><i class="fa fa-check"></i><b>11.2</b> 数据流水线的构造目标</a></li>
-<li class="chapter" data-level="11.3" data-path="make.html"><a href="make.html#make安装"><i class="fa fa-check"></i><b>11.3</b> Make安装</a></li>
-<li class="chapter" data-level="11.4" data-path="make.html"><a href="make.html#快速上手make"><i class="fa fa-check"></i><b>11.4</b> 快速上手make</a></li>
-<li class="chapter" data-level="11.5" data-path="make.html"><a href="make.html#make的工作方式"><i class="fa fa-check"></i><b>11.5</b> make的工作方式</a></li>
-<li class="chapter" data-level="11.6" data-path="make.html"><a href="make.html#makefile-的高级写法"><i class="fa fa-check"></i><b>11.6</b> Makefile 的高级写法</a>
+<li class="chapter" data-level="12.5.1" data-path="geo.html"><a href="geo.html#取子集"><i class="fa fa-check"></i><b>12.5.1</b> 取子集</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="geo.html"><a href="geo.html#地理数据读写"><i class="fa fa-check"></i><b>12.6</b> 地理数据读写</a></li>
+<li class="chapter" data-level="12.7" data-path="geo.html"><a href="geo.html#地理数据计算"><i class="fa fa-check"></i><b>12.7</b> 地理数据计算</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="make.html"><a href="make.html"><i class="fa fa-check"></i><b>13</b> GUN Make的数据生产线</a>
 <ul>
-<li class="chapter" data-level="11.6.1" data-path="make.html"><a href="make.html#特殊目标"><i class="fa fa-check"></i><b>11.6.1</b> 特殊目标</a></li>
-<li class="chapter" data-level="11.6.2" data-path="make.html"><a href="make.html#使用变量"><i class="fa fa-check"></i><b>11.6.2</b> 使用变量</a></li>
-<li class="chapter" data-level="11.6.3" data-path="make.html"><a href="make.html#分支与循环结构"><i class="fa fa-check"></i><b>11.6.3</b> 分支与循环结构</a></li>
-<li class="chapter" data-level="11.6.4" data-path="make.html"><a href="make.html#函数-1"><i class="fa fa-check"></i><b>11.6.4</b> 函数</a></li>
-</ul></li>
-<li class="chapter" data-level="11.7" data-path="make.html"><a href="make.html#make的高级语法"><i class="fa fa-check"></i><b>11.7</b> Make的高级语法</a>
+<li class="chapter" data-level="13.1" data-path="make.html"><a href="make.html#使用make的必要性"><i class="fa fa-check"></i><b>13.1</b> 使用Make的必要性</a></li>
+<li class="chapter" data-level="13.2" data-path="make.html"><a href="make.html#数据流水线的构造目标"><i class="fa fa-check"></i><b>13.2</b> 数据流水线的构造目标</a></li>
+<li class="chapter" data-level="13.3" data-path="make.html"><a href="make.html#make安装"><i class="fa fa-check"></i><b>13.3</b> Make安装</a></li>
+<li class="chapter" data-level="13.4" data-path="make.html"><a href="make.html#快速上手make"><i class="fa fa-check"></i><b>13.4</b> 快速上手make</a></li>
+<li class="chapter" data-level="13.5" data-path="make.html"><a href="make.html#make的工作方式"><i class="fa fa-check"></i><b>13.5</b> make的工作方式</a></li>
+<li class="chapter" data-level="13.6" data-path="make.html"><a href="make.html#makefile-的高级写法"><i class="fa fa-check"></i><b>13.6</b> Makefile 的高级写法</a>
 <ul>
-<li class="chapter" data-level="11.7.1" data-path="make.html"><a href="make.html#并行计算"><i class="fa fa-check"></i><b>11.7.1</b> 并行计算</a></li>
+<li class="chapter" data-level="13.6.1" data-path="make.html"><a href="make.html#特殊目标"><i class="fa fa-check"></i><b>13.6.1</b> 特殊目标</a></li>
+<li class="chapter" data-level="13.6.2" data-path="make.html"><a href="make.html#使用变量"><i class="fa fa-check"></i><b>13.6.2</b> 使用变量</a></li>
+<li class="chapter" data-level="13.6.3" data-path="make.html"><a href="make.html#分支与循环结构"><i class="fa fa-check"></i><b>13.6.3</b> 分支与循环结构</a></li>
+<li class="chapter" data-level="13.6.4" data-path="make.html"><a href="make.html#函数-2"><i class="fa fa-check"></i><b>13.6.4</b> 函数</a></li>
 </ul></li>
-<li class="chapter" data-level="11.8" data-path="make.html"><a href="make.html#参考资料"><i class="fa fa-check"></i><b>11.8</b> 参考资料</a></li>
+<li class="chapter" data-level="13.7" data-path="make.html"><a href="make.html#make的高级语法"><i class="fa fa-check"></i><b>13.7</b> Make的高级语法</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="make.html"><a href="make.html#并行计算"><i class="fa fa-check"></i><b>13.7.1</b> 并行计算</a></li>
 </ul></li>
+<li class="chapter" data-level="13.8" data-path="make.html"><a href="make.html#参考资料"><i class="fa fa-check"></i><b>13.8</b> 参考资料</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="net.html"><a href="net.html"><i class="fa fa-check"></i><b>14</b> 图数据分析</a></li>
 <li class="appendix"><span><b>附录</b></span></li>
 <li class="chapter" data-level="A" data-path="sound.html"><a href="sound.html"><i class="fa fa-check"></i><b>A</b> 余音绕梁</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>参考文献</a></li>
@@ -434,18 +550,19 @@
 
             <section class="normal" id="section-">
 <div id="manipulate" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">第 5 章</span> 数据操纵<a href="manipulate.html#manipulate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">第 5 章</span> 数据整理<a href="manipulate.html#manipulate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <blockquote>
-<p>整齐数据都是一样的，凌乱数据各有各的凌乱。— Hadley Wickham</p>
+<p>整齐数据都是一样的，凌乱数据各有各的凌乱。<em>— Hadley Wickham</em></p>
 </blockquote>
-<p>数据操纵的目的是把原始数据转变成</p>
-<div id="整洁数据tidydata" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> 整洁数据tidydata<a href="manipulate.html#整洁数据tidydata" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>前面两章我们介绍了R语言基本语法以及文学式编程。本章开始我们正式进入数据处理环节，此处的数据整理对应了英文的data manipulation，也可以协议理解为数据清理。在一个经济学研究中，数据整理工作往往占到一个数据工程（除数据采集、论文修改与写作外）的50%-80%的工作量。</p>
+<p>数据整理的目的是根据研究设计，通过清理、合并、变形等操作，把原始数据转变成可以被直接用于统计分析和可视化的数据，这样的数据，被称为整齐数据。</p>
+<div id="整齐数据tidydata" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> 整齐数据tidydata<a href="manipulate.html#整齐数据tidydata" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="分析单位unit-of-analysis" class="section level3 hasAnchor" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> 分析单位(unit of analysis)<a href="manipulate.html#分析单位unit-of-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>为了理解整洁数据，需要先介绍一个新的概念-分析单位。分析单元是实证研究中至关重要的概念。毫不夸张的说，理解分析单位就是理解和设计实证论文的钥匙。然而遗憾的是，分析单位在国内的教学中并没有得到充分的重视。</p>
+<p>为了理解整齐数据，需要先介绍一个新的概念-分析单位。分析单元是实证研究中至关重要的概念。毫不夸张的说，理解分析单位就是理解和设计实证论文的钥匙。然而遗憾的是，分析单位在国内的教学中并没有得到充分的重视。</p>
 <p>分析单位是一个”单位”的概念，类似于<em>千克，公里</em>，是针对某种对象的”计量”方式。艾尔·巴比在《社会研究方法》中将分析单位定义为”用来考察和总结同类事物特征，解释其中差异的单位。“该定义的核心关键词是<em>差异</em>。在艾尔·巴比的基础上，我们可以给出一个更加直观的定义，即<strong>分析单位是研究设计中用于比较研究对象差异的最小计量单位</strong>。设想这样的一个研究教育回报的研究设计，研究对象为上海市的所有应届毕业生，研究者可以通过普查的方式得到所有人的受教育年限与收入水平，此时的分析单位是<strong>个人</strong>。如果研究问题转化为研究生教育对收入的影响，此时，分析单位就不再是<strong>个人</strong>，而成为<em>研究生学历</em>与<em>研究生以下学历</em>的两个群体，因为同群体内的个人在教育测度上并不存在差异。从这个角度来看，风笑天在其影响范围很广的教材《社会研究方法》中对分析单位的定义就有点草率了。风笑天将分析单位定义为<em>“一项社会科学的研究对象”</em>，这个定义直接将分析单位与研究对象等价。</p>
-<p>与分析单位密切相关的一个概念是<strong>观测单位(unit of observation)</strong>，指的是观测数据中的计量单位。直观来说，就是数据每一行的单位。在上面的两个例子里面，数据都是在个人层面采集的，观测单位都是<strong>个人</strong>。这就看出了观测单位与分析单位之间的细微差别。</p>
+<p>与分析单位密切相关的一个概念是<strong>观测单位(unit of observation)</strong>，指的是观测数据中的计量单位。直观来说，就是数据每一行的单位。在上面的两个例子里面，数据都是在个人层面采集的，观测单位都是<strong>个人</strong>。这就看出了观测单位与分析单位之间的细微差别。在数据库中，观测单位对应了一张表格的<code>key</code>，后文中我们会介绍，确定<code>key</code>是数据整理中的核心概念。</p>
 <p>单位与变量的关系</p>
 <p>在操作层面，分析单位是由自变量的设计决定的，而观测单位是由因变量的设计决定的。在介绍理论与模型的章节中，我们提到当前的理论主要是关注两个变量之间的关系。因此，此处的自变量指的是我们关心的核心自变量(variable of interest)。所以才说，分析单位是实证研究的钥匙，当我们开始一项研究的时候，第一个要回答的问题便是这个研究的自变量与因变量分别是在什么”单位”上测量的。同样的道理，当我们去精度别人的论文时，首先要理解的便是他的回归中的分析单位与观测单位。如果我们看到识别模型的为 <span class="math display">\[y_{i,j,t} = \alpha + \beta \times x_{j,t} + \epsilon_{i,j,t}\]</span></p>
 <p>我们便可以确定此处的分析单位是{j,t}，而观测单位是{i,j,t}，在回归表中的观测值数量（样本大小N）应该等于<span class="math inline">\(I \times J \times T\)</span>。</p>
@@ -464,11 +581,9 @@
 <p>整齐数据是针对”表”这一类数据结构的定义。实际上，表是我们数据分析时使用到的最主要的数据结构。“表”是一个二维的数据结构，表的基本元素是单元格（cell），具有行（row）与列（volume）两个属性（大多数时候，行列是不可以互换的）。每个单元格中储存一个数据。</p>
 <p>回忆一下，我们讨论过的变量与观测单元的概念。变量指的是对研究对象的某一个属性（概念）的测度，而一个观测是属于同一个观测个体的所有变量。当我们提到表格时，一般默认表格的”第零行”为表头，用于储存变量名，而非数据值。</p>
 <p>当一个表格满足</p>
-<ol style="list-style-type: decimal">
-<li>每一列都储存同一个变量，且相同变量都储存在同一列</li>
-<li>每一行都储存对观测单元的一个观测，且同一个观测都储存于同一行</li>
-<li>一个表储存同一个观测单元</li>
-</ol>
+<p><strong>1. 每一列都储存同一个变量，且相同变量都储存在同一列</strong></p>
+<p><strong>2. 每一行都储存对观测单元的一个观测，且同一个观测都储存于同一行</strong></p>
+<p><strong>3. 一个表储存同一个观测单元</strong></p>
 <p>三个条件时，该表便是一组整齐数据。违背以上三个条件中的任何一个的表格都不是整齐数据，我们将其称为凌乱数据（Messy data）。</p>
 <p>我们看下面的三组数据，分别包含了</p>
 <p>当我们使用表1计算xx变量的平均数时，需要通过复杂的数据提取与计算。如果我们使用表2，则可以轻松的通过mean(xx)来达到同样的目的。这一下子就看出了整齐数据蕴含的力量。</p>
@@ -487,9 +602,898 @@
 <p>当然，我们永远不能低估数据的凌乱程度，在实际数据分析时遇到超出想象的情形也无需大惊小怪。</p>
 </div>
 </div>
-<div id="数据操纵案例" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> 数据操纵案例<a href="manipulate.html#数据操纵案例" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>先根据数据变形的目的</p>
+<div id="关系代数" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> 关系代数<a href="manipulate.html#关系代数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在介绍如何整理数据之前，我们先介绍数据整理背后的，数据库查询语言数学基础，关系代数。</p>
+<p>关系代数定义了使用表格组织数据所对应的数据运算。实际上，表格可以表示一切的数据，因此定义出一套简洁高效的基于表格的运算，就可以实现数据计算的正交分解，一部分计算机科学家可以专注于优化关系代数的实现效率，而其他人则只用了解最简单的约定来完成自己数据分析工作，可充分利用前者的集体智慧。因此，关系代数是表格数据处理的最佳工具。</p>
+<p>关系代数将表格的行视作集合，列视作属性。经济学里面对表格的理解反而更直接，行对应于观测，列对应于变量。</p>
+<p>关系代数运算包括：</p>
+<ul>
+<li><p>集合运算：交集、并集与补集。</p></li>
+<li><p>线性运算：笛卡尔积、（按列）投影与（按行）选取。</p></li>
+</ul>
+<p>常用的非关系代数的扩展运算包括：</p>
+<ul>
+<li><p>关系运算：两个表格之间连接，分为左（右）连接、内连接、外连接。</p></li>
+<li><p>分组运算</p></li>
+</ul>
+<p>现在看起来关系代数是如此简介明了，但实际上关系代数的发展为数据库技术的应用与普及扫清了障碍，也为当代大数据与人工智能奠定了基础。相关研究诞生了1981年（Edgar F. Codd）和2014年两届图灵奖（Michael Stonebraker）。</p>
+<p>参考资料：Hellerstein, Joseph M. and Michael Stonebraker. Readings in Database Systems.</p>
+</div>
+<div id="sql语言" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> SQL语言<a href="manipulate.html#sql语言" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mysql" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> MySQL<a href="manipulate.html#mysql" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="postgresql" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Postgresql<a href="manipulate.html#postgresql" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="dplyr" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> dplyr<a href="manipulate.html#dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>关系代数思想在R中的直接对应了<code>data.frame</code>数据结构。R语言大神Hadley Wickham开发了<code>dplyr</code>和<code>tidyr</code>包来实现各类关系代数运算与其他表格运算。这两个包的语法非常直观、灵活的，是数据整理的最佳工具，无出其右。</p>
+<div id="集合运算" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> 集合运算<a href="manipulate.html#集合运算" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>intersect</code>，<code>union</code>, <code>setdiff</code>函数可以直接用于<code>data.frame</code>的交并补运算。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="manipulate.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="manipulate.html#cb1-2" tabindex="-1"></a>stdnt_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb1-3"><a href="manipulate.html#cb1-3" tabindex="-1"></a>                      <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;张三&quot;</span>,<span class="st">&quot;李四&quot;</span>,<span class="st">&quot;王二&quot;</span>,<span class="st">&quot;赵五&quot;</span>),</span>
+<span id="cb1-4"><a href="manipulate.html#cb1-4" tabindex="-1"></a>                      <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">22</span>,<span class="dv">23</span>),</span>
+<span id="cb1-5"><a href="manipulate.html#cb1-5" tabindex="-1"></a>                      <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;M&quot;</span>))</span>
+<span id="cb1-6"><a href="manipulate.html#cb1-6" tabindex="-1"></a>stdnt_2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>), </span>
+<span id="cb1-7"><a href="manipulate.html#cb1-7" tabindex="-1"></a>                      <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;李四&quot;</span>,<span class="st">&quot;刘六&quot;</span>),</span>
+<span id="cb1-8"><a href="manipulate.html#cb1-8" tabindex="-1"></a>                      <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">24</span>,<span class="dv">21</span>), </span>
+<span id="cb1-9"><a href="manipulate.html#cb1-9" tabindex="-1"></a>                      <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>))</span>
+<span id="cb1-10"><a href="manipulate.html#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="manipulate.html#cb1-11" tabindex="-1"></a><span class="fu">intersect</span>(stdnt_1,stdnt_2)</span></code></pre></div>
+<pre><code>##   ID name age gender
+## 1  2 李四  24      M</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="manipulate.html#cb3-1" tabindex="-1"></a><span class="fu">union</span>(stdnt_1,stdnt_2)</span></code></pre></div>
+<pre><code>##   ID name age gender
+## 1  1 张三  23      M
+## 2  2 李四  24      M
+## 3  3 王二  22      F
+## 4  4 赵五  23      M
+## 5  5 刘六  21      F</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="manipulate.html#cb5-1" tabindex="-1"></a><span class="fu">setdiff</span>(stdnt_1,stdnt_2)</span></code></pre></div>
+<pre><code>##   ID name age gender
+## 1  1 张三  23      M
+## 2  3 王二  22      F
+## 3  4 赵五  23      M</code></pre>
+</div>
+<div id="线性运算" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> 线性运算<a href="manipulate.html#线性运算" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="投影选择变量" class="section level4 hasAnchor" number="5.5.2.1">
+<h4><span class="header-section-number">5.5.2.1</span> 投影（选择变量）<a href="manipulate.html#投影选择变量" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>select</code>函数用于投影操作，第一种用法是使用变量名组成的向量作为参数选出对应的变量，第二种办法是使用数字组成的向量选出对应位置的变量，例如：</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="manipulate.html#cb7-1" tabindex="-1"></a><span class="fu">select</span>(stdnt_1, <span class="fu">c</span>(name,age)) </span></code></pre></div>
+<pre><code>##   name age
+## 1 张三  23
+## 2 李四  24
+## 3 王二  22
+## 4 赵五  23</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="manipulate.html#cb9-1" tabindex="-1"></a><span class="fu">select</span>(stdnt_1, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span></code></pre></div>
+<pre><code>##   ID age
+## 1  1  23
+## 2  2  24
+## 3  3  22
+## 4  4  23</code></pre>
+<p>当参数加入<code>-</code>时，删除对应的变量，例如</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="manipulate.html#cb11-1" tabindex="-1"></a><span class="fu">select</span>(stdnt_1, <span class="sc">-</span><span class="fu">c</span>(name,age))</span></code></pre></div>
+<pre><code>##   ID gender
+## 1  1      M
+## 2  2      M
+## 3  3      F
+## 4  4      M</code></pre>
+<p><code>dplyr</code>提供了配套函数，让<code>select</code>更加灵活</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">配套函数</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>starts_with("a")</code></td>
+<td align="left">选择名字以<code>a</code>开头的变量</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ends_with("a")</code></td>
+<td align="left">选择名字以<code>a</code>结尾的变量</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>contains("a")</code></td>
+<td align="left">选择名字中含有<code>a</code>的变量</td>
+</tr>
+<tr class="even">
+<td align="left"><code>matches(pattern)</code></td>
+<td align="left">选择正则表达式匹配的变量</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>num_range("x", 1:3)</code></td>
+<td align="left">选择x1, x2, x3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="选取选择观测" class="section level4 hasAnchor" number="5.5.2.2">
+<h4><span class="header-section-number">5.5.2.2</span> 选取（选择观测）<a href="manipulate.html#选取选择观测" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>slice</code>函数可以使用数值向量来选择对应的行，<code>-</code>表示删除对应行</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="manipulate.html#cb13-1" tabindex="-1"></a><span class="fu">slice</span>(stdnt_1, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##   ID name age gender
+## 1  1 张三  23      M
+## 2  2 李四  24      M
+## 3  3 王二  22      F</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="manipulate.html#cb15-1" tabindex="-1"></a><span class="fu">slice</span>(stdnt_1, <span class="sc">-</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##   ID name age gender
+## 1  1 张三  23      M
+## 2  3 王二  22      F
+## 3  4 赵五  23      M</code></pre>
+<p><code>slice_</code>扩展函数</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">函数</th>
+<th align="left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>slice_head(n)</code></td>
+<td align="left">提取前n行，等价于<code>head(n)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>slice_tail(n=5)</code></td>
+<td align="left">提取最后n行，等价于<code>tail(n)</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>slice_min(x, n)</code></td>
+<td align="left">提取x值最小的n行</td>
+</tr>
+<tr class="even">
+<td align="left"><code>slice_max(x, n=1)</code></td>
+<td align="left">提取x值最大的n行</td>
+</tr>
+</tbody>
+</table>
+<p><code>filter</code>函数则可以用逻辑判断来选取满足条件的行，不同条件用<code>,</code>分割，例如选出A中年龄大于23，且性别为男性的行，可以使用下面的代码。</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="manipulate.html#cb17-1" tabindex="-1"></a><span class="fu">filter</span>(stdnt_1, age <span class="sc">&gt;</span> <span class="dv">23</span>, gender <span class="sc">==</span> <span class="st">&quot;M&quot;</span>)</span></code></pre></div>
+<pre><code>##   ID name age gender
+## 1  2 李四  24      M</code></pre>
+</div>
+<div id="笛卡尔积" class="section level4 hasAnchor" number="5.5.2.3">
+<h4><span class="header-section-number">5.5.2.3</span> 笛卡尔积<a href="manipulate.html#笛卡尔积" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>笛卡尔积在研究设计中对应了面板数据，即每一个观测单位上都有观测值的数据结构。<code>tidyr::expand_grid</code>函数可以生成其参数的所有可能的组合。</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="manipulate.html#cb19-1" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb19-2"><a href="manipulate.html#cb19-2" tabindex="-1"></a><span class="fu">expand_grid</span>(<span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">year =</span> <span class="dv">1998</span><span class="sc">:</span><span class="dv">2000</span>) </span></code></pre></div>
+<pre><code>## # A tibble: 18 × 2
+##       ID  year
+##    &lt;int&gt; &lt;int&gt;
+##  1     1  1998
+##  2     1  1999
+##  3     1  2000
+##  4     2  1998
+##  5     2  1999
+##  6     2  2000
+##  7     3  1998
+##  8     3  1999
+##  9     3  2000
+## 10     4  1998
+## 11     4  1999
+## 12     4  2000
+## 13     5  1998
+## 14     5  1999
+## 15     5  2000
+## 16     6  1998
+## 17     6  1999
+## 18     6  2000</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="manipulate.html#cb21-1" tabindex="-1"></a>stdnt <span class="ot">&lt;-</span> <span class="fu">union</span>(stdnt_1, stdnt_2)</span>
+<span id="cb21-2"><a href="manipulate.html#cb21-2" tabindex="-1"></a><span class="fu">expand_grid</span>(stdnt, <span class="at">year =</span> <span class="dv">1998</span><span class="sc">:</span><span class="dv">2000</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 15 × 5
+##       ID name    age gender  year
+##    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;int&gt;
+##  1     1 张三     23 M       1998
+##  2     1 张三     23 M       1999
+##  3     1 张三     23 M       2000
+##  4     2 李四     24 M       1998
+##  5     2 李四     24 M       1999
+##  6     2 李四     24 M       2000
+##  7     3 王二     22 F       1998
+##  8     3 王二     22 F       1999
+##  9     3 王二     22 F       2000
+## 10     4 赵五     23 M       1998
+## 11     4 赵五     23 M       1999
+## 12     4 赵五     23 M       2000
+## 13     5 刘六     21 F       1998
+## 14     5 刘六     21 F       1999
+## 15     5 刘六     21 F       2000</code></pre>
+<p><code>nesting</code>函数可以看作是<code>expand_grid</code>的反函数，可以从数据中提炼出不重复的组合。</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="manipulate.html#cb23-1" tabindex="-1"></a>stdnt_panel <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(stdnt, <span class="at">year =</span> <span class="dv">1998</span><span class="sc">:</span><span class="dv">2000</span>)</span>
+<span id="cb23-2"><a href="manipulate.html#cb23-2" tabindex="-1"></a>stdnt_panel_dup <span class="ot">&lt;-</span> <span class="fu">rbind</span>(stdnt_panel,stdnt_panel)</span>
+<span id="cb23-3"><a href="manipulate.html#cb23-3" tabindex="-1"></a><span class="fu">nesting</span>(stdnt_panel_dup)</span></code></pre></div>
+<pre><code>## # A tibble: 15 × 5
+##       ID name    age gender  year
+##    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;int&gt;
+##  1     1 张三     23 M       1998
+##  2     1 张三     23 M       1999
+##  3     1 张三     23 M       2000
+##  4     2 李四     24 M       1998
+##  5     2 李四     24 M       1999
+##  6     2 李四     24 M       2000
+##  7     3 王二     22 F       1998
+##  8     3 王二     22 F       1999
+##  9     3 王二     22 F       2000
+## 10     4 赵五     23 M       1998
+## 11     4 赵五     23 M       1999
+## 12     4 赵五     23 M       2000
+## 13     5 刘六     21 F       1998
+## 14     5 刘六     21 F       1999
+## 15     5 刘六     21 F       2000</code></pre>
+<p>在实际的研究设计中，第一步就是确定最终的数据结构，这其中的关键是观测单位。根据观测单位，又可以将面板数据分为平衡面板数据与非平衡面板数据，这两种数据结构都可以通过<code>expand_grid</code>函数生成。</p>
+</div>
+<div id="扩张" class="section level4 hasAnchor" number="5.5.2.4">
+<h4><span class="header-section-number">5.5.2.4</span> 扩张<a href="manipulate.html#扩张" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>线性空间的扩张对应于生成新的变量，<code>mutate</code>函数可以生成新的变量或对现有变量进行赋值，例如，在回归分析汇总我们经常会加入年龄的平方项</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="manipulate.html#cb25-1" tabindex="-1"></a><span class="fu">mutate</span>(stdnt, </span>
+<span id="cb25-2"><a href="manipulate.html#cb25-2" tabindex="-1"></a>       <span class="at">age2 =</span> age<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb25-3"><a href="manipulate.html#cb25-3" tabindex="-1"></a>       <span class="at">name =</span> <span class="fu">factor</span>(name),</span>
+<span id="cb25-4"><a href="manipulate.html#cb25-4" tabindex="-1"></a>       <span class="at">female =</span> <span class="fu">as.numeric</span>(gender <span class="sc">==</span> <span class="st">&quot;M&quot;</span>))</span></code></pre></div>
+<pre><code>##   ID name age gender age2 female
+## 1  1 张三  23      M  529      1
+## 2  2 李四  24      M  576      1
+## 3  3 王二  22      F  484      0
+## 4  4 赵五  23      M  529      1
+## 5  5 刘六  21      F  441      0</code></pre>
+<p>假设这些同学的平时和期末成绩如下表，平时成绩占比35%，期末成绩占比65%，那么可以计算每个同学最终的课程成绩。</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="manipulate.html#cb27-1" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
+<span id="cb27-2"><a href="manipulate.html#cb27-2" tabindex="-1"></a>                    <span class="at">hw1 =</span> <span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">87</span>,<span class="dv">99</span>,<span class="dv">80</span>,<span class="dv">100</span>),</span>
+<span id="cb27-3"><a href="manipulate.html#cb27-3" tabindex="-1"></a>                    <span class="at">hw2 =</span> <span class="fu">c</span>(<span class="dv">95</span>,<span class="dv">0</span>,<span class="dv">88</span>,<span class="dv">98</span>,<span class="dv">98</span>),</span>
+<span id="cb27-4"><a href="manipulate.html#cb27-4" tabindex="-1"></a>                    <span class="at">hw3 =</span> <span class="fu">c</span>(<span class="dv">80</span>,<span class="dv">0</span>,<span class="dv">90</span>,<span class="dv">85</span>,<span class="dv">95</span>),</span>
+<span id="cb27-5"><a href="manipulate.html#cb27-5" tabindex="-1"></a>                    <span class="at">final =</span> <span class="fu">c</span>(<span class="dv">83</span>,<span class="dv">60</span>,<span class="dv">88</span>,<span class="dv">90</span>,<span class="dv">94</span>))</span>
+<span id="cb27-6"><a href="manipulate.html#cb27-6" tabindex="-1"></a><span class="fu">mutate</span>(score, <span class="at">total =</span> <span class="fl">0.35</span><span class="sc">*</span>(hw1<span class="sc">+</span>hw2<span class="sc">+</span>hw3)<span class="sc">/</span><span class="dv">3</span><span class="fl">+0.65</span><span class="sc">*</span>final)</span></code></pre></div>
+<pre><code>##   ID hw1 hw2 hw3 final    total
+## 1  1  90  95  80    83 84.86667
+## 2  2  87   0   0    60 49.15000
+## 3  3  99  88  90    88 89.51667
+## 4  4  80  98  85    90 89.18333
+## 5  5 100  98  95    94 95.28333</code></pre>
+<p><code>transmute</code>函数可以在生成新的变量的同时，删除掉所有老的变量。</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="manipulate.html#cb29-1" tabindex="-1"></a><span class="fu">transmute</span>(score, <span class="at">total =</span> <span class="fl">0.35</span><span class="sc">*</span>(hw1<span class="sc">+</span>hw2<span class="sc">+</span>hw3)<span class="sc">/</span><span class="dv">3</span><span class="fl">+0.65</span><span class="sc">*</span>final)</span></code></pre></div>
+<pre><code>##      total
+## 1 84.86667
+## 2 49.15000
+## 3 89.51667
+## 4 89.18333
+## 5 95.28333</code></pre>
+<p><code>mutate</code>可以搭配其他窗口函数[^1](窗口函数是SQL语言中在不改变行数的情况下返回极值、排序等结果的函数)使用，满足用户多样化的需求。</p>
+<table>
+<thead>
+<tr class="header">
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pmin</code>、<code>pmax</code></td>
+<td>多个变量逐行对比，返回相应变量的最小、最大值</td>
+</tr>
+<tr class="even">
+<td><code>cummin</code>、 <code>cummax</code></td>
+<td>单个变量的累计最小、最大值</td>
+</tr>
+<tr class="odd">
+<td><code>cumsum</code>、<code>cumprod</code></td>
+<td>累计求和、乘积</td>
+</tr>
+<tr class="even">
+<td><code>between</code></td>
+<td>判断是否介于两个值之间</td>
+</tr>
+<tr class="odd">
+<td><code>cume_dist</code></td>
+<td>小于等于当前值的行数占总行数比重</td>
+</tr>
+<tr class="even">
+<td><code>cumall</code>、<code>cumany</code></td>
+<td>累计是否全部（任一）为TRUE</td>
+</tr>
+<tr class="odd">
+<td><code>cummean</code></td>
+<td>累计均值</td>
+</tr>
+<tr class="even">
+<td><code>lead(n)</code>、<code>lag(n)</code></td>
+<td>当前行的前（后）n行的结果</td>
+</tr>
+<tr class="odd">
+<td><code>ntile(n)</code></td>
+<td>将数据平分成n份后，返回当前行所属组别</td>
+</tr>
+<tr class="even">
+<td><code>dense_rank</code></td>
+<td>当前行的排名，排名不间断</td>
+</tr>
+<tr class="odd">
+<td><code>min_rank</code></td>
+<td>当前行的排名，排名允许间断，最大排名数与行数相同</td>
+</tr>
+<tr class="even">
+<td><code>percent_rank</code></td>
+<td>当前行的百分比排名</td>
+</tr>
+<tr class="odd">
+<td>`row_numbers``</td>
+<td>当前行数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>课堂练习</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>选出所有不及格同学的学号，并储存成一个向量（使用pull函数）</p></li>
+<li><p>选出所有不及格同学的姓名、性别</p></li>
+<li><p>选出班上成绩最好的两个同学的姓名与性别</p></li>
+</ol>
+</div>
+</div>
+<div id="管道" class="section level3 hasAnchor" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> 管道<a href="manipulate.html#管道" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在实际的数据整理中，我们往往要对表格进行连续的计算，如果每一次计算都进行一次函数和赋值，不仅会让代码变得冗余，而且可读性差。<code>magrittr</code>包（<code>tidyverse</code>的组成部分）借鉴命令行中的管道操作符的概念，在R中引入了管道操作符<code>%&gt;%</code>。从4.1.0版本以上的R的基本包中也引入了管道操作符<code>|&gt;</code>。在大部分情况下，这两种管道操作符没有区别。由于<code>tidyverse</code>是我们推荐的最佳工具，因此本教程依然使用<code>%&gt;%</code>。</p>
+<p><code>%&gt;%</code>的作用方式是把管道符左边的结果传输过去成为管道符右边函数的第一个参数。例如，</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="manipulate.html#cb31-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="manipulate.html#cb31-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total =</span> <span class="fl">0.35</span><span class="sc">*</span>(hw1<span class="sc">+</span>hw2<span class="sc">+</span>hw3)<span class="sc">/</span><span class="dv">3</span><span class="fl">+0.65</span><span class="sc">*</span>final) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-3"><a href="manipulate.html#cb31-3" tabindex="-1"></a>  <span class="fu">filter</span>(total <span class="sc">&lt;</span> <span class="dv">60</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="manipulate.html#cb31-4" tabindex="-1"></a>  <span class="fu">pull</span>(ID)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+<div id="数据连接" class="section level3 hasAnchor" number="5.5.4">
+<h3><span class="header-section-number">5.5.4</span> 数据连接<a href="manipulate.html#数据连接" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在实践中，信息往往被存在不同的表格当中，这就要求我们把不同的表格连接起来。表格之间的连接运算可以分为内连接（反连接）、左连接（右连接）和全连接。</p>
+<div id="表格的主键" class="section level4 hasAnchor" number="5.5.4.1">
+<h4><span class="header-section-number">5.5.4.1</span> 表格的主键<a href="manipulate.html#表格的主键" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>连接运算依赖一个重要的概念，主键（primary key），即表格中不重复的列。理论上，任何表格都应该确定其主键，主键可以是一列也可以是多列的组合。可以使用count函数确定主键。</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="manipulate.html#cb33-1" tabindex="-1"></a>stdnt <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="manipulate.html#cb33-2" tabindex="-1"></a>  <span class="fu">count</span>(ID) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-3"><a href="manipulate.html#cb33-3" tabindex="-1"></a>  <span class="fu">filter</span>(n<span class="sc">&gt;</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-4"><a href="manipulate.html#cb33-4" tabindex="-1"></a>  <span class="fu">nrow</span>()</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+</div>
+<div id="内连接-inner_join" class="section level4 hasAnchor" number="5.5.4.2">
+<h4><span class="header-section-number">5.5.4.2</span> 内连接 （inner_join）<a href="manipulate.html#内连接-inner_join" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>内连接仅仅匹配两个表之间的键可以匹配的结果。<code>dplyr</code>提供了<code>inner_join</code>函数来实现内连接，<code>by</code>参数用于指定两边表格的键。例如，</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="manipulate.html#cb35-1" tabindex="-1"></a><span class="fu">inner_join</span>(score, stdnt_1, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span></code></pre></div>
+<pre><code>##   ID hw1 hw2 hw3 final name age gender
+## 1  1  90  95  80    83 张三  23      M
+## 2  2  87   0   0    60 李四  24      M
+## 3  3  99  88  90    88 王二  22      F
+## 4  4  80  98  85    90 赵五  23      M</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="manipulate.html#cb37-1" tabindex="-1"></a><span class="co"># 等价于</span></span>
+<span id="cb37-2"><a href="manipulate.html#cb37-2" tabindex="-1"></a>score <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(stdnt_1, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span></code></pre></div>
+<pre><code>##   ID hw1 hw2 hw3 final name age gender
+## 1  1  90  95  80    83 张三  23      M
+## 2  2  87   0   0    60 李四  24      M
+## 3  3  99  88  90    88 王二  22      F
+## 4  4  80  98  85    90 赵五  23      M</code></pre>
+<p>为了保障研究设计执行的严谨性，可以设置参数为<code>multiple = "error"</code>，此时当两表一对多链接关系时，<code>inner_join</code>会报错。</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="manipulate.html#cb39-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(stdnt_panel, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>, <span class="at">multiple =</span> <span class="st">&quot;error&quot;</span>)</span></code></pre></div>
+<p><code>multiple</code>参数的缺省值为<code>all</code>，即程序正常运行，默认为一对多匹配。<code>multiple</code>参数还可以取值为<code>any</code>，<code>first</code>，<code>last</code>分别表示从多个匹配中选取任意或者第一个或者最后一个值来匹配。我们不推荐这样的参数设置，会让计算结果不可控。</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="manipulate.html#cb40-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(stdnt_panel, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span></code></pre></div>
+<pre><code>##    ID hw1 hw2 hw3 final name age gender year
+## 1   1  90  95  80    83 张三  23      M 1998
+## 2   1  90  95  80    83 张三  23      M 1999
+## 3   1  90  95  80    83 张三  23      M 2000
+## 4   2  87   0   0    60 李四  24      M 1998
+## 5   2  87   0   0    60 李四  24      M 1999
+## 6   2  87   0   0    60 李四  24      M 2000
+## 7   3  99  88  90    88 王二  22      F 1998
+## 8   3  99  88  90    88 王二  22      F 1999
+## 9   3  99  88  90    88 王二  22      F 2000
+## 10  4  80  98  85    90 赵五  23      M 1998
+## 11  4  80  98  85    90 赵五  23      M 1999
+## 12  4  80  98  85    90 赵五  23      M 2000
+## 13  5 100  98  95    94 刘六  21      F 1998
+## 14  5 100  98  95    94 刘六  21      F 1999
+## 15  5 100  98  95    94 刘六  21      F 2000</code></pre>
+<p>反过来，如果左表与右表是多对一的关系，设置参数<code>multiple = "error"</code>时，也不会报错。</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="manipulate.html#cb42-1" tabindex="-1"></a>stdnt_panel <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(score, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>,<span class="at">multiple =</span> <span class="st">&quot;error&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Specifying `multiple = &quot;error&quot;` was deprecated in dplyr 1.1.1.
+## ℹ Please use `relationship = &quot;many-to-one&quot;` instead.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<pre><code>## # A tibble: 15 × 9
+##       ID name    age gender  year   hw1   hw2   hw3 final
+##    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1     1 张三     23 M       1998    90    95    80    83
+##  2     1 张三     23 M       1999    90    95    80    83
+##  3     1 张三     23 M       2000    90    95    80    83
+##  4     2 李四     24 M       1998    87     0     0    60
+##  5     2 李四     24 M       1999    87     0     0    60
+##  6     2 李四     24 M       2000    87     0     0    60
+##  7     3 王二     22 F       1998    99    88    90    88
+##  8     3 王二     22 F       1999    99    88    90    88
+##  9     3 王二     22 F       2000    99    88    90    88
+## 10     4 赵五     23 M       1998    80    98    85    90
+## 11     4 赵五     23 M       1999    80    98    85    90
+## 12     4 赵五     23 M       2000    80    98    85    90
+## 13     5 刘六     21 F       1998   100    98    95    94
+## 14     5 刘六     21 F       1999   100    98    95    94
+## 15     5 刘六     21 F       2000   100    98    95    94</code></pre>
+<p>反连接是内连接的反向操作，即只保留第一个表格中无法匹配第二个表格的结果。</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="manipulate.html#cb45-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> <span class="fu">anti_join</span>(stdnt_1, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span></code></pre></div>
+<pre><code>##   ID hw1 hw2 hw3 final
+## 1  5 100  98  95    94</code></pre>
+<p>注意，内连接是对称运算，而反连接是非对称运算。</p>
+</div>
+<div id="左连接left_join右连接right_join与全连接full_join" class="section level4 hasAnchor" number="5.5.4.3">
+<h4><span class="header-section-number">5.5.4.3</span> 左连接（left_join）、右连接（right_join）与全连接（full_join）<a href="manipulate.html#左连接left_join右连接right_join与全连接full_join" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>左连接是内连接的扩展运算，无论是否key匹配，左表的所有观测都会保留，并将缺失变量（下面的例子中是<code>name</code>、<code>age</code>、<code>gender</code>）填充为<code>NA</code>，左连接也是非对称运算。</p>
+<p>当两边的变量名字不同时，可以使用<code>by=c("左名"="右名")</code>的格式指定key的对应关系。</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="manipulate.html#cb47-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(stdnt_1, <span class="at">by =</span> <span class="st">&quot;ID&quot;</span>)</span></code></pre></div>
+<pre><code>##   ID hw1 hw2 hw3 final name age gender
+## 1  1  90  95  80    83 张三  23      M
+## 2  2  87   0   0    60 李四  24      M
+## 3  3  99  88  90    88 王二  22      F
+## 4  4  80  98  85    90 赵五  23      M
+## 5  5 100  98  95    94 &lt;NA&gt;  NA   &lt;NA&gt;</code></pre>
+<p><code>dplyr</code>还提供了<code>right_join</code>函数来保留右表中所有的观测。在实践中，左连接就足够满足所有的需求了。</p>
+<p><code>full_join</code>可以保留左右两表的所有观测。<code>semi_join</code>类似于<code>inner_join</code>但是只保留左表的变量，实质上是一个筛选函数。</p>
+<p><strong>课堂练习</strong></p>
+<ol style="list-style-type: decimal">
+<li>使用连接函数，完成上一个练习的第2题与第3题</li>
+</ol>
+</div>
+</div>
+<div id="数据分组与汇总" class="section level3 hasAnchor" number="5.5.5">
+<h3><span class="header-section-number">5.5.5</span> 数据分组与汇总<a href="manipulate.html#数据分组与汇总" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>可以使用<code>group_by</code>函数来对数据进行分组，<code>group_by</code>可以指定一个或多个变量作为分组依据。<code>ungroup</code>函数可以去除数据的分组。</p>
+<p>本节的案例使用科学家的论文数据，<a href="https://www.dropbox.com/t/iEGB5Ow4j7GkpeM3">scientst_pub.csv</a>。</p>
+<div id="分组后生成新变量" class="section level4 hasAnchor" number="5.5.5.1">
+<h4><span class="header-section-number">5.5.5.1</span> 分组后生成新变量<a href="manipulate.html#分组后生成新变量" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>数据分组后使用mutate生成新变量时，变量在每一组内进行计算赋值，不改变行数。搭配各种窗口函数可以实现多种目的。</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="manipulate.html#cb49-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb49-2"><a href="manipulate.html#cb49-2" tabindex="-1"></a>paper <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;scientist_pub.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 2535 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (7): uniqueID, addr, item_type, wos, fullname, surname, givenname
+## dbl (6): ut_char, pub_year, type, startyear, endyear, auseq
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="manipulate.html#cb51-1" tabindex="-1"></a>paper <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(uniqueID) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">num_pub =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 2,535 × 14
+## # Groups:   uniqueID [10]
+##    ut_char uniqueID addr  item_type pub_year  type startyear endyear wos   auseq
+##      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1 2.08e11 1_91     natl… Meeting …     2009     2      2006    2010 natl…     5
+##  2 2.08e11 1_91     natl… Meeting …     2009     1      2006    2010 natl…     1
+##  3 2.08e11 1_449    univ… Meeting …     2010     1      2006    2009 univ…     2
+##  4 2.08e11 1_449    univ… Meeting …     2010     1      2006    2009 univ…     4
+##  5 2.09e11 1_449    univ… Meeting …     2012     1      2006    2009 univ…     7
+##  6 2.09e11 1_449    univ… Meeting …     2012     1      2006    2009 univ…     3
+##  7 2.52e11 1_91     natl… Article       2008     1      2006    2010 natl…     1
+##  8 2.53e11 0_51     univ… Article       2008     1      2006    2015 univ…     2
+##  9 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## 10 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## # ℹ 2,525 more rows
+## # ℹ 4 more variables: fullname &lt;chr&gt;, surname &lt;chr&gt;, givenname &lt;chr&gt;,
+## #   num_pub &lt;int&gt;</code></pre>
+</div>
+<div id="分组后汇总" class="section level4 hasAnchor" number="5.5.5.2">
+<h4><span class="header-section-number">5.5.5.2</span> 分组后汇总<a href="manipulate.html#分组后汇总" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>大部分情况下，<code>group_by</code>与<code>summarise</code>联合用于数据汇总。例如，下列代码可以用于计算科学家每年每种类型的论文数量。</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="manipulate.html#cb53-1" tabindex="-1"></a>paper <span class="sc">%&gt;%</span> </span>
+<span id="cb53-2"><a href="manipulate.html#cb53-2" tabindex="-1"></a>  <span class="fu">group_by</span>(uniqueID,pub_year,item_type) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-3"><a href="manipulate.html#cb53-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_pub =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;uniqueID&#39;, &#39;pub_year&#39;. You can override
+## using the `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 205 × 4
+## # Groups:   uniqueID, pub_year [140]
+##    uniqueID pub_year item_type        num_pub
+##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;              &lt;int&gt;
+##  1 0_117        2006 Article                6
+##  2 0_117        2006 Meeting Abstract       2
+##  3 0_117        2007 Article                8
+##  4 0_117        2008 Article                4
+##  5 0_117        2008 Review                 4
+##  6 0_117        2009 Article                8
+##  7 0_117        2010 Article                4
+##  8 0_117        2010 Review                 4
+##  9 0_117        2011 Article                4
+## 10 0_117        2012 Article               18
+## # ℹ 195 more rows</code></pre>
+<p>常见的汇总函数总结如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>min</code>、<code>max</code></td>
+<td>最小、最大值</td>
+</tr>
+<tr class="even">
+<td><code>mean</code>、 <code>median</code></td>
+<td>均值与中位数</td>
+</tr>
+<tr class="odd">
+<td><code>var</code>、<code>sd</code></td>
+<td>方差、标准差</td>
+</tr>
+<tr class="even">
+<td><code>sum</code></td>
+<td>向量求和</td>
+</tr>
+<tr class="odd">
+<td><code>first</code></td>
+<td>向量的第一个值</td>
+</tr>
+<tr class="even">
+<td><code>last</code></td>
+<td>向量的最后一个值</td>
+</tr>
+<tr class="odd">
+<td><code>nth</code></td>
+<td>向量的第n个值</td>
+</tr>
+<tr class="even">
+<td><code>n</code></td>
+<td>行数</td>
+</tr>
+<tr class="odd">
+<td><code>n_distinct</code></td>
+<td>去重后的行数</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="宽数据与长数据的转换" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> 宽数据与长数据的转换<a href="manipulate.html#宽数据与长数据的转换" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>前面计算课程总分数的案例中，我们使用了一个宽数据，即不同变量被储存在不同的列中，宽数据的优势是与人类的阅读和熟悉习惯是一致，方便原始数据记录与采集，适合结果展示。但是并不适合进一步的数据分析，设想如果有十次平时作业的话，计算总成绩的代码会非常冗长。</p>
+<p><code>tidyr</code>新设计了<code>pivot_longer</code>和<code>pivot_wider</code>函数，代替之前的<code>gather</code>和<code>spread</code>函数，来实现长宽数据转换。新设计的函数语法更加直观，功能更全，是长宽数据转换的最佳工具。</p>
+<div id="宽数据转长数据" class="section level3 hasAnchor" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> 宽数据转长数据<a href="manipulate.html#宽数据转长数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>宽数据转长数据的最简单情形是，每一行是一个观测，但是同一变量储存在不同列中。</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="manipulate.html#cb56-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="manipulate.html#cb56-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> hw1<span class="sc">:</span>final,</span>
+<span id="cb56-3"><a href="manipulate.html#cb56-3" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;test&quot;</span>,</span>
+<span id="cb56-4"><a href="manipulate.html#cb56-4" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 3
+##       ID test  score
+##    &lt;int&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1     1 hw1      90
+##  2     1 hw2      95
+##  3     1 hw3      80
+##  4     1 final    83
+##  5     2 hw1      87
+##  6     2 hw2       0
+##  7     2 hw3       0
+##  8     2 final    60
+##  9     3 hw1      99
+## 10     3 hw2      88
+## 11     3 hw3      90
+## 12     3 final    88
+## 13     4 hw1      80
+## 14     4 hw2      98
+## 15     4 hw3      85
+## 16     4 final    90
+## 17     5 hw1     100
+## 18     5 hw2      98
+## 19     5 hw3      95
+## 20     5 final    94</code></pre>
+<p>在上面的例子中，<code>cols</code>参数用于指定转换的变量，其用法与<code>select</code>函数中指定变量的方式相同；<code>names_to</code>参数用于指定一个新变量名（缺省值为<code>name</code>），储存宽数据中的列标题；<code>values_to</code>用于指定另一个新变量名（缺省值为<code>value</code>），储存宽数据中的变量取值；如果转换结果中不希望保留<code>NA</code>，可以设置参数<code>values_drop_na=TRUE</code>。</p>
+<p>在这个例子中，平时作业成绩与期末作业成绩，也可以看做是两个不同的变量，此时只用将<code>hw</code>对应的变量转化为长数据。</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="manipulate.html#cb58-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> </span>
+<span id="cb58-2"><a href="manipulate.html#cb58-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;hw&quot;</span>),</span>
+<span id="cb58-3"><a href="manipulate.html#cb58-3" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;homework&quot;</span>,</span>
+<span id="cb58-4"><a href="manipulate.html#cb58-4" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 15 × 4
+##       ID final homework score
+##    &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+##  1     1    83 hw1         90
+##  2     1    83 hw2         95
+##  3     1    83 hw3         80
+##  4     2    60 hw1         87
+##  5     2    60 hw2          0
+##  6     2    60 hw3          0
+##  7     3    88 hw1         99
+##  8     3    88 hw2         88
+##  9     3    88 hw3         90
+## 10     4    90 hw1         80
+## 11     4    90 hw2         98
+## 12     4    90 hw3         85
+## 13     5    94 hw1        100
+## 14     5    94 hw2         98
+## 15     5    94 hw3         95</code></pre>
+<p>我们可以直接提取homework中的数字作为变量取值，参数<code>names_prefix</code>指定了变量名称的前缀，在提取取值时会被忽略，<code>names_transform</code>定义了数值类型的转换函数。</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="manipulate.html#cb60-1" tabindex="-1"></a>score <span class="sc">%&gt;%</span> </span>
+<span id="cb60-2"><a href="manipulate.html#cb60-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;hw&quot;</span>),</span>
+<span id="cb60-3"><a href="manipulate.html#cb60-3" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;homework&quot;</span>,</span>
+<span id="cb60-4"><a href="manipulate.html#cb60-4" tabindex="-1"></a>               <span class="at">names_prefix =</span> <span class="st">&quot;hw&quot;</span>,</span>
+<span id="cb60-5"><a href="manipulate.html#cb60-5" tabindex="-1"></a>               <span class="at">names_transform =</span>as.integer,</span>
+<span id="cb60-6"><a href="manipulate.html#cb60-6" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 15 × 4
+##       ID final homework score
+##    &lt;int&gt; &lt;dbl&gt;    &lt;int&gt; &lt;dbl&gt;
+##  1     1    83        1    90
+##  2     1    83        2    95
+##  3     1    83        3    80
+##  4     2    60        1    87
+##  5     2    60        2     0
+##  6     2    60        3     0
+##  7     3    88        1    99
+##  8     3    88        2    88
+##  9     3    88        3    90
+## 10     4    90        1    80
+## 11     4    90        2    98
+## 12     4    90        3    85
+## 13     5    94        1   100
+## 14     5    94        2    98
+## 15     5    94        3    95</code></pre>
+<p>更加复杂的情形是，宽数据中的一行中包括了多个观测值。我们使用官方教程中的例子来介绍，</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="manipulate.html#cb62-1" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb62-2"><a href="manipulate.html#cb62-2" tabindex="-1"></a>household</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 5
+##   family dob_child1 dob_child2 name_child1 name_child2
+##    &lt;int&gt; &lt;date&gt;     &lt;date&gt;     &lt;chr&gt;       &lt;chr&gt;      
+## 1      1 1998-11-26 2000-01-29 Susan       Jose       
+## 2      2 1996-06-22 NA         Mark        &lt;NA&gt;       
+## 3      3 2002-07-11 2004-04-05 Sam         Seth       
+## 4      4 2004-10-10 2009-08-27 Craig       Khai       
+## 5      5 2000-12-05 2005-02-28 Parker      Gracie</code></pre>
+<p>数据<code>household</code>中，每一行是包括了一个家庭的两个孩子的出生日期和名字，如果以孩子作为观测单位，则该数据中的每一样行包括了多个观测值。可以使用下面的方式来将两个观测值拆开。</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="manipulate.html#cb64-1" tabindex="-1"></a>household <span class="sc">%&gt;%</span> </span>
+<span id="cb64-2"><a href="manipulate.html#cb64-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb64-3"><a href="manipulate.html#cb64-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">!</span>family, </span>
+<span id="cb64-4"><a href="manipulate.html#cb64-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;.value&quot;</span>, <span class="st">&quot;child&quot;</span>), </span>
+<span id="cb64-5"><a href="manipulate.html#cb64-5" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>, </span>
+<span id="cb64-6"><a href="manipulate.html#cb64-6" tabindex="-1"></a>    <span class="at">values_drop_na =</span> <span class="cn">TRUE</span></span>
+<span id="cb64-7"><a href="manipulate.html#cb64-7" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 9 × 4
+##   family child  dob        name  
+##    &lt;int&gt; &lt;chr&gt;  &lt;date&gt;     &lt;chr&gt; 
+## 1      1 child1 1998-11-26 Susan 
+## 2      1 child2 2000-01-29 Jose  
+## 3      2 child1 1996-06-22 Mark  
+## 4      3 child1 2002-07-11 Sam   
+## 5      3 child2 2004-04-05 Seth  
+## 6      4 child1 2004-10-10 Craig 
+## 7      4 child2 2009-08-27 Khai  
+## 8      5 child1 2000-12-05 Parker
+## 9      5 child2 2005-02-28 Gracie</code></pre>
+<p>上述代码中，<code>.value</code>表示将从变量名称中取出的值作为新数据值的变量名，<code>names_sep</code>表示分隔符，联合起来看，<code>dob_child1</code>会被拆分成为<code>dob</code>和<code>child1</code>，其中<code>dob</code>会被储存成新的变量名，而<code>child1</code>作为取值存入变量<code>child</code>。同时，无需指定<code>values_to</code>参数。</p>
+<p><strong>课堂练习</strong></p>
+<p>科学家简历上数据的变形</p>
+</div>
+<div id="长数据转宽数据" class="section level3 hasAnchor" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> 长数据转宽数据<a href="manipulate.html#长数据转宽数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在需要生成描述性统计表或者直观地展示数据时，往往需要将长数据转变为宽数据。<code>pivot_wider</code>函数，作为<code>pivot_longer</code>的反函数，可以实现此功能。</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="manipulate.html#cb66-1" tabindex="-1"></a>score_long <span class="ot">&lt;-</span> score <span class="sc">%&gt;%</span> </span>
+<span id="cb66-2"><a href="manipulate.html#cb66-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>ID,</span>
+<span id="cb66-3"><a href="manipulate.html#cb66-3" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;test&quot;</span>,</span>
+<span id="cb66-4"><a href="manipulate.html#cb66-4" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;score&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb66-5"><a href="manipulate.html#cb66-5" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">2</span>)</span>
+<span id="cb66-6"><a href="manipulate.html#cb66-6" tabindex="-1"></a></span>
+<span id="cb66-7"><a href="manipulate.html#cb66-7" tabindex="-1"></a>score_long <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> test,</span>
+<span id="cb66-8"><a href="manipulate.html#cb66-8" tabindex="-1"></a>                           <span class="at">values_from =</span> score,</span>
+<span id="cb66-9"><a href="manipulate.html#cb66-9" tabindex="-1"></a>                           <span class="at">values_fill =</span> <span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 5
+##      ID   hw1   hw3 final   hw2
+##   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    90    80    83     0
+## 2     2    87     0    60     0
+## 3     3    99    90    88    88
+## 4     4    80    85    90    98
+## 5     5   100    95    94    98</code></pre>
+<p>此处我们只介绍了<code>pivot</code>函数的基本用法。函数的设计者结合实际应用情形（对应了问卷设计里面的情形），为其赋予了众多妙用，调用<code>vignette("pivot")</code>可以看到，强烈推荐读者阅读。</p>
+<p>我们从中选择一个常用的情形做介绍。</p>
+</div>
+<div id="联系人数据表的案例" class="section level3 hasAnchor" number="5.6.3">
+<h3><span class="header-section-number">5.6.3</span> 联系人数据表的案例<a href="manipulate.html#联系人数据表的案例" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>使用<code>tribble</code>函数生成一个联系人表格，这个表格的挑战在于没有一个联系人的ID，但是我们人类知道相邻行表示的是同一个联系人的信息。此处的思路是配合使用<code>mutate</code>和<code>cumsum</code>函数，先生成ID，然后转变为宽数据。</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="manipulate.html#cb68-1" tabindex="-1"></a>contacts <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb68-2"><a href="manipulate.html#cb68-2" tabindex="-1"></a>  <span class="sc">~</span>field, <span class="sc">~</span>value,</span>
+<span id="cb68-3"><a href="manipulate.html#cb68-3" tabindex="-1"></a>  <span class="st">&quot;name&quot;</span>, <span class="st">&quot;Jiena McLellan&quot;</span>,</span>
+<span id="cb68-4"><a href="manipulate.html#cb68-4" tabindex="-1"></a>  <span class="st">&quot;company&quot;</span>, <span class="st">&quot;Toyota&quot;</span>, </span>
+<span id="cb68-5"><a href="manipulate.html#cb68-5" tabindex="-1"></a>  <span class="st">&quot;name&quot;</span>, <span class="st">&quot;John Smith&quot;</span>, </span>
+<span id="cb68-6"><a href="manipulate.html#cb68-6" tabindex="-1"></a>  <span class="st">&quot;company&quot;</span>, <span class="st">&quot;google&quot;</span>, </span>
+<span id="cb68-7"><a href="manipulate.html#cb68-7" tabindex="-1"></a>  <span class="st">&quot;email&quot;</span>, <span class="st">&quot;john@google.com&quot;</span>,</span>
+<span id="cb68-8"><a href="manipulate.html#cb68-8" tabindex="-1"></a>  <span class="st">&quot;name&quot;</span>, <span class="st">&quot;Huxley Ratcliffe&quot;</span></span>
+<span id="cb68-9"><a href="manipulate.html#cb68-9" tabindex="-1"></a>)</span>
+<span id="cb68-10"><a href="manipulate.html#cb68-10" tabindex="-1"></a>contacts <span class="ot">&lt;-</span> contacts <span class="sc">%&gt;%</span> </span>
+<span id="cb68-11"><a href="manipulate.html#cb68-11" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb68-12"><a href="manipulate.html#cb68-12" tabindex="-1"></a>    <span class="at">person_id =</span> <span class="fu">cumsum</span>(field <span class="sc">==</span> <span class="st">&quot;name&quot;</span>)</span>
+<span id="cb68-13"><a href="manipulate.html#cb68-13" tabindex="-1"></a>  )</span>
+<span id="cb68-14"><a href="manipulate.html#cb68-14" tabindex="-1"></a>contacts <span class="sc">%&gt;%</span> </span>
+<span id="cb68-15"><a href="manipulate.html#cb68-15" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb68-16"><a href="manipulate.html#cb68-16" tabindex="-1"></a>    <span class="at">names_from =</span> field, </span>
+<span id="cb68-17"><a href="manipulate.html#cb68-17" tabindex="-1"></a>    <span class="at">values_from =</span> value</span>
+<span id="cb68-18"><a href="manipulate.html#cb68-18" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 4
+##   person_id name             company email          
+##       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;   &lt;chr&gt;          
+## 1         1 Jiena McLellan   Toyota  &lt;NA&gt;           
+## 2         2 John Smith       google  john@google.com
+## 3         3 Huxley Ratcliffe &lt;NA&gt;    &lt;NA&gt;</code></pre>
+<p><strong>课堂练习</strong></p>
+<p>科学家的cv的长数据转变为宽数据</p>
+</div>
+</div>
+<div id="其他定制操作" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> 其他定制操作<a href="manipulate.html#其他定制操作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="排序" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> 排序<a href="manipulate.html#排序" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>arrange</code>函数用于变量的顺序排列，联合<code>desc</code>可用于逆序排列。</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="manipulate.html#cb70-1" tabindex="-1"></a>paper <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(uniqueID, <span class="fu">desc</span>(pub_year))</span></code></pre></div>
+<pre><code>## # A tibble: 2,535 × 13
+##    ut_char uniqueID addr  item_type pub_year  type startyear endyear wos   auseq
+##      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  2 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  3 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  4 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  5 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  6 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  7 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  8 5.05e11 0_117    univ… Article       2020     1      2004    2021 univ…     6
+##  9 5.24e11 0_117    univ… Article       2020     1      2004    2021 univ…    10
+## 10 5.24e11 0_117    univ… Article       2020     1      2004    2021 univ…    10
+## # ℹ 2,525 more rows
+## # ℹ 3 more variables: fullname &lt;chr&gt;, surname &lt;chr&gt;, givenname &lt;chr&gt;</code></pre>
+</div>
+<div id="抽样" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> 抽样<a href="manipulate.html#抽样" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>sample_n</code>函数可以从数据框中随机无放回抽样</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="manipulate.html#cb72-1" tabindex="-1"></a>paper <span class="sc">%&gt;%</span> <span class="fu">sample</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 2,535 × 10
+##    surname addr      uniqueID endyear pub_year ut_char wos   givenname item_type
+##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;    
+##  1 JIN     natl ins… 1_91        2010     2009 2.08e11 natl… C         Meeting …
+##  2 JIN     natl ins… 1_91        2010     2009 2.08e11 natl… CHUANHONG Meeting …
+##  3 ZHANG   univ cal… 1_449       2009     2010 2.08e11 univ… JUN       Meeting …
+##  4 ZHANG   univ cal… 1_449       2009     2010 2.08e11 univ… JUN       Meeting …
+##  5 ZHANG   univ cal… 1_449       2009     2012 2.09e11 univ… JUN       Meeting …
+##  6 ZHANG   univ cal… 1_449       2009     2012 2.09e11 univ… JUN       Meeting …
+##  7 JIN     natl ins… 1_91        2010     2008 2.52e11 natl… CHUANHONG Article  
+##  8 LU      univ vir… 0_51        2015     2008 2.53e11 univ… JIWEI     Article  
+##  9 JIN     peking u… 1_91        2006     2008 2.53e11 peki… CHUANHONG Article  
+## 10 JIN     peking u… 1_91        2006     2008 2.53e11 peki… CHUANHONG Article  
+## # ℹ 2,525 more rows
+## # ℹ 1 more variable: fullname &lt;chr&gt;</code></pre>
+</div>
+<div id="去重复" class="section level3 hasAnchor" number="5.7.3">
+<h3><span class="header-section-number">5.7.3</span> 去重复<a href="manipulate.html#去重复" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>distinct</code>函数返回变量的去重结果，如果希望保留数据框中其它变量， 可以加选项<code>.keep_all=TRUE</code>。</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="manipulate.html#cb74-1" tabindex="-1"></a>paper <span class="sc">%&gt;%</span> <span class="fu">select</span>(uniqueID) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 10 × 1
+##    uniqueID
+##    &lt;chr&gt;   
+##  1 1_91    
+##  2 1_449   
+##  3 0_51    
+##  4 1_148   
+##  5 1_226   
+##  6 0_394   
+##  7 0_117   
+##  8 1_532   
+##  9 1_587   
+## 10 0_496</code></pre>
+</div>
+<div id="缺失值处理" class="section level3 hasAnchor" number="5.7.4">
+<h3><span class="header-section-number">5.7.4</span> 缺失值处理<a href="manipulate.html#缺失值处理" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>drop_na</code>函数用于删除指定变量有缺失值的行。</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="manipulate.html#cb76-1" tabindex="-1"></a>paper <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>(wos)</span></code></pre></div>
+<pre><code>## # A tibble: 2,535 × 13
+##    ut_char uniqueID addr  item_type pub_year  type startyear endyear wos   auseq
+##      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1 2.08e11 1_91     natl… Meeting …     2009     2      2006    2010 natl…     5
+##  2 2.08e11 1_91     natl… Meeting …     2009     1      2006    2010 natl…     1
+##  3 2.08e11 1_449    univ… Meeting …     2010     1      2006    2009 univ…     2
+##  4 2.08e11 1_449    univ… Meeting …     2010     1      2006    2009 univ…     4
+##  5 2.09e11 1_449    univ… Meeting …     2012     1      2006    2009 univ…     7
+##  6 2.09e11 1_449    univ… Meeting …     2012     1      2006    2009 univ…     3
+##  7 2.52e11 1_91     natl… Article       2008     1      2006    2010 natl…     1
+##  8 2.53e11 0_51     univ… Article       2008     1      2006    2015 univ…     2
+##  9 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## 10 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## # ℹ 2,525 more rows
+## # ℹ 3 more variables: fullname &lt;chr&gt;, surname &lt;chr&gt;, givenname &lt;chr&gt;</code></pre>
+<p><code>fill</code>函数用于按行填充缺失值</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="manipulate.html#cb78-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="cn">NA</span>,<span class="dv">3</span>),</span>
+<span id="cb78-2"><a href="manipulate.html#cb78-2" tabindex="-1"></a>                 <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">90</span>,<span class="dv">87</span>,<span class="dv">99</span>,<span class="dv">80</span>,<span class="dv">100</span>,<span class="dv">92</span>),</span>
+<span id="cb78-3"><a href="manipulate.html#cb78-3" tabindex="-1"></a>                 <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2021</span>,<span class="dv">2022</span>,<span class="dv">2023</span>,<span class="dv">2022</span>,<span class="dv">2023</span>,<span class="dv">2023</span>))</span>
+<span id="cb78-4"><a href="manipulate.html#cb78-4" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">fill</span>(ID)</span></code></pre></div>
+<pre><code>##   ID score year
+## 1  1    90 2021
+## 2  1    87 2022
+## 3  1    99 2023
+## 4  2    80 2022
+## 5  2   100 2023
+## 6  3    92 2023</code></pre>
+<p><code>coalesce</code>函数可以用于<code>NA</code>值的赋值，<code>na_if</code>函数是它的反函数。</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="manipulate.html#cb80-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ID =</span> <span class="fu">coalesce</span>(ID,<span class="dv">0</span>),<span class="at">IDnew =</span> <span class="fu">na_if</span>(ID,<span class="dv">0</span>))</span></code></pre></div>
+<pre><code>##   ID score year IDnew
+## 1  1    90 2021     1
+## 2  0    87 2022    NA
+## 3  0    99 2023    NA
+## 4  2    80 2022     2
+## 5  0   100 2023    NA
+## 6  3    92 2023     3</code></pre>
+</div>
+<div id="拆分与合并数据列" class="section level3 hasAnchor" number="5.7.5">
+<h3><span class="header-section-number">5.7.5</span> 拆分与合并数据列<a href="manipulate.html#拆分与合并数据列" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>seperate</code>函数可以利用分隔符将列拆分为各自的变量列。<code>unite</code>函数是它的反函数</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="manipulate.html#cb82-1" tabindex="-1"></a>df_sep <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(</span>
+<span id="cb82-2"><a href="manipulate.html#cb82-2" tabindex="-1"></a><span class="st">&quot;testid, succ/total</span></span>
+<span id="cb82-3"><a href="manipulate.html#cb82-3" tabindex="-1"></a><span class="st">1, 1/10</span></span>
+<span id="cb82-4"><a href="manipulate.html#cb82-4" tabindex="-1"></a><span class="st">2, 3/5</span></span>
+<span id="cb82-5"><a href="manipulate.html#cb82-5" tabindex="-1"></a><span class="st">3, 2/8&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 3 Columns: 2
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (1): succ/total
+## dbl (1): testid
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="manipulate.html#cb84-1" tabindex="-1"></a>df_sep <span class="sc">%&gt;%</span> </span>
+<span id="cb84-2"><a href="manipulate.html#cb84-2" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb84-3"><a href="manipulate.html#cb84-3" tabindex="-1"></a>    <span class="st">`</span><span class="at">succ/total</span><span class="st">`</span>, </span>
+<span id="cb84-4"><a href="manipulate.html#cb84-4" tabindex="-1"></a>    <span class="at">into=</span><span class="fu">c</span>(<span class="st">&quot;succ&quot;</span>, <span class="st">&quot;total&quot;</span>), </span>
+<span id="cb84-5"><a href="manipulate.html#cb84-5" tabindex="-1"></a>    <span class="at">sep=</span><span class="st">&quot;/&quot;</span>, </span>
+<span id="cb84-6"><a href="manipulate.html#cb84-6" tabindex="-1"></a>    <span class="at">convert=</span><span class="cn">TRUE</span>) </span></code></pre></div>
+<pre><code>## # A tibble: 3 × 3
+##   testid  succ total
+##    &lt;dbl&gt; &lt;int&gt; &lt;int&gt;
+## 1      1     1    10
+## 2      2     3     5
+## 3      3     2     8</code></pre>
+</div>
+<div id="合并数据" class="section level3 hasAnchor" number="5.7.6">
+<h3><span class="header-section-number">5.7.6</span> 合并数据<a href="manipulate.html#合并数据" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>bind_rows</code>函数可以对两个或多个数据框纵向合并。要求变量集合是相同的，但变量次序可以不同，这一点比<code>rbind</code>函数方便。<code>bind_rows</code>函数可以将两个行数相同的数据框按行号对齐合并。</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="manipulate.html#cb86-1" tabindex="-1"></a>paper1 <span class="ot">&lt;-</span> paper <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb86-2"><a href="manipulate.html#cb86-2" tabindex="-1"></a>paper2 <span class="ot">&lt;-</span> paper <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">11</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb86-3"><a href="manipulate.html#cb86-3" tabindex="-1"></a>paper1 <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>(paper2)</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 13
+##    ut_char uniqueID addr  item_type pub_year  type startyear endyear wos   auseq
+##      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1 2.08e11 1_91     natl… Meeting …     2009     2      2006    2010 natl…     5
+##  2 2.08e11 1_91     natl… Meeting …     2009     1      2006    2010 natl…     1
+##  3 2.08e11 1_449    univ… Meeting …     2010     1      2006    2009 univ…     2
+##  4 2.08e11 1_449    univ… Meeting …     2010     1      2006    2009 univ…     4
+##  5 2.09e11 1_449    univ… Meeting …     2012     1      2006    2009 univ…     7
+##  6 2.09e11 1_449    univ… Meeting …     2012     1      2006    2009 univ…     3
+##  7 2.52e11 1_91     natl… Article       2008     1      2006    2010 natl…     1
+##  8 2.53e11 0_51     univ… Article       2008     1      2006    2015 univ…     2
+##  9 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## 10 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## 11 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## 12 2.53e11 1_91     peki… Article       2008     1      2006    2006 peki…     3
+## 13 2.53e11 0_51     univ… Article       2008     1      2006    2015 univ…     2
+## 14 2.53e11 1_148    univ… Article       2008     1      2005    2008 univ…     2
+## 15 2.53e11 1_148    univ… Article       2008     1      2005    2008 univ…     2
+## 16 2.53e11 1_91     peki… Article       2008     2      2006    2006 peki…     4
+## 17 2.53e11 1_91     peki… Article       2008     2      2006    2006 peki…     4
+## 18 2.53e11 1_91     peki… Article       2008     2      2006    2006 peki…     4
+## 19 2.53e11 1_91     peki… Article       2008     2      2006    2006 peki…     4
+## 20 2.53e11 1_226    univ… Article       2008     1      2001    2007 univ…     1
+## # ℹ 3 more variables: fullname &lt;chr&gt;, surname &lt;chr&gt;, givenname &lt;chr&gt;</code></pre>
+<p><strong>课堂练习题</strong></p>
+<p>计算科学家每年发表的论文之后，对该数据滞后一年。</p>
+</div>
+</div>
+<div id="数据库的连接" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> 数据库的连接<a href="manipulate.html#数据库的连接" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="data.table" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> data.table<a href="manipulate.html#data.table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -530,7 +1534,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/yihui/bookdown-chinese/edit/master/06-data_manipulation.Rmd",
+"link": "https://github.com/yihui/bookdown-chinese/edit/master/05-data_manipulation.Rmd",
 "text": "编辑"
 },
 "history": {
