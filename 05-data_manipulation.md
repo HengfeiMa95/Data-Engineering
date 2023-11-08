@@ -979,20 +979,20 @@ paper %>% sample(10)
 
 ```
 ## # A tibble: 2,535 × 10
-##      ut_char startyear givenname surname item_type addr  wos   fullname pub_year
-##        <dbl>     <dbl> <chr>     <chr>   <chr>     <chr> <chr> <chr>       <dbl>
-##  1   2.08e11      2006 C         JIN     Meeting … natl… natl… jinc         2009
-##  2   2.08e11      2006 CHUANHONG JIN     Meeting … natl… natl… jinchua…     2009
-##  3   2.08e11      2006 JUN       ZHANG   Meeting … univ… univ… zhangjun     2010
-##  4   2.08e11      2006 JUN       ZHANG   Meeting … univ… univ… zhangjun     2010
-##  5   2.09e11      2006 JUN       ZHANG   Meeting … univ… univ… zhangjun     2012
-##  6   2.09e11      2006 JUN       ZHANG   Meeting … univ… univ… zhangjun     2012
-##  7   2.52e11      2006 CHUANHONG JIN     Article   natl… natl… jinchua…     2008
-##  8   2.53e11      2006 JIWEI     LU      Article   univ… univ… lujiwei      2008
-##  9   2.53e11      2006 CHUANHONG JIN     Article   peki… peki… jinchua…     2008
-## 10   2.53e11      2006 CHUANHONG JIN     Article   peki… peki… jinchua…     2008
+##    item_type        surname endyear wos     addr   type fullname auseq startyear
+##    <chr>            <chr>     <dbl> <chr>   <chr> <dbl> <chr>    <dbl>     <dbl>
+##  1 Meeting Abstract JIN        2010 natl i… natl…     2 jinc         5      2006
+##  2 Meeting Abstract JIN        2010 natl i… natl…     1 jinchua…     1      2006
+##  3 Meeting Abstract ZHANG      2009 univ c… univ…     1 zhangjun     2      2006
+##  4 Meeting Abstract ZHANG      2009 univ c… univ…     1 zhangjun     4      2006
+##  5 Meeting Abstract ZHANG      2009 univ c… univ…     1 zhangjun     7      2006
+##  6 Meeting Abstract ZHANG      2009 univ c… univ…     1 zhangjun     3      2006
+##  7 Article          JIN        2010 natl i… natl…     1 jinchua…     1      2006
+##  8 Article          LU         2015 univ v… univ…     1 lujiwei      2      2006
+##  9 Article          JIN        2006 peking… peki…     1 jinchua…     3      2006
+## 10 Article          JIN        2006 peking… peki…     1 jinchua…     3      2006
 ## # ℹ 2,525 more rows
-## # ℹ 1 more variable: type <dbl>
+## # ℹ 1 more variable: givenname <chr>
 ```
 
 ### 去重复

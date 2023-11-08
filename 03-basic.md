@@ -349,8 +349,8 @@ R提供了内置的`is.`函数和`as.`函数来对数据类型进行判断与转
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-36a7f7978dd561d638a5" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-36a7f7978dd561d638a5">{"x":{"diagram":"digraph R {\n  \n  rankdir = LR\n  layout = dot\n  node [shape = box]\n  \n  num [style=\"rounded, filled\",label = \"numeric\",fillcolor = Gainsboro]\n  char [style=\"rounded, filled\", label = \"character\",fillcolor = Gainsboro]\n  log [style=\"rounded, filled\", label = \"logical\",fillcolor= Gainsboro]\n  num -> char [label = \"as.character\"]\n  char -> num [label = \"as.numeric(数字组成字符)\"]\n  num -> log [label = \"as.logical\"]\n  log -> num [label = \"as.numeric\"]\n  log -> char [label = \"as.character\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ace528b6ab3151313ced" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-ace528b6ab3151313ced">{"x":{"diagram":"digraph R {\n  \n  rankdir = LR\n  layout = dot\n  node [shape = box]\n  \n  num [style=\"rounded, filled\",label = \"numeric\",fillcolor = Gainsboro]\n  char [style=\"rounded, filled\", label = \"character\",fillcolor = Gainsboro]\n  log [style=\"rounded, filled\", label = \"logical\",fillcolor= Gainsboro]\n  num -> char [label = \"as.character\"]\n  char -> num [label = \"as.numeric(数字组成字符)\"]\n  num -> log [label = \"as.logical\"]\n  log -> num [label = \"as.numeric\"]\n  log -> char [label = \"as.character\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 **课堂练习**
@@ -980,8 +980,8 @@ list_data[["category"]] <- 'C9'
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-faaacedda56e9fe35950" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-faaacedda56e9fe35950">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  node [shape = box]\n  \n  v [style=\"rounded, filled\",label = \"vector\",fillcolor = Gainsboro]\n  mt [style=\"rounded, filled\", label = \"matrix\",fillcolor = Gainsboro]\n  df [style=\"rounded, filled\", label = \"data.frame\",fillcolor= Gainsboro]\n  l [style=\"rounded, filled\", label = \"list\",fillcolor= Gainsboro]\n\n  v -> mt [label = \"matrix\"]\n  v -> df [label = \"data.frame\"]\n  v -> l [label = \"list\"]\n  mt -> df [label = \"data.frame\"]\n  mt -> l [label = \"list\"]\n  mt -> v [label = \"as.vector\"]\n  df -> l [label = \"list\"]\n  df -> mt [label = \"matrix（列全部是数值型）\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d5b7462107963d4cbaa9" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-d5b7462107963d4cbaa9">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  node [shape = box]\n  \n  v [style=\"rounded, filled\",label = \"vector\",fillcolor = Gainsboro]\n  mt [style=\"rounded, filled\", label = \"matrix\",fillcolor = Gainsboro]\n  df [style=\"rounded, filled\", label = \"data.frame\",fillcolor= Gainsboro]\n  l [style=\"rounded, filled\", label = \"list\",fillcolor= Gainsboro]\n\n  v -> mt [label = \"matrix\"]\n  v -> df [label = \"data.frame\"]\n  v -> l [label = \"list\"]\n  mt -> df [label = \"data.frame\"]\n  mt -> l [label = \"list\"]\n  mt -> v [label = \"as.vector\"]\n  df -> l [label = \"list\"]\n  df -> mt [label = \"matrix（列全部是数值型）\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ## 数据读写
@@ -1176,8 +1176,8 @@ R语言针对各类专用数据文件设计了读写借口，具体函数如下�
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cb89026a5872dff8c773" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-cb89026a5872dff8c773">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b1 [shape = box, style=\"rounded, filled\",label = \"执行语句1\", fillcolor = Gainsboro]\n  b2 [shape = box, style=\"rounded, filled\",label = \"执行语句2\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b1 [label = \"TRUE\"]\n  d -> b2 [label = \"FALSE（可选）\"]\n  b1 -> c2 \n  b2 -> c2 []\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6e64b9eced57f975aa47" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-6e64b9eced57f975aa47">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b1 [shape = box, style=\"rounded, filled\",label = \"执行语句1\", fillcolor = Gainsboro]\n  b2 [shape = box, style=\"rounded, filled\",label = \"执行语句2\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b1 [label = \"TRUE\"]\n  d -> b2 [label = \"FALSE（可选）\"]\n  b1 -> c2 \n  b2 -> c2 []\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### if-else语句
@@ -1292,8 +1292,8 @@ switch("史老师", 张老师 = "谁啊", 王老师 = "呵呵", 史老师 = "讲
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-41b1657348059202c8f7" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-41b1657348059202c8f7">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b [shape = box, style=\"rounded, filled\",label = \"执行语句\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b [label = \"TRUE\"]\n  b -> c1 \n  d -> c2 [label = \"FALSE\"]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-40b0a68d3a65f9541ac5" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-40b0a68d3a65f9541ac5">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b [shape = box, style=\"rounded, filled\",label = \"执行语句\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b [label = \"TRUE\"]\n  b -> c1 \n  d -> c2 [label = \"FALSE\"]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### for循环
@@ -1451,7 +1451,7 @@ repeat{
 通过for循环，得到第n月的兔子数量。
 
 
-## 函数
+## 函数与包
 
 通过前面的学习和练习，细心的读者应该已经发现，我们在编程的时候经常会重复自己的代码，例如，在数字炸弹游戏中我们重复使用了比大小的代码；在菲波那切数列时，要能不断修改循环的次数，来实现求和？
 
@@ -1601,16 +1601,16 @@ R语言包可以上传到CRAN平台，通过审核后，遍布在世界各地的
 
 ```
 ##    rank     package  count       from         to
-## 1     1        ragg 127957 2023-11-03 2023-11-03
-## 2     2 textshaping 125500 2023-11-03 2023-11-03
-## 3     3     ggplot2 106057 2023-11-03 2023-11-03
-## 4     4    devtools  80689 2023-11-03 2023-11-03
-## 5     5     pkgdown  76651 2023-11-03 2023-11-03
-## 6     6         rgl  72239 2023-11-03 2023-11-03
-## 7     7       rlang  68572 2023-11-03 2023-11-03
-## 8     8       dplyr  62296 2023-11-03 2023-11-03
-## 9     9       vctrs  60524 2023-11-03 2023-11-03
-## 10   10          sf  60090 2023-11-03 2023-11-03
+## 1     1        ragg 125093 2023-11-06 2023-11-06
+## 2     2 textshaping 122765 2023-11-06 2023-11-06
+## 3     3     ggplot2 107786 2023-11-06 2023-11-06
+## 4     4       rlang 103167 2023-11-06 2023-11-06
+## 5     5    devtools  91634 2023-11-06 2023-11-06
+## 6     6     pkgdown  73979 2023-11-06 2023-11-06
+## 7     7         rgl  69708 2023-11-06 2023-11-06
+## 8     8       vctrs  66394 2023-11-06 2023-11-06
+## 9     9         cli  64802 2023-11-06 2023-11-06
+## 10   10       dplyr  63799 2023-11-06 2023-11-06
 ```
 
 ## 向量化
