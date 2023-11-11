@@ -979,20 +979,19 @@ paper %>% sample(10)
 
 ```
 ## # A tibble: 2,535 × 10
-##    surname fullname   pub_year startyear item_type wos   addr  givenname endyear
-##    <chr>   <chr>         <dbl>     <dbl> <chr>     <chr> <chr> <chr>       <dbl>
-##  1 JIN     jinc           2009      2006 Meeting … natl… natl… C            2010
-##  2 JIN     jinchuanh…     2009      2006 Meeting … natl… natl… CHUANHONG    2010
-##  3 ZHANG   zhangjun       2010      2006 Meeting … univ… univ… JUN          2009
-##  4 ZHANG   zhangjun       2010      2006 Meeting … univ… univ… JUN          2009
-##  5 ZHANG   zhangjun       2012      2006 Meeting … univ… univ… JUN          2009
-##  6 ZHANG   zhangjun       2012      2006 Meeting … univ… univ… JUN          2009
-##  7 JIN     jinchuanh…     2008      2006 Article   natl… natl… CHUANHONG    2010
-##  8 LU      lujiwei        2008      2006 Article   univ… univ… JIWEI        2015
-##  9 JIN     jinchuanh…     2008      2006 Article   peki… peki… CHUANHONG    2006
-## 10 JIN     jinchuanh…     2008      2006 Article   peki… peki… CHUANHONG    2006
+##    startyear pub_year item_type ut_char  type fullname addr  endyear wos   auseq
+##        <dbl>    <dbl> <chr>       <dbl> <dbl> <chr>    <chr>   <dbl> <chr> <dbl>
+##  1      2006     2009 Meeting … 2.08e11     2 jinc     natl…    2010 natl…     5
+##  2      2006     2009 Meeting … 2.08e11     1 jinchua… natl…    2010 natl…     1
+##  3      2006     2010 Meeting … 2.08e11     1 zhangjun univ…    2009 univ…     2
+##  4      2006     2010 Meeting … 2.08e11     1 zhangjun univ…    2009 univ…     4
+##  5      2006     2012 Meeting … 2.09e11     1 zhangjun univ…    2009 univ…     7
+##  6      2006     2012 Meeting … 2.09e11     1 zhangjun univ…    2009 univ…     3
+##  7      2006     2008 Article   2.52e11     1 jinchua… natl…    2010 natl…     1
+##  8      2006     2008 Article   2.53e11     1 lujiwei  univ…    2015 univ…     2
+##  9      2006     2008 Article   2.53e11     1 jinchua… peki…    2006 peki…     3
+## 10      2006     2008 Article   2.53e11     1 jinchua… peki…    2006 peki…     3
 ## # ℹ 2,525 more rows
-## # ℹ 1 more variable: auseq <dbl>
 ```
 
 ### 去重复

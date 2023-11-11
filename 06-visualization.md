@@ -114,7 +114,7 @@ datasaurus_dozen %>%
 
 讲GG在R语言中实现的又是我们熟悉的大神Wickham，他设计了`ggplot2`包，`ggplot2`及其家族现在已经成为统制图的最佳工具。
 
-我们看下发表在经济学人杂志的一篇文章中的图片，图片来源<http://www.economist.com/node/21541178>。
+我们看下发表在经济学人杂志的一篇文章中的图片，图片来源<http://www.economist.com/node/21541178>。数据来源，
 
 <img src="./images/visualization/Economist1.png" width="90%" />
 
@@ -122,11 +122,23 @@ datasaurus_dozen %>%
 
 <img src="./images/visualization/Economist2.png" width="90%" />
 
-本节的任务就是逐步学习`ggplot2`的要素，并画出此图。教学材料源自哈佛大学[IQSS](http://tutorials.iq.harvard.edu/)。
+本节的任务就是逐步学习`ggplot2`的要素，并画出此图。教学材料受到哈佛大学[IQSS](http://tutorials.iq.harvard.edu/)的启发。数据位于：[EconomistData.csv](https://drive.google.com/file/d/1CyCRpPVqLP-_BWjURiV5127rTiSHWuqe/view?usp=drive_link)。
 
+要制作一批自己教学数据。
 
-## `ggplot2`辅助
-### 调色板
+### `ggplot2`几何对象
+
+**练习题**
+
+导入EconomistData.csv数据，（数据来源：http://www.transparency.org/content/download/64476/1031428）该数据包括了部分国家的人类发展指数与腐败感知指数。创建一个以 CPI 为x轴，HDI为y轴的散点图。
+
+### `ggplot2`的美术属性
+
+### `ggplot2`辅助
+
+#### 主题
+
+#### 调色板
 
 选择优雅的颜色是高质量数据可视化的保障。如果不是艺术造诣很高的话，选择成熟的配色是最安全的选择。`ggthemes`包封装了多种成熟的主题，`ggsci`则包括了多种杂志的配色方案，我们可以使用`scales`包的show_col函数来查看色号。
 
@@ -170,7 +182,7 @@ pal_aaas()(9)
 
 当然，艺术造诣和编程能力并不是互斥的技能点。例如，R语言社区资深开发者（`ggplot2`包的作者）、计算认知科学家Danielle Navarro就是一名计算艺术家（computational artist）。下面是她的作品*Dancer*，更多作品可以浏览https://art.djnavarro.net/。
 
-
+## 案例：DID结果的可视化
 
 ## 动图
 

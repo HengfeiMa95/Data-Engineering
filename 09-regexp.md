@@ -168,10 +168,6 @@ seq 10000 | egrep -n '^23{2,4}$'
 
 ### 入门
 
-使用系统的例子？先看下具体的案例再做设计。
-
-20门课程，现在有其他的事情压着了，所以得改变一些策略了，统计分析的课件
-
 从`grep`到`sed`再到`awk`的复杂度和能力是逐步提升的，我们最佳工具原则推荐大家同一个人任务，优先选择简单的工具。
 
 必要性强不强的问题
@@ -212,10 +208,16 @@ R语言中的正则表达式转义符使用两个`\`，这一点值得特别注�
 
 其次，读入文件，可以看到论文的作者地址在哪一列？
 
-然后，解析论文地址列，分别制作“论文-地址-地址顺序”表格以及“论文-作者-作者顺序”，统计相关数据。
+然后，解析论文地址列，分别制作“论文-作者-地址-地址顺序”表格以及“论文-作者-作者顺序”，统计相关数据。
 
-### 应用案例：数据合并与校对（作业）
+### 应用案例：数据合并与校对
 
+在研究中，我们进程需要合并来自不同数据源头的同一个数据。
+
+现在，我们需要比较同一个科学家在不同数据库中解锁得到的科学家论文发表清单，来判断不同数据库的准确性。来自[Aminer](https://www.aminer.org/)数据库的论文清单储存为[aminer.csv](https://drive.google.com/file/d/18CF3QhHwTfRG3u39MvwFl4zpan8R10zR/view?usp=drive_link)，科学家在其个人主页自我披露的论文清单存在
+[gt.csv](https://drive.google.com/file/d/1nipKSFlQZmzhmpUdKxeEhzNw7c0kJhxx/view?usp=drive_link)。
+
+可以的信息包括：论文发表年份、期刊、doi、论文题目。
 
 ## Python的re模块
 
@@ -409,7 +411,7 @@ re.sub(r"(\w)(\w+)(\w)", repl, text)
 ```
 
 ```
-## 'Psosreofr Aomdlalebk, plseae roeprt yuor acesnbes porltpmy.'
+## 'Pefsroosr Aaellobdmk, pelase rroept your aesbcens ptporlmy.'
 ```
 `re.subn`的行为与`re.sub`相同，但是返回一个元组 (字符串, 替换次数)。
 
