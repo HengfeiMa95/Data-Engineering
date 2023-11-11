@@ -2,7 +2,7 @@
 
 # 数据可视化{#visu}
 
-人都是视觉动物
+> 人都是视觉动物。
 
 ## 从一个可以画恐龙的包说起
 
@@ -78,8 +78,55 @@ datasaurus_dozen %>%
 ## 13 x_shape      54.3   47.8      16.8      26.9  -0.0656
 ```
 
+## 数据可视化的目的
 
-## 调色板
+数据可视化的目的是直观地向读者传递数据中包含的信息。重要的事情说三遍，**传递信息、传递信息、传递信息**！
+
+因此，一个优秀的可视化应该具备以下的特征。
+
+1. 重点突出。要让读者第一眼就能发现你要传达的主要信息，而不是暗戳戳的隐藏起来，等待别人发现。
+
+2. 表意清晰。主要信息的传递要明确清晰，不要产生歧义，让读者自行发挥。充分利用注释、标题等来避免歧义。
+
+3. 信息量大。图形的标题、注释都可以传达信息，在有限的图形内，尽可能传递更多信息。
+
+4. 逻辑完整。数据传递的信息要有逻辑，能够独立阅读。
+
+5. 美观。尽可能增强图形的美学水平，让读者愿意看，看着舒服，愿意分享。
+
+## 图形语法（Grammar of Graphics）
+
+图形语法（Grammar of Graphics，简称GG）是Leland Wilkinson开发的一套用来描述所有统计图表深层特性的语法规则，该语法回答了**什么是统计图表**这一问题，以自底向上的方式组织最基本的元素形成更高级的元素。在GG看来，一张图就是从数据到几何标记对象的图形属性的一组映射，此外图形中还可能包含数据的统计变换，最后绘制在某个特定的坐标系中。此时，科学绘图就会非常接近画油画，绘图的过程就是在一张空白的画布上，一层一层地叠加图形要素。
+
+粗略地，GG拆解的主要图形要素可以分为三大类：几何对象、美术属性与标签注释。
+
+**几何对象**指的是将数据映射到图形之后的几何类型，包括点（point）、线（line）、直方（histgram）、柱（bar）等。
+
+**美术属性**指的是几何对象呈现在图形中的属性，例如颜色（color）、形状（shape）、尺寸（size）、透明度（alpha）等。属性让同一类几何对象传递更加丰富的信息。
+
+**标签注释**包括标题（title）、轴标题（x/y title）、轴标签（xlab/ylab）、文本标签（text label）、注释（note）、图例（legend）等。可以进一步丰富图形传达的信息。
+
+通过图形语法可以实现统计绘图的自动化，满足可复现原则与一次原则。
+
+更多关于GG的内容，可以参考Wilkinson的著作[The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0)。
+
+## `ggplot2`
+
+讲GG在R语言中实现的又是我们熟悉的大神Wickham，他设计了`ggplot2`包，`ggplot2`及其家族现在已经成为统制图的最佳工具。
+
+我们看下发表在经济学人杂志的一篇文章中的图片，图片来源<http://www.economist.com/node/21541178>。
+
+<img src="./images/visualization/Economist1.png" width="90%" />
+
+这幅图首先在视觉呈现非常美观，然后信息传达非常丰富，几乎所有的图形要素都被利用了起来。可以分类总结如下。
+
+<img src="./images/visualization/Economist2.png" width="90%" />
+
+本节的任务就是逐步学习`ggplot2`的要素，并画出此图。教学材料源自哈佛大学[IQSS](http://tutorials.iq.harvard.edu/)。
+
+
+## `ggplot2`辅助
+### 调色板
 
 选择优雅的颜色是高质量数据可视化的保障。如果不是艺术造诣很高的话，选择成熟的配色是最安全的选择。`ggthemes`包封装了多种成熟的主题，`ggsci`则包括了多种杂志的配色方案，我们可以使用`scales`包的show_col函数来查看色号。
 
@@ -93,7 +140,7 @@ library(ggsci)
 show_col(economist_pal()(9))
 ```
 
-<img src="06-visualization_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="06-visualization_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 ```r
 economist_pal()(9)
@@ -110,7 +157,7 @@ economist_pal()(9)
 show_col(pal_aaas()(9))
 ```
 
-<img src="06-visualization_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="06-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 ```r
 pal_aaas()(9)
@@ -122,3 +169,11 @@ pal_aaas()(9)
 ```
 
 当然，艺术造诣和编程能力并不是互斥的技能点。例如，R语言社区资深开发者（`ggplot2`包的作者）、计算认知科学家Danielle Navarro就是一名计算艺术家（computational artist）。下面是她的作品*Dancer*，更多作品可以浏览https://art.djnavarro.net/。
+
+
+
+## 动图
+
+## 大屏
+
+### 交互式
