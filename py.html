@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 8 章 Python基础 | 数据工程讲义：经济学分册</title>
+  <meta name="description" content="适用于数据工程与数据科学课程的教材。" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 8 章 Python基础 | 数据工程讲义：经济学分册" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="适用于数据工程与数据科学课程的教材。" />
+  <meta name="github-repo" content="yihui/bookdown-chinese" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 8 章 Python基础 | 数据工程讲义：经济学分册" />
+  
+  <meta name="twitter:description" content="适用于数据工程与数据科学课程的教材。" />
+  
+
+<meta name="author" content="史冬波 续本达" />
+
+
+<meta name="date" content="2023-11-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="reg.html"/>
+<link rel="next" href="regexp.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">数据工程讲义</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#致谢"><i class="fa fa-check"></i>致谢</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="author.html"><a href="author.html"><i class="fa fa-check"></i>作者简介</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 写在前面</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#为什么写本书"><i class="fa fa-check"></i><b>1.1</b> 为什么写本书</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#如何使用本书"><i class="fa fa-check"></i><b>1.2</b> 如何使用本书</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="flow.html"><a href="flow.html"><i class="fa fa-check"></i><b>2</b> 数据工程：重塑经济学研究的流程</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="flow.html"><a href="flow.html#人工智能时代的社会科学研究机遇与挑战"><i class="fa fa-check"></i><b>2.1</b> 人工智能时代的社会科学研究：机遇与挑战</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="flow.html"><a href="flow.html#社会科学的三圈分类"><i class="fa fa-check"></i><b>2.1.1</b> 社会科学的三圈分类</a></li>
+<li class="chapter" data-level="2.1.2" data-path="flow.html"><a href="flow.html#ai智能发展的三要素"><i class="fa fa-check"></i><b>2.1.2</b> AI智能发展的三要素</a></li>
+<li class="chapter" data-level="2.1.3" data-path="flow.html"><a href="flow.html#ai对社会科学研究的冲击"><i class="fa fa-check"></i><b>2.1.3</b> AI对社会科学研究的冲击</a></li>
+<li class="chapter" data-level="2.1.4" data-path="flow.html"><a href="flow.html#ai为社会科学研究创造的机遇"><i class="fa fa-check"></i><b>2.1.4</b> AI为社会科学研究创造的机遇</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="flow.html"><a href="flow.html#数据工程与数据科学"><i class="fa fa-check"></i><b>2.2</b> 数据工程与数据科学</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="flow.html"><a href="flow.html#数据工程的灵魂数据流"><i class="fa fa-check"></i><b>2.2.1</b> 数据工程的灵魂：数据流</a></li>
+<li class="chapter" data-level="2.2.2" data-path="flow.html"><a href="flow.html#数据工程的钥匙数据结构"><i class="fa fa-check"></i><b>2.2.2</b> 数据工程的钥匙：数据结构</a></li>
+<li class="chapter" data-level="2.2.3" data-path="flow.html"><a href="flow.html#数据工程师的工具箱"><i class="fa fa-check"></i><b>2.2.3</b> 数据工程师的工具箱</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="flow.html"><a href="flow.html#数据工程的四个指导原则"><i class="fa fa-check"></i><b>2.3</b> 数据工程的四个指导原则</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="flow.html"><a href="flow.html#可复现性原则"><i class="fa fa-check"></i><b>2.3.1</b> 可复现性原则</a></li>
+<li class="chapter" data-level="2.3.2" data-path="flow.html"><a href="flow.html#模块化与正交分解原则"><i class="fa fa-check"></i><b>2.3.2</b> 模块化与正交分解原则</a></li>
+<li class="chapter" data-level="2.3.3" data-path="flow.html"><a href="flow.html#最佳工具原则"><i class="fa fa-check"></i><b>2.3.3</b> 最佳工具原则</a></li>
+<li class="chapter" data-level="2.3.4" data-path="flow.html"><a href="flow.html#一次原则"><i class="fa fa-check"></i><b>2.3.4</b> 一次原则</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="flow.html"><a href="flow.html#gnu-环境"><i class="fa fa-check"></i><b>2.4</b> GNU 环境</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="flow.html"><a href="flow.html#posix"><i class="fa fa-check"></i><b>2.4.1</b> POSIX</a></li>
+<li class="chapter" data-level="2.4.2" data-path="flow.html"><a href="flow.html#gnu"><i class="fa fa-check"></i><b>2.4.2</b> GNU</a></li>
+<li class="chapter" data-level="2.4.3" data-path="flow.html"><a href="flow.html#命令行"><i class="fa fa-check"></i><b>2.4.3</b> 命令行</a></li>
+<li class="chapter" data-level="2.4.4" data-path="flow.html"><a href="flow.html#编辑器"><i class="fa fa-check"></i><b>2.4.4</b> 编辑器</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="flow.html"><a href="flow.html#版本控制"><i class="fa fa-check"></i><b>2.5</b> 版本控制</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="flow.html"><a href="flow.html#git"><i class="fa fa-check"></i><b>2.5.1</b> Git</a></li>
+<li class="chapter" data-level="2.5.2" data-path="flow.html"><a href="flow.html#git的三种状态"><i class="fa fa-check"></i><b>2.5.2</b> Git的三种状态</a></li>
+<li class="chapter" data-level="2.5.3" data-path="flow.html"><a href="flow.html#git仓库"><i class="fa fa-check"></i><b>2.5.3</b> Git仓库</a></li>
+<li class="chapter" data-level="2.5.4" data-path="flow.html"><a href="flow.html#git命令实践"><i class="fa fa-check"></i><b>2.5.4</b> Git命令实践</a></li>
+<li class="chapter" data-level="2.5.5" data-path="flow.html"><a href="flow.html#git目前的局限性"><i class="fa fa-check"></i><b>2.5.5</b> Git目前的局限性</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basic.html"><a href="basic.html"><i class="fa fa-check"></i><b>3</b> R语言基础</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basic.html"><a href="basic.html#r语言简介"><i class="fa fa-check"></i><b>3.1</b> R语言简介</a></li>
+<li class="chapter" data-level="3.2" data-path="basic.html"><a href="basic.html#r语言的特点"><i class="fa fa-check"></i><b>3.2</b> R语言的特点</a></li>
+<li class="chapter" data-level="3.3" data-path="basic.html"><a href="basic.html#r与rtudio的安装"><i class="fa fa-check"></i><b>3.3</b> R与Rtudio的安装</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="basic.html"><a href="basic.html#安装r"><i class="fa fa-check"></i><b>3.3.1</b> 安装R</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basic.html"><a href="basic.html#r安装rstudio"><i class="fa fa-check"></i><b>3.3.2</b> R安装RStudio</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basic.html"><a href="basic.html#组织r代码的三种方式"><i class="fa fa-check"></i><b>3.3.3</b> 组织R代码的三种方式</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basic.html"><a href="basic.html#r代码的组成"><i class="fa fa-check"></i><b>3.3.4</b> R代码的组成</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="basic.html"><a href="basic.html#r对文件和路径的相关操作"><i class="fa fa-check"></i><b>3.4</b> R对文件和路径的相关操作</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="basic.html"><a href="basic.html#路径操作"><i class="fa fa-check"></i><b>3.4.1</b> 路径操作</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basic.html"><a href="basic.html#文件操作"><i class="fa fa-check"></i><b>3.4.2</b> 文件操作</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basic.html"><a href="basic.html#特殊路径"><i class="fa fa-check"></i><b>3.4.3</b> 特殊路径</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="basic.html"><a href="basic.html#数据类型"><i class="fa fa-check"></i><b>3.5</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basic.html"><a href="basic.html#数值型"><i class="fa fa-check"></i><b>3.5.1</b> 数值型</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basic.html"><a href="basic.html#逻辑型布尔型"><i class="fa fa-check"></i><b>3.5.2</b> 逻辑型/布尔型</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basic.html"><a href="basic.html#字符型"><i class="fa fa-check"></i><b>3.5.3</b> 字符型</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basic.html"><a href="basic.html#缺失值"><i class="fa fa-check"></i><b>3.5.4</b> 缺失值</a></li>
+<li class="chapter" data-level="3.5.5" data-path="basic.html"><a href="basic.html#数据类型判断与转换"><i class="fa fa-check"></i><b>3.5.5</b> 数据类型判断与转换</a></li>
+<li class="chapter" data-level="3.5.6" data-path="basic.html"><a href="basic.html#运算"><i class="fa fa-check"></i><b>3.5.6</b> 运算</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="basic.html"><a href="basic.html#变量"><i class="fa fa-check"></i><b>3.6</b> 变量</a></li>
+<li class="chapter" data-level="3.7" data-path="basic.html"><a href="basic.html#数据结构"><i class="fa fa-check"></i><b>3.7</b> 数据结构</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="basic.html"><a href="basic.html#向量"><i class="fa fa-check"></i><b>3.7.1</b> 向量</a></li>
+<li class="chapter" data-level="3.7.2" data-path="basic.html"><a href="basic.html#因子"><i class="fa fa-check"></i><b>3.7.2</b> 因子</a></li>
+<li class="chapter" data-level="3.7.3" data-path="basic.html"><a href="basic.html#矩阵"><i class="fa fa-check"></i><b>3.7.3</b> 矩阵</a></li>
+<li class="chapter" data-level="3.7.4" data-path="basic.html"><a href="basic.html#数据框"><i class="fa fa-check"></i><b>3.7.4</b> 数据框</a></li>
+<li class="chapter" data-level="3.7.5" data-path="basic.html"><a href="basic.html#列表"><i class="fa fa-check"></i><b>3.7.5</b> 列表</a></li>
+<li class="chapter" data-level="3.7.6" data-path="basic.html"><a href="basic.html#数据结构之间的转化"><i class="fa fa-check"></i><b>3.7.6</b> 数据结构之间的转化</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="basic.html"><a href="basic.html#数据读写"><i class="fa fa-check"></i><b>3.8</b> 数据读写</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="basic.html"><a href="basic.html#csv文件"><i class="fa fa-check"></i><b>3.8.1</b> csv文件</a></li>
+<li class="chapter" data-level="3.8.2" data-path="basic.html"><a href="basic.html#hdf5"><i class="fa fa-check"></i><b>3.8.2</b> HDF5</a></li>
+<li class="chapter" data-level="3.8.3" data-path="basic.html"><a href="basic.html#xml"><i class="fa fa-check"></i><b>3.8.3</b> XML</a></li>
+<li class="chapter" data-level="3.8.4" data-path="basic.html"><a href="basic.html#json"><i class="fa fa-check"></i><b>3.8.4</b> JSON</a></li>
+<li class="chapter" data-level="3.8.5" data-path="basic.html"><a href="basic.html#yaml"><i class="fa fa-check"></i><b>3.8.5</b> YAML</a></li>
+<li class="chapter" data-level="3.8.6" data-path="basic.html"><a href="basic.html#专用数据文件"><i class="fa fa-check"></i><b>3.8.6</b> 专用数据文件</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="basic.html"><a href="basic.html#流程控制"><i class="fa fa-check"></i><b>3.9</b> 流程控制</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="basic.html"><a href="basic.html#条件判断"><i class="fa fa-check"></i><b>3.9.1</b> 条件判断</a></li>
+<li class="chapter" data-level="3.9.2" data-path="basic.html"><a href="basic.html#循环"><i class="fa fa-check"></i><b>3.9.2</b> 循环</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="basic.html"><a href="basic.html#函数与包"><i class="fa fa-check"></i><b>3.10</b> 函数与包</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="basic.html"><a href="basic.html#函数的定义与调用"><i class="fa fa-check"></i><b>3.10.1</b> 函数的定义与调用</a></li>
+<li class="chapter" data-level="3.10.2" data-path="basic.html"><a href="basic.html#变量作用域"><i class="fa fa-check"></i><b>3.10.2</b> 变量作用域</a></li>
+<li class="chapter" data-level="3.10.3" data-path="basic.html"><a href="basic.html#函数模块化"><i class="fa fa-check"></i><b>3.10.3</b> 函数模块化</a></li>
+<li class="chapter" data-level="3.10.4" data-path="basic.html"><a href="basic.html#包"><i class="fa fa-check"></i><b>3.10.4</b> 包</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="basic.html"><a href="basic.html#向量化"><i class="fa fa-check"></i><b>3.11</b> 向量化</a>
+<ul>
+<li class="chapter" data-level="3.11.1" data-path="basic.html"><a href="basic.html#apply"><i class="fa fa-check"></i><b>3.11.1</b> apply</a></li>
+<li class="chapter" data-level="3.11.2" data-path="basic.html"><a href="basic.html#lapply"><i class="fa fa-check"></i><b>3.11.2</b> lapply</a></li>
+<li class="chapter" data-level="3.11.3" data-path="basic.html"><a href="basic.html#sapply"><i class="fa fa-check"></i><b>3.11.3</b> sapply</a></li>
+<li class="chapter" data-level="3.11.4" data-path="basic.html"><a href="basic.html#vapply"><i class="fa fa-check"></i><b>3.11.4</b> vapply</a></li>
+<li class="chapter" data-level="3.11.5" data-path="basic.html"><a href="basic.html#mapply"><i class="fa fa-check"></i><b>3.11.5</b> mapply</a></li>
+<li class="chapter" data-level="3.11.6" data-path="basic.html"><a href="basic.html#其他"><i class="fa fa-check"></i><b>3.11.6</b> 其他</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="basic.html"><a href="basic.html#代码风格"><i class="fa fa-check"></i><b>3.12</b> 代码风格</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rmd.html"><a href="rmd.html"><i class="fa fa-check"></i><b>4</b> 文学式编程</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="rmd.html"><a href="rmd.html#什么是文学式编程"><i class="fa fa-check"></i><b>4.1</b> 什么是文学式编程</a></li>
+<li class="chapter" data-level="4.2" data-path="rmd.html"><a href="rmd.html#markdown格式"><i class="fa fa-check"></i><b>4.2</b> Markdown格式</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="rmd.html"><a href="rmd.html#标题"><i class="fa fa-check"></i><b>4.2.1</b> 标题</a></li>
+<li class="chapter" data-level="4.2.2" data-path="rmd.html"><a href="rmd.html#段落文本"><i class="fa fa-check"></i><b>4.2.2</b> 段落文本</a></li>
+<li class="chapter" data-level="4.2.3" data-path="rmd.html"><a href="rmd.html#表格"><i class="fa fa-check"></i><b>4.2.3</b> 表格</a></li>
+<li class="chapter" data-level="4.2.4" data-path="rmd.html"><a href="rmd.html#图片"><i class="fa fa-check"></i><b>4.2.4</b> 图片</a></li>
+<li class="chapter" data-level="4.2.5" data-path="rmd.html"><a href="rmd.html#代码块"><i class="fa fa-check"></i><b>4.2.5</b> 代码块</a></li>
+<li class="chapter" data-level="4.2.6" data-path="rmd.html"><a href="rmd.html#数学公式"><i class="fa fa-check"></i><b>4.2.6</b> 数学公式</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="rmd.html"><a href="rmd.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> Rmarkdown</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="rmd.html"><a href="rmd.html#yaml头文件"><i class="fa fa-check"></i><b>4.3.1</b> YAML头文件</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rmd.html"><a href="rmd.html#代码块控制"><i class="fa fa-check"></i><b>4.3.2</b> 代码块控制</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rmd.html"><a href="rmd.html#rmarkdown特殊语法"><i class="fa fa-check"></i><b>4.3.3</b> Rmarkdown特殊语法</a></li>
+<li class="chapter" data-level="4.3.4" data-path="rmd.html"><a href="rmd.html#格式转换"><i class="fa fa-check"></i><b>4.3.4</b> 格式转换</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rmd.html"><a href="rmd.html#xaringan"><i class="fa fa-check"></i><b>4.4</b> Xaringan</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="rmd.html"><a href="rmd.html#安装与模板"><i class="fa fa-check"></i><b>4.4.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.4.2" data-path="rmd.html"><a href="rmd.html#其他学习资源"><i class="fa fa-check"></i><b>4.4.2</b> 其他学习资源</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="rmd.html"><a href="rmd.html#leanr"><i class="fa fa-check"></i><b>4.5</b> leanr</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="rmd.html"><a href="rmd.html#安装与模板-1"><i class="fa fa-check"></i><b>4.5.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.5.2" data-path="rmd.html"><a href="rmd.html#互动代码模块"><i class="fa fa-check"></i><b>4.5.2</b> 互动代码模块</a></li>
+<li class="chapter" data-level="4.5.3" data-path="rmd.html"><a href="rmd.html#测试题"><i class="fa fa-check"></i><b>4.5.3</b> 测试题</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="rmd.html"><a href="rmd.html#bookdownblogdown以及pagedown"><i class="fa fa-check"></i><b>4.6</b> bookdown、blogdown以及pagedown</a></li>
+<li class="chapter" data-level="4.7" data-path="rmd.html"><a href="rmd.html#quarto"><i class="fa fa-check"></i><b>4.7</b> Quarto</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipulate.html"><a href="manipulate.html"><i class="fa fa-check"></i><b>5</b> 数据整理</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipulate.html"><a href="manipulate.html#整齐数据tidydata"><i class="fa fa-check"></i><b>5.1</b> 整齐数据tidydata</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="manipulate.html"><a href="manipulate.html#分析单位unit-of-analysis"><i class="fa fa-check"></i><b>5.1.1</b> 分析单位(unit of analysis)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipulate.html"><a href="manipulate.html#整齐数据"><i class="fa fa-check"></i><b>5.2</b> 整齐数据</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="manipulate.html"><a href="manipulate.html#整齐数据的缘起"><i class="fa fa-check"></i><b>5.2.1</b> 整齐数据的缘起</a></li>
+<li class="chapter" data-level="5.2.2" data-path="manipulate.html"><a href="manipulate.html#整齐数据的定义"><i class="fa fa-check"></i><b>5.2.2</b> 整齐数据的定义</a></li>
+<li class="chapter" data-level="5.2.3" data-path="manipulate.html"><a href="manipulate.html#数据的凌乱点"><i class="fa fa-check"></i><b>5.2.3</b> 数据的凌乱点</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="manipulate.html"><a href="manipulate.html#关系代数"><i class="fa fa-check"></i><b>5.3</b> 关系代数</a></li>
+<li class="chapter" data-level="5.4" data-path="manipulate.html"><a href="manipulate.html#sql语言"><i class="fa fa-check"></i><b>5.4</b> SQL语言</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="manipulate.html"><a href="manipulate.html#mysql"><i class="fa fa-check"></i><b>5.4.1</b> MySQL</a></li>
+<li class="chapter" data-level="5.4.2" data-path="manipulate.html"><a href="manipulate.html#postgresql"><i class="fa fa-check"></i><b>5.4.2</b> Postgresql</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="manipulate.html"><a href="manipulate.html#dplyr"><i class="fa fa-check"></i><b>5.5</b> dplyr</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="manipulate.html"><a href="manipulate.html#集合运算"><i class="fa fa-check"></i><b>5.5.1</b> 集合运算</a></li>
+<li class="chapter" data-level="5.5.2" data-path="manipulate.html"><a href="manipulate.html#线性运算"><i class="fa fa-check"></i><b>5.5.2</b> 线性运算</a></li>
+<li class="chapter" data-level="5.5.3" data-path="manipulate.html"><a href="manipulate.html#管道"><i class="fa fa-check"></i><b>5.5.3</b> 管道</a></li>
+<li class="chapter" data-level="5.5.4" data-path="manipulate.html"><a href="manipulate.html#数据连接"><i class="fa fa-check"></i><b>5.5.4</b> 数据连接</a></li>
+<li class="chapter" data-level="5.5.5" data-path="manipulate.html"><a href="manipulate.html#数据分组与汇总"><i class="fa fa-check"></i><b>5.5.5</b> 数据分组与汇总</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="manipulate.html"><a href="manipulate.html#宽数据与长数据的转换"><i class="fa fa-check"></i><b>5.6</b> 宽数据与长数据的转换</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="manipulate.html"><a href="manipulate.html#宽数据转长数据"><i class="fa fa-check"></i><b>5.6.1</b> 宽数据转长数据</a></li>
+<li class="chapter" data-level="5.6.2" data-path="manipulate.html"><a href="manipulate.html#长数据转宽数据"><i class="fa fa-check"></i><b>5.6.2</b> 长数据转宽数据</a></li>
+<li class="chapter" data-level="5.6.3" data-path="manipulate.html"><a href="manipulate.html#联系人数据表的案例"><i class="fa fa-check"></i><b>5.6.3</b> 联系人数据表的案例</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="manipulate.html"><a href="manipulate.html#其他定制操作"><i class="fa fa-check"></i><b>5.7</b> 其他定制操作</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="manipulate.html"><a href="manipulate.html#排序"><i class="fa fa-check"></i><b>5.7.1</b> 排序</a></li>
+<li class="chapter" data-level="5.7.2" data-path="manipulate.html"><a href="manipulate.html#抽样"><i class="fa fa-check"></i><b>5.7.2</b> 抽样</a></li>
+<li class="chapter" data-level="5.7.3" data-path="manipulate.html"><a href="manipulate.html#去重复"><i class="fa fa-check"></i><b>5.7.3</b> 去重复</a></li>
+<li class="chapter" data-level="5.7.4" data-path="manipulate.html"><a href="manipulate.html#缺失值处理"><i class="fa fa-check"></i><b>5.7.4</b> 缺失值处理</a></li>
+<li class="chapter" data-level="5.7.5" data-path="manipulate.html"><a href="manipulate.html#拆分与合并数据列"><i class="fa fa-check"></i><b>5.7.5</b> 拆分与合并数据列</a></li>
+<li class="chapter" data-level="5.7.6" data-path="manipulate.html"><a href="manipulate.html#合并数据"><i class="fa fa-check"></i><b>5.7.6</b> 合并数据</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="manipulate.html"><a href="manipulate.html#数据库的连接"><i class="fa fa-check"></i><b>5.8</b> 数据库的连接</a></li>
+<li class="chapter" data-level="5.9" data-path="manipulate.html"><a href="manipulate.html#data.table"><i class="fa fa-check"></i><b>5.9</b> data.table</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visu.html"><a href="visu.html"><i class="fa fa-check"></i><b>6</b> 数据可视化</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="visu.html"><a href="visu.html#从一个可以画恐龙的包说起"><i class="fa fa-check"></i><b>6.1</b> 从一个可以画恐龙的包说起</a></li>
+<li class="chapter" data-level="6.2" data-path="visu.html"><a href="visu.html#数据可视化的目的"><i class="fa fa-check"></i><b>6.2</b> 数据可视化的目的</a></li>
+<li class="chapter" data-level="6.3" data-path="visu.html"><a href="visu.html#图形语法grammar-of-graphics"><i class="fa fa-check"></i><b>6.3</b> 图形语法（Grammar of Graphics）</a></li>
+<li class="chapter" data-level="6.4" data-path="visu.html"><a href="visu.html#ggplot2"><i class="fa fa-check"></i><b>6.4</b> <code>ggplot2</code></a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#ggplot2几何对象"><i class="fa fa-check"></i><b>6.4.1</b> <code>ggplot2</code>几何对象</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#ggplot2的美术属性"><i class="fa fa-check"></i><b>6.4.2</b> <code>ggplot2</code>的美术属性</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#ggplot2辅助"><i class="fa fa-check"></i><b>6.4.3</b> <code>ggplot2</code>辅助</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#案例did结果的可视化"><i class="fa fa-check"></i><b>6.5</b> 案例：DID结果的可视化</a></li>
+<li class="chapter" data-level="6.6" data-path="visu.html"><a href="visu.html#动图"><i class="fa fa-check"></i><b>6.6</b> 动图</a></li>
+<li class="chapter" data-level="6.7" data-path="visu.html"><a href="visu.html#大屏"><i class="fa fa-check"></i><b>6.7</b> 大屏</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="visu.html"><a href="visu.html#交互式"><i class="fa fa-check"></i><b>6.7.1</b> 交互式</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>7</b> 回归</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="reg.html"><a href="reg.html#一般线性回归"><i class="fa fa-check"></i><b>7.1</b> 一般线性回归</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="reg.html"><a href="reg.html#基础模型"><i class="fa fa-check"></i><b>7.1.1</b> 基础模型</a></li>
+<li class="chapter" data-level="7.1.2" data-path="reg.html"><a href="reg.html#稳健性标准误"><i class="fa fa-check"></i><b>7.1.2</b> 稳健性标准误</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="reg.html"><a href="reg.html#因果推断的反事实框架"><i class="fa fa-check"></i><b>7.2</b> 因果推断的反事实框架</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="reg.html"><a href="reg.html#定义因果关系"><i class="fa fa-check"></i><b>7.2.1</b> 定义因果关系</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reg.html"><a href="reg.html#cef三定理"><i class="fa fa-check"></i><b>7.2.2</b> CEF三定理</a></li>
+<li class="chapter" data-level="7.2.3" data-path="reg.html"><a href="reg.html#交互项还是分组回归"><i class="fa fa-check"></i><b>7.2.3</b> 交互项还是分组回归</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reg.html"><a href="reg.html#匹配"><i class="fa fa-check"></i><b>7.3</b> 匹配</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="reg.html"><a href="reg.html#原理"><i class="fa fa-check"></i><b>7.3.1</b> 原理</a></li>
+<li class="chapter" data-level="7.3.2" data-path="reg.html"><a href="reg.html#案例"><i class="fa fa-check"></i><b>7.3.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="reg.html"><a href="reg.html#工具变量"><i class="fa fa-check"></i><b>7.4</b> 工具变量</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="reg.html"><a href="reg.html#原理-1"><i class="fa fa-check"></i><b>7.4.1</b> 原理</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reg.html"><a href="reg.html#案例-1"><i class="fa fa-check"></i><b>7.4.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reg.html"><a href="reg.html#双重差分"><i class="fa fa-check"></i><b>7.5</b> 双重差分</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="reg.html"><a href="reg.html#原理-2"><i class="fa fa-check"></i><b>7.5.1</b> 原理</a></li>
+<li class="chapter" data-level="7.5.2" data-path="reg.html"><a href="reg.html#案例-2"><i class="fa fa-check"></i><b>7.5.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="reg.html"><a href="reg.html#断点回归"><i class="fa fa-check"></i><b>7.6</b> 断点回归</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="reg.html"><a href="reg.html#原理-3"><i class="fa fa-check"></i><b>7.6.1</b> 原理</a></li>
+<li class="chapter" data-level="7.6.2" data-path="reg.html"><a href="reg.html#案例-3"><i class="fa fa-check"></i><b>7.6.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="reg.html"><a href="reg.html#包含高维分类变量的回归"><i class="fa fa-check"></i><b>7.7</b> 包含高维分类变量的回归</a></li>
+<li class="chapter" data-level="7.8" data-path="reg.html"><a href="reg.html#formula-公式对象"><i class="fa fa-check"></i><b>7.8</b> formula (公式)对象</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="reg.html"><a href="reg.html#公式的生成"><i class="fa fa-check"></i><b>7.8.1</b> 公式的生成</a></li>
+<li class="chapter" data-level="7.8.2" data-path="reg.html"><a href="reg.html#生成公式的运算符"><i class="fa fa-check"></i><b>7.8.2</b> 生成公式的运算符</a></li>
+<li class="chapter" data-level="7.8.3" data-path="reg.html"><a href="reg.html#公式与字符串之间的转换"><i class="fa fa-check"></i><b>7.8.3</b> 公式与字符串之间的转换</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="reg.html"><a href="reg.html#表达式expression"><i class="fa fa-check"></i><b>7.9</b> 表达式expression</a></li>
+<li class="chapter" data-level="7.10" data-path="reg.html"><a href="reg.html#表达式的生成与执行"><i class="fa fa-check"></i><b>7.10</b> 表达式的生成与执行</a></li>
+<li class="chapter" data-level="7.11" data-path="reg.html"><a href="reg.html#表达式与字符串的转换"><i class="fa fa-check"></i><b>7.11</b> 表达式与字符串的转换</a></li>
+<li class="chapter" data-level="7.12" data-path="reg.html"><a href="reg.html#使用stargazer输出表格"><i class="fa fa-check"></i><b>7.12</b> 使用stargazer输出表格</a>
+<ul>
+<li class="chapter" data-level="7.12.1" data-path="reg.html"><a href="reg.html#标准回归表"><i class="fa fa-check"></i><b>7.12.1</b> 标准回归表</a></li>
+<li class="chapter" data-level="7.12.2" data-path="reg.html"><a href="reg.html#默认格式"><i class="fa fa-check"></i><b>7.12.2</b> 默认格式</a></li>
+<li class="chapter" data-level="7.12.3" data-path="reg.html"><a href="reg.html#表格表头"><i class="fa fa-check"></i><b>7.12.3</b> 表格表头</a></li>
+<li class="chapter" data-level="7.12.4" data-path="reg.html"><a href="reg.html#表格正文"><i class="fa fa-check"></i><b>7.12.4</b> 表格正文</a></li>
+<li class="chapter" data-level="7.12.5" data-path="reg.html"><a href="reg.html#添加变量信息"><i class="fa fa-check"></i><b>7.12.5</b> 添加变量信息</a></li>
+<li class="chapter" data-level="7.12.6" data-path="reg.html"><a href="reg.html#选择统计量"><i class="fa fa-check"></i><b>7.12.6</b> 选择统计量</a></li>
+<li class="chapter" data-level="7.12.7" data-path="reg.html"><a href="reg.html#表格注释"><i class="fa fa-check"></i><b>7.12.7</b> 表格注释</a></li>
+<li class="chapter" data-level="7.12.8" data-path="reg.html"><a href="reg.html#整体布局"><i class="fa fa-check"></i><b>7.12.8</b> 整体布局</a></li>
+<li class="chapter" data-level="7.12.9" data-path="reg.html"><a href="reg.html#其他-1"><i class="fa fa-check"></i><b>7.12.9</b> 其他</a></li>
+<li class="chapter" data-level="7.12.10" data-path="reg.html"><a href="reg.html#描述性统计表"><i class="fa fa-check"></i><b>7.12.10</b> 描述性统计表</a></li>
+</ul></li>
+<li class="chapter" data-level="7.13" data-path="reg.html"><a href="reg.html#回归结果的可视化"><i class="fa fa-check"></i><b>7.13</b> 回归结果的可视化</a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="reg.html"><a href="reg.html#使用ggcoefstats可视化回归结果"><i class="fa fa-check"></i><b>7.13.1</b> 使用ggcoefstats可视化回归结果</a></li>
+<li class="chapter" data-level="7.13.2" data-path="reg.html"><a href="reg.html#使用"><i class="fa fa-check"></i><b>7.13.2</b> 使用</a></li>
+<li class="chapter" data-level="7.13.3" data-path="reg.html"><a href="reg.html#双重差分模型的可视化"><i class="fa fa-check"></i><b>7.13.3</b> 双重差分模型的可视化</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="py.html"><a href="py.html"><i class="fa fa-check"></i><b>8</b> Python基础</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="py.html"><a href="py.html#python简介"><i class="fa fa-check"></i><b>8.1</b> Python简介</a></li>
+<li class="chapter" data-level="8.2" data-path="py.html"><a href="py.html#python安装与pycharm"><i class="fa fa-check"></i><b>8.2</b> Python安装与Pycharm</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="py.html"><a href="py.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装</a></li>
+<li class="chapter" data-level="8.2.2" data-path="py.html"><a href="py.html#编辑器-1"><i class="fa fa-check"></i><b>8.2.2</b> 编辑器</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="py.html"><a href="py.html#变量-1"><i class="fa fa-check"></i><b>8.3</b> 变量</a></li>
+<li class="chapter" data-level="8.4" data-path="py.html"><a href="py.html#数据类型-1"><i class="fa fa-check"></i><b>8.4</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="py.html"><a href="py.html#类型转换"><i class="fa fa-check"></i><b>8.4.1</b> 类型转换</a></li>
+<li class="chapter" data-level="8.4.2" data-path="py.html"><a href="py.html#算术运算"><i class="fa fa-check"></i><b>8.4.2</b> 算术运算</a></li>
+<li class="chapter" data-level="8.4.3" data-path="py.html"><a href="py.html#布尔运算"><i class="fa fa-check"></i><b>8.4.3</b> 布尔运算</a></li>
+<li class="chapter" data-level="8.4.4" data-path="py.html"><a href="py.html#字符串"><i class="fa fa-check"></i><b>8.4.4</b> 字符串</a></li>
+<li class="chapter" data-level="8.4.5" data-path="py.html"><a href="py.html#字符串的替换"><i class="fa fa-check"></i><b>8.4.5</b> 字符串的替换</a></li>
+<li class="chapter" data-level="8.4.6" data-path="py.html"><a href="py.html#字符串的切片"><i class="fa fa-check"></i><b>8.4.6</b> 字符串的切片</a></li>
+<li class="chapter" data-level="8.4.7" data-path="py.html"><a href="py.html#标准字符串操作"><i class="fa fa-check"></i><b>8.4.7</b> 标准字符串操作</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="py.html"><a href="py.html#标准输入输出"><i class="fa fa-check"></i><b>8.5</b> 标准输入输出</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="py.html"><a href="py.html#标准输入"><i class="fa fa-check"></i><b>8.5.1</b> 标准输入</a></li>
+<li class="chapter" data-level="8.5.2" data-path="py.html"><a href="py.html#命令执行"><i class="fa fa-check"></i><b>8.5.2</b> 命令执行</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="py.html"><a href="py.html#数据结构-1"><i class="fa fa-check"></i><b>8.6</b> 数据结构</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="py.html"><a href="py.html#列表-1"><i class="fa fa-check"></i><b>8.6.1</b> 列表</a></li>
+<li class="chapter" data-level="8.6.2" data-path="py.html"><a href="py.html#元组"><i class="fa fa-check"></i><b>8.6.2</b> 元组</a></li>
+<li class="chapter" data-level="8.6.3" data-path="py.html"><a href="py.html#字典"><i class="fa fa-check"></i><b>8.6.3</b> 字典</a></li>
+<li class="chapter" data-level="8.6.4" data-path="py.html"><a href="py.html#数据结构之间的转化-1"><i class="fa fa-check"></i><b>8.6.4</b> 数据结构之间的转化</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="py.html"><a href="py.html#流程控制-1"><i class="fa fa-check"></i><b>8.7</b> 流程控制</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="py.html"><a href="py.html#条件判断-1"><i class="fa fa-check"></i><b>8.7.1</b> 条件判断</a></li>
+<li class="chapter" data-level="8.7.2" data-path="py.html"><a href="py.html#循环-1"><i class="fa fa-check"></i><b>8.7.2</b> 循环</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="py.html"><a href="py.html#函数与模块"><i class="fa fa-check"></i><b>8.8</b> 函数与模块</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="py.html"><a href="py.html#批量调用"><i class="fa fa-check"></i><b>8.8.1</b> 批量调用</a></li>
+<li class="chapter" data-level="8.8.2" data-path="py.html"><a href="py.html#无名函数"><i class="fa fa-check"></i><b>8.8.2</b> 无名函数</a></li>
+<li class="chapter" data-level="8.8.3" data-path="py.html"><a href="py.html#函数文档"><i class="fa fa-check"></i><b>8.8.3</b> 函数文档</a></li>
+<li class="chapter" data-level="8.8.4" data-path="py.html"><a href="py.html#模块"><i class="fa fa-check"></i><b>8.8.4</b> 模块</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="py.html"><a href="py.html#数据读写与文件操作"><i class="fa fa-check"></i><b>8.9</b> 数据读写与文件操作</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="py.html"><a href="py.html#读入文件"><i class="fa fa-check"></i><b>8.9.1</b> 读入文件</a></li>
+<li class="chapter" data-level="8.9.2" data-path="py.html"><a href="py.html#写出文件"><i class="fa fa-check"></i><b>8.9.2</b> 写出文件</a></li>
+<li class="chapter" data-level="8.9.3" data-path="py.html"><a href="py.html#with关键字"><i class="fa fa-check"></i><b>8.9.3</b> with关键字</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="py.html"><a href="py.html#os模块"><i class="fa fa-check"></i><b>8.10</b> os模块</a></li>
+<li class="chapter" data-level="8.11" data-path="py.html"><a href="py.html#案例获取高德地图地址信息"><i class="fa fa-check"></i><b>8.11</b> 案例：获取高德地图地址信息</a></li>
+<li class="chapter" data-level="8.12" data-path="py.html"><a href="py.html#面向对象单独成一章"><i class="fa fa-check"></i><b>8.12</b> 面向对象单独成一章</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="regexp.html"><a href="regexp.html"><i class="fa fa-check"></i><b>9</b> 正则表达式</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="regexp.html"><a href="regexp.html#语法要素"><i class="fa fa-check"></i><b>9.1</b> 语法要素</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="regexp.html"><a href="regexp.html#元字符"><i class="fa fa-check"></i><b>9.1.1</b> 元字符</a></li>
+<li class="chapter" data-level="9.1.2" data-path="regexp.html"><a href="regexp.html#重复"><i class="fa fa-check"></i><b>9.1.2</b> 重复</a></li>
+<li class="chapter" data-level="9.1.3" data-path="regexp.html"><a href="regexp.html#常用字符集"><i class="fa fa-check"></i><b>9.1.3</b> 常用字符集</a></li>
+<li class="chapter" data-level="9.1.4" data-path="regexp.html"><a href="regexp.html#分组"><i class="fa fa-check"></i><b>9.1.4</b> 分组</a></li>
+<li class="chapter" data-level="9.1.5" data-path="regexp.html"><a href="regexp.html#非捕获组与断言"><i class="fa fa-check"></i><b>9.1.5</b> 非捕获组与断言</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="regexp.html"><a href="regexp.html#grep命令"><i class="fa fa-check"></i><b>9.2</b> grep命令</a></li>
+<li class="chapter" data-level="9.3" data-path="regexp.html"><a href="regexp.html#sed命令"><i class="fa fa-check"></i><b>9.3</b> sed命令</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="regexp.html"><a href="regexp.html#应用情景"><i class="fa fa-check"></i><b>9.3.1</b> 应用情景</a></li>
+<li class="chapter" data-level="9.3.2" data-path="regexp.html"><a href="regexp.html#文本替换"><i class="fa fa-check"></i><b>9.3.2</b> 文本替换</a></li>
+<li class="chapter" data-level="9.3.3" data-path="regexp.html"><a href="regexp.html#定位行"><i class="fa fa-check"></i><b>9.3.3</b> 定位行</a></li>
+<li class="chapter" data-level="9.3.4" data-path="regexp.html"><a href="regexp.html#替代"><i class="fa fa-check"></i><b>9.3.4</b> 替代</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="regexp.html"><a href="regexp.html#awk命令"><i class="fa fa-check"></i><b>9.4</b> awk命令</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="regexp.html"><a href="regexp.html#入门"><i class="fa fa-check"></i><b>9.4.1</b> 入门</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="regexp.html"><a href="regexp.html#r语言stringr包"><i class="fa fa-check"></i><b>9.5</b> R语言stringr包</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="regexp.html"><a href="regexp.html#stringr包"><i class="fa fa-check"></i><b>9.5.1</b> stringr包</a></li>
+<li class="chapter" data-level="9.5.2" data-path="regexp.html"><a href="regexp.html#应用案例wos数据分析"><i class="fa fa-check"></i><b>9.5.2</b> 应用案例：wos数据分析</a></li>
+<li class="chapter" data-level="9.5.3" data-path="regexp.html"><a href="regexp.html#应用案例数据合并与校对"><i class="fa fa-check"></i><b>9.5.3</b> 应用案例：数据合并与校对</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="regexp.html"><a href="regexp.html#python的re模块"><i class="fa fa-check"></i><b>9.6</b> Python的re模块</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="regexp.html"><a href="regexp.html#原生字符串"><i class="fa fa-check"></i><b>9.6.1</b> 原生字符串</a></li>
+<li class="chapter" data-level="9.6.2" data-path="regexp.html"><a href="regexp.html#编译"><i class="fa fa-check"></i><b>9.6.2</b> 编译</a></li>
+<li class="chapter" data-level="9.6.3" data-path="regexp.html"><a href="regexp.html#匹配-1"><i class="fa fa-check"></i><b>9.6.3</b> 匹配</a></li>
+<li class="chapter" data-level="9.6.4" data-path="regexp.html"><a href="regexp.html#分割"><i class="fa fa-check"></i><b>9.6.4</b> 分割</a></li>
+<li class="chapter" data-level="9.6.5" data-path="regexp.html"><a href="regexp.html#替换"><i class="fa fa-check"></i><b>9.6.5</b> 替换</a></li>
+<li class="chapter" data-level="9.6.6" data-path="regexp.html"><a href="regexp.html#命名组"><i class="fa fa-check"></i><b>9.6.6</b> 命名组</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="cml.html"><a href="cml.html"><i class="fa fa-check"></i><b>10</b> 命令行</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="cml.html"><a href="cml.html#命令的基本概念"><i class="fa fa-check"></i><b>10.1</b> 命令的基本概念</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="cml.html"><a href="cml.html#常用命令"><i class="fa fa-check"></i><b>10.1.1</b> 常用命令</a></li>
+<li class="chapter" data-level="10.1.2" data-path="cml.html"><a href="cml.html#标准输入与输出"><i class="fa fa-check"></i><b>10.1.2</b> 标准输入与输出</a></li>
+<li class="chapter" data-level="10.1.3" data-path="cml.html"><a href="cml.html#管道与进程管理"><i class="fa fa-check"></i><b>10.1.3</b> 管道与进程管理</a></li>
+<li class="chapter" data-level="10.1.4" data-path="cml.html"><a href="cml.html#别名"><i class="fa fa-check"></i><b>10.1.4</b> 别名</a></li>
+<li class="chapter" data-level="10.1.5" data-path="cml.html"><a href="cml.html#脚本"><i class="fa fa-check"></i><b>10.1.5</b> 脚本</a></li>
+<li class="chapter" data-level="10.1.6" data-path="cml.html"><a href="cml.html#传参"><i class="fa fa-check"></i><b>10.1.6</b> 传参</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="cml.html"><a href="cml.html#变量与数据结构"><i class="fa fa-check"></i><b>10.2</b> 变量与数据结构</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="cml.html"><a href="cml.html#数组"><i class="fa fa-check"></i><b>10.2.1</b> 数组</a></li>
+<li class="chapter" data-level="10.2.2" data-path="cml.html"><a href="cml.html#字典-1"><i class="fa fa-check"></i><b>10.2.2</b> 字典</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="cml.html"><a href="cml.html#运算-1"><i class="fa fa-check"></i><b>10.3</b> 运算</a></li>
+<li class="chapter" data-level="10.4" data-path="cml.html"><a href="cml.html#控制流程"><i class="fa fa-check"></i><b>10.4</b> 控制流程</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="cml.html"><a href="cml.html#选择结构"><i class="fa fa-check"></i><b>10.4.1</b> 选择结构</a></li>
+<li class="chapter" data-level="10.4.2" data-path="cml.html"><a href="cml.html#循环-2"><i class="fa fa-check"></i><b>10.4.2</b> 循环</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="cml.html"><a href="cml.html#函数"><i class="fa fa-check"></i><b>10.5</b> 函数</a></li>
+<li class="chapter" data-level="10.6" data-path="cml.html"><a href="cml.html#bash内建正则表达式"><i class="fa fa-check"></i><b>10.6</b> bash内建正则表达式</a></li>
+<li class="chapter" data-level="10.7" data-path="cml.html"><a href="cml.html#应用案例"><i class="fa fa-check"></i><b>10.7</b> 应用案例</a></li>
+<li class="chapter" data-level="10.8" data-path="cml.html"><a href="cml.html#通配符"><i class="fa fa-check"></i><b>10.8</b> 通配符</a></li>
+<li class="chapter" data-level="10.9" data-path="cml.html"><a href="cml.html#sed"><i class="fa fa-check"></i><b>10.9</b> sed</a></li>
+<li class="chapter" data-level="10.10" data-path="cml.html"><a href="cml.html#awk"><i class="fa fa-check"></i><b>10.10</b> awk</a></li>
+<li class="chapter" data-level="10.11" data-path="cml.html"><a href="cml.html#正则表达式"><i class="fa fa-check"></i><b>10.11</b> 正则表达式</a></li>
+<li class="chapter" data-level="10.12" data-path="cml.html"><a href="cml.html#r的命令行选项"><i class="fa fa-check"></i><b>10.12</b> R的命令行选项</a>
+<ul>
+<li class="chapter" data-level="10.12.1" data-path="cml.html"><a href="cml.html#linuxunix-shebang"><i class="fa fa-check"></i><b>10.12.1</b> Linux/Unix Shebang</a></li>
+<li class="chapter" data-level="10.12.2" data-path="cml.html"><a href="cml.html#argparse包实例"><i class="fa fa-check"></i><b>10.12.2</b> argparse包实例</a></li>
+</ul></li>
+<li class="chapter" data-level="10.13" data-path="cml.html"><a href="cml.html#关于命令行与ide"><i class="fa fa-check"></i><b>10.13</b> 关于命令行与IDE</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="web.html"><a href="web.html"><i class="fa fa-check"></i><b>11</b> 网络数据采集</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="web.html"><a href="web.html#网络数据格式"><i class="fa fa-check"></i><b>11.1</b> 网络数据格式</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="web.html"><a href="web.html#csv"><i class="fa fa-check"></i><b>11.1.1</b> CSV</a></li>
+<li class="chapter" data-level="11.1.2" data-path="web.html"><a href="web.html#xml-1"><i class="fa fa-check"></i><b>11.1.2</b> XML</a></li>
+<li class="chapter" data-level="11.1.3" data-path="web.html"><a href="web.html#json-1"><i class="fa fa-check"></i><b>11.1.3</b> JSON</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="web.html"><a href="web.html#html"><i class="fa fa-check"></i><b>11.2</b> HTML</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="web.html"><a href="web.html#html的基本语法"><i class="fa fa-check"></i><b>11.2.1</b> HTML的基本语法</a></li>
+<li class="chapter" data-level="11.2.2" data-path="web.html"><a href="web.html#常见html标签"><i class="fa fa-check"></i><b>11.2.2</b> 常见HTML标签</a></li>
+<li class="chapter" data-level="11.2.3" data-path="web.html"><a href="web.html#dom树形数据结构"><i class="fa fa-check"></i><b>11.2.3</b> DOM树形数据结构</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="web.html"><a href="web.html#css"><i class="fa fa-check"></i><b>11.3</b> CSS</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="web.html"><a href="web.html#css的基本语法"><i class="fa fa-check"></i><b>11.3.1</b> CSS的基本语法</a></li>
+<li class="chapter" data-level="11.3.2" data-path="web.html"><a href="web.html#id选择器"><i class="fa fa-check"></i><b>11.3.2</b> id选择器</a></li>
+<li class="chapter" data-level="11.3.3" data-path="web.html"><a href="web.html#类选择器"><i class="fa fa-check"></i><b>11.3.3</b> 类选择器</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="web.html"><a href="web.html#javascript"><i class="fa fa-check"></i><b>11.4</b> JavaScript</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="web.html"><a href="web.html#javascript案例"><i class="fa fa-check"></i><b>11.4.1</b> JavaScript案例</a></li>
+<li class="chapter" data-level="11.4.2" data-path="web.html"><a href="web.html#javascript的基本语法"><i class="fa fa-check"></i><b>11.4.2</b> JavaScript的基本语法</a></li>
+<li class="chapter" data-level="11.4.3" data-path="web.html"><a href="web.html#ajax"><i class="fa fa-check"></i><b>11.4.3</b> AJAX</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="web.html"><a href="web.html#开发者工具"><i class="fa fa-check"></i><b>11.5</b> 开发者工具</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="web.html"><a href="web.html#打开开发者工具"><i class="fa fa-check"></i><b>11.5.1</b> 打开开发者工具</a></li>
+<li class="chapter" data-level="11.5.2" data-path="web.html"><a href="web.html#查看器与样式"><i class="fa fa-check"></i><b>11.5.2</b> 查看器与样式</a></li>
+<li class="chapter" data-level="11.5.3" data-path="web.html"><a href="web.html#其他功能"><i class="fa fa-check"></i><b>11.5.3</b> 其他功能</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="web.html"><a href="web.html#xpath"><i class="fa fa-check"></i><b>11.6</b> Xpath</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="web.html"><a href="web.html#基本查询"><i class="fa fa-check"></i><b>11.6.1</b> 基本查询</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="web.html"><a href="web.html#http"><i class="fa fa-check"></i><b>11.7</b> HTTP</a>
+<ul>
+<li class="chapter" data-level="11.7.1" data-path="web.html"><a href="web.html#http常见方法"><i class="fa fa-check"></i><b>11.7.1</b> HTTP常见方法</a></li>
+</ul></li>
+<li class="chapter" data-level="11.8" data-path="web.html"><a href="web.html#静态爬虫"><i class="fa fa-check"></i><b>11.8</b> 静态爬虫</a></li>
+<li class="chapter" data-level="11.9" data-path="web.html"><a href="web.html#使用rselenium的动态爬虫"><i class="fa fa-check"></i><b>11.9</b> 使用RSelenium的动态爬虫</a>
+<ul>
+<li class="chapter" data-level="11.9.1" data-path="web.html"><a href="web.html#rselenium简介与安装"><i class="fa fa-check"></i><b>11.9.1</b> RSelenium简介与安装</a></li>
+<li class="chapter" data-level="11.9.2" data-path="web.html"><a href="web.html#安装docker"><i class="fa fa-check"></i><b>11.9.2</b> 安装Docker</a></li>
+<li class="chapter" data-level="11.9.3" data-path="web.html"><a href="web.html#rselenum语法"><i class="fa fa-check"></i><b>11.9.3</b> RSelenum语法</a></li>
+<li class="chapter" data-level="11.9.4" data-path="web.html"><a href="web.html#案例1在链家搜索并获取相关信息"><i class="fa fa-check"></i><b>11.9.4</b> 案例1:在链家搜索并获取相关信息</a></li>
+<li class="chapter" data-level="11.9.5" data-path="web.html"><a href="web.html#案例2登录豆瓣"><i class="fa fa-check"></i><b>11.9.5</b> 案例2:登录豆瓣</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="geo.html"><a href="geo.html"><i class="fa fa-check"></i><b>12</b> 地理计算</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="geo.html"><a href="geo.html#r中地理计算"><i class="fa fa-check"></i><b>12.1</b> R中地理计算</a></li>
+<li class="chapter" data-level="12.2" data-path="geo.html"><a href="geo.html#地理数据结构"><i class="fa fa-check"></i><b>12.2</b> 地理数据结构</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="geo.html"><a href="geo.html#向量vector"><i class="fa fa-check"></i><b>12.2.1</b> 向量（Vector）</a></li>
+<li class="chapter" data-level="12.2.2" data-path="geo.html"><a href="geo.html#栅格raster"><i class="fa fa-check"></i><b>12.2.2</b> 栅格（Raster）</a></li>
+<li class="chapter" data-level="12.2.3" data-path="geo.html"><a href="geo.html#坐标系coordinate-reference-system"><i class="fa fa-check"></i><b>12.2.3</b> 坐标系（coordinate reference system）</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="geo.html"><a href="geo.html#地理数据操纵"><i class="fa fa-check"></i><b>12.3</b> 地理数据操纵</a></li>
+<li class="chapter" data-level="12.4" data-path="geo.html"><a href="geo.html#地理数据可视化"><i class="fa fa-check"></i><b>12.4</b> 地理数据可视化</a></li>
+<li class="chapter" data-level="12.5" data-path="geo.html"><a href="geo.html#地理数据运算"><i class="fa fa-check"></i><b>12.5</b> 地理数据运算</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="geo.html"><a href="geo.html#取子集"><i class="fa fa-check"></i><b>12.5.1</b> 取子集</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="geo.html"><a href="geo.html#地理数据读写"><i class="fa fa-check"></i><b>12.6</b> 地理数据读写</a></li>
+<li class="chapter" data-level="12.7" data-path="geo.html"><a href="geo.html#地理数据计算"><i class="fa fa-check"></i><b>12.7</b> 地理数据计算</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="make.html"><a href="make.html"><i class="fa fa-check"></i><b>13</b> GUN Make的数据生产线</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="make.html"><a href="make.html#使用make的必要性"><i class="fa fa-check"></i><b>13.1</b> 使用Make的必要性</a></li>
+<li class="chapter" data-level="13.2" data-path="make.html"><a href="make.html#数据流水线的构造目标"><i class="fa fa-check"></i><b>13.2</b> 数据流水线的构造目标</a></li>
+<li class="chapter" data-level="13.3" data-path="make.html"><a href="make.html#make安装"><i class="fa fa-check"></i><b>13.3</b> Make安装</a></li>
+<li class="chapter" data-level="13.4" data-path="make.html"><a href="make.html#快速上手make"><i class="fa fa-check"></i><b>13.4</b> 快速上手make</a></li>
+<li class="chapter" data-level="13.5" data-path="make.html"><a href="make.html#make的工作方式"><i class="fa fa-check"></i><b>13.5</b> make的工作方式</a></li>
+<li class="chapter" data-level="13.6" data-path="make.html"><a href="make.html#makefile-的高级写法"><i class="fa fa-check"></i><b>13.6</b> Makefile 的高级写法</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="make.html"><a href="make.html#特殊目标"><i class="fa fa-check"></i><b>13.6.1</b> 特殊目标</a></li>
+<li class="chapter" data-level="13.6.2" data-path="make.html"><a href="make.html#使用变量"><i class="fa fa-check"></i><b>13.6.2</b> 使用变量</a></li>
+<li class="chapter" data-level="13.6.3" data-path="make.html"><a href="make.html#分支与循环结构"><i class="fa fa-check"></i><b>13.6.3</b> 分支与循环结构</a></li>
+<li class="chapter" data-level="13.6.4" data-path="make.html"><a href="make.html#函数-1"><i class="fa fa-check"></i><b>13.6.4</b> 函数</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="make.html"><a href="make.html#make的高级语法"><i class="fa fa-check"></i><b>13.7</b> Make的高级语法</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="make.html"><a href="make.html#并行计算"><i class="fa fa-check"></i><b>13.7.1</b> 并行计算</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="make.html"><a href="make.html#参考资料"><i class="fa fa-check"></i><b>13.8</b> 参考资料</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="net.html"><a href="net.html"><i class="fa fa-check"></i><b>14</b> 图数据分析</a></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="sound.html"><a href="sound.html"><i class="fa fa-check"></i><b>A</b> 余音绕梁</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>参考文献</a></li>
+<li class="chapter" data-level="B" data-path="date.html"><a href="date.html"><i class="fa fa-check"></i><b>B</b> R日期时间</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="date.html"><a href="date.html#日期-时间数据类型"><i class="fa fa-check"></i><b>B.1</b> 日期-时间数据类型</a></li>
+<li class="chapter" data-level="B.2" data-path="date.html"><a href="date.html#lubridate包"><i class="fa fa-check"></i><b>B.2</b> lubridate包</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="date.html"><a href="date.html#定义日期-时间变量"><i class="fa fa-check"></i><b>B.2.1</b> 定义日期-时间变量</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="date.html"><a href="date.html#从日期-时间中取出元素"><i class="fa fa-check"></i><b>B.3</b> 从日期-时间中取出元素</a></li>
+<li class="chapter" data-level="B.4" data-path="date.html"><a href="date.html#日期-时间取整"><i class="fa fa-check"></i><b>B.4</b> 日期-时间取整</a></li>
+<li class="chapter" data-level="B.5" data-path="date.html"><a href="date.html#日期-时间的数学运算"><i class="fa fa-check"></i><b>B.5</b> 日期-时间的数学运算</a>
+<ul>
+<li class="chapter" data-level="B.5.1" data-path="date.html"><a href="date.html#时间长度"><i class="fa fa-check"></i><b>B.5.1</b> 时间长度</a></li>
+<li class="chapter" data-level="B.5.2" data-path="date.html"><a href="date.html#时间周期"><i class="fa fa-check"></i><b>B.5.2</b> 时间周期</a></li>
+<li class="chapter" data-level="B.5.3" data-path="date.html"><a href="date.html#时间区间"><i class="fa fa-check"></i><b>B.5.3</b> 时间区间</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">本书由 bookdown 强力驱动</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">数据工程讲义：经济学分册</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="py" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">第 8 章</span> Python基础<a href="py.html#py" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>你总是给自己设置障碍，因为你不敢。<em>—邪不压正</em></p>
+</blockquote>
+<div id="python简介" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Python简介<a href="py.html#python简介" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>本章我们介绍<code>Python</code>的基础知识。在这之前，读者可能会好奇，为什么又多了一个语言？我们已经学习了<code>R语言</code>和<code>SQL语言</code>，接触了<code>bash</code>，在未来还要学习<code>html语言</code>和<code>正则表达式</code>。之所以学习这么多语言是因为数据工程中涵盖了多种多样的任务，针对不同的任务往往有不同的最佳工具。与其追求在一个语言中费劲完成</p>
+<p>正如在第三章介绍的，尽管<code>R语言</code>非常强大，但是它毕竟不是一个通用语言，在很多任务上，效率并不高。例如，绝大多数的<code>API</code>都使用的是<code>Python</code>语法，这就极大限制了<code>R语言</code>的应用场景。因此，我们需要学习一门通用语言，</p>
+<p><code>Python</code>也是一门解释性语言，对于编译型语言如<code>C/C++</code>它更容易调试。<code>Python</code>的语法如<code>R语言</code>一般简洁易懂。<code>Python</code>是一个通用语言可，在生活中的方方面面都可以使用。</p>
+<p><code>Python</code>的软件库丰富，可以完成非常多其他的功能。<code>Python</code>可以将跨语言的程序粘合在一起，是天生的“胶水语言”，非常适合跨语言协作。</p>
+<p>由于以上优点，<code>Python</code>成为当前最流行的编程语言。<code>Python</code>的出现大大降低了编程的门槛，程序员供给数量指数增多。</p>
+<p>更重要的是，学习编程语言在总收益不变的情况下，边际成本是断崖式下降的，假设大家在学习<code>R语言</code>时候用了100%的努力，在学习<code>Python</code>时只用付出25%的努力，就可以快速掌握<code>Python</code>，但是编程能力和视野会翻倍。在未来深入学习<code>bash</code>时，只用付出10%的努力即可。不同的编程语言更是代表了不同的世界观，在增加技能的同时，让我们的用于更多看待世界的角度。</p>
+</div>
+<div id="python安装与pycharm" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Python安装与Pycharm<a href="py.html#python安装与pycharm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="安装" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> 安装<a href="py.html#安装" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Python</code>存在两个版本主要版本，<code>Python2</code>和<code>Python3</code>。<code>Python3</code>是针对<code>Python2</code>的一次大规模改进，以至于很多<code>Python2</code>的程序无法在<code>Python3</code>中运行，因此可以将两者看做是不同的语言，以避免混淆出错。</p>
+<p>Windows用户在WSL环境中使用<code>apt</code>命令安装<code>python3</code>。</p>
+<pre><code>apt install python3</code></pre>
+<p>R用户可以通过<code>brew</code>或者在<code>Gentoo prefix</code>中的<code>merge</code>命令安装。</p>
+<pre><code>brew install python3</code></pre>
+</div>
+<div id="编辑器-1" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> 编辑器<a href="py.html#编辑器-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Python</code>有一个增强式编译环境，<code>Ipython</code>可用于交互式编程。还提供了<code>Jupyter</code>，是<code>IPython</code>发展而来的可以在网页上进行交互式编程的环境。它的交互性更强，可以规避掉命令行，上手容易，适合写教程。但是，网页并不能替代编辑器，不适合写大段程序，也没有批量处理能力。如果是只是学会了<code>Jupyter</code>就以为自己学会了编程，到处招摇过市，会暴露自己的无知与傲慢。因此，不推荐大家将其作为编辑器使用。</p>
+<p>我们推荐<code>Pycharm Professional</code>作为<code>Python</code>的编辑器（<a href="https://www.jetbrains.com/pycharm/download/?section=mac">下载地址</a>），这是一款不逊色于<code>Rstudio</code>的编辑器，且为教育机构用户提供免费的权限。<code>Pycharm</code>不仅继承了语法高亮、自动补全以及版本控制等基本功能，更是集合了远程服务器编译功能，让远程调试非常便捷，这是一个<code>Rstudio</code>都没有的功能。同时，<code>Pycharm</code>也支持跨语言编辑。</p>
+<p><strong>这里缺一个pycharm教程（后面补上）</strong>。</p>
+<p>此外<code>Rstudio</code>也是可以兼容python的，使用<code>reticulate::repl_python()</code>即可将<code>Console</code>的编译环境变成<code>python</code>环境。在做一些小命令尝试的时候，可以直接在Rtudio中编程，而不需要特别转换工作环境。毕竟，任何环境的转换都是需要成本的。</p>
+</div>
+</div>
+<div id="变量-1" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> 变量<a href="py.html#变量-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Python</code>变量使用<code>=</code>赋值与修改，变量既可以是最基本的数据类型，也可以是复杂的数据结构，甚至是新的类实体。<code>print</code>函数可以将变量输出到屏幕。</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="py.html#cb3-1" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&quot;hello world&quot;</span></span>
+<span id="cb3-2"><a href="py.html#cb3-2" tabindex="-1"></a><span class="bu">print</span>(a)</span></code></pre></div>
+<pre><code>## hello world</code></pre>
+</div>
+<div id="数据类型-1" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> 数据类型<a href="py.html#数据类型-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Python</code>有物种数据类型：整型（精度无限的整数）、浮点型（64位高精度小数）、字符串和<code>None</code>。字符串引号（单引号或双引号）标注、布尔型（<code>Ture</code>和<code>False</code>）。</p>
+<p><code>None</code>是<code>Python</code>中一个特别的值，即不是整数也不是浮点数，属于一种独有的类型。可以代表很多含义：“空”或者“没有”，或者“无法表达”，或者“出错了”、“非法”。转换为布尔类型时，None 的赋值为“假”。</p>
+<p><code>type</code>函数可以查看的数据类型。</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="py.html#cb5-1" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## &lt;class &#39;int&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="py.html#cb7-1" tabindex="-1"></a><span class="bu">type</span>(<span class="fl">3.14</span>)</span></code></pre></div>
+<pre><code>## &lt;class &#39;float&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="py.html#cb9-1" tabindex="-1"></a><span class="bu">type</span>(<span class="st">&quot;hello world&quot;</span>)</span></code></pre></div>
+<pre><code>## &lt;class &#39;str&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="py.html#cb11-1" tabindex="-1"></a><span class="bu">type</span>(<span class="va">True</span>)</span></code></pre></div>
+<pre><code>## &lt;class &#39;bool&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="py.html#cb13-1" tabindex="-1"></a><span class="bu">type</span>(<span class="va">None</span>)</span></code></pre></div>
+<pre><code>## &lt;class &#39;NoneType&#39;&gt;</code></pre>
+<div id="类型转换" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> 类型转换<a href="py.html#类型转换" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>int</code>、<code>float</code>、<code>str</code>和<code>bool</code>函数可以转换数据类型。与<code>R</code>一样，不是所有类型都可以互相转换的，转换不及会报错。</p>
+</div>
+<div id="算术运算" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> 算术运算<a href="py.html#算术运算" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>+-*/</code>用于四则运算，幂运算使用两个星号，<code>//</code>表示整除，<code>%</code>为取余数。</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="py.html#cb15-1" tabindex="-1"></a><span class="dv">3</span> <span class="op">+</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## 6</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="py.html#cb17-1" tabindex="-1"></a><span class="dv">3</span> <span class="op">-</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## 0</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="py.html#cb19-1" tabindex="-1"></a><span class="dv">3</span> <span class="op">*</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## 9</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="py.html#cb21-1" tabindex="-1"></a><span class="dv">3</span> <span class="op">/</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## 1.5</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="py.html#cb23-1" tabindex="-1"></a><span class="dv">3</span> <span class="op">**</span> <span class="dv">6</span></span></code></pre></div>
+<pre><code>## 729</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="py.html#cb25-1" tabindex="-1"></a><span class="dv">3</span> <span class="op">//</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## 1</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="py.html#cb27-1" tabindex="-1"></a><span class="dv">4</span> <span class="op">%</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## 0</code></pre>
+<p>更复杂的运算，可以导入<code>math</code>模块，例如阶乘。</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="py.html#cb29-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb29-2"><a href="py.html#cb29-2" tabindex="-1"></a>math.factorial(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## 3628800</code></pre>
+<p>注意，在<code>Python</code>里面整数是高精度的，具体多少精度，取决于计算机的硬件水平。<code>Python</code>会自行做出判断，用计算效率损失来换取人类在编程时候的方便。这样的恰恰适合经济学家，如果能够节省人类的时间，不惜浪费计算机的时间；通过升级硬件来节约计算机的时间。</p>
+</div>
+<div id="布尔运算" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> 布尔运算<a href="py.html#布尔运算" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>and</code>，<code>or</code>，<code>not</code>是<code>Python</code>中的“与或非”运算。</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="py.html#cb31-1" tabindex="-1"></a><span class="va">True</span> <span class="kw">and</span> <span class="va">False</span></span></code></pre></div>
+<pre><code>## False</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="py.html#cb33-1" tabindex="-1"></a><span class="va">True</span> <span class="kw">or</span> <span class="va">False</span></span></code></pre></div>
+<pre><code>## True</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="py.html#cb35-1" tabindex="-1"></a><span class="kw">not</span> <span class="va">True</span></span></code></pre></div>
+<pre><code>## False</code></pre>
+<p><code>&lt;</code>、<code>&lt;=</code>、<code>&gt;</code>、<code>&gt;=</code>、<code>==</code>，<code>!=</code>用于数值比较，生成布尔型。</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="py.html#cb37-1" tabindex="-1"></a><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## True</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="py.html#cb39-1" tabindex="-1"></a><span class="dv">2</span> <span class="op">!=</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## False</code></pre>
+<p>在<code>Python</code>内部，布尔型被储存成整数型的0和1，因此可进行算术运算。</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="py.html#cb41-1" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="va">True</span></span></code></pre></div>
+<pre><code>## 3</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="py.html#cb43-1" tabindex="-1"></a><span class="dv">2</span> <span class="op">&gt;</span> <span class="va">False</span></span></code></pre></div>
+<pre><code>## True</code></pre>
+</div>
+<div id="字符串" class="section level3 hasAnchor" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> 字符串<a href="py.html#字符串" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Python</code>有非常强大的字符串工具库，针对单个字符串，<code>Python</code>开发了非常强大的属性与操作。很多操作让R用户眼睛瞪得像铜铃。例如，用加法和乘法，定义字符串的拼接与重复。</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="py.html#cb45-1" tabindex="-1"></a><span class="co">&quot;3.14&quot;</span> <span class="op">+</span> <span class="st">&quot;15926&quot;</span></span></code></pre></div>
+<pre><code>## &#39;3.1415926&#39;</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="py.html#cb47-1" tabindex="-1"></a><span class="co">&quot;重要的话说三次！&quot;</span><span class="op">*</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## &#39;重要的话说三次！重要的话说三次！重要的话说三次！&#39;</code></pre>
+<p><code>len</code>函数可以得到字符串的长度。</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="py.html#cb49-1" tabindex="-1"></a><span class="bu">len</span>(<span class="st">&quot;3.1415&quot;</span>)</span></code></pre></div>
+<pre><code>## 6</code></pre>
+</div>
+<div id="字符串的替换" class="section level3 hasAnchor" number="8.4.5">
+<h3><span class="header-section-number">8.4.5</span> 字符串的替换<a href="py.html#字符串的替换" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>.format</code>函数可以实现灵活的字符串替换，例如，</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="py.html#cb51-1" tabindex="-1"></a><span class="co">&quot;我感觉{}还需要{}，你们毕竟还是{}，你明白这意思吧？我告诉你们我是{}了，见得多了，西方哪一个{}我没有去过？你们要知道，美国的{}，比你们不知道要{}到哪里去了，我跟他{}。&quot;</span>.<span class="bu">format</span>(<span class="st">&quot;你们新闻界&quot;</span>,<span class="st">&quot;学习&quot;</span>,<span class="st">&quot;too young&quot;</span>,<span class="st">&quot;身经百战&quot;</span>,<span class="st">&quot;国家&quot;</span>,<span class="st">&quot;华莱士&quot;</span>,<span class="st">&quot;高&quot;</span>,<span class="st">&quot;谈笑风生&quot;</span>)</span></code></pre></div>
+<pre><code>## &#39;我感觉你们新闻界还需要学习，你们毕竟还是too young，你明白这意思吧？我告诉你们我是身经百战了，见得多了，西方哪一个国家我没有去过？你们要知道，美国的华莱士，比你们不知道要高到哪里去了，我跟他谈笑风生。&#39;</code></pre>
+<p>其中，变的部分用<code>{}</code>表示，<code>.format</code>中的参数与前面的<code>{}</code>一一对应。</p>
+<p><code>f-string</code>可以实现同样的功能，在数据输出时经常使用。</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="py.html#cb53-1" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb53-2"><a href="py.html#cb53-2" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb53-3"><a href="py.html#cb53-3" tabindex="-1"></a><span class="ss">f&quot;</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">乘以</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">等于</span><span class="sc">{</span>a<span class="op">*</span>b<span class="sc">}</span><span class="ss">&quot;</span></span></code></pre></div>
+<pre><code>## &#39;3乘以5等于15&#39;</code></pre>
+</div>
+<div id="字符串的切片" class="section level3 hasAnchor" number="8.4.6">
+<h3><span class="header-section-number">8.4.6</span> 字符串的切片<a href="py.html#字符串的切片" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>直接用<code>[]</code>就可以取出字符串的子集，注意<code>Python</code>从0开始编号，且使用左闭右开区间，跨语言使用时别出错。</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="py.html#cb55-1" tabindex="-1"></a>a <span class="op">=</span> <span class="st">&quot;hello world&quot;</span></span>
+<span id="cb55-2"><a href="py.html#cb55-2" tabindex="-1"></a>a[<span class="dv">0</span>],a[<span class="dv">2</span>:<span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## (&#39;h&#39;, &#39;ll&#39;)</code></pre>
+</div>
+<div id="标准字符串操作" class="section level3 hasAnchor" number="8.4.7">
+<h3><span class="header-section-number">8.4.7</span> 标准字符串操作<a href="py.html#标准字符串操作" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Python</code>的官方文档详尽介绍了标准库中字符串的进阶操作，推荐大家自己学一遍。我们介绍一些常用操作。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">操作</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>.count</code></td>
+<td align="left">统计字符出现的次数</td>
+</tr>
+<tr class="even">
+<td align="left"><code>.startwith</code></td>
+<td align="left">判断字符串是否由某个子串开头</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>.split</code></td>
+<td align="left">将字符串按照给定的分隔符分成列表</td>
+</tr>
+<tr class="even">
+<td align="left"><code>.replace</code></td>
+<td align="left">一一替换字符</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="py.html#cb57-1" tabindex="-1"></a>seed <span class="op">=</span> <span class="bu">bin</span>(<span class="dv">2324</span>)</span>
+<span id="cb57-2"><a href="py.html#cb57-2" tabindex="-1"></a><span class="bu">print</span>(seed)</span></code></pre></div>
+<pre><code>## 0b100100010100</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="py.html#cb59-1" tabindex="-1"></a><span class="bu">print</span>(seed.replace(<span class="st">&#39;0&#39;</span>,<span class="st">&quot;奥&quot;</span>).replace(<span class="st">&#39;1&#39;</span>,<span class="st">&quot;利&quot;</span>))</span></code></pre></div>
+<pre><code>## 奥b利奥奥利奥奥奥利奥利奥奥</code></pre>
+</div>
+</div>
+<div id="标准输入输出" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> 标准输入输出<a href="py.html#标准输入输出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="标准输入" class="section level3 hasAnchor" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> 标准输入<a href="py.html#标准输入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>input</code>函数可以键盘得到输入。</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="py.html#cb61-1" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">input</span>()</span></code></pre></div>
+<p>标准输入默认输入数据类型为字符串，因此，当需要数字时，需要进行类型转换。标准输入使程序可与外界交互，输入信息被赋给了变量。输入可以由人给出，也可以由其它程序给出。</p>
+</div>
+<div id="命令执行" class="section level3 hasAnchor" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> 命令执行<a href="py.html#命令执行" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Python</code>默认一个命令独立成行，如果需要多个命令写在一行中，需要用分号连接不同的命令。</p>
+</div>
+</div>
+<div id="数据结构-1" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> 数据结构<a href="py.html#数据结构-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>把基本数据类型组合起来可以构成复杂的数据结构。<code>Python</code>数据结构包括列表、元组和字典。</p>
+<div id="列表-1" class="section level3 hasAnchor" number="8.6.1">
+<h3><span class="header-section-number">8.6.1</span> 列表<a href="py.html#列表-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>列表用<code>[]</code>表达，其中的元素用<code>,</code>分割。</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="py.html#cb62-1" tabindex="-1"></a>lt <span class="op">=</span> [<span class="st">&quot;a&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="dv">2</span>]</span></code></pre></div>
+<div id="添加" class="section level4 hasAnchor" number="8.6.1.1">
+<h4><span class="header-section-number">8.6.1.1</span> 添加<a href="py.html#添加" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>生成空列表，使用<code>.append()</code>方法逐步加入元素，注意每次只能加一个</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="py.html#cb63-1" tabindex="-1"></a>lt.append(<span class="dv">1</span>)</span>
+<span id="cb63-2"><a href="py.html#cb63-2" tabindex="-1"></a><span class="bu">print</span>(lt)</span></code></pre></div>
+<pre><code>## [&#39;a&#39;, &#39;c&#39;, 2, 1]</code></pre>
+</div>
+<div id="拼接" class="section level4 hasAnchor" number="8.6.1.2">
+<h4><span class="header-section-number">8.6.1.2</span> 拼接<a href="py.html#拼接" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>+</code>，<code>+=</code>可用于拼接列表；<code>*</code>用于重复。</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="py.html#cb65-1" tabindex="-1"></a>lt <span class="op">+</span> [<span class="dv">1</span>,<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [&#39;a&#39;, &#39;c&#39;, 2, 1, 1, 2]</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="py.html#cb67-1" tabindex="-1"></a>lt <span class="op">*</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## [&#39;a&#39;, &#39;c&#39;, 2, 1, &#39;a&#39;, &#39;c&#39;, 2, 1, &#39;a&#39;, &#39;c&#39;, 2, 1]</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="py.html#cb69-1" tabindex="-1"></a>lt<span class="op">+=</span>[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb69-2"><a href="py.html#cb69-2" tabindex="-1"></a><span class="bu">print</span>(lt)</span></code></pre></div>
+<pre><code>## [&#39;a&#39;, &#39;c&#39;, 2, 1, 1, 2]</code></pre>
+</div>
+<div id="切片" class="section level4 hasAnchor" number="8.6.1.3">
+<h4><span class="header-section-number">8.6.1.3</span> 切片<a href="py.html#切片" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>与字符串一致，可以用下标取出列表特定的元素，同样是左闭右开。</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="py.html#cb71-1" tabindex="-1"></a>lt[<span class="dv">0</span>:<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [&#39;a&#39;]</code></pre>
+</div>
+<div id="判断" class="section level4 hasAnchor" number="8.6.1.4">
+<h4><span class="header-section-number">8.6.1.4</span> 判断<a href="py.html#判断" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>in</code>命令可以判断元素的归属。</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="py.html#cb73-1" tabindex="-1"></a><span class="co">&quot;b&quot;</span> <span class="kw">in</span> lt, <span class="dv">2</span> <span class="kw">in</span> lt</span></code></pre></div>
+<pre><code>## (False, True)</code></pre>
+</div>
+<div id="删除" class="section level4 hasAnchor" number="8.6.1.5">
+<h4><span class="header-section-number">8.6.1.5</span> 删除<a href="py.html#删除" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>remove</code>用于为删除特定元素；<code>pop</code>用于删除指定索引对应的元素；<code>clear</code>用于清空列表中所有元素，得到空列表；<code>del</code>删除变量。</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="py.html#cb75-1" tabindex="-1"></a>lt.remove(<span class="dv">1</span>)</span>
+<span id="cb75-2"><a href="py.html#cb75-2" tabindex="-1"></a><span class="bu">print</span>(lt)</span></code></pre></div>
+<pre><code>## [&#39;a&#39;, &#39;c&#39;, 2, 1, 2]</code></pre>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="py.html#cb77-1" tabindex="-1"></a>lt.pop(<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## &#39;a&#39;</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="py.html#cb79-1" tabindex="-1"></a><span class="bu">print</span>(lt)</span></code></pre></div>
+<pre><code>## [&#39;c&#39;, 2, 1, 2]</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="py.html#cb81-1" tabindex="-1"></a>lt.clear()</span>
+<span id="cb81-2"><a href="py.html#cb81-2" tabindex="-1"></a><span class="bu">print</span>(lt)</span></code></pre></div>
+<pre><code>## []</code></pre>
+</div>
+</div>
+<div id="元组" class="section level3 hasAnchor" number="8.6.2">
+<h3><span class="header-section-number">8.6.2</span> 元组<a href="py.html#元组" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>元组是一类特殊的列表，不同之处在于元组的元素不能修改。使用<code>()</code>生成。<code>+</code>与<code>+=</code>可以用于拼接元组，<code>*</code>用于重复，<code>[]</code>用于切片。</p>
+<p>由于元组是不能修改的，因此只能全部删除元组。</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="py.html#cb83-1" tabindex="-1"></a>tup1 <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">23</span>,<span class="dv">4</span>,<span class="st">&#39;a&#39;</span>)</span>
+<span id="cb83-2"><a href="py.html#cb83-2" tabindex="-1"></a>tup2 <span class="op">=</span> (<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>)</span>
+<span id="cb83-3"><a href="py.html#cb83-3" tabindex="-1"></a>tup <span class="op">=</span> tup1 <span class="op">+</span> tup2</span>
+<span id="cb83-4"><a href="py.html#cb83-4" tabindex="-1"></a>tup[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## (1, 23, 4)</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="py.html#cb85-1" tabindex="-1"></a><span class="kw">del</span> tup</span></code></pre></div>
+<p>注意一个细节，<code>("x")</code>一个元素时，会被认为是字符串而不是元组。但是<code>["x"]</code>却是一个列表。</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="py.html#cb86-1" tabindex="-1"></a><span class="bu">type</span>((<span class="st">&quot;x&quot;</span>))</span></code></pre></div>
+<pre><code>## &lt;class &#39;str&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="py.html#cb88-1" tabindex="-1"></a><span class="bu">type</span>([<span class="st">&quot;x&quot;</span>])</span></code></pre></div>
+<pre><code>## &lt;class &#39;list&#39;&gt;</code></pre>
+</div>
+<div id="字典" class="section level3 hasAnchor" number="8.6.3">
+<h3><span class="header-section-number">8.6.3</span> 字典<a href="py.html#字典" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>字典是<code>Python</code>的经典数据结构，与<code>JSON</code>数据结构类似。字典用<code>{}</code>定义，以<code>key:value</code>这样的键值对定义一组词，词与词之间用<code>,</code>分隔。</p>
+<p>可以通过<code>.keys()</code>和<code>.values()</code>取出字典的键和值，<code>.items()</code>在则可以构建迭代器。</p>
+<p>字典的索引是通过<code>keys</code>实现的，是无序的，但仍可以通过对keys的索引进行元素的删除，只是不支持切片操作。</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="py.html#cb90-1" tabindex="-1"></a>dc <span class="op">=</span> {<span class="st">&quot;女&quot;</span>: <span class="dv">25</span>}</span>
+<span id="cb90-2"><a href="py.html#cb90-2" tabindex="-1"></a>dc[<span class="st">&quot;男&quot;</span>]<span class="op">=</span><span class="dv">18</span></span>
+<span id="cb90-3"><a href="py.html#cb90-3" tabindex="-1"></a><span class="bu">print</span>(dc[<span class="st">&quot;女&quot;</span>])</span></code></pre></div>
+<pre><code>## 25</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="py.html#cb92-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;男&#39;</span> <span class="kw">in</span> dc)</span></code></pre></div>
+<pre><code>## True</code></pre>
+<p><code>dict</code>和<code>enumerate</code>函数可以把任何序列直接生成字典。这在后续的循环迭代器构建中有妙用。</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="py.html#cb94-1" tabindex="-1"></a><span class="bu">dict</span>(<span class="bu">enumerate</span>(<span class="st">&quot;abcd&quot;</span>))</span></code></pre></div>
+<pre><code>## {0: &#39;a&#39;, 1: &#39;b&#39;, 2: &#39;c&#39;, 3: &#39;d&#39;}</code></pre>
+<div id="字典的键" class="section level4 hasAnchor" number="8.6.3.1">
+<h4><span class="header-section-number">8.6.3.1</span> 字典的键<a href="py.html#字典的键" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>字典的原理要求键是不可变类型。因此，元组可以作为键，例如，</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="py.html#cb96-1" tabindex="-1"></a>{(<span class="dv">0</span>, <span class="dv">0</span>): <span class="st">&quot;a&quot;</span>, (<span class="dv">0</span>, <span class="dv">1</span>): <span class="st">&quot;b&quot;</span>, (<span class="dv">1</span>, <span class="dv">0</span>): <span class="st">&quot;c&quot;</span>}</span></code></pre></div>
+<pre><code>## {(0, 0): &#39;a&#39;, (0, 1): &#39;b&#39;, (1, 0): &#39;c&#39;}</code></pre>
+<p>这样的数据结构适合地理数据。</p>
+</div>
+<div id="删除-1" class="section level4 hasAnchor" number="8.6.3.2">
+<h4><span class="header-section-number">8.6.3.2</span> 删除<a href="py.html#删除-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>pop</code>的作用为删除指定索引对应的键值对，使用方式为 <code>dict.pop(keys)</code>。<code>clear</code>与<code>del</code>函数的作用与对列表一致。</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="py.html#cb98-1" tabindex="-1"></a>dc.pop(<span class="st">&quot;女&quot;</span>)</span></code></pre></div>
+<pre><code>## 25</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="py.html#cb100-1" tabindex="-1"></a><span class="bu">print</span>(dc)</span></code></pre></div>
+<pre><code>## {&#39;男&#39;: 18}</code></pre>
+</div>
+</div>
+<div id="数据结构之间的转化-1" class="section level3 hasAnchor" number="8.6.4">
+<h3><span class="header-section-number">8.6.4</span> 数据结构之间的转化<a href="py.html#数据结构之间的转化-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>列表与元组之间可以无缝转换，使用<code>tuple</code>函数和<code>list</code>函数。字典中的词或者值都可以转化为列表和元组。</p>
+</div>
+</div>
+<div id="流程控制-1" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> 流程控制<a href="py.html#流程控制-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="条件判断-1" class="section level3 hasAnchor" number="8.7.1">
+<h3><span class="header-section-number">8.7.1</span> 条件判断<a href="py.html#条件判断-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>Python</code>中条件判断的语法如下：</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="py.html#cb102-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb102-2"><a href="py.html#cb102-2" tabindex="-1"></a><span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span>:</span>
+<span id="cb102-3"><a href="py.html#cb102-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">是奇数&quot;</span>)</span>
+<span id="cb102-4"><a href="py.html#cb102-4" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb102-5"><a href="py.html#cb102-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">是偶数&quot;</span>)</span></code></pre></div>
+<pre><code>## 10是偶数</code></pre>
+<p>上述代码构建了一个奇偶数判断器。特别要注意，<code>Python</code>强制要求代码缩进来表达程序的结构。如果缩进错误会直接报错。这么做的好处是可以省略掉其他语言中用于显示结构关系的标记符，例如<code>{}</code>。其哲学是，与其希望用户自觉缩进，不如要求强制缩进。</p>
+<p>对于有良好编程习惯的程序员，这个约定不会带来额外的负担。</p>
+<p>当有三重选择时，可以使用<code>else if（或elif）</code>，搬出我们的泰山代码。</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="py.html#cb104-1" tabindex="-1"></a>m <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb104-2"><a href="py.html#cb104-2" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb104-3"><a href="py.html#cb104-3" tabindex="-1"></a><span class="cf">if</span> m <span class="op">&gt;</span> n:</span>
+<span id="cb104-4"><a href="py.html#cb104-4" tabindex="-1"></a>  <span class="bu">print</span>(m,<span class="st">&quot;is lager than&quot;</span>, n)</span>
+<span id="cb104-5"><a href="py.html#cb104-5" tabindex="-1"></a><span class="cf">elif</span> m <span class="op">==</span>n:</span>
+<span id="cb104-6"><a href="py.html#cb104-6" tabindex="-1"></a>  <span class="bu">print</span>(m,<span class="st">&quot;is equal to&quot;</span>, n)</span>
+<span id="cb104-7"><a href="py.html#cb104-7" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb104-8"><a href="py.html#cb104-8" tabindex="-1"></a>  <span class="bu">print</span>(m,<span class="st">&quot;is smaller than&quot;</span>, n)</span></code></pre></div>
+<pre><code>## 100 is lager than 50</code></pre>
+</div>
+<div id="循环-1" class="section level3 hasAnchor" number="8.7.2">
+<h3><span class="header-section-number">8.7.2</span> 循环<a href="py.html#循环-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python的循环结构有两种，<code>for</code>语句和<code>while</code>语句。例如，求和代码可以写成。</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a href="py.html#cb106-1" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb106-2"><a href="py.html#cb106-2" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb106-3"><a href="py.html#cb106-3" tabindex="-1"></a><span class="cf">while</span> a <span class="op">&lt;</span> <span class="dv">101</span>:</span>
+<span id="cb106-4"><a href="py.html#cb106-4" tabindex="-1"></a>  n <span class="op">=</span> n <span class="op">+</span> a</span>
+<span id="cb106-5"><a href="py.html#cb106-5" tabindex="-1"></a>  a <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb106-6"><a href="py.html#cb106-6" tabindex="-1"></a><span class="bu">print</span>(n)</span></code></pre></div>
+<pre><code>## 5050</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="py.html#cb108-1" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb108-2"><a href="py.html#cb108-2" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">101</span>):</span>
+<span id="cb108-3"><a href="py.html#cb108-3" tabindex="-1"></a>  n <span class="op">=</span> n <span class="op">+</span> a</span>
+<span id="cb108-4"><a href="py.html#cb108-4" tabindex="-1"></a><span class="bu">print</span>(n)</span></code></pre></div>
+<pre><code>## 5050</code></pre>
+<p>此处的<code>range</code>函数是生成了一个从0到100的<strong>迭代器</strong>（iterator）。在每次 for 循环时，都从迭代器中取出一个值。迭代器是一般概念，Python 中的多数多个元素组成的数据结构都可以看作迭代器。</p>
+<p>字符串可以当成天然的迭代器，下面的写法就比<code>R</code>里面方便的多。</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="py.html#cb110-1" tabindex="-1"></a><span class="cf">for</span> a <span class="kw">in</span> <span class="st">&quot;hello world&quot;</span>:</span>
+<span id="cb110-2"><a href="py.html#cb110-2" tabindex="-1"></a>  <span class="bu">print</span>(a)</span></code></pre></div>
+<pre><code>## h
+## e
+## l
+## l
+## o
+##  
+## w
+## o
+## r
+## l
+## d</code></pre>
+<p><code>enumerate</code>函数生成索引和迭代器，</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="py.html#cb112-1" tabindex="-1"></a><span class="cf">for</span> i, a <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="st">&quot;hello world&quot;</span>):</span>
+<span id="cb112-2"><a href="py.html#cb112-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f&quot;第</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">个字符是</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>## 第0个字符是h
+## 第1个字符是e
+## 第2个字符是l
+## 第3个字符是l
+## 第4个字符是o
+## 第5个字符是 
+## 第6个字符是w
+## 第7个字符是o
+## 第8个字符是r
+## 第9个字符是l
+## 第10个字符是d</code></pre>
+<p>字典也是天生的迭代器，</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="py.html#cb114-1" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> {<span class="st">&quot;女&quot;</span>: <span class="dv">25</span>,<span class="st">&quot;男&quot;</span>:<span class="dv">18</span>}.items():</span>
+<span id="cb114-2"><a href="py.html#cb114-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f&quot;班上有</span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">个</span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">生&quot;</span>)</span></code></pre></div>
+<pre><code>## 班上有25个女生
+## 班上有18个男生</code></pre>
+<p>由此看来，构造迭代器是<code>for</code>循环的关键。</p>
+<p>在循环里执行<code>continue</code>，可以跳过本次循环进入下一步。执行<code>break</code>则终止循环，直接跳出循环体。这与R的用法类似。</p>
+</div>
+</div>
+<div id="函数与模块" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">8.8</span> 函数与模块<a href="py.html#函数与模块" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>Python</code>定义函数的方式如下：</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="py.html#cb116-1" tabindex="-1"></a><span class="kw">def</span> add(x,y):</span>
+<span id="cb116-2"><a href="py.html#cb116-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f&quot;x is </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss"> and y is </span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb116-3"><a href="py.html#cb116-3" tabindex="-1"></a>  <span class="cf">return</span> x <span class="op">+</span> y  <span class="co"># Return values with a return statement</span></span>
+<span id="cb116-4"><a href="py.html#cb116-4" tabindex="-1"></a></span>
+<span id="cb116-5"><a href="py.html#cb116-5" tabindex="-1"></a>add(<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## x is 2 and y is 3
+## 5</code></pre>
+<div id="批量调用" class="section level3 hasAnchor" number="8.8.1">
+<h3><span class="header-section-number">8.8.1</span> 批量调用<a href="py.html#批量调用" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>map</code>可以将函数作用到每个元素后返回值组成的迭代器。</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb118-1"><a href="py.html#cb118-1" tabindex="-1"></a><span class="kw">def</span> squared(x):</span>
+<span id="cb118-2"><a href="py.html#cb118-2" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">*</span>x</span>
+<span id="cb118-3"><a href="py.html#cb118-3" tabindex="-1"></a></span>
+<span id="cb118-4"><a href="py.html#cb118-4" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">map</span>(squared,<span class="bu">range</span>(<span class="dv">5</span>)))</span></code></pre></div>
+<pre><code>## [0, 1, 4, 9, 16]</code></pre>
+</div>
+<div id="无名函数" class="section level3 hasAnchor" number="8.8.2">
+<h3><span class="header-section-number">8.8.2</span> 无名函数<a href="py.html#无名函数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>当函数只是调用一次时，可以使用无名函数的方法来定义。</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb120-1"><a href="py.html#cb120-1" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x:x<span class="op">*</span>x,<span class="bu">range</span>(<span class="dv">5</span>)))</span></code></pre></div>
+<pre><code>## [0, 1, 4, 9, 16]</code></pre>
+</div>
+<div id="函数文档" class="section level3 hasAnchor" number="8.8.3">
+<h3><span class="header-section-number">8.8.3</span> 函数文档<a href="py.html#函数文档" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>为了更好地解释函数的使用方法，可以在函数定义时，输入一段字符串，这样的字符串可以用<code>help</code>函数读出。</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a href="py.html#cb122-1" tabindex="-1"></a><span class="kw">def</span> squared(x):</span>
+<span id="cb122-2"><a href="py.html#cb122-2" tabindex="-1"></a>    <span class="co">&quot;计算平方的函数&quot;</span></span>
+<span id="cb122-3"><a href="py.html#cb122-3" tabindex="-1"></a>    <span class="co"># 具体实现省略</span></span>
+<span id="cb122-4"><a href="py.html#cb122-4" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">*</span>x</span>
+<span id="cb122-5"><a href="py.html#cb122-5" tabindex="-1"></a></span>
+<span id="cb122-6"><a href="py.html#cb122-6" tabindex="-1"></a><span class="bu">help</span>(squared)</span></code></pre></div>
+<pre><code>## Help on function squared in module __main__:
+## 
+## squared(x)
+##     计算平方的函数</code></pre>
+<p>如果一大段的说明，可以使用<code>Python</code>多行字符串。多行字符串以三个引号开始，三个引号结束，单引号双引号皆可。</p>
+</div>
+<div id="模块" class="section level3 hasAnchor" number="8.8.4">
+<h3><span class="header-section-number">8.8.4</span> 模块<a href="py.html#模块" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>模块是把函数等聚集起来的名字空间，由目录或者文件划定。使用<code>import</code>方法可以导入模块，模块都具有详实的在线帮助，可以使用<code>help</code>函数查看。</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb124-1"><a href="py.html#cb124-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb124-2"><a href="py.html#cb124-2" tabindex="-1"></a><span class="bu">help</span>(math)</span></code></pre></div>
+<pre><code>## Help on module math:
+## 
+## NAME
+##     math
+## 
+## DESCRIPTION
+##     This module provides access to the mathematical functions
+##     defined by the C standard.
+## 
+## FUNCTIONS
+##     acos(x, /)
+##         Return the arc cosine (measured in radians) of x.
+##         
+##         The result is between 0 and pi.
+##     
+##     acosh(x, /)
+##         Return the inverse hyperbolic cosine of x.
+##     
+##     asin(x, /)
+##         Return the arc sine (measured in radians) of x.
+##         
+##         The result is between -pi/2 and pi/2.
+##     
+##     asinh(x, /)
+##         Return the inverse hyperbolic sine of x.
+##     
+##     atan(x, /)
+##         Return the arc tangent (measured in radians) of x.
+##         
+##         The result is between -pi/2 and pi/2.
+##     
+##     atan2(y, x, /)
+##         Return the arc tangent (measured in radians) of y/x.
+##         
+##         Unlike atan(y/x), the signs of both x and y are considered.
+##     
+##     atanh(x, /)
+##         Return the inverse hyperbolic tangent of x.
+##     
+##     cbrt(x, /)
+##         Return the cube root of x.
+##     
+##     ceil(x, /)
+##         Return the ceiling of x as an Integral.
+##         
+##         This is the smallest integer &gt;= x.
+##     
+##     comb(n, k, /)
+##         Number of ways to choose k items from n items without repetition and without order.
+##         
+##         Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates
+##         to zero when k &gt; n.
+##         
+##         Also called the binomial coefficient because it is equivalent
+##         to the coefficient of k-th term in polynomial expansion of the
+##         expression (1 + x)**n.
+##         
+##         Raises TypeError if either of the arguments are not integers.
+##         Raises ValueError if either of the arguments are negative.
+##     
+##     copysign(x, y, /)
+##         Return a float with the magnitude (absolute value) of x but the sign of y.
+##         
+##         On platforms that support signed zeros, copysign(1.0, -0.0)
+##         returns -1.0.
+##     
+##     cos(x, /)
+##         Return the cosine of x (measured in radians).
+##     
+##     cosh(x, /)
+##         Return the hyperbolic cosine of x.
+##     
+##     degrees(x, /)
+##         Convert angle x from radians to degrees.
+##     
+##     dist(p, q, /)
+##         Return the Euclidean distance between two points p and q.
+##         
+##         The points should be specified as sequences (or iterables) of
+##         coordinates.  Both inputs must have the same dimension.
+##         
+##         Roughly equivalent to:
+##             sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
+##     
+##     erf(x, /)
+##         Error function at x.
+##     
+##     erfc(x, /)
+##         Complementary error function at x.
+##     
+##     exp(x, /)
+##         Return e raised to the power of x.
+##     
+##     exp2(x, /)
+##         Return 2 raised to the power of x.
+##     
+##     expm1(x, /)
+##         Return exp(x)-1.
+##         
+##         This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
+##     
+##     fabs(x, /)
+##         Return the absolute value of the float x.
+##     
+##     factorial(n, /)
+##         Find n!.
+##         
+##         Raise a ValueError if x is negative or non-integral.
+##     
+##     floor(x, /)
+##         Return the floor of x as an Integral.
+##         
+##         This is the largest integer &lt;= x.
+##     
+##     fmod(x, y, /)
+##         Return fmod(x, y), according to platform C.
+##         
+##         x % y may differ.
+##     
+##     frexp(x, /)
+##         Return the mantissa and exponent of x, as pair (m, e).
+##         
+##         m is a float and e is an int, such that x = m * 2.**e.
+##         If x is 0, m and e are both 0.  Else 0.5 &lt;= abs(m) &lt; 1.0.
+##     
+##     fsum(seq, /)
+##         Return an accurate floating point sum of values in the iterable seq.
+##         
+##         Assumes IEEE-754 floating point arithmetic.
+##     
+##     gamma(x, /)
+##         Gamma function at x.
+##     
+##     gcd(*integers)
+##         Greatest Common Divisor.
+##     
+##     hypot(...)
+##         hypot(*coordinates) -&gt; value
+##         
+##         Multidimensional Euclidean distance from the origin to a point.
+##         
+##         Roughly equivalent to:
+##             sqrt(sum(x**2 for x in coordinates))
+##         
+##         For a two dimensional point (x, y), gives the hypotenuse
+##         using the Pythagorean theorem:  sqrt(x*x + y*y).
+##         
+##         For example, the hypotenuse of a 3/4/5 right triangle is:
+##         
+##             &gt;&gt;&gt; hypot(3.0, 4.0)
+##             5.0
+##     
+##     isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
+##         Determine whether two floating point numbers are close in value.
+##         
+##           rel_tol
+##             maximum difference for being considered &quot;close&quot;, relative to the
+##             magnitude of the input values
+##           abs_tol
+##             maximum difference for being considered &quot;close&quot;, regardless of the
+##             magnitude of the input values
+##         
+##         Return True if a is close in value to b, and False otherwise.
+##         
+##         For the values to be considered close, the difference between them
+##         must be smaller than at least one of the tolerances.
+##         
+##         -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That
+##         is, NaN is not close to anything, even itself.  inf and -inf are
+##         only close to themselves.
+##     
+##     isfinite(x, /)
+##         Return True if x is neither an infinity nor a NaN, and False otherwise.
+##     
+##     isinf(x, /)
+##         Return True if x is a positive or negative infinity, and False otherwise.
+##     
+##     isnan(x, /)
+##         Return True if x is a NaN (not a number), and False otherwise.
+##     
+##     isqrt(n, /)
+##         Return the integer part of the square root of the input.
+##     
+##     lcm(*integers)
+##         Least Common Multiple.
+##     
+##     ldexp(x, i, /)
+##         Return x * (2**i).
+##         
+##         This is essentially the inverse of frexp().
+##     
+##     lgamma(x, /)
+##         Natural logarithm of absolute value of Gamma function at x.
+##     
+##     log(...)
+##         log(x, [base=math.e])
+##         Return the logarithm of x to the given base.
+##         
+##         If the base not specified, returns the natural logarithm (base e) of x.
+##     
+##     log10(x, /)
+##         Return the base 10 logarithm of x.
+##     
+##     log1p(x, /)
+##         Return the natural logarithm of 1+x (base e).
+##         
+##         The result is computed in a way which is accurate for x near zero.
+##     
+##     log2(x, /)
+##         Return the base 2 logarithm of x.
+##     
+##     modf(x, /)
+##         Return the fractional and integer parts of x.
+##         
+##         Both results carry the sign of x and are floats.
+##     
+##     nextafter(x, y, /)
+##         Return the next floating-point value after x towards y.
+##     
+##     perm(n, k=None, /)
+##         Number of ways to choose k items from n items without repetition and with order.
+##         
+##         Evaluates to n! / (n - k)! when k &lt;= n and evaluates
+##         to zero when k &gt; n.
+##         
+##         If k is not specified or is None, then k defaults to n
+##         and the function returns n!.
+##         
+##         Raises TypeError if either of the arguments are not integers.
+##         Raises ValueError if either of the arguments are negative.
+##     
+##     pow(x, y, /)
+##         Return x**y (x to the power of y).
+##     
+##     prod(iterable, /, *, start=1)
+##         Calculate the product of all the elements in the input iterable.
+##         
+##         The default start value for the product is 1.
+##         
+##         When the iterable is empty, return the start value.  This function is
+##         intended specifically for use with numeric values and may reject
+##         non-numeric types.
+##     
+##     radians(x, /)
+##         Convert angle x from degrees to radians.
+##     
+##     remainder(x, y, /)
+##         Difference between x and the closest integer multiple of y.
+##         
+##         Return x - n*y where n*y is the closest integer multiple of y.
+##         In the case where x is exactly halfway between two multiples of
+##         y, the nearest even value of n is used. The result is always exact.
+##     
+##     sin(x, /)
+##         Return the sine of x (measured in radians).
+##     
+##     sinh(x, /)
+##         Return the hyperbolic sine of x.
+##     
+##     sqrt(x, /)
+##         Return the square root of x.
+##     
+##     tan(x, /)
+##         Return the tangent of x (measured in radians).
+##     
+##     tanh(x, /)
+##         Return the hyperbolic tangent of x.
+##     
+##     trunc(x, /)
+##         Truncates the Real x to the nearest Integral toward 0.
+##         
+##         Uses the __trunc__ magic method.
+##     
+##     ulp(x, /)
+##         Return the value of the least significant bit of the float x.
+## 
+## DATA
+##     e = 2.718281828459045
+##     inf = inf
+##     nan = nan
+##     pi = 3.141592653589793
+##     tau = 6.283185307179586
+## 
+## FILE
+##     /usr/local/Cellar/python@3.11/3.11.5/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload/math.cpython-311-darwin.so</code></pre>
+<p>当模块中的内容很多时，会被安排在不同层次的名字空间中，可以使用<code>from</code>来简化调用，<code>as</code>可以指定模块的别名。</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb126-1"><a href="py.html#cb126-1" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb126-2"><a href="py.html#cb126-2" tabindex="-1"></a><span class="im">from</span> os.path <span class="im">import</span> abspath</span>
+<span id="cb126-3"><a href="py.html#cb126-3" tabindex="-1"></a><span class="im">from</span> os.path <span class="im">import</span> abspath <span class="im">as</span> absp</span></code></pre></div>
+</div>
+</div>
+<div id="数据读写与文件操作" class="section level2 hasAnchor" number="8.9">
+<h2><span class="header-section-number">8.9</span> 数据读写与文件操作<a href="py.html#数据读写与文件操作" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>之前我们介绍了通过<code>input</code>从键盘输入和<code>print</code>输出到屏幕。除此之外，还可以直接从文件读入和输出到文件。<code>Python</code>内置了<code>file</code>类，来完成文件操作。</p>
+<div id="读入文件" class="section level3 hasAnchor" number="8.9.1">
+<h3><span class="header-section-number">8.9.1</span> 读入文件<a href="py.html#读入文件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>open</code>函数用于打开文件，创建一个<code>file</code>对象，第一个参数是文件名，第二参数为打开模式，默认值<code>r</code>表示只读，<code>w</code>表示写出，<code>a</code>表示添加。</p>
+<p><code>open</code>打开文件之后，用迭代器逐行读取。</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb127-1"><a href="py.html#cb127-1" tabindex="-1"></a><span class="cf">for</span> l <span class="kw">in</span> <span class="bu">open</span>(<span class="st">&quot;log.txt&quot;</span>):</span>
+<span id="cb127-2"><a href="py.html#cb127-2" tabindex="-1"></a>  <span class="bu">print</span>(l,end <span class="op">=</span> <span class="st">&quot;&quot;</span>) <span class="co"># 读入的字符串带有换行符，与print 叠加会有空行，end参数表示去掉空行。</span></span></code></pre></div>
+<pre><code>## This is a record of my progress in learning Python
+## Day 1: Introduction</code></pre>
+</div>
+<div id="写出文件" class="section level3 hasAnchor" number="8.9.2">
+<h3><span class="header-section-number">8.9.2</span> 写出文件<a href="py.html#写出文件" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>open</code>以写模式打开，可以输出到文件。</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb129-1"><a href="py.html#cb129-1" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;log.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)</span>
+<span id="cb129-2"><a href="py.html#cb129-2" tabindex="-1"></a>f.write(<span class="st">&quot;Day 2: Basics</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 14</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a href="py.html#cb131-1" tabindex="-1"></a>f.write(<span class="st">&quot;Day 3: Numpy</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 13</code></pre>
+<div class="sourceCode" id="cb133"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a href="py.html#cb133-1" tabindex="-1"></a>f.close()</span></code></pre></div>
+<p>注意文件写出完成后，需要关闭文件，否则会一直建立关联，占用资源。</p>
+<p>写出模式下，之前的内容会会被覆盖，如果希望添加到已有内容中，需要使用添加模式。</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="py.html#cb134-1" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;log.txt&quot;</span>, <span class="st">&quot;a&quot;</span>)</span>
+<span id="cb134-2"><a href="py.html#cb134-2" tabindex="-1"></a>f.write(<span class="st">&quot;Day 4: Scrapy</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 14</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="py.html#cb136-1" tabindex="-1"></a>f.close()</span></code></pre></div>
+</div>
+<div id="with关键字" class="section level3 hasAnchor" number="8.9.3">
+<h3><span class="header-section-number">8.9.3</span> with关键字<a href="py.html#with关键字" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>使用<code>with</code>关键字系统会自动调用<code>f.close</code>方法。</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a href="py.html#cb137-1" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;log.txt&quot;</span>,<span class="st">&quot;r&quot;</span>) <span class="im">as</span> f:</span>
+<span id="cb137-2"><a href="py.html#cb137-2" tabindex="-1"></a>  <span class="cf">for</span> l <span class="kw">in</span> f.readlines():</span>
+<span id="cb137-3"><a href="py.html#cb137-3" tabindex="-1"></a>    <span class="bu">print</span>(l,end <span class="op">=</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<pre><code>## Day 2: Basics
+## Day 3: Numpy
+## Day 4: Scrapy</code></pre>
+<p><code>readlines</code>方法是逐行读入文件，是一个天然的迭代器。</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb139-1"><a href="py.html#cb139-1" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;log.txt&quot;</span>,<span class="st">&quot;a&quot;</span>) <span class="im">as</span> f:</span>
+<span id="cb139-2"><a href="py.html#cb139-2" tabindex="-1"></a>  f.write(<span class="st">&quot;Day 5: Machine Learning</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 24</code></pre>
+</div>
+</div>
+<div id="os模块" class="section level2 hasAnchor" number="8.10">
+<h2><span class="header-section-number">8.10</span> os模块<a href="py.html#os模块" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>os</code>提供了帮你执行文件处理操作的方法，比如重命名和删除文件。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">方法</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>remove</code></td>
+<td align="left">删除文件</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rename</code></td>
+<td align="left">重名命文件</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>mkdir</code></td>
+<td align="left">创建新目录</td>
+</tr>
+<tr class="even">
+<td align="left"><code>chdir</code></td>
+<td align="left">改变当前目录</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>getcwd</code></td>
+<td align="left">查看当前目录</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rmdir</code></td>
+<td align="left">删除目录</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="案例获取高德地图地址信息" class="section level2 hasAnchor" number="8.11">
+<h2><span class="header-section-number">8.11</span> 案例：获取高德地图地址信息<a href="py.html#案例获取高德地图地址信息" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="面向对象单独成一章" class="section level2 hasAnchor" number="8.12">
+<h2><span class="header-section-number">8.12</span> 面向对象单独成一章<a href="py.html#面向对象单独成一章" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reg.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regexp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-chinese/edit/master/08-pybasics.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["dataengeering.pdf", "dataengeering.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

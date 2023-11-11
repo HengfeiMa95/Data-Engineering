@@ -979,19 +979,20 @@ paper %>% sample(10)
 
 ```
 ## # A tibble: 2,535 × 10
-##    startyear pub_year item_type ut_char  type fullname addr  endyear wos   auseq
-##        <dbl>    <dbl> <chr>       <dbl> <dbl> <chr>    <chr>   <dbl> <chr> <dbl>
-##  1      2006     2009 Meeting … 2.08e11     2 jinc     natl…    2010 natl…     5
-##  2      2006     2009 Meeting … 2.08e11     1 jinchua… natl…    2010 natl…     1
-##  3      2006     2010 Meeting … 2.08e11     1 zhangjun univ…    2009 univ…     2
-##  4      2006     2010 Meeting … 2.08e11     1 zhangjun univ…    2009 univ…     4
-##  5      2006     2012 Meeting … 2.09e11     1 zhangjun univ…    2009 univ…     7
-##  6      2006     2012 Meeting … 2.09e11     1 zhangjun univ…    2009 univ…     3
-##  7      2006     2008 Article   2.52e11     1 jinchua… natl…    2010 natl…     1
-##  8      2006     2008 Article   2.53e11     1 lujiwei  univ…    2015 univ…     2
-##  9      2006     2008 Article   2.53e11     1 jinchua… peki…    2006 peki…     3
-## 10      2006     2008 Article   2.53e11     1 jinchua… peki…    2006 peki…     3
+##    startyear surname addr     item_type givenname ut_char  type uniqueID endyear
+##        <dbl> <chr>   <chr>    <chr>     <chr>       <dbl> <dbl> <chr>      <dbl>
+##  1      2006 JIN     natl in… Meeting … C         2.08e11     2 1_91        2010
+##  2      2006 JIN     natl in… Meeting … CHUANHONG 2.08e11     1 1_91        2010
+##  3      2006 ZHANG   univ ca… Meeting … JUN       2.08e11     1 1_449       2009
+##  4      2006 ZHANG   univ ca… Meeting … JUN       2.08e11     1 1_449       2009
+##  5      2006 ZHANG   univ ca… Meeting … JUN       2.09e11     1 1_449       2009
+##  6      2006 ZHANG   univ ca… Meeting … JUN       2.09e11     1 1_449       2009
+##  7      2006 JIN     natl in… Article   CHUANHONG 2.52e11     1 1_91        2010
+##  8      2006 LU      univ vi… Article   JIWEI     2.53e11     1 0_51        2015
+##  9      2006 JIN     peking … Article   CHUANHONG 2.53e11     1 1_91        2006
+## 10      2006 JIN     peking … Article   CHUANHONG 2.53e11     1 1_91        2006
 ## # ℹ 2,525 more rows
+## # ℹ 1 more variable: fullname <chr>
 ```
 
 ### 去重复

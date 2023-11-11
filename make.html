@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 13 章 GUN Make的数据生产线 | 数据工程讲义：经济学分册</title>
+  <meta name="description" content="适用于数据工程与数据科学课程的教材。" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 13 章 GUN Make的数据生产线 | 数据工程讲义：经济学分册" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="适用于数据工程与数据科学课程的教材。" />
+  <meta name="github-repo" content="yihui/bookdown-chinese" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 13 章 GUN Make的数据生产线 | 数据工程讲义：经济学分册" />
+  
+  <meta name="twitter:description" content="适用于数据工程与数据科学课程的教材。" />
+  
+
+<meta name="author" content="史冬波 续本达" />
+
+
+<meta name="date" content="2023-11-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="geo.html"/>
+<link rel="next" href="net.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.10/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">数据工程讲义</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#致谢"><i class="fa fa-check"></i>致谢</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="author.html"><a href="author.html"><i class="fa fa-check"></i>作者简介</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 写在前面</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#为什么写本书"><i class="fa fa-check"></i><b>1.1</b> 为什么写本书</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#如何使用本书"><i class="fa fa-check"></i><b>1.2</b> 如何使用本书</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="flow.html"><a href="flow.html"><i class="fa fa-check"></i><b>2</b> 数据工程：重塑经济学研究的流程</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="flow.html"><a href="flow.html#人工智能时代的社会科学研究机遇与挑战"><i class="fa fa-check"></i><b>2.1</b> 人工智能时代的社会科学研究：机遇与挑战</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="flow.html"><a href="flow.html#社会科学的三圈分类"><i class="fa fa-check"></i><b>2.1.1</b> 社会科学的三圈分类</a></li>
+<li class="chapter" data-level="2.1.2" data-path="flow.html"><a href="flow.html#ai智能发展的三要素"><i class="fa fa-check"></i><b>2.1.2</b> AI智能发展的三要素</a></li>
+<li class="chapter" data-level="2.1.3" data-path="flow.html"><a href="flow.html#ai对社会科学研究的冲击"><i class="fa fa-check"></i><b>2.1.3</b> AI对社会科学研究的冲击</a></li>
+<li class="chapter" data-level="2.1.4" data-path="flow.html"><a href="flow.html#ai为社会科学研究创造的机遇"><i class="fa fa-check"></i><b>2.1.4</b> AI为社会科学研究创造的机遇</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="flow.html"><a href="flow.html#数据工程与数据科学"><i class="fa fa-check"></i><b>2.2</b> 数据工程与数据科学</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="flow.html"><a href="flow.html#数据工程的灵魂数据流"><i class="fa fa-check"></i><b>2.2.1</b> 数据工程的灵魂：数据流</a></li>
+<li class="chapter" data-level="2.2.2" data-path="flow.html"><a href="flow.html#数据工程的钥匙数据结构"><i class="fa fa-check"></i><b>2.2.2</b> 数据工程的钥匙：数据结构</a></li>
+<li class="chapter" data-level="2.2.3" data-path="flow.html"><a href="flow.html#数据工程师的工具箱"><i class="fa fa-check"></i><b>2.2.3</b> 数据工程师的工具箱</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="flow.html"><a href="flow.html#数据工程的四个指导原则"><i class="fa fa-check"></i><b>2.3</b> 数据工程的四个指导原则</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="flow.html"><a href="flow.html#可复现性原则"><i class="fa fa-check"></i><b>2.3.1</b> 可复现性原则</a></li>
+<li class="chapter" data-level="2.3.2" data-path="flow.html"><a href="flow.html#模块化与正交分解原则"><i class="fa fa-check"></i><b>2.3.2</b> 模块化与正交分解原则</a></li>
+<li class="chapter" data-level="2.3.3" data-path="flow.html"><a href="flow.html#最佳工具原则"><i class="fa fa-check"></i><b>2.3.3</b> 最佳工具原则</a></li>
+<li class="chapter" data-level="2.3.4" data-path="flow.html"><a href="flow.html#一次原则"><i class="fa fa-check"></i><b>2.3.4</b> 一次原则</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="flow.html"><a href="flow.html#gnu-环境"><i class="fa fa-check"></i><b>2.4</b> GNU 环境</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="flow.html"><a href="flow.html#posix"><i class="fa fa-check"></i><b>2.4.1</b> POSIX</a></li>
+<li class="chapter" data-level="2.4.2" data-path="flow.html"><a href="flow.html#gnu"><i class="fa fa-check"></i><b>2.4.2</b> GNU</a></li>
+<li class="chapter" data-level="2.4.3" data-path="flow.html"><a href="flow.html#命令行"><i class="fa fa-check"></i><b>2.4.3</b> 命令行</a></li>
+<li class="chapter" data-level="2.4.4" data-path="flow.html"><a href="flow.html#编辑器"><i class="fa fa-check"></i><b>2.4.4</b> 编辑器</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="flow.html"><a href="flow.html#版本控制"><i class="fa fa-check"></i><b>2.5</b> 版本控制</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="flow.html"><a href="flow.html#git"><i class="fa fa-check"></i><b>2.5.1</b> Git</a></li>
+<li class="chapter" data-level="2.5.2" data-path="flow.html"><a href="flow.html#git的三种状态"><i class="fa fa-check"></i><b>2.5.2</b> Git的三种状态</a></li>
+<li class="chapter" data-level="2.5.3" data-path="flow.html"><a href="flow.html#git仓库"><i class="fa fa-check"></i><b>2.5.3</b> Git仓库</a></li>
+<li class="chapter" data-level="2.5.4" data-path="flow.html"><a href="flow.html#git命令实践"><i class="fa fa-check"></i><b>2.5.4</b> Git命令实践</a></li>
+<li class="chapter" data-level="2.5.5" data-path="flow.html"><a href="flow.html#git目前的局限性"><i class="fa fa-check"></i><b>2.5.5</b> Git目前的局限性</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basic.html"><a href="basic.html"><i class="fa fa-check"></i><b>3</b> R语言基础</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basic.html"><a href="basic.html#r语言简介"><i class="fa fa-check"></i><b>3.1</b> R语言简介</a></li>
+<li class="chapter" data-level="3.2" data-path="basic.html"><a href="basic.html#r语言的特点"><i class="fa fa-check"></i><b>3.2</b> R语言的特点</a></li>
+<li class="chapter" data-level="3.3" data-path="basic.html"><a href="basic.html#r与rtudio的安装"><i class="fa fa-check"></i><b>3.3</b> R与Rtudio的安装</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="basic.html"><a href="basic.html#安装r"><i class="fa fa-check"></i><b>3.3.1</b> 安装R</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basic.html"><a href="basic.html#r安装rstudio"><i class="fa fa-check"></i><b>3.3.2</b> R安装RStudio</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basic.html"><a href="basic.html#组织r代码的三种方式"><i class="fa fa-check"></i><b>3.3.3</b> 组织R代码的三种方式</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basic.html"><a href="basic.html#r代码的组成"><i class="fa fa-check"></i><b>3.3.4</b> R代码的组成</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="basic.html"><a href="basic.html#r对文件和路径的相关操作"><i class="fa fa-check"></i><b>3.4</b> R对文件和路径的相关操作</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="basic.html"><a href="basic.html#路径操作"><i class="fa fa-check"></i><b>3.4.1</b> 路径操作</a></li>
+<li class="chapter" data-level="3.4.2" data-path="basic.html"><a href="basic.html#文件操作"><i class="fa fa-check"></i><b>3.4.2</b> 文件操作</a></li>
+<li class="chapter" data-level="3.4.3" data-path="basic.html"><a href="basic.html#特殊路径"><i class="fa fa-check"></i><b>3.4.3</b> 特殊路径</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="basic.html"><a href="basic.html#数据类型"><i class="fa fa-check"></i><b>3.5</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="basic.html"><a href="basic.html#数值型"><i class="fa fa-check"></i><b>3.5.1</b> 数值型</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basic.html"><a href="basic.html#逻辑型布尔型"><i class="fa fa-check"></i><b>3.5.2</b> 逻辑型/布尔型</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basic.html"><a href="basic.html#字符型"><i class="fa fa-check"></i><b>3.5.3</b> 字符型</a></li>
+<li class="chapter" data-level="3.5.4" data-path="basic.html"><a href="basic.html#缺失值"><i class="fa fa-check"></i><b>3.5.4</b> 缺失值</a></li>
+<li class="chapter" data-level="3.5.5" data-path="basic.html"><a href="basic.html#数据类型判断与转换"><i class="fa fa-check"></i><b>3.5.5</b> 数据类型判断与转换</a></li>
+<li class="chapter" data-level="3.5.6" data-path="basic.html"><a href="basic.html#运算"><i class="fa fa-check"></i><b>3.5.6</b> 运算</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="basic.html"><a href="basic.html#变量"><i class="fa fa-check"></i><b>3.6</b> 变量</a></li>
+<li class="chapter" data-level="3.7" data-path="basic.html"><a href="basic.html#数据结构"><i class="fa fa-check"></i><b>3.7</b> 数据结构</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="basic.html"><a href="basic.html#向量"><i class="fa fa-check"></i><b>3.7.1</b> 向量</a></li>
+<li class="chapter" data-level="3.7.2" data-path="basic.html"><a href="basic.html#因子"><i class="fa fa-check"></i><b>3.7.2</b> 因子</a></li>
+<li class="chapter" data-level="3.7.3" data-path="basic.html"><a href="basic.html#矩阵"><i class="fa fa-check"></i><b>3.7.3</b> 矩阵</a></li>
+<li class="chapter" data-level="3.7.4" data-path="basic.html"><a href="basic.html#数据框"><i class="fa fa-check"></i><b>3.7.4</b> 数据框</a></li>
+<li class="chapter" data-level="3.7.5" data-path="basic.html"><a href="basic.html#列表"><i class="fa fa-check"></i><b>3.7.5</b> 列表</a></li>
+<li class="chapter" data-level="3.7.6" data-path="basic.html"><a href="basic.html#数据结构之间的转化"><i class="fa fa-check"></i><b>3.7.6</b> 数据结构之间的转化</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="basic.html"><a href="basic.html#数据读写"><i class="fa fa-check"></i><b>3.8</b> 数据读写</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="basic.html"><a href="basic.html#csv文件"><i class="fa fa-check"></i><b>3.8.1</b> csv文件</a></li>
+<li class="chapter" data-level="3.8.2" data-path="basic.html"><a href="basic.html#hdf5"><i class="fa fa-check"></i><b>3.8.2</b> HDF5</a></li>
+<li class="chapter" data-level="3.8.3" data-path="basic.html"><a href="basic.html#xml"><i class="fa fa-check"></i><b>3.8.3</b> XML</a></li>
+<li class="chapter" data-level="3.8.4" data-path="basic.html"><a href="basic.html#json"><i class="fa fa-check"></i><b>3.8.4</b> JSON</a></li>
+<li class="chapter" data-level="3.8.5" data-path="basic.html"><a href="basic.html#yaml"><i class="fa fa-check"></i><b>3.8.5</b> YAML</a></li>
+<li class="chapter" data-level="3.8.6" data-path="basic.html"><a href="basic.html#专用数据文件"><i class="fa fa-check"></i><b>3.8.6</b> 专用数据文件</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="basic.html"><a href="basic.html#流程控制"><i class="fa fa-check"></i><b>3.9</b> 流程控制</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="basic.html"><a href="basic.html#条件判断"><i class="fa fa-check"></i><b>3.9.1</b> 条件判断</a></li>
+<li class="chapter" data-level="3.9.2" data-path="basic.html"><a href="basic.html#循环"><i class="fa fa-check"></i><b>3.9.2</b> 循环</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="basic.html"><a href="basic.html#函数与包"><i class="fa fa-check"></i><b>3.10</b> 函数与包</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="basic.html"><a href="basic.html#函数的定义与调用"><i class="fa fa-check"></i><b>3.10.1</b> 函数的定义与调用</a></li>
+<li class="chapter" data-level="3.10.2" data-path="basic.html"><a href="basic.html#变量作用域"><i class="fa fa-check"></i><b>3.10.2</b> 变量作用域</a></li>
+<li class="chapter" data-level="3.10.3" data-path="basic.html"><a href="basic.html#函数模块化"><i class="fa fa-check"></i><b>3.10.3</b> 函数模块化</a></li>
+<li class="chapter" data-level="3.10.4" data-path="basic.html"><a href="basic.html#包"><i class="fa fa-check"></i><b>3.10.4</b> 包</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="basic.html"><a href="basic.html#向量化"><i class="fa fa-check"></i><b>3.11</b> 向量化</a>
+<ul>
+<li class="chapter" data-level="3.11.1" data-path="basic.html"><a href="basic.html#apply"><i class="fa fa-check"></i><b>3.11.1</b> apply</a></li>
+<li class="chapter" data-level="3.11.2" data-path="basic.html"><a href="basic.html#lapply"><i class="fa fa-check"></i><b>3.11.2</b> lapply</a></li>
+<li class="chapter" data-level="3.11.3" data-path="basic.html"><a href="basic.html#sapply"><i class="fa fa-check"></i><b>3.11.3</b> sapply</a></li>
+<li class="chapter" data-level="3.11.4" data-path="basic.html"><a href="basic.html#vapply"><i class="fa fa-check"></i><b>3.11.4</b> vapply</a></li>
+<li class="chapter" data-level="3.11.5" data-path="basic.html"><a href="basic.html#mapply"><i class="fa fa-check"></i><b>3.11.5</b> mapply</a></li>
+<li class="chapter" data-level="3.11.6" data-path="basic.html"><a href="basic.html#其他"><i class="fa fa-check"></i><b>3.11.6</b> 其他</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="basic.html"><a href="basic.html#代码风格"><i class="fa fa-check"></i><b>3.12</b> 代码风格</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rmd.html"><a href="rmd.html"><i class="fa fa-check"></i><b>4</b> 文学式编程</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="rmd.html"><a href="rmd.html#什么是文学式编程"><i class="fa fa-check"></i><b>4.1</b> 什么是文学式编程</a></li>
+<li class="chapter" data-level="4.2" data-path="rmd.html"><a href="rmd.html#markdown格式"><i class="fa fa-check"></i><b>4.2</b> Markdown格式</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="rmd.html"><a href="rmd.html#标题"><i class="fa fa-check"></i><b>4.2.1</b> 标题</a></li>
+<li class="chapter" data-level="4.2.2" data-path="rmd.html"><a href="rmd.html#段落文本"><i class="fa fa-check"></i><b>4.2.2</b> 段落文本</a></li>
+<li class="chapter" data-level="4.2.3" data-path="rmd.html"><a href="rmd.html#表格"><i class="fa fa-check"></i><b>4.2.3</b> 表格</a></li>
+<li class="chapter" data-level="4.2.4" data-path="rmd.html"><a href="rmd.html#图片"><i class="fa fa-check"></i><b>4.2.4</b> 图片</a></li>
+<li class="chapter" data-level="4.2.5" data-path="rmd.html"><a href="rmd.html#代码块"><i class="fa fa-check"></i><b>4.2.5</b> 代码块</a></li>
+<li class="chapter" data-level="4.2.6" data-path="rmd.html"><a href="rmd.html#数学公式"><i class="fa fa-check"></i><b>4.2.6</b> 数学公式</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="rmd.html"><a href="rmd.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> Rmarkdown</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="rmd.html"><a href="rmd.html#yaml头文件"><i class="fa fa-check"></i><b>4.3.1</b> YAML头文件</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rmd.html"><a href="rmd.html#代码块控制"><i class="fa fa-check"></i><b>4.3.2</b> 代码块控制</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rmd.html"><a href="rmd.html#rmarkdown特殊语法"><i class="fa fa-check"></i><b>4.3.3</b> Rmarkdown特殊语法</a></li>
+<li class="chapter" data-level="4.3.4" data-path="rmd.html"><a href="rmd.html#格式转换"><i class="fa fa-check"></i><b>4.3.4</b> 格式转换</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rmd.html"><a href="rmd.html#xaringan"><i class="fa fa-check"></i><b>4.4</b> Xaringan</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="rmd.html"><a href="rmd.html#安装与模板"><i class="fa fa-check"></i><b>4.4.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.4.2" data-path="rmd.html"><a href="rmd.html#其他学习资源"><i class="fa fa-check"></i><b>4.4.2</b> 其他学习资源</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="rmd.html"><a href="rmd.html#leanr"><i class="fa fa-check"></i><b>4.5</b> leanr</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="rmd.html"><a href="rmd.html#安装与模板-1"><i class="fa fa-check"></i><b>4.5.1</b> 安装与模板</a></li>
+<li class="chapter" data-level="4.5.2" data-path="rmd.html"><a href="rmd.html#互动代码模块"><i class="fa fa-check"></i><b>4.5.2</b> 互动代码模块</a></li>
+<li class="chapter" data-level="4.5.3" data-path="rmd.html"><a href="rmd.html#测试题"><i class="fa fa-check"></i><b>4.5.3</b> 测试题</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="rmd.html"><a href="rmd.html#bookdownblogdown以及pagedown"><i class="fa fa-check"></i><b>4.6</b> bookdown、blogdown以及pagedown</a></li>
+<li class="chapter" data-level="4.7" data-path="rmd.html"><a href="rmd.html#quarto"><i class="fa fa-check"></i><b>4.7</b> Quarto</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipulate.html"><a href="manipulate.html"><i class="fa fa-check"></i><b>5</b> 数据整理</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipulate.html"><a href="manipulate.html#整齐数据tidydata"><i class="fa fa-check"></i><b>5.1</b> 整齐数据tidydata</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="manipulate.html"><a href="manipulate.html#分析单位unit-of-analysis"><i class="fa fa-check"></i><b>5.1.1</b> 分析单位(unit of analysis)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipulate.html"><a href="manipulate.html#整齐数据"><i class="fa fa-check"></i><b>5.2</b> 整齐数据</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="manipulate.html"><a href="manipulate.html#整齐数据的缘起"><i class="fa fa-check"></i><b>5.2.1</b> 整齐数据的缘起</a></li>
+<li class="chapter" data-level="5.2.2" data-path="manipulate.html"><a href="manipulate.html#整齐数据的定义"><i class="fa fa-check"></i><b>5.2.2</b> 整齐数据的定义</a></li>
+<li class="chapter" data-level="5.2.3" data-path="manipulate.html"><a href="manipulate.html#数据的凌乱点"><i class="fa fa-check"></i><b>5.2.3</b> 数据的凌乱点</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="manipulate.html"><a href="manipulate.html#关系代数"><i class="fa fa-check"></i><b>5.3</b> 关系代数</a></li>
+<li class="chapter" data-level="5.4" data-path="manipulate.html"><a href="manipulate.html#sql语言"><i class="fa fa-check"></i><b>5.4</b> SQL语言</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="manipulate.html"><a href="manipulate.html#mysql"><i class="fa fa-check"></i><b>5.4.1</b> MySQL</a></li>
+<li class="chapter" data-level="5.4.2" data-path="manipulate.html"><a href="manipulate.html#postgresql"><i class="fa fa-check"></i><b>5.4.2</b> Postgresql</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="manipulate.html"><a href="manipulate.html#dplyr"><i class="fa fa-check"></i><b>5.5</b> dplyr</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="manipulate.html"><a href="manipulate.html#集合运算"><i class="fa fa-check"></i><b>5.5.1</b> 集合运算</a></li>
+<li class="chapter" data-level="5.5.2" data-path="manipulate.html"><a href="manipulate.html#线性运算"><i class="fa fa-check"></i><b>5.5.2</b> 线性运算</a></li>
+<li class="chapter" data-level="5.5.3" data-path="manipulate.html"><a href="manipulate.html#管道"><i class="fa fa-check"></i><b>5.5.3</b> 管道</a></li>
+<li class="chapter" data-level="5.5.4" data-path="manipulate.html"><a href="manipulate.html#数据连接"><i class="fa fa-check"></i><b>5.5.4</b> 数据连接</a></li>
+<li class="chapter" data-level="5.5.5" data-path="manipulate.html"><a href="manipulate.html#数据分组与汇总"><i class="fa fa-check"></i><b>5.5.5</b> 数据分组与汇总</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="manipulate.html"><a href="manipulate.html#宽数据与长数据的转换"><i class="fa fa-check"></i><b>5.6</b> 宽数据与长数据的转换</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="manipulate.html"><a href="manipulate.html#宽数据转长数据"><i class="fa fa-check"></i><b>5.6.1</b> 宽数据转长数据</a></li>
+<li class="chapter" data-level="5.6.2" data-path="manipulate.html"><a href="manipulate.html#长数据转宽数据"><i class="fa fa-check"></i><b>5.6.2</b> 长数据转宽数据</a></li>
+<li class="chapter" data-level="5.6.3" data-path="manipulate.html"><a href="manipulate.html#联系人数据表的案例"><i class="fa fa-check"></i><b>5.6.3</b> 联系人数据表的案例</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="manipulate.html"><a href="manipulate.html#其他定制操作"><i class="fa fa-check"></i><b>5.7</b> 其他定制操作</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="manipulate.html"><a href="manipulate.html#排序"><i class="fa fa-check"></i><b>5.7.1</b> 排序</a></li>
+<li class="chapter" data-level="5.7.2" data-path="manipulate.html"><a href="manipulate.html#抽样"><i class="fa fa-check"></i><b>5.7.2</b> 抽样</a></li>
+<li class="chapter" data-level="5.7.3" data-path="manipulate.html"><a href="manipulate.html#去重复"><i class="fa fa-check"></i><b>5.7.3</b> 去重复</a></li>
+<li class="chapter" data-level="5.7.4" data-path="manipulate.html"><a href="manipulate.html#缺失值处理"><i class="fa fa-check"></i><b>5.7.4</b> 缺失值处理</a></li>
+<li class="chapter" data-level="5.7.5" data-path="manipulate.html"><a href="manipulate.html#拆分与合并数据列"><i class="fa fa-check"></i><b>5.7.5</b> 拆分与合并数据列</a></li>
+<li class="chapter" data-level="5.7.6" data-path="manipulate.html"><a href="manipulate.html#合并数据"><i class="fa fa-check"></i><b>5.7.6</b> 合并数据</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="manipulate.html"><a href="manipulate.html#数据库的连接"><i class="fa fa-check"></i><b>5.8</b> 数据库的连接</a></li>
+<li class="chapter" data-level="5.9" data-path="manipulate.html"><a href="manipulate.html#data.table"><i class="fa fa-check"></i><b>5.9</b> data.table</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visu.html"><a href="visu.html"><i class="fa fa-check"></i><b>6</b> 数据可视化</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="visu.html"><a href="visu.html#从一个可以画恐龙的包说起"><i class="fa fa-check"></i><b>6.1</b> 从一个可以画恐龙的包说起</a></li>
+<li class="chapter" data-level="6.2" data-path="visu.html"><a href="visu.html#数据可视化的目的"><i class="fa fa-check"></i><b>6.2</b> 数据可视化的目的</a></li>
+<li class="chapter" data-level="6.3" data-path="visu.html"><a href="visu.html#图形语法grammar-of-graphics"><i class="fa fa-check"></i><b>6.3</b> 图形语法（Grammar of Graphics）</a></li>
+<li class="chapter" data-level="6.4" data-path="visu.html"><a href="visu.html#ggplot2"><i class="fa fa-check"></i><b>6.4</b> <code>ggplot2</code></a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="visu.html"><a href="visu.html#ggplot2几何对象"><i class="fa fa-check"></i><b>6.4.1</b> <code>ggplot2</code>几何对象</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visu.html"><a href="visu.html#ggplot2的美术属性"><i class="fa fa-check"></i><b>6.4.2</b> <code>ggplot2</code>的美术属性</a></li>
+<li class="chapter" data-level="6.4.3" data-path="visu.html"><a href="visu.html#ggplot2辅助"><i class="fa fa-check"></i><b>6.4.3</b> <code>ggplot2</code>辅助</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="visu.html"><a href="visu.html#案例did结果的可视化"><i class="fa fa-check"></i><b>6.5</b> 案例：DID结果的可视化</a></li>
+<li class="chapter" data-level="6.6" data-path="visu.html"><a href="visu.html#动图"><i class="fa fa-check"></i><b>6.6</b> 动图</a></li>
+<li class="chapter" data-level="6.7" data-path="visu.html"><a href="visu.html#大屏"><i class="fa fa-check"></i><b>6.7</b> 大屏</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="visu.html"><a href="visu.html#交互式"><i class="fa fa-check"></i><b>6.7.1</b> 交互式</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reg.html"><a href="reg.html"><i class="fa fa-check"></i><b>7</b> 回归</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="reg.html"><a href="reg.html#一般线性回归"><i class="fa fa-check"></i><b>7.1</b> 一般线性回归</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="reg.html"><a href="reg.html#基础模型"><i class="fa fa-check"></i><b>7.1.1</b> 基础模型</a></li>
+<li class="chapter" data-level="7.1.2" data-path="reg.html"><a href="reg.html#稳健性标准误"><i class="fa fa-check"></i><b>7.1.2</b> 稳健性标准误</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="reg.html"><a href="reg.html#因果推断的反事实框架"><i class="fa fa-check"></i><b>7.2</b> 因果推断的反事实框架</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="reg.html"><a href="reg.html#定义因果关系"><i class="fa fa-check"></i><b>7.2.1</b> 定义因果关系</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reg.html"><a href="reg.html#cef三定理"><i class="fa fa-check"></i><b>7.2.2</b> CEF三定理</a></li>
+<li class="chapter" data-level="7.2.3" data-path="reg.html"><a href="reg.html#交互项还是分组回归"><i class="fa fa-check"></i><b>7.2.3</b> 交互项还是分组回归</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reg.html"><a href="reg.html#匹配"><i class="fa fa-check"></i><b>7.3</b> 匹配</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="reg.html"><a href="reg.html#原理"><i class="fa fa-check"></i><b>7.3.1</b> 原理</a></li>
+<li class="chapter" data-level="7.3.2" data-path="reg.html"><a href="reg.html#案例"><i class="fa fa-check"></i><b>7.3.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="reg.html"><a href="reg.html#工具变量"><i class="fa fa-check"></i><b>7.4</b> 工具变量</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="reg.html"><a href="reg.html#原理-1"><i class="fa fa-check"></i><b>7.4.1</b> 原理</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reg.html"><a href="reg.html#案例-1"><i class="fa fa-check"></i><b>7.4.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reg.html"><a href="reg.html#双重差分"><i class="fa fa-check"></i><b>7.5</b> 双重差分</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="reg.html"><a href="reg.html#原理-2"><i class="fa fa-check"></i><b>7.5.1</b> 原理</a></li>
+<li class="chapter" data-level="7.5.2" data-path="reg.html"><a href="reg.html#案例-2"><i class="fa fa-check"></i><b>7.5.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="reg.html"><a href="reg.html#断点回归"><i class="fa fa-check"></i><b>7.6</b> 断点回归</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="reg.html"><a href="reg.html#原理-3"><i class="fa fa-check"></i><b>7.6.1</b> 原理</a></li>
+<li class="chapter" data-level="7.6.2" data-path="reg.html"><a href="reg.html#案例-3"><i class="fa fa-check"></i><b>7.6.2</b> 案例</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="reg.html"><a href="reg.html#包含高维分类变量的回归"><i class="fa fa-check"></i><b>7.7</b> 包含高维分类变量的回归</a></li>
+<li class="chapter" data-level="7.8" data-path="reg.html"><a href="reg.html#formula-公式对象"><i class="fa fa-check"></i><b>7.8</b> formula (公式)对象</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="reg.html"><a href="reg.html#公式的生成"><i class="fa fa-check"></i><b>7.8.1</b> 公式的生成</a></li>
+<li class="chapter" data-level="7.8.2" data-path="reg.html"><a href="reg.html#生成公式的运算符"><i class="fa fa-check"></i><b>7.8.2</b> 生成公式的运算符</a></li>
+<li class="chapter" data-level="7.8.3" data-path="reg.html"><a href="reg.html#公式与字符串之间的转换"><i class="fa fa-check"></i><b>7.8.3</b> 公式与字符串之间的转换</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="reg.html"><a href="reg.html#表达式expression"><i class="fa fa-check"></i><b>7.9</b> 表达式expression</a></li>
+<li class="chapter" data-level="7.10" data-path="reg.html"><a href="reg.html#表达式的生成与执行"><i class="fa fa-check"></i><b>7.10</b> 表达式的生成与执行</a></li>
+<li class="chapter" data-level="7.11" data-path="reg.html"><a href="reg.html#表达式与字符串的转换"><i class="fa fa-check"></i><b>7.11</b> 表达式与字符串的转换</a></li>
+<li class="chapter" data-level="7.12" data-path="reg.html"><a href="reg.html#使用stargazer输出表格"><i class="fa fa-check"></i><b>7.12</b> 使用stargazer输出表格</a>
+<ul>
+<li class="chapter" data-level="7.12.1" data-path="reg.html"><a href="reg.html#标准回归表"><i class="fa fa-check"></i><b>7.12.1</b> 标准回归表</a></li>
+<li class="chapter" data-level="7.12.2" data-path="reg.html"><a href="reg.html#默认格式"><i class="fa fa-check"></i><b>7.12.2</b> 默认格式</a></li>
+<li class="chapter" data-level="7.12.3" data-path="reg.html"><a href="reg.html#表格表头"><i class="fa fa-check"></i><b>7.12.3</b> 表格表头</a></li>
+<li class="chapter" data-level="7.12.4" data-path="reg.html"><a href="reg.html#表格正文"><i class="fa fa-check"></i><b>7.12.4</b> 表格正文</a></li>
+<li class="chapter" data-level="7.12.5" data-path="reg.html"><a href="reg.html#添加变量信息"><i class="fa fa-check"></i><b>7.12.5</b> 添加变量信息</a></li>
+<li class="chapter" data-level="7.12.6" data-path="reg.html"><a href="reg.html#选择统计量"><i class="fa fa-check"></i><b>7.12.6</b> 选择统计量</a></li>
+<li class="chapter" data-level="7.12.7" data-path="reg.html"><a href="reg.html#表格注释"><i class="fa fa-check"></i><b>7.12.7</b> 表格注释</a></li>
+<li class="chapter" data-level="7.12.8" data-path="reg.html"><a href="reg.html#整体布局"><i class="fa fa-check"></i><b>7.12.8</b> 整体布局</a></li>
+<li class="chapter" data-level="7.12.9" data-path="reg.html"><a href="reg.html#其他-1"><i class="fa fa-check"></i><b>7.12.9</b> 其他</a></li>
+<li class="chapter" data-level="7.12.10" data-path="reg.html"><a href="reg.html#描述性统计表"><i class="fa fa-check"></i><b>7.12.10</b> 描述性统计表</a></li>
+</ul></li>
+<li class="chapter" data-level="7.13" data-path="reg.html"><a href="reg.html#回归结果的可视化"><i class="fa fa-check"></i><b>7.13</b> 回归结果的可视化</a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="reg.html"><a href="reg.html#使用ggcoefstats可视化回归结果"><i class="fa fa-check"></i><b>7.13.1</b> 使用ggcoefstats可视化回归结果</a></li>
+<li class="chapter" data-level="7.13.2" data-path="reg.html"><a href="reg.html#使用"><i class="fa fa-check"></i><b>7.13.2</b> 使用</a></li>
+<li class="chapter" data-level="7.13.3" data-path="reg.html"><a href="reg.html#双重差分模型的可视化"><i class="fa fa-check"></i><b>7.13.3</b> 双重差分模型的可视化</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="py.html"><a href="py.html"><i class="fa fa-check"></i><b>8</b> Python基础</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="py.html"><a href="py.html#python简介"><i class="fa fa-check"></i><b>8.1</b> Python简介</a></li>
+<li class="chapter" data-level="8.2" data-path="py.html"><a href="py.html#python安装与pycharm"><i class="fa fa-check"></i><b>8.2</b> Python安装与Pycharm</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="py.html"><a href="py.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装</a></li>
+<li class="chapter" data-level="8.2.2" data-path="py.html"><a href="py.html#编辑器-1"><i class="fa fa-check"></i><b>8.2.2</b> 编辑器</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="py.html"><a href="py.html#变量-1"><i class="fa fa-check"></i><b>8.3</b> 变量</a></li>
+<li class="chapter" data-level="8.4" data-path="py.html"><a href="py.html#数据类型-1"><i class="fa fa-check"></i><b>8.4</b> 数据类型</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="py.html"><a href="py.html#类型转换"><i class="fa fa-check"></i><b>8.4.1</b> 类型转换</a></li>
+<li class="chapter" data-level="8.4.2" data-path="py.html"><a href="py.html#算术运算"><i class="fa fa-check"></i><b>8.4.2</b> 算术运算</a></li>
+<li class="chapter" data-level="8.4.3" data-path="py.html"><a href="py.html#布尔运算"><i class="fa fa-check"></i><b>8.4.3</b> 布尔运算</a></li>
+<li class="chapter" data-level="8.4.4" data-path="py.html"><a href="py.html#字符串"><i class="fa fa-check"></i><b>8.4.4</b> 字符串</a></li>
+<li class="chapter" data-level="8.4.5" data-path="py.html"><a href="py.html#字符串的替换"><i class="fa fa-check"></i><b>8.4.5</b> 字符串的替换</a></li>
+<li class="chapter" data-level="8.4.6" data-path="py.html"><a href="py.html#字符串的切片"><i class="fa fa-check"></i><b>8.4.6</b> 字符串的切片</a></li>
+<li class="chapter" data-level="8.4.7" data-path="py.html"><a href="py.html#标准字符串操作"><i class="fa fa-check"></i><b>8.4.7</b> 标准字符串操作</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="py.html"><a href="py.html#标准输入输出"><i class="fa fa-check"></i><b>8.5</b> 标准输入输出</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="py.html"><a href="py.html#标准输入"><i class="fa fa-check"></i><b>8.5.1</b> 标准输入</a></li>
+<li class="chapter" data-level="8.5.2" data-path="py.html"><a href="py.html#命令执行"><i class="fa fa-check"></i><b>8.5.2</b> 命令执行</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="py.html"><a href="py.html#数据结构-1"><i class="fa fa-check"></i><b>8.6</b> 数据结构</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="py.html"><a href="py.html#列表-1"><i class="fa fa-check"></i><b>8.6.1</b> 列表</a></li>
+<li class="chapter" data-level="8.6.2" data-path="py.html"><a href="py.html#元组"><i class="fa fa-check"></i><b>8.6.2</b> 元组</a></li>
+<li class="chapter" data-level="8.6.3" data-path="py.html"><a href="py.html#字典"><i class="fa fa-check"></i><b>8.6.3</b> 字典</a></li>
+<li class="chapter" data-level="8.6.4" data-path="py.html"><a href="py.html#数据结构之间的转化-1"><i class="fa fa-check"></i><b>8.6.4</b> 数据结构之间的转化</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="py.html"><a href="py.html#流程控制-1"><i class="fa fa-check"></i><b>8.7</b> 流程控制</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="py.html"><a href="py.html#条件判断-1"><i class="fa fa-check"></i><b>8.7.1</b> 条件判断</a></li>
+<li class="chapter" data-level="8.7.2" data-path="py.html"><a href="py.html#循环-1"><i class="fa fa-check"></i><b>8.7.2</b> 循环</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="py.html"><a href="py.html#函数与模块"><i class="fa fa-check"></i><b>8.8</b> 函数与模块</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="py.html"><a href="py.html#批量调用"><i class="fa fa-check"></i><b>8.8.1</b> 批量调用</a></li>
+<li class="chapter" data-level="8.8.2" data-path="py.html"><a href="py.html#无名函数"><i class="fa fa-check"></i><b>8.8.2</b> 无名函数</a></li>
+<li class="chapter" data-level="8.8.3" data-path="py.html"><a href="py.html#函数文档"><i class="fa fa-check"></i><b>8.8.3</b> 函数文档</a></li>
+<li class="chapter" data-level="8.8.4" data-path="py.html"><a href="py.html#模块"><i class="fa fa-check"></i><b>8.8.4</b> 模块</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="py.html"><a href="py.html#数据读写与文件操作"><i class="fa fa-check"></i><b>8.9</b> 数据读写与文件操作</a>
+<ul>
+<li class="chapter" data-level="8.9.1" data-path="py.html"><a href="py.html#读入文件"><i class="fa fa-check"></i><b>8.9.1</b> 读入文件</a></li>
+<li class="chapter" data-level="8.9.2" data-path="py.html"><a href="py.html#写出文件"><i class="fa fa-check"></i><b>8.9.2</b> 写出文件</a></li>
+<li class="chapter" data-level="8.9.3" data-path="py.html"><a href="py.html#with关键字"><i class="fa fa-check"></i><b>8.9.3</b> with关键字</a></li>
+</ul></li>
+<li class="chapter" data-level="8.10" data-path="py.html"><a href="py.html#os模块"><i class="fa fa-check"></i><b>8.10</b> os模块</a></li>
+<li class="chapter" data-level="8.11" data-path="py.html"><a href="py.html#案例获取高德地图地址信息"><i class="fa fa-check"></i><b>8.11</b> 案例：获取高德地图地址信息</a></li>
+<li class="chapter" data-level="8.12" data-path="py.html"><a href="py.html#面向对象单独成一章"><i class="fa fa-check"></i><b>8.12</b> 面向对象单独成一章</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="regexp.html"><a href="regexp.html"><i class="fa fa-check"></i><b>9</b> 正则表达式</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="regexp.html"><a href="regexp.html#语法要素"><i class="fa fa-check"></i><b>9.1</b> 语法要素</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="regexp.html"><a href="regexp.html#元字符"><i class="fa fa-check"></i><b>9.1.1</b> 元字符</a></li>
+<li class="chapter" data-level="9.1.2" data-path="regexp.html"><a href="regexp.html#重复"><i class="fa fa-check"></i><b>9.1.2</b> 重复</a></li>
+<li class="chapter" data-level="9.1.3" data-path="regexp.html"><a href="regexp.html#常用字符集"><i class="fa fa-check"></i><b>9.1.3</b> 常用字符集</a></li>
+<li class="chapter" data-level="9.1.4" data-path="regexp.html"><a href="regexp.html#分组"><i class="fa fa-check"></i><b>9.1.4</b> 分组</a></li>
+<li class="chapter" data-level="9.1.5" data-path="regexp.html"><a href="regexp.html#非捕获组与断言"><i class="fa fa-check"></i><b>9.1.5</b> 非捕获组与断言</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="regexp.html"><a href="regexp.html#grep命令"><i class="fa fa-check"></i><b>9.2</b> grep命令</a></li>
+<li class="chapter" data-level="9.3" data-path="regexp.html"><a href="regexp.html#sed命令"><i class="fa fa-check"></i><b>9.3</b> sed命令</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="regexp.html"><a href="regexp.html#应用情景"><i class="fa fa-check"></i><b>9.3.1</b> 应用情景</a></li>
+<li class="chapter" data-level="9.3.2" data-path="regexp.html"><a href="regexp.html#文本替换"><i class="fa fa-check"></i><b>9.3.2</b> 文本替换</a></li>
+<li class="chapter" data-level="9.3.3" data-path="regexp.html"><a href="regexp.html#定位行"><i class="fa fa-check"></i><b>9.3.3</b> 定位行</a></li>
+<li class="chapter" data-level="9.3.4" data-path="regexp.html"><a href="regexp.html#替代"><i class="fa fa-check"></i><b>9.3.4</b> 替代</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="regexp.html"><a href="regexp.html#awk命令"><i class="fa fa-check"></i><b>9.4</b> awk命令</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="regexp.html"><a href="regexp.html#入门"><i class="fa fa-check"></i><b>9.4.1</b> 入门</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="regexp.html"><a href="regexp.html#r语言stringr包"><i class="fa fa-check"></i><b>9.5</b> R语言stringr包</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="regexp.html"><a href="regexp.html#stringr包"><i class="fa fa-check"></i><b>9.5.1</b> stringr包</a></li>
+<li class="chapter" data-level="9.5.2" data-path="regexp.html"><a href="regexp.html#应用案例wos数据分析"><i class="fa fa-check"></i><b>9.5.2</b> 应用案例：wos数据分析</a></li>
+<li class="chapter" data-level="9.5.3" data-path="regexp.html"><a href="regexp.html#应用案例数据合并与校对"><i class="fa fa-check"></i><b>9.5.3</b> 应用案例：数据合并与校对</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="regexp.html"><a href="regexp.html#python的re模块"><i class="fa fa-check"></i><b>9.6</b> Python的re模块</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="regexp.html"><a href="regexp.html#原生字符串"><i class="fa fa-check"></i><b>9.6.1</b> 原生字符串</a></li>
+<li class="chapter" data-level="9.6.2" data-path="regexp.html"><a href="regexp.html#编译"><i class="fa fa-check"></i><b>9.6.2</b> 编译</a></li>
+<li class="chapter" data-level="9.6.3" data-path="regexp.html"><a href="regexp.html#匹配-1"><i class="fa fa-check"></i><b>9.6.3</b> 匹配</a></li>
+<li class="chapter" data-level="9.6.4" data-path="regexp.html"><a href="regexp.html#分割"><i class="fa fa-check"></i><b>9.6.4</b> 分割</a></li>
+<li class="chapter" data-level="9.6.5" data-path="regexp.html"><a href="regexp.html#替换"><i class="fa fa-check"></i><b>9.6.5</b> 替换</a></li>
+<li class="chapter" data-level="9.6.6" data-path="regexp.html"><a href="regexp.html#命名组"><i class="fa fa-check"></i><b>9.6.6</b> 命名组</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="cml.html"><a href="cml.html"><i class="fa fa-check"></i><b>10</b> 命令行</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="cml.html"><a href="cml.html#命令的基本概念"><i class="fa fa-check"></i><b>10.1</b> 命令的基本概念</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="cml.html"><a href="cml.html#常用命令"><i class="fa fa-check"></i><b>10.1.1</b> 常用命令</a></li>
+<li class="chapter" data-level="10.1.2" data-path="cml.html"><a href="cml.html#标准输入与输出"><i class="fa fa-check"></i><b>10.1.2</b> 标准输入与输出</a></li>
+<li class="chapter" data-level="10.1.3" data-path="cml.html"><a href="cml.html#管道与进程管理"><i class="fa fa-check"></i><b>10.1.3</b> 管道与进程管理</a></li>
+<li class="chapter" data-level="10.1.4" data-path="cml.html"><a href="cml.html#别名"><i class="fa fa-check"></i><b>10.1.4</b> 别名</a></li>
+<li class="chapter" data-level="10.1.5" data-path="cml.html"><a href="cml.html#脚本"><i class="fa fa-check"></i><b>10.1.5</b> 脚本</a></li>
+<li class="chapter" data-level="10.1.6" data-path="cml.html"><a href="cml.html#传参"><i class="fa fa-check"></i><b>10.1.6</b> 传参</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="cml.html"><a href="cml.html#变量与数据结构"><i class="fa fa-check"></i><b>10.2</b> 变量与数据结构</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="cml.html"><a href="cml.html#数组"><i class="fa fa-check"></i><b>10.2.1</b> 数组</a></li>
+<li class="chapter" data-level="10.2.2" data-path="cml.html"><a href="cml.html#字典-1"><i class="fa fa-check"></i><b>10.2.2</b> 字典</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="cml.html"><a href="cml.html#运算-1"><i class="fa fa-check"></i><b>10.3</b> 运算</a></li>
+<li class="chapter" data-level="10.4" data-path="cml.html"><a href="cml.html#控制流程"><i class="fa fa-check"></i><b>10.4</b> 控制流程</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="cml.html"><a href="cml.html#选择结构"><i class="fa fa-check"></i><b>10.4.1</b> 选择结构</a></li>
+<li class="chapter" data-level="10.4.2" data-path="cml.html"><a href="cml.html#循环-2"><i class="fa fa-check"></i><b>10.4.2</b> 循环</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="cml.html"><a href="cml.html#函数"><i class="fa fa-check"></i><b>10.5</b> 函数</a></li>
+<li class="chapter" data-level="10.6" data-path="cml.html"><a href="cml.html#bash内建正则表达式"><i class="fa fa-check"></i><b>10.6</b> bash内建正则表达式</a></li>
+<li class="chapter" data-level="10.7" data-path="cml.html"><a href="cml.html#应用案例"><i class="fa fa-check"></i><b>10.7</b> 应用案例</a></li>
+<li class="chapter" data-level="10.8" data-path="cml.html"><a href="cml.html#通配符"><i class="fa fa-check"></i><b>10.8</b> 通配符</a></li>
+<li class="chapter" data-level="10.9" data-path="cml.html"><a href="cml.html#sed"><i class="fa fa-check"></i><b>10.9</b> sed</a></li>
+<li class="chapter" data-level="10.10" data-path="cml.html"><a href="cml.html#awk"><i class="fa fa-check"></i><b>10.10</b> awk</a></li>
+<li class="chapter" data-level="10.11" data-path="cml.html"><a href="cml.html#正则表达式"><i class="fa fa-check"></i><b>10.11</b> 正则表达式</a></li>
+<li class="chapter" data-level="10.12" data-path="cml.html"><a href="cml.html#r的命令行选项"><i class="fa fa-check"></i><b>10.12</b> R的命令行选项</a>
+<ul>
+<li class="chapter" data-level="10.12.1" data-path="cml.html"><a href="cml.html#linuxunix-shebang"><i class="fa fa-check"></i><b>10.12.1</b> Linux/Unix Shebang</a></li>
+<li class="chapter" data-level="10.12.2" data-path="cml.html"><a href="cml.html#argparse包实例"><i class="fa fa-check"></i><b>10.12.2</b> argparse包实例</a></li>
+</ul></li>
+<li class="chapter" data-level="10.13" data-path="cml.html"><a href="cml.html#关于命令行与ide"><i class="fa fa-check"></i><b>10.13</b> 关于命令行与IDE</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="web.html"><a href="web.html"><i class="fa fa-check"></i><b>11</b> 网络数据采集</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="web.html"><a href="web.html#网络数据格式"><i class="fa fa-check"></i><b>11.1</b> 网络数据格式</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="web.html"><a href="web.html#csv"><i class="fa fa-check"></i><b>11.1.1</b> CSV</a></li>
+<li class="chapter" data-level="11.1.2" data-path="web.html"><a href="web.html#xml-1"><i class="fa fa-check"></i><b>11.1.2</b> XML</a></li>
+<li class="chapter" data-level="11.1.3" data-path="web.html"><a href="web.html#json-1"><i class="fa fa-check"></i><b>11.1.3</b> JSON</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="web.html"><a href="web.html#html"><i class="fa fa-check"></i><b>11.2</b> HTML</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="web.html"><a href="web.html#html的基本语法"><i class="fa fa-check"></i><b>11.2.1</b> HTML的基本语法</a></li>
+<li class="chapter" data-level="11.2.2" data-path="web.html"><a href="web.html#常见html标签"><i class="fa fa-check"></i><b>11.2.2</b> 常见HTML标签</a></li>
+<li class="chapter" data-level="11.2.3" data-path="web.html"><a href="web.html#dom树形数据结构"><i class="fa fa-check"></i><b>11.2.3</b> DOM树形数据结构</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="web.html"><a href="web.html#css"><i class="fa fa-check"></i><b>11.3</b> CSS</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="web.html"><a href="web.html#css的基本语法"><i class="fa fa-check"></i><b>11.3.1</b> CSS的基本语法</a></li>
+<li class="chapter" data-level="11.3.2" data-path="web.html"><a href="web.html#id选择器"><i class="fa fa-check"></i><b>11.3.2</b> id选择器</a></li>
+<li class="chapter" data-level="11.3.3" data-path="web.html"><a href="web.html#类选择器"><i class="fa fa-check"></i><b>11.3.3</b> 类选择器</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="web.html"><a href="web.html#javascript"><i class="fa fa-check"></i><b>11.4</b> JavaScript</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="web.html"><a href="web.html#javascript案例"><i class="fa fa-check"></i><b>11.4.1</b> JavaScript案例</a></li>
+<li class="chapter" data-level="11.4.2" data-path="web.html"><a href="web.html#javascript的基本语法"><i class="fa fa-check"></i><b>11.4.2</b> JavaScript的基本语法</a></li>
+<li class="chapter" data-level="11.4.3" data-path="web.html"><a href="web.html#ajax"><i class="fa fa-check"></i><b>11.4.3</b> AJAX</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="web.html"><a href="web.html#开发者工具"><i class="fa fa-check"></i><b>11.5</b> 开发者工具</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="web.html"><a href="web.html#打开开发者工具"><i class="fa fa-check"></i><b>11.5.1</b> 打开开发者工具</a></li>
+<li class="chapter" data-level="11.5.2" data-path="web.html"><a href="web.html#查看器与样式"><i class="fa fa-check"></i><b>11.5.2</b> 查看器与样式</a></li>
+<li class="chapter" data-level="11.5.3" data-path="web.html"><a href="web.html#其他功能"><i class="fa fa-check"></i><b>11.5.3</b> 其他功能</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="web.html"><a href="web.html#xpath"><i class="fa fa-check"></i><b>11.6</b> Xpath</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="web.html"><a href="web.html#基本查询"><i class="fa fa-check"></i><b>11.6.1</b> 基本查询</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="web.html"><a href="web.html#http"><i class="fa fa-check"></i><b>11.7</b> HTTP</a>
+<ul>
+<li class="chapter" data-level="11.7.1" data-path="web.html"><a href="web.html#http常见方法"><i class="fa fa-check"></i><b>11.7.1</b> HTTP常见方法</a></li>
+</ul></li>
+<li class="chapter" data-level="11.8" data-path="web.html"><a href="web.html#静态爬虫"><i class="fa fa-check"></i><b>11.8</b> 静态爬虫</a></li>
+<li class="chapter" data-level="11.9" data-path="web.html"><a href="web.html#使用rselenium的动态爬虫"><i class="fa fa-check"></i><b>11.9</b> 使用RSelenium的动态爬虫</a>
+<ul>
+<li class="chapter" data-level="11.9.1" data-path="web.html"><a href="web.html#rselenium简介与安装"><i class="fa fa-check"></i><b>11.9.1</b> RSelenium简介与安装</a></li>
+<li class="chapter" data-level="11.9.2" data-path="web.html"><a href="web.html#安装docker"><i class="fa fa-check"></i><b>11.9.2</b> 安装Docker</a></li>
+<li class="chapter" data-level="11.9.3" data-path="web.html"><a href="web.html#rselenum语法"><i class="fa fa-check"></i><b>11.9.3</b> RSelenum语法</a></li>
+<li class="chapter" data-level="11.9.4" data-path="web.html"><a href="web.html#案例1在链家搜索并获取相关信息"><i class="fa fa-check"></i><b>11.9.4</b> 案例1:在链家搜索并获取相关信息</a></li>
+<li class="chapter" data-level="11.9.5" data-path="web.html"><a href="web.html#案例2登录豆瓣"><i class="fa fa-check"></i><b>11.9.5</b> 案例2:登录豆瓣</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="geo.html"><a href="geo.html"><i class="fa fa-check"></i><b>12</b> 地理计算</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="geo.html"><a href="geo.html#r中地理计算"><i class="fa fa-check"></i><b>12.1</b> R中地理计算</a></li>
+<li class="chapter" data-level="12.2" data-path="geo.html"><a href="geo.html#地理数据结构"><i class="fa fa-check"></i><b>12.2</b> 地理数据结构</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="geo.html"><a href="geo.html#向量vector"><i class="fa fa-check"></i><b>12.2.1</b> 向量（Vector）</a></li>
+<li class="chapter" data-level="12.2.2" data-path="geo.html"><a href="geo.html#栅格raster"><i class="fa fa-check"></i><b>12.2.2</b> 栅格（Raster）</a></li>
+<li class="chapter" data-level="12.2.3" data-path="geo.html"><a href="geo.html#坐标系coordinate-reference-system"><i class="fa fa-check"></i><b>12.2.3</b> 坐标系（coordinate reference system）</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="geo.html"><a href="geo.html#地理数据操纵"><i class="fa fa-check"></i><b>12.3</b> 地理数据操纵</a></li>
+<li class="chapter" data-level="12.4" data-path="geo.html"><a href="geo.html#地理数据可视化"><i class="fa fa-check"></i><b>12.4</b> 地理数据可视化</a></li>
+<li class="chapter" data-level="12.5" data-path="geo.html"><a href="geo.html#地理数据运算"><i class="fa fa-check"></i><b>12.5</b> 地理数据运算</a>
+<ul>
+<li class="chapter" data-level="12.5.1" data-path="geo.html"><a href="geo.html#取子集"><i class="fa fa-check"></i><b>12.5.1</b> 取子集</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="geo.html"><a href="geo.html#地理数据读写"><i class="fa fa-check"></i><b>12.6</b> 地理数据读写</a></li>
+<li class="chapter" data-level="12.7" data-path="geo.html"><a href="geo.html#地理数据计算"><i class="fa fa-check"></i><b>12.7</b> 地理数据计算</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="make.html"><a href="make.html"><i class="fa fa-check"></i><b>13</b> GUN Make的数据生产线</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="make.html"><a href="make.html#使用make的必要性"><i class="fa fa-check"></i><b>13.1</b> 使用Make的必要性</a></li>
+<li class="chapter" data-level="13.2" data-path="make.html"><a href="make.html#make安装"><i class="fa fa-check"></i><b>13.2</b> Make安装</a></li>
+<li class="chapter" data-level="13.3" data-path="make.html"><a href="make.html#快速上手make"><i class="fa fa-check"></i><b>13.3</b> 快速上手make</a></li>
+<li class="chapter" data-level="13.4" data-path="make.html"><a href="make.html#make的工作方式"><i class="fa fa-check"></i><b>13.4</b> make的工作方式</a></li>
+<li class="chapter" data-level="13.5" data-path="make.html"><a href="make.html#makefile-的高级写法"><i class="fa fa-check"></i><b>13.5</b> Makefile 的高级写法</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="make.html"><a href="make.html#特殊目标"><i class="fa fa-check"></i><b>13.5.1</b> 特殊目标</a></li>
+<li class="chapter" data-level="13.5.2" data-path="make.html"><a href="make.html#使用变量"><i class="fa fa-check"></i><b>13.5.2</b> 使用变量</a></li>
+<li class="chapter" data-level="13.5.3" data-path="make.html"><a href="make.html#分支与循环结构"><i class="fa fa-check"></i><b>13.5.3</b> 分支与循环结构</a></li>
+<li class="chapter" data-level="13.5.4" data-path="make.html"><a href="make.html#函数-1"><i class="fa fa-check"></i><b>13.5.4</b> 函数</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="make.html"><a href="make.html#make的高级语法"><i class="fa fa-check"></i><b>13.6</b> Make的高级语法</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="make.html"><a href="make.html#并行计算"><i class="fa fa-check"></i><b>13.6.1</b> 并行计算</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="make.html"><a href="make.html#参考资料"><i class="fa fa-check"></i><b>13.7</b> 参考资料</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="net.html"><a href="net.html"><i class="fa fa-check"></i><b>14</b> 图数据分析</a></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="sound.html"><a href="sound.html"><i class="fa fa-check"></i><b>A</b> 余音绕梁</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>参考文献</a></li>
+<li class="chapter" data-level="B" data-path="date.html"><a href="date.html"><i class="fa fa-check"></i><b>B</b> R日期时间</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="date.html"><a href="date.html#日期-时间数据类型"><i class="fa fa-check"></i><b>B.1</b> 日期-时间数据类型</a></li>
+<li class="chapter" data-level="B.2" data-path="date.html"><a href="date.html#lubridate包"><i class="fa fa-check"></i><b>B.2</b> lubridate包</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="date.html"><a href="date.html#定义日期-时间变量"><i class="fa fa-check"></i><b>B.2.1</b> 定义日期-时间变量</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="date.html"><a href="date.html#从日期-时间中取出元素"><i class="fa fa-check"></i><b>B.3</b> 从日期-时间中取出元素</a></li>
+<li class="chapter" data-level="B.4" data-path="date.html"><a href="date.html#日期-时间取整"><i class="fa fa-check"></i><b>B.4</b> 日期-时间取整</a></li>
+<li class="chapter" data-level="B.5" data-path="date.html"><a href="date.html#日期-时间的数学运算"><i class="fa fa-check"></i><b>B.5</b> 日期-时间的数学运算</a>
+<ul>
+<li class="chapter" data-level="B.5.1" data-path="date.html"><a href="date.html#时间长度"><i class="fa fa-check"></i><b>B.5.1</b> 时间长度</a></li>
+<li class="chapter" data-level="B.5.2" data-path="date.html"><a href="date.html#时间周期"><i class="fa fa-check"></i><b>B.5.2</b> 时间周期</a></li>
+<li class="chapter" data-level="B.5.3" data-path="date.html"><a href="date.html#时间区间"><i class="fa fa-check"></i><b>B.5.3</b> 时间区间</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">本书由 bookdown 强力驱动</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">数据工程讲义：经济学分册</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="make" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">第 13 章</span> GUN Make的数据生产线<a href="make.html#make" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>本章中我们将介绍如何使用GUN Make工具来帮助我们实现更为便捷的可复现数据分析。对于绝大多数数据分析人员，GNU Make是一个完全陌生的概念；但对于软件工程师而言，Make则是再熟悉不过的工具。Make起源于1976年，是软件工程开发人员为了将多文件组成的复杂软件工程搭建过程自动化的工具。本章中，我们要解决三个问题：<strong>使用Make的必要性</strong>，<strong>Make的基本语法以及Make的高级语法</strong>。</p>
+<div id="使用make的必要性" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> 使用Make的必要性<a href="make.html#使用make的必要性" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>当前，数据分析已经成为一个系统性工程。从工程的视角来看，一个数据分析项目至少包括数据获取，数据清理，数据分析，结果展示，以及最终开发数据产品等环节。设想一下有一个三人合作的经济学研究项目(如下图所示)，Alice负责从网页爬取数据，Bob负责原始数据的清理，Eve用机器学习的方法从数据中定义一个变量，然后Alice在用Bob和Eve的数据跑回归模型，Bob擅长分析结果的可视化展示，最后Alice写研究论文。该项目中的复杂性来自两个方面：第一是多人协同，三个合作者的工作是相互依赖的。例如，Bob需要Alice的原始数据作为输入，Alice的回归则依赖于Bob和Eve的数据清理结果，这种相互依赖性会意味着数据分析某一环节的变化（例如改变了对缺失值的处理方法）都会引起其后续步骤的变化；第二是多语言协同。之所以出现多语言协同，可能是因为不同合作者擅长的语言各异，更重要的是在这个项目中，Alice使用的是Python、Stata、Latex，Bob使用R，而Eve使用python，本来就没有一个语言是各方面都是最优的。实际上，“根据任务特性选择合适的语言”本就是数据工程的一个重要原则。多语言意味着没办法将所有的代码整合进一个文件中。传统地，我们以来<strong>人工协同</strong>来完成数据分析项目，但是人工协同不但非常耗时，还增加了出错的概率。</p>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5c1dd4a18d906326cb8e" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5c1dd4a18d906326cb8e">{"x":{"diagram":"\ndigraph boxes_and_circles {\n\n  # a \"graph\" statement\n  graph [overlap = true, fontsize = 10,layout = circo]\n\n  # several \"node\" statements\n  node [shape = box,\n        fontname = Helvetica]\n        \n  WebPages; RawData;CleanData; Variables; Model; Figures; Articles\n\n  node [shape = circle,\n        fixedsize = false,\n        width = 1] // sets as circles\n  Alice_Crawler; Bob_DataClean; Eve_ML; Alice_Regression; Bob_Visualization; Alice_Writing;\n\n  # several \"edge\" statements\n  WebPages->Alice_Crawler Alice_Crawler->RawData\n  RawData->Bob_DataClean Bob_DataClean->CleanData\n  CleanData ->Eve_ML CleanData->Alice_Regression\n  Eve_ML -> Variables Variables->Alice_Regression\n  Alice_Regression -> Model Model->Bob_Visualization \n  CleanData ->Bob_Visualization Bob_Visualization -> Figures\n  Figures -> Alice_Writing Model -> Alice_Writing\n  Alice_Writing -> Articles\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Make为我们管理数据工程提供了自动化解决方案。首先，Make定义了数据分析的“菜单”，菜单上定义了所有数据之间的依赖关系与转换步骤（即数据工程中使用的各类程序）。良好定义的Make可以实现复现数据的分析流程。</p>
+<p>之后，我们可以在命令行使用<code>make</code>命令，与项目相关的所有相关文件将会按照菜单顺序依次执行。其次，Make是一种<strong>语言独立</strong>（Language Agnostic）的工具，这使得Make可以将任何语言的代码加入数据流（Data Pipeline）当中，在管理数据工程时非常灵活。</p>
+<p><em>下面这写内容是从续本达课上学到的，所以需要和续本达确定是否可以在书稿中使用</em>
+## 数据流水线的构造目标
+对于任何数据工程项目，都可以抽象成三个要素：数据输入、数据输出和数据处理过程。在此基础上，我们还需要精确表达输入数据、输出数据与中间计算结果的依赖关系。同时，我们需要满足高效执行的要求包括并行处理与超级计算机上的运行。最后我们希望当时数据工程出现错误时，我们可以从最后一个正确的结果中恢复运算。</p>
+<p>GNU make是我们构造数据工程流水线的最佳工具。<em>这是我的结论</em></p>
+<p>可以实现复现原则；管理程序运行，在超级计算机上运行；可以从错误中恢复。</p>
+</div>
+<div id="make安装" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Make安装<a href="make.html#make安装" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mac在命令行通过<code>brew install make</code>直接安装；Windows的安装参考<a href="http://gnuwin32.sourceforge.net/packages/make.htm">Make for windows</a>。</p>
+<p>安装完成后，可以在命令行通过<code>make --version</code>查看make的版本。</p>
+</div>
+<div id="快速上手make" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> 快速上手make<a href="make.html#快速上手make" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>安装make之后，可以根据上面的例子，编辑一个Makefile文件，如下：</p>
+<pre class="base"><code>targe
+</code></pre>
+<p><em>把前面的示意图的例子直接写一个demo出来</em>
+从上面的例子可以看出，Makefile的语法简单明了，其基本规则如下：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="make.html#cb2-1" tabindex="-1"></a><span class="ex">target</span> : prerequisites</span>
+<span id="cb2-2"><a href="make.html#cb2-2" tabindex="-1"></a>  <span class="ex">command1</span></span>
+<span id="cb2-3"><a href="make.html#cb2-3" tabindex="-1"></a>  <span class="ex">command2</span></span>
+<span id="cb2-4"><a href="make.html#cb2-4" tabindex="-1"></a>  <span class="ex">...</span></span></code></pre></div>
+<p>其中:
+- <code>target</code> 是make的输出
+- <code>prerequisites</code>是生成target的所有输入，target与prerequisites使用冒号连接
+- <code>command</code>是生成target需要执行的命令，可以使任意的shell命令。command前使用制表符<code>\t</code>缩进。一般来说，make会以UNIX的标准Shell，也就是 /bin/sh 来执行命令。</p>
+<p>多个上述基本单元放在一起形成一个完整的文件依赖系统，Make根据target与其prerequisites时间关系来判断是否需要执行command中的命令。只要prerequisites中至少有一个文件比target更新，command的命令就会被执行。</p>
+<p>make更像是一个函数式编程语言，不再关注“执行什么操作”，而是关注“输入到输出的映射”</p>
+</div>
+<div id="make的工作方式" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> make的工作方式<a href="make.html#make的工作方式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>有了这个Makefile文件，我们在命令行中使用<code>make</code>来自动运行整个数据工程（是不是特别神奇）。实际上，GNU make工作时的执行逻辑为：</p>
+<ol style="list-style-type: decimal">
+<li>读入Makefile</li>
+<li>为所有的输出文件创建输入文件依赖关系链</li>
+<li>根据依赖关系，决定哪些文件要重新生成</li>
+<li>执行生成命令</li>
+</ol>
+<p>其中，1-2为第一阶段，3-4为第二阶段，5为第三阶段。Makefile支持<code>*</code>，<code>?</code>和<code>~</code>通配符，例如<code>*.csv</code>表示所有后缀为csv的文件。</p>
+</div>
+<div id="makefile-的高级写法" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">13.5</span> Makefile 的高级写法<a href="make.html#makefile-的高级写法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="特殊目标" class="section level3 hasAnchor" number="13.5.1">
+<h3><span class="header-section-number">13.5.1</span> 特殊目标<a href="make.html#特殊目标" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>.PHONY</code>用于指明伪目标，伪目标指的是不需要生成输出文件的目标。在下面的代码中，定义了一个没有没有依赖的伪目标clean，此时不会生成名字为clean的文件，它的作用是删除所有文件名中包含temp的文件。当我们运行<code>make clean</code>即可删除相关文件。</p>
+<pre><code>.PHONY : clean
+clean :
+    rm *temp.*</code></pre>
+<p>其他比较重要的特殊目标为:</p>
+<pre><code>.DELETE_ON_ERROR:出错时删掉坏文件，避免make认为出错但是依然输出的文件已存在而不更新
+.SECONDARY:保留中间结果，这样我们的数据运算更容易回溯与检查</code></pre>
+<p><em>后文中要修改语言风格为自己的风格</em>
+Makefile中， <code>#</code> 是注释符</p>
+<p>通常，make会把其要执行的命令行在命令执行前输出到屏幕上。当我们用 @ 字符在命令行前，那么，这个命令将不被make显示出来，最具代表性的例子是，我们用这个功能来向屏幕显示一些信息。如:
+<code>@echo 正在编译XXX模块......</code></p>
+<p>make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，默认情况下使用UNIX的标准Shell——/bin/sh来执行命令。</p>
+</div>
+<div id="使用变量" class="section level3 hasAnchor" number="13.5.2">
+<h3><span class="header-section-number">13.5.2</span> 使用变量<a href="make.html#使用变量" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Makefile中可以使用变量，变量的命名字可以包含字符、数字，下划线（可以是数字开头），但不应该含有 : 、 # 、 = 或是空字符（空格、回车等）。注意Makefile中的变量名是大小写敏感的。变量在声明时需要通过<code>:=</code>给予初值，而在使用时，需要给在变量名前加上<code>$</code> 符号，但最好用小括号<code>()</code>。在Makefile中，变量可以使用在“目标”，“依赖目标”， “命令”或是Makefile的其它部分中。</p>
+<p>我们可以使用 += 操作符给变量追加值。</p>
+<pre><code>objects = main.o foo.o bar.o utils.o
+objects += another.o</code></pre>
+<p>a:= 1
+$(info $(a)) info是GNU make自带函数用于输出信息</p>
+<p>$^表示所有的输入
+$<span class="citation">(<a href="#ref-表示所有的输出"><strong>表示所有的输出?</strong></a>)</span>
+$&lt;表示第一个输入
+$(word n, $^)表示第n个输入（此处，n是自然数）。</p>
+<p>Makefile中可以调用Shell命令，将其标准输出作为值。例如</p>
+<p>guile可以调用scheme语言</p>
+<p>字符串替代的结果</p>
+<p><code>#</code>是makefile的注释标识符</p>
+</div>
+<div id="分支与循环结构" class="section level3 hasAnchor" number="13.5.3">
+<h3><span class="header-section-number">13.5.3</span> 分支与循环结构<a href="make.html#分支与循环结构" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>使用条件判断，可以让make根据运行时的不同情况选择不同的执行分支。条件表达式可以是比较变量的值，或是比较变量和常量的值。下面的代码中，</p>
+<pre><code>libs_for_gcc = -lgnu
+normal_libs =
+
+foo: $(objects)
+ifeq ($(CC),gcc)
+    $(CC) -o foo $(objects) $(libs_for_gcc)
+else
+    $(CC) -o foo $(objects) $(normal_libs)
+endif</code></pre>
+<p>可见，在上面示例的这个规则中，目标 foo 可以根据变量 $(CC) 值来选取不同的函数库来编译程序。</p>
+<p>我们可以从上面的示例中看到三个关键字： ifeq 、 else 和 endif 。 ifeq 的意思表示条件语句的开始，并指定一个条件表达式，表达式包含两个参数，以逗号分隔，表达式以圆括号括起。 else 表示条件表达式为假的情况。 endif 表示一个条件语句的结束，任何一个条件表达式都应该以 endif 结束。</p>
+</div>
+<div id="函数-1" class="section level3 hasAnchor" number="13.5.4">
+<h3><span class="header-section-number">13.5.4</span> 函数<a href="make.html#函数-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在Makefile中可以使用函数来处理变量，从而让我们的命令或是规则更为的灵活和具有智能。make 所支持的函数也不算很多，不过已经足够我们的操作了。函数调用后，函数的返回值可以当做变量来使用。</p>
+<p>函数调用，很像变量的使用，也是以 $ 来标识的，其语法如下：
+<code>$(&lt;function&gt; &lt;arguments&gt;)</code></p>
+<p>例如，foreach函数可以用来做循环，</p>
+<pre><code>names := a b c d
+files := $(foreach n,$(names),$(n).o)</code></pre>
+<p>make使用惰性赋值，只有变量所在依赖关系被使用时，变量才会展开。</p>
+<p>之所以有一些语法看不懂，是因为对shell的命令不太清楚</p>
+<ul>
+<li>define something</li>
+<li>dummy target</li>
+</ul>
+<p>Make 语法是否执行的原则。
+Make target 需要举一个例子作为不同的部分，这个地方需要画图加上去，然后要准备后续的部分，科学家的要处理起来
+然后准备机器学习的课件</p>
+</div>
+</div>
+<div id="make的高级语法" class="section level2 hasAnchor" number="13.6">
+<h2><span class="header-section-number">13.6</span> Make的高级语法<a href="make.html#make的高级语法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>SHEBANG符号<code>#!</code>位于Unix系统脚本的第一行，用于指明执行该脚本的解释程序。符合以下规则：</p>
+<ol style="list-style-type: decimal">
+<li>脚本文件中没有<code>#!</code>这一行，那么它执行时会默认用当前Shell去解释这个脚本(即：$SHELL环境变量）；</li>
+<li><code>#!</code>之后的解释程序是一个可执行文件，那么执行这个脚本时，它就会把文件名及其参数一起作为参数传给解释程序去执行。</li>
+<li><code>#!</code>指定的解释程序没有可执行权限，则会报错“bad interpreter: Permission denied”。</li>
+<li><code>#!</code>指定的解释程序不是一个可执行文件，那么指定的解释程序会被忽略，转而交给当前的SHELL去执行这个脚本。</li>
+<li><code>#!</code>指定的解释程序不存在，那么会报错“bad interpreter: No such file or directory”。注意：<code>#!</code>之后的解释程序，需要写其绝对路径（如：#!/bin/bash），它是不会自动到$PATH中寻找解释器的。</li>
+</ol>
+<p>定义变量
+Automatic variables
+- <code>$@</code>: 目标的文件名（包括“路径/文件”）
+- <code>$&lt;</code>: 第一个依赖
+- <code>$^</code>: 所有依赖
+- <code>$(@D)</code>: 目标的路径/文件夹部分
+- <code>$(@F)</code>: 目标的文件部分
+- <code>$(&lt;D)</code>: 第一个依赖的路径/文件夹部分
+- <code>$(&lt;F)</code>: 第一个依赖的文件部分</p>
+<div id="并行计算" class="section level3 hasAnchor" number="13.6.1">
+<h3><span class="header-section-number">13.6.1</span> 并行计算<a href="make.html#并行计算" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><code>make -j n target</code>使用n个核并行运行</p>
+<p>Make的工作原理可以参考John Graham-Cumming 的<a href="Graham-Cumming%20J.%20The%20GNU%20make%20book%5BM%5D.%20No%20Starch%20Press,%202015.">The GNU Make Book</a></p>
+</div>
+</div>
+<div id="参考资料" class="section level2 hasAnchor" number="13.7">
+<h2><span class="header-section-number">13.7</span> 参考资料<a href="make.html#参考资料" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="http://zmjones.com/make" class="uri">http://zmjones.com/make</a></p>
+<p><a href="https://bost.ocks.org/mike/make/" class="uri">https://bost.ocks.org/mike/make/</a></p>
+<p><a href="http://matt.might.net/articles/intro-to-make/" class="uri">http://matt.might.net/articles/intro-to-make/</a></p>
+<p><a href="http://stat545.com/automation04_make-activity.html" class="uri">http://stat545.com/automation04_make-activity.html</a></p>
+<p><a href="https://seisman.github.io/how-to-write-makefile/introduction.html" class="uri">https://seisman.github.io/how-to-write-makefile/introduction.html</a></p>
+<p><a href="https://www.oreilly.com/openbook/make3/book/index.csp">Managing Projects with GNU Make, Third Edition</a>
+<a href="https://www.gnu.org/software/make/manual/make.html">Make Documents</a></p>
+<p><em>需要单独整理一期shell命令行的内容</em></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="geo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="net.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-chinese/edit/master/13-make.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["dataengeering.pdf", "dataengeering.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
