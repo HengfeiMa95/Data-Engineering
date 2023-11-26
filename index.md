@@ -1,7 +1,7 @@
 --- 
 title: "数据工程讲义：经济学分册"
 author: "史冬波 续本达"
-date: "2023-11-11"
+date: "2023-11-26"
 colorlinks: yes
 bibliography:
 - book.bib
@@ -60,19 +60,25 @@ sessionInfo()
 ## [1] ggplot2_3.4.3
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bslib_0.5.1      compiler_4.2.0   pillar_1.9.0    
-##  [4] jquerylib_0.1.4  tools_4.2.0      digest_0.6.33   
-##  [7] jsonlite_1.8.7   evaluate_0.21    lifecycle_1.0.3 
-## [10] tibble_3.2.1     gtable_0.3.4     pkgconfig_2.0.3 
-## [13] rlang_1.1.1      cli_3.6.1        rstudioapi_0.13 
-## [16] yaml_2.3.7       xfun_0.40        fastmap_1.1.1   
-## [19] withr_2.5.0      dplyr_1.1.3      knitr_1.43      
-## [22] generics_0.1.3   vctrs_0.6.3      sass_0.4.7      
-## [25] grid_4.2.0       tidyselect_1.2.0 glue_1.6.2      
-## [28] R6_2.5.1         fansi_1.0.4      rmarkdown_2.24  
-## [31] bookdown_0.30    magrittr_2.0.3   scales_1.2.1    
-## [34] htmltools_0.5.6  colorspace_2.1-0 utf8_1.2.3      
-## [37] munsell_0.5.0    cachem_1.0.8
+##  [1] bslib_0.5.1       compiler_4.2.0   
+##  [3] pillar_1.9.0      jquerylib_0.1.4  
+##  [5] tools_4.2.0       digest_0.6.33    
+##  [7] jsonlite_1.8.7    evaluate_0.21    
+##  [9] lifecycle_1.0.3   tibble_3.2.1     
+## [11] gtable_0.3.4      pkgconfig_2.0.3  
+## [13] rlang_1.1.1       cli_3.6.1        
+## [15] rstudioapi_0.15.0 yaml_2.3.7       
+## [17] xfun_0.40         fastmap_1.1.1    
+## [19] withr_2.5.0       dplyr_1.1.3      
+## [21] knitr_1.43        generics_0.1.3   
+## [23] vctrs_0.6.3       sass_0.4.7       
+## [25] grid_4.2.0        tidyselect_1.2.0 
+## [27] glue_1.6.2        R6_2.5.1         
+## [29] fansi_1.0.4       rmarkdown_2.24   
+## [31] bookdown_0.30     magrittr_2.0.3   
+## [33] scales_1.2.1      htmltools_0.5.6  
+## [35] colorspace_2.1-0  utf8_1.2.3       
+## [37] munsell_0.5.0     cachem_1.0.8
 ```
 
 ## 致谢 {-}

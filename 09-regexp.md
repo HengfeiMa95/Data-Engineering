@@ -411,7 +411,7 @@ re.sub(r"(\w)(\w+)(\w)", repl, text)
 ```
 
 ```
-## 'Psoosefrr Aedloblamk, paelse rpreot yuor aseenbcs pptmorly.'
+## 'Psroefsor Aoldlabmek, psaele roerpt your aneesbcs ptpomrly.'
 ```
 `re.subn`的行为与`re.sub`相同，但是返回一个元组 (字符串, 替换次数)。
 

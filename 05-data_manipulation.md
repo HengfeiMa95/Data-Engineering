@@ -979,20 +979,20 @@ paper %>% sample(10)
 
 ```
 ## # A tibble: 2,535 × 10
-##    startyear surname addr     item_type givenname ut_char  type uniqueID endyear
-##        <dbl> <chr>   <chr>    <chr>     <chr>       <dbl> <dbl> <chr>      <dbl>
-##  1      2006 JIN     natl in… Meeting … C         2.08e11     2 1_91        2010
-##  2      2006 JIN     natl in… Meeting … CHUANHONG 2.08e11     1 1_91        2010
-##  3      2006 ZHANG   univ ca… Meeting … JUN       2.08e11     1 1_449       2009
-##  4      2006 ZHANG   univ ca… Meeting … JUN       2.08e11     1 1_449       2009
-##  5      2006 ZHANG   univ ca… Meeting … JUN       2.09e11     1 1_449       2009
-##  6      2006 ZHANG   univ ca… Meeting … JUN       2.09e11     1 1_449       2009
-##  7      2006 JIN     natl in… Article   CHUANHONG 2.52e11     1 1_91        2010
-##  8      2006 LU      univ vi… Article   JIWEI     2.53e11     1 0_51        2015
-##  9      2006 JIN     peking … Article   CHUANHONG 2.53e11     1 1_91        2006
-## 10      2006 JIN     peking … Article   CHUANHONG 2.53e11     1 1_91        2006
+##     type addr         startyear givenname auseq pub_year fullname uniqueID wos  
+##    <dbl> <chr>            <dbl> <chr>     <dbl>    <dbl> <chr>    <chr>    <chr>
+##  1     2 natl inst a…      2006 C             5     2009 jinc     1_91     natl…
+##  2     1 natl inst a…      2006 CHUANHONG     1     2009 jinchua… 1_91     natl…
+##  3     1 univ calif …      2006 JUN           2     2010 zhangjun 1_449    univ…
+##  4     1 univ calif …      2006 JUN           4     2010 zhangjun 1_449    univ…
+##  5     1 univ calif …      2006 JUN           7     2012 zhangjun 1_449    univ…
+##  6     1 univ calif …      2006 JUN           3     2012 zhangjun 1_449    univ…
+##  7     1 natl inst a…      2006 CHUANHONG     1     2008 jinchua… 1_91     natl…
+##  8     1 univ virgin…      2006 JIWEI         2     2008 lujiwei  0_51     univ…
+##  9     1 peking univ…      2006 CHUANHONG     3     2008 jinchua… 1_91     peki…
+## 10     1 peking univ…      2006 CHUANHONG     3     2008 jinchua… 1_91     peki…
 ## # ℹ 2,525 more rows
-## # ℹ 1 more variable: fullname <chr>
+## # ℹ 1 more variable: item_type <chr>
 ```
 
 ### 去重复
