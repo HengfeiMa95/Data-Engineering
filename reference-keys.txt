@@ -406,3 +406,4 @@ lubridate包
 时间区间
 fig:fig2
 tab:ktb
+在wsl上安装r语言

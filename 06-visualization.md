@@ -124,9 +124,13 @@ datasaurus_dozen %>%
 
 本节的任务就是逐步学习`ggplot2`的要素，并画出此图。教学材料受到哈佛大学[IQSS](http://tutorials.iq.harvard.edu/)的启发。数据位于：[EconomistData.csv](https://drive.google.com/file/d/1CyCRpPVqLP-_BWjURiV5127rTiSHWuqe/view?usp=drive_link)。
 
-要制作一批自己教学数据。
-
 ### `ggplot2`几何对象
+
+`ggplot2`的语法是先通过`ggplot`函数指定数据，然后使用`+`叠加后续绘图动作。我们使用
+
+
+
+
 
 **练习题**
 

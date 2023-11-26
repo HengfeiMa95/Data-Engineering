@@ -35,6 +35,129 @@ R语言具有以下特点:
 
 从R语言官网（<https://www.r-project.org/）根据自己的操作系统选择对应R版本。亦可通过%60apt%60或%60brew%60命令下载>。
 
+### 在WSL上安装R语言
+
+对于Windows读者，在Windows Subsystem for Linux (WSL) 上安装R语言，有两种安装方法：使用包管理器安装和从源代码编译安装。
+
+1. 替换软件源列表
+
+在开始安装前，建议先更换软件源，以提高下载速度和稳定性。以下是更换软件源的步骤：
+
+第一步、打开WSL
+   
+第二步、**备份原有的`sources.list`文件：**
+
+```
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.bk
+```
+
+第三步、**使用新的源列表（阿里云的源）：**
+
+首先，打开`/etc/apt/sources.list`文件进行编辑：
+
+```
+sudo nano /etc/apt/sources.list
+```
+
+然后，复制并粘贴以下内容到该文件(注意你的系统版本，此处默认为Debian)：
+
+```
+deb http://mirrors.aliyun.com/debian/ bookworm main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ bookworm main non-free contrib
+
+deb http://mirrors.aliyun.com/debian-security bookworm-security main contrib non-free
+deb-src http://mirrors.aliyun.com/debian-security bookworm-security main contrib non-free
+
+deb http://mirrors.aliyun.com/debian/ bookworm-updates main contrib non-free
+deb-src http://mirrors.aliyun.com/debian/ bookworm-updates main contrib non-free
+```
+
+第四步、 **保存并关闭文件。**
+
+如果你使用的是nano编辑器，可以通过按Ctrl + X，然后按Y，最后按Enter来保存更改。
+
+第五步、**更新软件包列表：**
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+2. 使用包管理器安装R
+
+第一步、安装R
+
+```
+sudo apt install r-base
+```
+
+第二步、验证安装
+
+检查R版本以确认安装：
+
+```
+R --version
+```
+
+第三步、启动R
+
+```bash
+R
+```
+
+将进入R的交互式界面。
+
+
+3. 从源代码编译安装R
+
+第一步 安装R的构建依赖
+
+```
+sudo apt-get build-dep r-base
+```
+
+第二步、选择R版本并下载源代码（此处选择3.6.2）
+
+```
+RVERSION=3.6.2
+mkdir src
+cd src
+wget https://mirrors.tuna.tsinghua.edu.cn/CRAN/src/base/R-3/R-3.6.2.tar.gz
+tar zxf R-${RVERSION}.tar.gz
+cd R-${RVERSION}
+```
+
+第三步、配置、构建和安装
+
+```
+./configure --prefix=$HOME/R/${RVERSION} --enable-R-shlib
+make
+make install
+```
+
+第四步、清理源代码（可选）
+
+```
+cd ..
+rm -r R-${RVERSION}
+```
+
+第五步、添加R到PATH环境变量
+
+```bash
+cd
+cp .bashrc .bashrc-R.bk
+echo -e "
+# add R $RVERSION to PATH
+export PATH=$HOME/R/${RVERSION}/bin:\$PATH
+" >> .bashrc
+. .bashrc
+```
+
+
+选择适合你需求的安装方法：包管理器安装适合大多数用户需求，源代码编译安装允许更多自定义配置但过程更复杂。
+
+
 ### R安装RStudio
 
 从Rstudio官网（<https://posit.co/products/open-source/rstudio/）下载Rstudio并安装。打开RStudio可以看到下列界面>
@@ -349,8 +472,8 @@ R提供了内置的`is.`函数和`as.`函数来对数据类型进行判断与转
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8645476acd495ecac306" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-8645476acd495ecac306">{"x":{"diagram":"digraph R {\n  \n  rankdir = LR\n  layout = dot\n  node [shape = box]\n  \n  num [style=\"rounded, filled\",label = \"numeric\",fillcolor = Gainsboro]\n  char [style=\"rounded, filled\", label = \"character\",fillcolor = Gainsboro]\n  log [style=\"rounded, filled\", label = \"logical\",fillcolor= Gainsboro]\n  num -> char [label = \"as.character\"]\n  char -> num [label = \"as.numeric(数字组成字符)\"]\n  num -> log [label = \"as.logical\"]\n  log -> num [label = \"as.numeric\"]\n  log -> char [label = \"as.character\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8ad1b8c2d1620b4f82d2" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-8ad1b8c2d1620b4f82d2">{"x":{"diagram":"digraph R {\n  \n  rankdir = LR\n  layout = dot\n  node [shape = box]\n  \n  num [style=\"rounded, filled\",label = \"numeric\",fillcolor = Gainsboro]\n  char [style=\"rounded, filled\", label = \"character\",fillcolor = Gainsboro]\n  log [style=\"rounded, filled\", label = \"logical\",fillcolor= Gainsboro]\n  num -> char [label = \"as.character\"]\n  char -> num [label = \"as.numeric(数字组成字符)\"]\n  num -> log [label = \"as.logical\"]\n  log -> num [label = \"as.numeric\"]\n  log -> char [label = \"as.character\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 **课堂练习**
@@ -980,8 +1103,8 @@ list_data[["category"]] <- 'C9'
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-800c3f816d49149d9c64" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-800c3f816d49149d9c64">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  node [shape = box]\n  \n  v [style=\"rounded, filled\",label = \"vector\",fillcolor = Gainsboro]\n  mt [style=\"rounded, filled\", label = \"matrix\",fillcolor = Gainsboro]\n  df [style=\"rounded, filled\", label = \"data.frame\",fillcolor= Gainsboro]\n  l [style=\"rounded, filled\", label = \"list\",fillcolor= Gainsboro]\n\n  v -> mt [label = \"matrix\"]\n  v -> df [label = \"data.frame\"]\n  v -> l [label = \"list\"]\n  mt -> df [label = \"data.frame\"]\n  mt -> l [label = \"list\"]\n  mt -> v [label = \"as.vector\"]\n  df -> l [label = \"list\"]\n  df -> mt [label = \"matrix（列全部是数值型）\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5aaf54993f7593b6a247" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-5aaf54993f7593b6a247">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  node [shape = box]\n  \n  v [style=\"rounded, filled\",label = \"vector\",fillcolor = Gainsboro]\n  mt [style=\"rounded, filled\", label = \"matrix\",fillcolor = Gainsboro]\n  df [style=\"rounded, filled\", label = \"data.frame\",fillcolor= Gainsboro]\n  l [style=\"rounded, filled\", label = \"list\",fillcolor= Gainsboro]\n\n  v -> mt [label = \"matrix\"]\n  v -> df [label = \"data.frame\"]\n  v -> l [label = \"list\"]\n  mt -> df [label = \"data.frame\"]\n  mt -> l [label = \"list\"]\n  mt -> v [label = \"as.vector\"]\n  df -> l [label = \"list\"]\n  df -> mt [label = \"matrix（列全部是数值型）\"]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 ## 数据读写
@@ -1176,8 +1299,8 @@ R语言针对各类专用数据文件设计了读写借口，具体函数如下�
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c9757c6148ae964a9b51" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-c9757c6148ae964a9b51">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b1 [shape = box, style=\"rounded, filled\",label = \"执行语句1\", fillcolor = Gainsboro]\n  b2 [shape = box, style=\"rounded, filled\",label = \"执行语句2\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b1 [label = \"TRUE\"]\n  d -> b2 [label = \"FALSE（可选）\"]\n  b1 -> c2 \n  b2 -> c2 []\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-eed6e0df1d006053523d" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-eed6e0df1d006053523d">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b1 [shape = box, style=\"rounded, filled\",label = \"执行语句1\", fillcolor = Gainsboro]\n  b2 [shape = box, style=\"rounded, filled\",label = \"执行语句2\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b1 [label = \"TRUE\"]\n  d -> b2 [label = \"FALSE（可选）\"]\n  b1 -> c2 \n  b2 -> c2 []\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### if-else语句
@@ -1292,8 +1415,8 @@ switch("史老师", 张老师 = "谁啊", 王老师 = "呵呵", 史老师 = "讲
 
 
 ```{=html}
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ee31e766bfc28558e41f" style="width:672px;height:10%;"></div>
-<script type="application/json" data-for="htmlwidget-ee31e766bfc28558e41f">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b [shape = box, style=\"rounded, filled\",label = \"执行语句\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b [label = \"TRUE\"]\n  b -> c1 \n  d -> c2 [label = \"FALSE\"]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-15efbbb42227584aedb4" style="width:672px;height:10%;"></div>
+<script type="application/json" data-for="htmlwidget-15efbbb42227584aedb4">{"x":{"diagram":"digraph R {\n  \n  rankdir = TB\n  \n  c1 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"起始\"]\n  d [shape = diamond,label = \"条件\", fillcolor = Gainsboro]\n  b [shape = box, style=\"rounded, filled\",label = \"执行语句\", fillcolor = Gainsboro]\n  c2 [shape = circle, style=\"rounded, filled\",fillcolor = Gainsboro,label = \"结束\"]\n   \n  c1 -> d\n  d -> b [label = \"TRUE\"]\n  b -> c1 \n  d -> c2 [label = \"FALSE\"]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 #### for循环
@@ -1601,16 +1724,16 @@ R语言包可以上传到CRAN平台，通过审核后，遍布在世界各地的
 
 ```
 ##    rank     package  count       from         to
-## 1     1        ragg 122051 2023-11-09 2023-11-09
-## 2     2 textshaping 119538 2023-11-09 2023-11-09
-## 3     3     ggplot2 105180 2023-11-09 2023-11-09
-## 4     4       rlang  88850 2023-11-09 2023-11-09
-## 5     5    devtools  76601 2023-11-09 2023-11-09
-## 6     6     pkgdown  72222 2023-11-09 2023-11-09
-## 7     7   lifecycle  70012 2023-11-09 2023-11-09
-## 8     8         rgl  68405 2023-11-09 2023-11-09
-## 9     9       dplyr  64556 2023-11-09 2023-11-09
-## 10   10       vctrs  63925 2023-11-09 2023-11-09
+## 1     1        ragg 116767 2023-11-24 2023-11-24
+## 2     2 textshaping 114935 2023-11-24 2023-11-24
+## 3     3     ggplot2  95446 2023-11-24 2023-11-24
+## 4     4    devtools  75109 2023-11-24 2023-11-24
+## 5     5     pkgdown  72893 2023-11-24 2023-11-24
+## 6     6         rgl  70714 2023-11-24 2023-11-24
+## 7     7          sf  63360 2023-11-24 2023-11-24
+## 8     8       rlang  61007 2023-11-24 2023-11-24
+## 9     9       vctrs  53075 2023-11-24 2023-11-24
+## 10   10       dplyr  52183 2023-11-24 2023-11-24
 ```
 
 ## 向量化
